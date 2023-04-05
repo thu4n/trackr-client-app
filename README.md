@@ -79,5 +79,6 @@ Ngoài ra còn có các đối tượng Parcel chứa mọi thông tin chi tiế
   - Delivery tương tự như customer, nhưng có thêm quyền cập nhật các thông tin liên quan đến vị trí và tình trạng của Parcel.
   - Admin có toàn quyền đối với các record của Customer, Delivery và Parcel.
 ## Kiến trúc hệ thống và công nghệ sử dụng
+![img](https://raw.githubusercontent.com/thu4n/trackr-app/main/System%20Architecture%20Diagram.png?token=GHSAT0AAAAAAB57POCCFMN3E4Q33RB7UAOSZBN2JHQ)
 ## Đặc tả các giao thức truyền thông trong ứng dụng
 ## Demo ứng dụng
