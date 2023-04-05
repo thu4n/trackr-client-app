@@ -62,7 +62,20 @@ Cái này mình thống nhất ghi ý nghĩa tên biến vào file docx và ph�
 > Ví dụ: main[1].cpp, test[1].cpp
 
 ## Tổng quan về đồ án
+**Trackr** là một ứng dụng desktop để người dùng cập nhật và theo dõi tình trạng vận chuyển đơn hàng được mua trực tuyến từ trước. Ứng dụng được sử dụng trong ngữ cảnh như sau: "Một cửa hàng online cần sử dụng dịch vụ vận chuyển để giao hàng đến cho khách hàng, ứng dụng này sẽ hoạt động như bộ phận chuyên vận chuyển các đơn hàng của shop. Người quản lý cửa hàng sẽ có khả năng thêm đơn hàng và phân công giao hàng". Sẽ có 3 loại user (sẽ không có user thuộc loại Cửa hàng để giữ tính đơn giản) khi truy cập vào ứng dụng:
+
+- Customer - Người mua hàng muốn kiểm tra xem đơn hàng đã được vận chuyển tới đâu
+- Delivery - Nhân viên giao hàng thường xuyên cập nhật vị trí và tình trạng của đơn hàng mình đang vận chuyển.
+- Administrator (admin) - Quản trị viên có khả năng theo dõi và thực hiện các tác vụ quản lý như thêm, sửa hoặc xóa các thông tin (record) về user hoặc đơn hàng. Đây là vai trò dành cho người quản lý cửa hàng.
+
+Ngoài ra còn có các đối tượng Parcel chứa mọi thông tin chi tiết về một đơn hàng tương ứng.
 ## Các tính năng chính của ứng dụng
+- Cho phép nhiều user cùng lúc có thể xem cũng như cập nhật thông tin theo thời gian thực.
+- Hệ thống tính phí giao hàng dựa trên khoảng cách vật lý
+- Có xác thực và phân quyền cho mỗi loại user:
+  - Customer chỉ có quyền đọc thông tin của bên Delivery và Parcel.
+  - Delivery tương tự như customer, nhưng có thêm quyền cập nhật các thông tin liên quan đến vị trí và tình trạng của Parcel.
+  - Admin có toàn quyền đối với các record của Customer, Delivery và Parcel.
 ## Kiến trúc hệ thống và công nghệ sử dụng
 ## Đặc tả các giao thức truyền thông trong ứng dụng
 ## Demo ứng dụng
