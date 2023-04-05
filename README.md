@@ -1,5 +1,7 @@
 # Trackr
-Một ứng dụng desktop giúp theo dõi hành trình đơn hàng, đây là đồ án cho môn học Lập trình mạng căn bản tại UIT.
+![img](/logoSmall.png)
+
+Một ứng dụng desktop giúp theo dõi hành trình đơn hàng, đây là đồ án cho môn học Lập trình mạng căn bản tại UIT. 
 ## Table of Contents
 - [Quy tắc làm việc chung trên GitHub](#quy-tắc-làm-việc-chung-trên-github)
 - [Quy ước chung về code và tên biến](#quy-ước-chung-về-code-và-tên-biến)
