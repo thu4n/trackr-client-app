@@ -81,17 +81,17 @@ Ngoài ra còn có các đối tượng Parcel chứa mọi thông tin chi tiế
 ## Kiến trúc hệ thống và công nghệ sử dụng
 - Kiến trúc hệ thống
 
-![img](https://raw.githubusercontent.com/thu4n/trackr-app/main/System%20Architecture%20Diagram.png?token=GHSAT0AAAAAAB57POCCFMN3E4Q33RB7UAOSZBN2JHQ)
+![img2](/system-architecture-diagram.png)
 
 - Công nghệ sử dụng:
-  1. IDE: Visual Studio 2019 hoặc 2022 
-  2. Ngôn ngữ sử dụng: C# (ngôn ngữ dùng chính), XAML ,HTML, CSS, Javascript, SQL.
-  3. Framework sử dụng: WPF, ASP.NET 
-  4. Thư viện sử dụng: SignalR
-  5. Network stack: Websocket (TCP), RESTful API HTTP request
-  6. Loại project: Desktop application
-  7. Database system: Azure SQL Database và SQL Server Express LocalDB
-  8. Version control: Git
+ 1. IDE: Visual Studio 2019 hoặc 2022 
+ 2. Ngôn ngữ sử dụng: C# (ngôn ngữ dùng chính), XAML ,HTML, CSS, Javascript, SQL.
+ 3. Framework sử dụng: WPF, ASP.NET 
+ 4. Thư viện sử dụng: SignalR
+ 5. Network stack: Websocket (TCP), RESTful API HTTP request
+ 6. Loại project: Desktop application
+ 7. Database system: Azure SQL Database và SQL Server Express LocalDB
+ 8. Version control: Git
 
 ## Đặc tả các giao thức truyền thông trong ứng dụng
 ## Demo ứng dụng
