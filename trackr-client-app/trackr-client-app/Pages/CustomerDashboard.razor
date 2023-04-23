@@ -1,4 +1,18 @@
 ﻿@page "/customer-dashboard"
+
+@using trackr_client_app.Data
+@inject NavigationManager navManager
+@inject ParcelDetails Details
+
+<style>
+    table{
+        counter-reset: tableCount;
+    }
+    .counterCell:before{
+        content: counter(tableCount);
+        counter-increment: tableCount;
+    }
+</style>
 <h1 style="text-align:center; font-weight:600;color:#e26f6f">Danh sách đơn hàng</h1>
 <div class="input-group mx-auto col-10 col-md-8 col-lg-6" style="max-width:400px; align-content:center; margin-bottom:1em">
     <input class="form-control" type="text" placeholder="Tra cứu đơn hàng" />
@@ -25,31 +39,34 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Otto</td>
-                <td>thuan</td>
-                <td>Mark</td>
-                <td>Otto</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Thornton</td>
-                <td>thuan1</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>the Bird</td>
-                <td>thuan2</td>
-                <td>Larry</td>
-                <td>the Bird</td>
-            </tr>
+            @foreach(var parcel in parcels)
+            {
+                <tr>
+                    <th class="counterCell" scope="row"></th>
+                    <td><button @onclick="() => OnClick(parcel)" style="text-decoration:none; color:blue; border:none">@parcel.parcelId</button></td>
+                    <td>@parcel.parcelName</td>
+                    <td>@parcel.orderDate.ToShortDateString()</td>
+                    <td>@parcel.parcelStatus</td>
+                </tr>
+                
+            }
         </tbody>
     </table>
 </div>
-
 @code {
-
+    private void OnClick(Parcel parcel)
+    {
+        long parcelId = parcel.parcelId;
+        navManager.NavigateTo($"parcel-information/{parcelId}");
+    }
+    private Parcel[] parcels;
+    bool firstTime = false;
+    protected override async Task OnInitializedAsync()
+    {
+        if (!firstTime)
+        {
+            parcels = await Details.GetParcels(DateTime.Now);
+            firstTime = true;
+        }
+    }
 }
