@@ -2,15 +2,77 @@
 @using trackr_client_app.Data
 @inject ParcelDetails Details
 
+<style>
+    .sample-img{
+        height: 120px;
+        width: 100%;
+        max-width:120px;
+        background-color: gray;
+        margin-right: 2em;
+    }
+</style>
 <a href="customer-dashboard" style="text-decoration:none;color:black; font-size:20px;font-weight:700">
     <i class="fa fa-thin fa-arrow-left " style="color: #000000;"></i>
     Danh sách đơn hàng
 </a>
-<h3 style="margin-top:10px; ">Hello, this is @parcelId</h3>
+<div class="align-items-center" style="background-color:white; padding: 10px 10px; border-radius: 0.5em; margin-top: 1em; box-shadow: 0.5px 1px">
+    <h2 style="color:#e26f6f">Chi tiết đơn hàng</h2>
+    <div style="display:flex; width:100%;">
+        <div class="sample-img"></div>
+        <div style="width:90%">
+            <form>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label style="font-weight:600"> Mã vận đơn: <span style="font-weight:400">@parcelId</span></label>
+                    </div>
+                    <div class="col-auto">
+                        <label style="font-weight:600"> Mã khách hàng: <span style="font-weight:400">@parcelId 32</span></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label style="font-weight:600"> Tên đơn hàng: <span style="font-weight:400">tên gì đó</span></label>
+                    </div>
+                    <div class="col-auto">
+                        <label style="font-weight:600"> Tên khách hàng: <span style="font-weight:400">Tống Võ Anh Thuận</span></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label style="font-weight:600"> Ngày đặt hàng: <span style="font-weight:400">20/04/2023</span></label>
+                    </div>
+                    <div class="col-md-3">
+                        <label style="font-weight:600"> SĐT: <span style="font-weight:400">0123456789</span></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label style="font-weight:600"> Trạng thái đơn hàng: <span style="font-weight:400">đang giao</span></label>
+                    </div>
+                    <div class="col-md-6">
+                        <label style="font-weight:600"> Địa chỉ: <span style="font-weight:400">201/7 Phạm Ngũ Lão, phường Thới Bình</span></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label style="font-weight:600"> Dự kiến giao trước: <span style="font-weight:400">30/04/2023</span></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
 
 @code {
     [Parameter]
     public string parcelId { get; set; }
 
+    /*
+     Sau này dùng API gọi data từ chỉ cần pass cái id vào là đủ để lấy thông tin chi tiết ra
+     và hiển thị ở trên page này. Không cần truyền tham số object phức tạp
+     */
     
 }
