@@ -1,0 +1,46 @@
+﻿@page "/"
+
+
+<div>
+    <img  src="/images/logo.svg" style="display:block; margin: auto auto; width:30%; max-width:100px;" />
+    <h1 class="display-3" style="text-align:center; font-weight:800; color:#e26f6f">Trackr!</h1>
+    <div class="row align-items-center">
+        
+        <div class="mx-auto col-10 col-md-8 col-lg-6" style="max-width:400px; align-content:center">
+            <!-- Form -->
+            <form class="form-example" action="" method="post">
+                <!-- Input fields -->
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control username"
+                           id="username"
+                           placeholder="Tài khoản"
+                           name="username" style="margin-bottom: 0.5em" />
+                </div>
+                <div class="form-group">
+                    <input type="password"
+                           class="form-control password"
+                           id="password"
+                           placeholder="Mật khẩu"
+                           name="password"/>
+                </div>
+                <button type="submit" class="btn btn-primary form-control mt-4" style="background-color:#e26f6f; border:none">
+                    Đăng nhập
+                </button>
+            </form>
+            <!-- Form end -->
+        </div>
+    </div>
+</div>
+<!--
+
+
+<p role="status">Tình trạng: @str</p>
+-->
+@code {
+    string str = "Chưa đăng nhập";
+    private void Alert()
+    {
+        str = "Đăng nhập thành công";
+    }
+}
