@@ -1,0 +1,93 @@
+﻿@page "/customer-dashboard"
+
+@using trackr_client_app.Data
+@inject NavigationManager navManager
+@inject ParcelDetails Details
+
+<style>
+    table{
+        counter-reset: tableCount;
+    }
+    .counterCell:before{
+        content: counter(tableCount);
+        counter-increment: tableCount;
+    }
+</style>
+<h1 style="text-align:center; font-weight:600;color:#e26f6f">Danh sách đơn hàng</h1>
+<div class="input-group mx-auto col-10 col-md-8 col-lg-6" style="max-width:400px; align-content:center; margin-bottom:1em">
+    <input class="form-control" type="text" placeholder="Tra cứu đơn hàng" @bind-value="searchTxt"/>
+    <span class="input-group-append">
+        <button class="btn" style="" @onclick="SearchParcel" value="Search" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+            <!--
+            <i class="fas fa-search"></i>
+            -->
+        </button>
+    </span>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Mã vận đơn</th>
+                <th scope="col">Tên đơn hàng</th>
+                <th scope="col">Ngày đặt hàng</th>
+                <th scope="col">Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(!search)
+            {
+                @foreach (var parcel in parcels)
+                {
+                    <tr>
+                        <th class="counterCell" scope="row"></th>
+                        <td><button @onclick="() => OnClick(parcel)" style="text-decoration:none; color:blue; border:none">@parcel.parcelId</button></td>
+                        <td>@parcel.parcelName</td>
+                        <td>@parcel.orderDate.ToShortDateString()</td>
+                        <td>@parcel.parcelStatus</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <th class="counterCell" scope="row"></th>
+                    <td><button @onclick="() => OnClick(parcel)" style="text-decoration:none; color:blue; border:none">@parcel.parcelId</button></td>
+                    <td>@parcel.parcelName</td>
+                    <td>@parcel.orderDate.ToShortDateString()</td>
+                    <td>@parcel.parcelStatus</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@code {
+    public string searchTxt;
+    bool search = false;
+    Parcel parcel;
+    async Task SearchParcel()
+    {
+        int id = int.Parse(searchTxt);
+        parcel = parcels.Find(p => p.parcelId == id);
+        search = true;
+    }
+    private void OnClick(Parcel parcel)
+    {
+        long parcelId = parcel.parcelId;
+        navManager.NavigateTo($"parcel-information/{parcelId}");
+    }
+    private List<Parcel> parcels;
+    bool firstTime = false;
+    protected override async Task OnInitializedAsync()
+    {
+        if (!firstTime)
+        {
+            parcels = await Details.GetParcels(DateTime.Now);
+            firstTime = true;
+        }
+    }
+}
