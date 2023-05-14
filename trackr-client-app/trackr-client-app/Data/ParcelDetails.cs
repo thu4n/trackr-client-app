@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,7 @@ namespace trackr_client_app.Data
         {
             "Đang chuẩn bị", "Đang giao", "Đã giao"
         };
-        public Task<Parcel[]> GetParcels(DateTime startDate)
+        public Task<List<Parcel>> GetParcels(DateTime startDate)
         {
             return Task.FromResult(Enumerable.Range(1, 10).Select(index => new Parcel
             {
@@ -29,7 +30,7 @@ namespace trackr_client_app.Data
                 cusName = "Tống Võ Anh Thuận",
                 cusAddress = "Trường Đại học Công nghệ Thông tin",
                 cusPhone = "0795998888"
-            }).ToArray());
-        }
+            }).ToList());
+        }        
     }
 }

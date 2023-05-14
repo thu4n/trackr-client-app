@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,5 +18,6 @@ namespace trackr_client_app.Data
         public string cusName { get; set;}
         public string cusPhone { get; set;}
         public string cusAddress { get; set;}
+
     }
 }
