@@ -25,5 +25,11 @@ namespace trackr_client_app
             loginForm.Show();
             Close();
         }
+
+        private void RegisterForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var loginForm = (LoginForm)Tag;
+            loginForm.Close();
+        }
     }
 }
