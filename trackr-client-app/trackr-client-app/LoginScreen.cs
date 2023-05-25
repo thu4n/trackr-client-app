@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace trackr_client_app
 {
-    public partial class Form1 : Form
+    public partial class LoginScreen : Form
     {
-        public Form1()
+        public LoginScreen()
         {
             InitializeComponent();
+        }
+
+        private void LoginScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
