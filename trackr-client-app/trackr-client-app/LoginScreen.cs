@@ -19,6 +19,11 @@ namespace trackr_client_app
 
         private void LoginScreen_Load(object sender, EventArgs e)
         {
+            Text = "Track - Login Screen";
+        }
+
+        private void navigateRegisterLabel_Click(object sender, EventArgs e)
+        {
 
         }
     }
