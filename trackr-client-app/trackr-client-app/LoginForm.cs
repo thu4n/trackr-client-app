@@ -10,21 +10,26 @@ using System.Windows.Forms;
 
 namespace trackr_client_app
 {
-    public partial class LoginScreen : Form
+    public partial class LoginForm : Form
     {
-        public LoginScreen()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
         private void LoginScreen_Load(object sender, EventArgs e)
         {
-            Text = "Track - Login Screen";
+            Text = "Trackr - Đăng nhập";
         }
 
         private void navigateRegisterLabel_Click(object sender, EventArgs e)
         {
-
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Tag = this;
+            registerForm.StartPosition = FormStartPosition.Manual;
+            registerForm.Location = this.Location;
+            registerForm.Show();
+            Hide();
         }
     }
 }
