@@ -12,6 +12,7 @@ namespace trackr_client_app
 {
     public partial class RegisterForm : Form
     {
+        private bool returnToLogin = false;
         public RegisterForm()
         {
             InitializeComponent();
@@ -23,13 +24,17 @@ namespace trackr_client_app
             loginForm.StartPosition = FormStartPosition.Manual;
             loginForm.Location = this.Location;
             loginForm.Show();
+            returnToLogin = true;
             Close();
         }
 
         private void RegisterForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            var loginForm = (LoginForm)Tag;
-            loginForm.Close();
+            if(!returnToLogin)
+            {
+                var loginForm = (LoginForm)Tag;
+                loginForm.Close();
+            }
         }
     }
 }
