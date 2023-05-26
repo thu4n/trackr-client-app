@@ -22,5 +22,10 @@ namespace trackr_client_app.UserControls
         {
 
         }
+
+        private void ParcelTrackingTree_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

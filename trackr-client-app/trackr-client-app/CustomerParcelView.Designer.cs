@@ -29,37 +29,36 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerParcelView));
+            this.parcelDetails2 = new trackr_client_app.ParcelDetails();
             this.parcelTrackingTree1 = new trackr_client_app.UserControls.ParcelTrackingTree();
-            this.parcelDetails1 = new trackr_client_app.ParcelDetails();
             this.SuspendLayout();
+            // 
+            // parcelDetails2
+            // 
+            this.parcelDetails2.BackColor = System.Drawing.Color.White;
+            this.parcelDetails2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.parcelDetails2.Location = new System.Drawing.Point(47, 42);
+            this.parcelDetails2.Name = "parcelDetails2";
+            this.parcelDetails2.Size = new System.Drawing.Size(1052, 318);
+            this.parcelDetails2.TabIndex = 2;
             // 
             // parcelTrackingTree1
             // 
             this.parcelTrackingTree1.BackColor = System.Drawing.Color.White;
             this.parcelTrackingTree1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parcelTrackingTree1.Location = new System.Drawing.Point(26, 336);
+            this.parcelTrackingTree1.Location = new System.Drawing.Point(47, 395);
             this.parcelTrackingTree1.Name = "parcelTrackingTree1";
             this.parcelTrackingTree1.Size = new System.Drawing.Size(1052, 371);
-            this.parcelTrackingTree1.TabIndex = 1;
-            // 
-            // parcelDetails1
-            // 
-            this.parcelDetails1.BackColor = System.Drawing.Color.White;
-            this.parcelDetails1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parcelDetails1.Location = new System.Drawing.Point(26, 12);
-            this.parcelDetails1.Name = "parcelDetails1";
-            this.parcelDetails1.Size = new System.Drawing.Size(1052, 318);
-            this.parcelDetails1.TabIndex = 0;
+            this.parcelTrackingTree1.TabIndex = 3;
             // 
             // CustomerParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoScrollMargin = new System.Drawing.Size(2, 2);
-            this.ClientSize = new System.Drawing.Size(1098, 494);
+            this.ClientSize = new System.Drawing.Size(1146, 637);
             this.Controls.Add(this.parcelTrackingTree1);
-            this.Controls.Add(this.parcelDetails1);
+            this.Controls.Add(this.parcelDetails2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomerParcelView";
             this.Text = "Trackr - Parcel Details";
@@ -69,8 +68,7 @@
         }
 
         #endregion
-
-        private ParcelDetails parcelDetails1;
+        private ParcelDetails parcelDetails2;
         private UserControls.ParcelTrackingTree parcelTrackingTree1;
     }
 }
