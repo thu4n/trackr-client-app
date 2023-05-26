@@ -16,6 +16,11 @@ namespace trackr_client_app
         {
             InitializeComponent();
         }
+        public CustomerDashboard(string name)
+        {
+            InitializeComponent();
+            usernameLabel.Text = name;
+        }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
