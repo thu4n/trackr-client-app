@@ -16,5 +16,19 @@ namespace trackr_client_app.UserControls
         {
             InitializeComponent();
         }
+
+        private void CreateCirlce(Graphics g, Pen pen, Brush brush,float centerX, float centerY, float radius)
+        {
+            g.DrawEllipse(pen, centerX - radius, centerY - radius, radius + radius, radius + radius);
+            g.FillEllipse(brush, centerX - radius, centerY - radius, radius + radius, radius + radius);
+        }
+
+        private void ParcelTrackingTreeNode_Paint(object sender, PaintEventArgs e)
+        {
+            Color green = Color.FromArgb(255, 0, 255, 0);
+            Pen greenPen = new Pen(green);
+            greenPen.Width = 5;
+            e.Graphics.DrawEllipse(greenPen, 400, 150, 400, 400);
+        }
     }
 }

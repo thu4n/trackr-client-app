@@ -15,6 +15,12 @@ namespace trackr_client_app.UserControls
         public ParcelTrackingTree()
         {
             InitializeComponent();
+            Invalidate();
+        }
+
+        private void parcelTrackingTreeNode1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
