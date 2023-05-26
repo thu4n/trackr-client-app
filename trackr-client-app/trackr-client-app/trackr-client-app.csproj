@@ -95,6 +95,18 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ParcelTrackingTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ParcelTrackingTree.Designer.cs">
+      <DependentUpon>ParcelTrackingTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ParcelTrackingTreeNode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ParcelTrackingTreeNode.Designer.cs">
+      <DependentUpon>ParcelTrackingTreeNode.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +131,12 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ParcelTrackingTree.resx">
+      <DependentUpon>ParcelTrackingTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ParcelTrackingTreeNode.resx">
+      <DependentUpon>ParcelTrackingTreeNode.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
