@@ -35,7 +35,11 @@ namespace trackr_client_app
         private void loginBtn_Click(object sender, EventArgs e)
         {
             CustomerDashboard customerDashboard = new CustomerDashboard();
+            customerDashboard.Tag = this;
+            customerDashboard.StartPosition = FormStartPosition.Manual;
+            customerDashboard.Location = this.Location;
             customerDashboard.Show();
+            Hide();
         }
     }
 }

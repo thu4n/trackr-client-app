@@ -175,6 +175,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomerDashboard";
             this.Text = "Trackr - Dashboard";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CustomerDashboard_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

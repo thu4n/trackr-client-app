@@ -24,5 +24,11 @@ namespace trackr_client_app
                 parcelGridView.Rows.Add("i","thuan","ok","alo");
             }
         }
+
+        private void CustomerDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var loginForm = (LoginForm)Tag;
+            loginForm.Close();
+        }
     }
 }
