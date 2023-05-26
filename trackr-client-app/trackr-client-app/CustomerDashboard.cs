@@ -19,10 +19,12 @@ namespace trackr_client_app
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            for(int i = 1; i <= 10; i++)
+            /*for(int i = 1; i <= 10; i++)
             {
                 parcelGridView.Rows.Add("i","thuan","ok","alo");
-            }
+            }*/
+            CustomerParcelView customerParcelView = new CustomerParcelView();
+            customerParcelView.Show();
         }
 
         private void CustomerDashboard_FormClosed(object sender, FormClosedEventArgs e)
