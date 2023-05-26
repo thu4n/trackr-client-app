@@ -30,6 +30,11 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDashboard));
             this.titleLabel = new System.Windows.Forms.Label();
             this.searchTB = new System.Windows.Forms.TextBox();
@@ -41,7 +46,10 @@
             this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -94,13 +102,15 @@
             this.parcelGridView.AllowUserToResizeColumns = false;
             this.parcelGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.parcelGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.parcelGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.parcelGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.parcelGridView.ColumnHeadersHeight = 30;
             this.parcelGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.parcelGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -109,9 +119,25 @@
             this.nameColumn,
             this.orderDateColumn,
             this.statusColumn});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.parcelGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.parcelGridView.EnableHeadersVisualStyles = false;
             this.parcelGridView.Location = new System.Drawing.Point(66, 202);
             this.parcelGridView.Name = "parcelGridView";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.parcelGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.parcelGridView.RowHeadersWidth = 51;
             this.parcelGridView.RowTemplate.Height = 24;
             this.parcelGridView.Size = new System.Drawing.Size(904, 363);
@@ -120,8 +146,8 @@
             // sttColumn
             // 
             this.sttColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sttColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sttColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.sttColumn.HeaderText = "STT";
             this.sttColumn.MinimumWidth = 6;
             this.sttColumn.Name = "sttColumn";
@@ -131,6 +157,8 @@
             // codeColumn
             // 
             this.codeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codeColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.codeColumn.HeaderText = "Mã vận đơn";
             this.codeColumn.MinimumWidth = 6;
             this.codeColumn.Name = "codeColumn";
@@ -148,6 +176,8 @@
             // orderDateColumn
             // 
             this.orderDateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.orderDateColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.orderDateColumn.HeaderText = "Ngày đặt hàng";
             this.orderDateColumn.MinimumWidth = 6;
             this.orderDateColumn.Name = "orderDateColumn";
@@ -162,11 +192,35 @@
             this.statusColumn.Name = "statusColumn";
             this.statusColumn.ReadOnly = true;
             // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.Location = new System.Drawing.Point(866, 24);
+            this.usernameLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(104, 28);
+            this.usernameLabel.TabIndex = 16;
+            this.usernameLabel.Text = "Username";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.pictureBox1.Location = new System.Drawing.Point(820, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 577);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.parcelGridView);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.searchBtn);
@@ -177,6 +231,7 @@
             this.Text = "Trackr - Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CustomerDashboard_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,5 +249,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusColumn;
+        private System.Windows.Forms.Label usernameLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
