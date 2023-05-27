@@ -8,21 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace trackr_client_app
+namespace trackr_client_app.UserControls
 {
-    public partial class LoginScreen : Form
+    public partial class ParcelTrackingTree : UserControl
     {
-        public LoginScreen()
+        public ParcelTrackingTree()
         {
             InitializeComponent();
+            Invalidate();
         }
 
-        private void LoginScreen_Load(object sender, EventArgs e)
+        private void parcelTrackingTreeNode1_Load(object sender, EventArgs e)
         {
-            Text = "Track - Login Screen";
+
         }
 
-        private void navigateRegisterLabel_Click(object sender, EventArgs e)
+        private void ParcelTrackingTree_Load(object sender, EventArgs e)
         {
 
         }
