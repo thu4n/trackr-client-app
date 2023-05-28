@@ -12,6 +12,7 @@ using Newtonsoft.Json.Linq;
 using System.Xml.Linq;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
+using System.Security.Cryptography;
 
 namespace trackr_client_app
 {
@@ -29,6 +30,17 @@ namespace trackr_client_app
             Text = "Trackr - Đăng nhập";
         }
 
+        string ComputeSHA256(string s)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                // Cần chuyển đổi string sang dạng byte khi Hash
+                byte[] hashValue = sha256.ComputeHash(Encoding.UTF8.GetBytes(s));
+                // Chuyển đổi chuỗi vừa hash sang dạng string để dễ sử dụng
+                return BitConverter.ToString(hashValue).Replace("-", "").ToLower();
+            }
+        }
+
         private void navigateRegisterLabel_Click(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();
@@ -42,11 +54,13 @@ namespace trackr_client_app
         private async void loginBtn_Click(object sender, EventArgs e)
         {
             string username = accountTB.Text; 
-            string password = passwordTB.Text;  
+            string password = passwordTB.Text;
+            string padding = "@@@!0Di3m***";
+            string hash = ComputeSHA256(password + padding);
             var values = new Dictionary<string, string>
             {
                 { "account", username },
-                { "password", password }
+                { "password", hash }
             };
             string jsonString = JsonConvert.SerializeObject(values);
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
