@@ -84,7 +84,9 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Parcel.cs" />
+    <Compile Include="Models\UserSession.cs" />
     <Compile Include="UserControls\ParcelDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
