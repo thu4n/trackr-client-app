@@ -16,6 +16,7 @@ namespace trackr_client_app
 {
     public partial class CustomerDashboard : Form
     {
+        List<Parcel> data = new List<Parcel>();
         public CustomerDashboard()
         {
             InitializeComponent();
@@ -49,7 +50,6 @@ namespace trackr_client_app
         }
         private List<Parcel> LoadData(JArray parcels)
         {
-            List<Parcel> data = new List<Parcel>();
             foreach(JObject parcel in parcels.Cast<JObject>())
             {
                 Parcel newParcel = new Parcel();
@@ -71,8 +71,9 @@ namespace trackr_client_app
         {
             if(parcelGridView.CurrentCell.ColumnIndex == 1 && e.RowIndex != -1) 
             {
-                /*CustomerParcelView customerParcelView = new CustomerParcelView();
-                customerParcelView.Show();*/
+                Parcel parcel = data[e.RowIndex];
+                CustomerParcelView customerParcelView = new CustomerParcelView(parcel);
+                customerParcelView.Show();
             }
         }
     }
