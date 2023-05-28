@@ -18,6 +18,7 @@ Một ứng dụng desktop giúp theo dõi hành trình đơn hàng, đây là �
 - Hai nhánh để làm việc chính là nhánh `server-side` và nhánh `client-side`. Mỗi khi có tính năng được hoàn thiện ở 1 trong 2 nhánh, tiến hành `merge` vào nhánh `dev` và kiểm tra conflict.
 - Nếu nhánh `server-side` hoặc nhánh `client-side` bị tụt lại so với `dev`, thực hiện lệnh `git pull origin dev` để kéo thay đổi về nhánh mà mình **đang làm**.
 - Khi có bug, khó fix thì tạo thêm nhánh `fix-bug-x-in-y` từ nhánh mình **đang làm** với `x` là tên bug và `y` là tên nhánh. Sau khi đã kiểm chứng không còn xuất hiện bug, tiến hành merge vào nhánh **gốc** và xóa nhánh hiện tại đi.
+- Nâng cao: [link](https://github.com/thu4n/trackr-app/issues/21#issuecomment-1538659063)
 ## Quy ước chung về code và tên biến
 
 **Áp dụng cho trùng tên biến**
