@@ -84,6 +84,7 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Parcel.cs" />
     <Compile Include="UserControls\ParcelDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,12 +104,6 @@
     </Compile>
     <Compile Include="UserControls\ParcelTrackingTree.Designer.cs">
       <DependentUpon>ParcelTrackingTree.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ParcelTrackingTreeNode.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ParcelTrackingTreeNode.Designer.cs">
-      <DependentUpon>ParcelTrackingTreeNode.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
@@ -137,9 +132,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ParcelTrackingTree.resx">
       <DependentUpon>ParcelTrackingTree.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ParcelTrackingTreeNode.resx">
-      <DependentUpon>ParcelTrackingTreeNode.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

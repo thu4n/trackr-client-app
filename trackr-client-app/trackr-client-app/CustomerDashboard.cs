@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json.Linq;
 
 namespace trackr_client_app
 {
@@ -22,14 +24,18 @@ namespace trackr_client_app
             usernameLabel.Text = name;
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
+        private async void searchBtn_Click(object sender, EventArgs e)
         {
-            /*for(int i = 1; i <= 10; i++)
+            HttpClient client = new HttpClient();
+            var response = await client.GetAsync("https://testtestserver20230526163638.azurewebsites.net/api/Parcel");
+            var responseString = await response.Content.ReadAsStringAsync();
+            var arr = JArray.Parse(responseString);
+            foreach(var item in arr)
             {
-                parcelGridView.Rows.Add("i","thuan","ok","alo");
-            }*/
-            CustomerParcelView customerParcelView = new CustomerParcelView();
-            customerParcelView.Show();
+                MessageBox.Show(item.ToString());
+            }
+            /*CustomerParcelView customerParcelView = new CustomerParcelView();
+            customerParcelView.Show();*/
         }
 
         private void CustomerDashboard_FormClosed(object sender, FormClosedEventArgs e)
