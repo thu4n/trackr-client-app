@@ -77,7 +77,7 @@ namespace trackr_client_app
             }
             else if (role == "DeliveryMan")
             {
-
+                GetDeliveryInfo(id);
             }
         }
         private async void GetAdminInfo(string id)

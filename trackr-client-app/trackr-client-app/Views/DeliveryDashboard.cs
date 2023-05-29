@@ -19,6 +19,12 @@ namespace trackr_client_app.Views
 
         private void DeliveryDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
+            var loginForm = (LoginForm)Tag;
+            loginForm.Close();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -122,6 +122,7 @@
             this.searchBtn.Size = new System.Drawing.Size(49, 30);
             this.searchBtn.TabIndex = 28;
             this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // searchTB
             // 

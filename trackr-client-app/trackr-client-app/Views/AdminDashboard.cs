@@ -28,5 +28,10 @@ namespace trackr_client_app.Views
             var loginForm = (LoginForm)Tag;
             loginForm.Close();
         }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
