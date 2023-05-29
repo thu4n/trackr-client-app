@@ -52,15 +52,36 @@ namespace trackr_client_app
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
             var response = await client.PostAsync("https://testtestserver20230526163638.azurewebsites.net/api/Login", content);
             var responseString = await response.Content.ReadAsStringAsync();
+            MessageBox.Show(responseString);
             JObject json = JObject.Parse(responseString); // Chuyển string nhận được thành Json Object
             if (json.TryGetValue("id", out var id))  // Lấy thông tin từ trường token của Json Object
             {
-                GetCustomerInfo(id.ToString());
+                json.TryGetValue("role", out var role);
+                Authorize(role.ToString(), id.ToString());
             }
             else
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
             }
+        }
+        private void Authorize(string role, string id)
+        {
+            if(role == "Admin")
+            {
+                
+            }
+            else if(role == "Customer")
+            {
+                GetCustomerInfo(id);
+            }
+            else if (role == "DeliveryMan")
+            {
+
+            }
+        }
+        private async void GetAdminInfo(string id)
+        {
+            var response = await client.GetAsync($"https://testtestserver20230526163638.azurewebsites.net/api/Admin/{id}");
         }
         private async void GetCustomerInfo(string id)
         {

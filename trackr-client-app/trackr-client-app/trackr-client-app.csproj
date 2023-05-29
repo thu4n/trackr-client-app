@@ -66,16 +66,22 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerDashboard.cs">
+    <Compile Include="Views\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerDashboard.Designer.cs">
+    <Compile Include="Views\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerDashboard.Designer.cs">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerParcelView.cs">
+    <Compile Include="Views\CustomerParcelView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerParcelView.Designer.cs">
+    <Compile Include="Views\CustomerParcelView.Designer.cs">
       <DependentUpon>CustomerParcelView.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
@@ -107,14 +113,17 @@
     <Compile Include="UserControls\ParcelTrackingTree.Designer.cs">
       <DependentUpon>ParcelTrackingTree.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomerDashboard.resx">
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerParcelView.resx">
+    <EmbeddedResource Include="Views\CustomerParcelView.resx">
       <DependentUpon>CustomerParcelView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ParcelDetails.resx">
       <DependentUpon>ParcelDetails.cs</DependentUpon>
