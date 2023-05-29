@@ -50,7 +50,7 @@ namespace trackr_client_app
             };
             string jsonString = JsonConvert.SerializeObject(values);
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("https://testtestserver20230526163638.azurewebsites.net/api/Login", content);
+            var response = await client.PostAsync("https://trackrwebserver.azurewebsites.net/api/Login", content);
             var responseString = await response.Content.ReadAsStringAsync();
             MessageBox.Show(responseString);
             JObject json = JObject.Parse(responseString); // Chuyển string nhận được thành Json Object
@@ -81,11 +81,12 @@ namespace trackr_client_app
         }
         private async void GetAdminInfo(string id)
         {
-            var response = await client.GetAsync($"https://testtestserver20230526163638.azurewebsites.net/api/Admin/{id}");
+            var response = await client.GetAsync($"https://trackrwebserver.azurewebsites.net/api/Admin/{id}");
+
         }
         private async void GetCustomerInfo(string id)
         {
-            var response = await client.GetAsync($"https://testtestserver20230526163638.azurewebsites.net/api/Customer/{id}");
+            var response = await client.GetAsync($"https://trackrwebserver.azurewebsites.net/api/Customer/{id}");
             var responseString = await response.Content.ReadAsStringAsync();
             JObject json = JObject.Parse(responseString);
             UserSession.customer = JsonConvert.DeserializeObject<Customer>(json.ToString());

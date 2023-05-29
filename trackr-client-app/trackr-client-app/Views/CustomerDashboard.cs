@@ -42,7 +42,7 @@ namespace trackr_client_app
         {
             HttpClient client = new HttpClient();
             string cusID = UserSession.customer.CusID.ToString();
-            var response = await client.GetAsync($"https://testtestserver20230526163638.azurewebsites.net/api/Customer/Parcel?id={cusID}");
+            var response = await client.GetAsync($"https://trackrwebserver.azurewebsites.net/api/Customer/Parcel?id={cusID}");
             var responseString = await response.Content.ReadAsStringAsync();
             var parcels = JArray.Parse(responseString);
             var data = LoadData(parcels);
