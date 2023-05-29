@@ -157,6 +157,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeliveryDashboard";
             this.Text = "Trackr - Delivery Dashboard";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DeliveryDashboard_FormClosed);
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -109,7 +109,12 @@ namespace trackr_client_app
         }
         private void GetDeliveryDashBoard(string id)
         {
-
+            DeliveryDashboard dashboard = new DeliveryDashboard();
+            dashboard.Tag = this;
+            dashboard.StartPosition = FormStartPosition.Manual;
+            dashboard.Location = this.Location;
+            dashboard.Show();
+            Hide();
         }
         private async void GetCustomerInfo(string id)
         {

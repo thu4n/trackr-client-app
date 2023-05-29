@@ -16,5 +16,10 @@ namespace trackr_client_app.Views
         {
             InitializeComponent();
         }
+
+        private void DeliveryDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }
