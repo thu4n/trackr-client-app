@@ -98,6 +98,19 @@ namespace trackr_client_app
             adminDashboard.Show();
             Hide();
         }
+
+        private async void GetDeliveryInfo(string id)
+        {
+            var response = await client.GetAsync($"https://trackrwebserver.azurewebsites.net/api/DeliveryMan/{id}");
+            var responseString = await response.Content.ReadAsStringAsync();
+            JObject json = JObject.Parse(responseString);
+            UserSession.admin = JsonConvert.DeserializeObject<Admin>(json.ToString());
+            
+        }
+        private void GetDeliveryDashBoard(string id)
+        {
+
+        }
         private async void GetCustomerInfo(string id)
         {
             var response = await client.GetAsync($"https://trackrwebserver.azurewebsites.net/api/Customer/{id}");
