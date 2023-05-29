@@ -13,6 +13,7 @@ using System.Xml.Linq;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 using trackr_client_app.Models;
+using trackr_client_app.Views;
 
 namespace trackr_client_app
 {
@@ -68,7 +69,7 @@ namespace trackr_client_app
         {
             if(role == "Admin")
             {
-                
+                GetAdminInfo(id);
             }
             else if(role == "Customer")
             {
@@ -82,7 +83,20 @@ namespace trackr_client_app
         private async void GetAdminInfo(string id)
         {
             var response = await client.GetAsync($"https://trackrwebserver.azurewebsites.net/api/Admin/{id}");
+            var responseString = await response.Content.ReadAsStringAsync();
+            JObject json = JObject.Parse(responseString);
+            UserSession.admin = JsonConvert.DeserializeObject<Admin>(json.ToString());
+            GetAdminDashBoard();
+        }
 
+        private void GetAdminDashBoard()
+        {
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.Tag = this;
+            adminDashboard.StartPosition = FormStartPosition.Manual;
+            adminDashboard.Location = this.Location;
+            adminDashboard.Show();
+            Hide();
         }
         private async void GetCustomerInfo(string id)
         {
