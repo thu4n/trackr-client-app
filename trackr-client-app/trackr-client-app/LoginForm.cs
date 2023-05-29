@@ -12,13 +12,13 @@ using Newtonsoft.Json.Linq;
 using System.Xml.Linq;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
+using trackr_client_app.Models;
 
 namespace trackr_client_app
 {
     public partial class LoginForm : Form
     {
         private static readonly HttpClient client = new HttpClient();
-
         public LoginForm()
         {
             InitializeComponent();
@@ -50,19 +50,25 @@ namespace trackr_client_app
             };
             string jsonString = JsonConvert.SerializeObject(values);
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync($"https://testtestserver20230526163638.azurewebsites.net/api/Login", content);
+            var response = await client.PostAsync("https://testtestserver20230526163638.azurewebsites.net/api/Login", content);
             var responseString = await response.Content.ReadAsStringAsync();
-            MessageBox.Show(responseString);
             JObject json = JObject.Parse(responseString); // Chuyển string nhận được thành Json Object
             if (json.TryGetValue("id", out var id))  // Lấy thông tin từ trường token của Json Object
             {
-                json.TryGetValue("name", out var name);
-                GetCustomerDashBoard(name.ToString());
+                GetCustomerInfo(id.ToString());
             }
             else
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
             }
+        }
+        private async void GetCustomerInfo(string id)
+        {
+            var response = await client.GetAsync($"https://testtestserver20230526163638.azurewebsites.net/api/Customer/{id}");
+            var responseString = await response.Content.ReadAsStringAsync();
+            JObject json = JObject.Parse(responseString);
+            UserSession.customer = JsonConvert.DeserializeObject<Customer>(json.ToString());
+            GetCustomerDashBoard(UserSession.customer.CusName);
         }
         private void GetCustomerDashBoard(string name)
         {
@@ -72,7 +78,6 @@ namespace trackr_client_app
             customerDashboard.Location = this.Location;
             customerDashboard.Show();
             Hide();
-
         }
     }
 }
