@@ -53,7 +53,6 @@ namespace trackr_client_app
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
             var response = await client.PostAsync("https://trackrwebserver.azurewebsites.net/api/Login", content);
             var responseString = await response.Content.ReadAsStringAsync();
-            MessageBox.Show(responseString);
             JObject json = JObject.Parse(responseString); // Chuyển string nhận được thành Json Object
             if (json.TryGetValue("id", out var id))  // Lấy thông tin từ trường token của Json Object
             {
@@ -104,10 +103,10 @@ namespace trackr_client_app
             var response = await client.GetAsync($"https://trackrwebserver.azurewebsites.net/api/DeliveryMan/{id}");
             var responseString = await response.Content.ReadAsStringAsync();
             JObject json = JObject.Parse(responseString);
-            UserSession.admin = JsonConvert.DeserializeObject<Admin>(json.ToString());
-            
+            UserSession.delivery = JsonConvert.DeserializeObject<DeliveryMan>(json.ToString());
+            GetDeliveryDashBoard();
         }
-        private void GetDeliveryDashBoard(string id)
+        private void GetDeliveryDashBoard()
         {
             DeliveryDashboard dashboard = new DeliveryDashboard();
             dashboard.Tag = this;
