@@ -116,28 +116,30 @@
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl1.Location = new System.Drawing.Point(105, 227);
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(20, 5);
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(727, 366);
             this.tabControl1.TabIndex = 24;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(719, 328);
+            this.tabPage1.Size = new System.Drawing.Size(719, 324);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đơn hàng";
             // 
             // tabPage2
             // 
             this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(719, 328);
+            this.tabPage2.Size = new System.Drawing.Size(719, 324);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nhân viên giao hàng";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -145,9 +147,9 @@
             // tabPage3
             // 
             this.tabPage3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Location = new System.Drawing.Point(4, 38);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(719, 328);
+            this.tabPage3.Size = new System.Drawing.Size(719, 324);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Khách hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
