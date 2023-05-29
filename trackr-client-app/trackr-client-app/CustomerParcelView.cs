@@ -34,6 +34,12 @@ namespace trackr_client_app
             parcelCodeTB.Text = parcel.ParID.ToString();
             parcelNameTB.Text = parcel.ParDescription;
             statusTB.Text = parcel.ParStatus;
+            DisplayTrackingTree();
+        }
+
+        private void DisplayTrackingTree()
+        {
+            treeView1.Nodes.Add(parcel.ParLocation + " - " + parcel.Realtime.ToShortDateString() + ", " + parcel.Realtime.ToShortTimeString());
         }
     }
 }
