@@ -121,11 +121,11 @@ namespace trackr_client_app
             var responseString = await response.Content.ReadAsStringAsync();
             JObject json = JObject.Parse(responseString);
             UserSession.customer = JsonConvert.DeserializeObject<Customer>(json.ToString());
-            GetCustomerDashBoard(UserSession.customer.CusName);
+            GetCustomerDashBoard();
         }
-        private void GetCustomerDashBoard(string name)
+        private void GetCustomerDashBoard()
         {
-            CustomerDashboard customerDashboard = new CustomerDashboard(name);
+            CustomerDashboard customerDashboard = new CustomerDashboard();
             customerDashboard.Tag = this;
             customerDashboard.StartPosition = FormStartPosition.Manual;
             customerDashboard.Location = this.Location;
