@@ -16,7 +16,6 @@ namespace trackr_client_app
 {
     public partial class CustomerDashboard : Form
     {
-        List<Parcel> data = new List<Parcel>();
         public CustomerDashboard()
         {
             InitializeComponent();
@@ -41,23 +40,22 @@ namespace trackr_client_app
             var response = await client.GetAsync($"https://trackrwebserver.azurewebsites.net/api/Customer/Parcel?id={cusID}");
             var responseString = await response.Content.ReadAsStringAsync();
             var parcels = JArray.Parse(responseString);
-            var data = LoadData(parcels);
-            DisplayData(data);
+            LoadData(parcels);
+            DisplayData();
         }
-        private List<Parcel> LoadData(JArray parcels)
+        private void LoadData(JArray parcels)
         {
             foreach(JObject parcel in parcels.Cast<JObject>())
             {
                 Parcel newParcel = new Parcel();
                 newParcel = JsonConvert.DeserializeObject<Parcel>(parcel.ToString());
-                data.Add(newParcel);
+                UserSession.parcels.Add(newParcel);
             }
-            return data;
         }
-        private void DisplayData(List<Parcel> data)
+        private void DisplayData()
         {
             int i = 1;
-            foreach(Parcel parcel in data)
+            foreach(Parcel parcel in UserSession.parcels)
             {
                 parcelGridView.Rows.Add(i++, parcel.ParID.ToString(),parcel.ParDescription,parcel.ParDeliveryDate.ToString(),parcel.ParStatus);
             }
@@ -67,7 +65,7 @@ namespace trackr_client_app
         {
             if(parcelGridView.CurrentCell.ColumnIndex == 1 && e.RowIndex != -1) 
             {
-                Parcel parcel = data[e.RowIndex];
+                Parcel parcel = UserSession.parcels[e.RowIndex];
                 CustomerParcelView customerParcelView = new CustomerParcelView(parcel);
                 customerParcelView.Show();
             }
