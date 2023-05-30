@@ -70,12 +70,14 @@ namespace trackr_client_app.Views
         {
             var response = await client.GetAsync("https://trackrwebserver.azurewebsites.net/api/DeliveryMan");
             var responseString = await response.Content.ReadAsStringAsync();
-            var deliveryMans = JArray.Parse(responseString);
+            var deliveryManArray = JArray.Parse(responseString);
+            LoadDeliveryManData(deliveryManArray);
+            DisplayDeliveryManData();
         }
 
-        private void LoadDeliveryManData(JArray deliveryMans)
+        private void LoadDeliveryManData(JArray deliveryManArray)
         {
-            foreach(JObject deliveryMan in deliveryMans.Cast<JObject>())
+            foreach(JObject deliveryMan in deliveryManArray.Cast<JObject>())
             {
                 DeliveryMan newDeliveryMan = new DeliveryMan();
                 newDeliveryMan = JsonConvert.DeserializeObject<DeliveryMan>(deliveryMan.ToString());
@@ -89,6 +91,37 @@ namespace trackr_client_app.Views
             foreach(DeliveryMan deliveryMan in deliveryMen)
             {
                 deliveryGridView.Rows.Add(i++, deliveryMan.ManID.ToString(), deliveryMan.ManName, deliveryMan.ManPhone);
+            }
+        }
+        #endregion
+
+        #region Customer Data
+        
+        private async void GetCustomerData()
+        {
+            var response = await client.GetAsync("https://trackrwebserver.azurewebsites.net/api/DeliveryMan");
+            var responseString = await response.Content.ReadAsStringAsync();
+            var customerArray = JArray.Parse(responseString);
+            LoadCustomerData(customerArray);
+            DisplayCustomerData();
+        }
+
+        private void LoadCustomerData(JArray customerArray)
+        {
+            foreach(JObject customer in customerArray.Cast<JObject>())
+            {
+                Customer newCustomer = new Customer();
+                newCustomer = JsonConvert.DeserializeObject<Customer>(customer.ToString());
+                customers.Add(newCustomer);
+            }
+        }
+
+        private void DisplayCustomerData()
+        {
+            int i = 1;
+            foreach(Customer customer in customers)
+            {
+                customerGridView.Rows.Add(i++, customer.CusID.ToString(), customer.CusName, customer.CusAddress);
             }
         }
         #endregion
