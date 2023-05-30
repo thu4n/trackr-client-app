@@ -81,7 +81,7 @@ namespace trackr_client_app
         }
         private async void GetAdminInfo(string id)
         {
-            var response = await client.GetAsync($"https://trackrwebserver.azurewebsites.net/api/Admin/{id}");
+            var response = await client.GetAsync(UserSession.apiUrl + $"Admin/{id}");
             var responseString = await response.Content.ReadAsStringAsync();
             JObject json = JObject.Parse(responseString);
             UserSession.admin = JsonConvert.DeserializeObject<Admin>(json.ToString());
@@ -100,7 +100,7 @@ namespace trackr_client_app
 
         private async void GetDeliveryInfo(string id)
         {
-            var response = await client.GetAsync($"https://trackrwebserver.azurewebsites.net/api/DeliveryMan/{id}");
+            var response = await client.GetAsync(UserSession.apiUrl + $"DeliveryMan/{id}");
             var responseString = await response.Content.ReadAsStringAsync();
             JObject json = JObject.Parse(responseString);
             UserSession.delivery = JsonConvert.DeserializeObject<DeliveryMan>(json.ToString());
@@ -117,7 +117,7 @@ namespace trackr_client_app
         }
         private async void GetCustomerInfo(string id)
         {
-            var response = await client.GetAsync($"https://trackrwebserver.azurewebsites.net/api/Customer/{id}");
+            var response = await client.GetAsync(UserSession.apiUrl + $"Customer/{id}");
             var responseString = await response.Content.ReadAsStringAsync();
             JObject json = JObject.Parse(responseString);
             UserSession.customer = JsonConvert.DeserializeObject<Customer>(json.ToString());

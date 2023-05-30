@@ -14,6 +14,6 @@ namespace trackr_client_app.Models
         public static Customer customer;
         public static Admin admin;
         public static DeliveryMan delivery;
-        public static List<Parcel> parcels;
+        public static List<Parcel> parcels = new List<Parcel>();
     }
 }

@@ -39,7 +39,7 @@ namespace trackr_client_app
 
         private void DisplayTrackingTree()
         {
-            treeView1.Nodes.Add(parcel.ParLocation + " - " + parcel.Realtime.ToShortDateString() + ", " + parcel.Realtime.ToShortTimeString());
+            treeView1.Nodes.Add(parcel.ParLocation + " - " + parcel.Realtime + ", " + parcel.Realtime);
         }
     }
 }

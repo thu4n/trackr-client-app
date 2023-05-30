@@ -39,7 +39,7 @@ namespace trackr_client_app.Views
         #region Parcel Data
         private async void GetParcelData()
         {
-            var response = await client.GetAsync("https://trackrwebserver.azurewebsites.net/api/Parcel");
+            var response = await client.GetAsync(UserSession.apiUrl + "Parcel");
             var responseString = await response.Content.ReadAsStringAsync();
             var parcels = JArray.Parse(responseString);
             LoadParcelData(parcels);
@@ -68,7 +68,7 @@ namespace trackr_client_app.Views
         #region DeliveryMan Data
         private async void GetDeliveryManData()
         {
-            var response = await client.GetAsync("https://trackrwebserver.azurewebsites.net/api/DeliveryMan");
+            var response = await client.GetAsync(UserSession.apiUrl + "DeliveryMan");
             var responseString = await response.Content.ReadAsStringAsync();
             var deliveryManArray = JArray.Parse(responseString);
             LoadDeliveryManData(deliveryManArray);
@@ -99,7 +99,7 @@ namespace trackr_client_app.Views
         
         private async void GetCustomerData()
         {
-            var response = await client.GetAsync("https://trackrwebserver.azurewebsites.net/api/DeliveryMan");
+            var response = await client.GetAsync(UserSession.apiUrl + "Customer");
             var responseString = await response.Content.ReadAsStringAsync();
             var customerArray = JArray.Parse(responseString);
             LoadCustomerData(customerArray);

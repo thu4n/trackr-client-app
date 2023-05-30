@@ -51,6 +51,7 @@
             this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deliCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -87,7 +88,7 @@
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(101, 181);
+            this.searchLabel.Location = new System.Drawing.Point(148, 181);
             this.searchLabel.Name = "searchLabel";
             this.searchLabel.Size = new System.Drawing.Size(166, 23);
             this.searchLabel.TabIndex = 22;
@@ -96,7 +97,7 @@
             // searchTB
             // 
             this.searchTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTB.Location = new System.Drawing.Point(273, 178);
+            this.searchTB.Location = new System.Drawing.Point(320, 178);
             this.searchTB.Name = "searchTB";
             this.searchTB.Size = new System.Drawing.Size(436, 30);
             this.searchTB.TabIndex = 20;
@@ -108,11 +109,11 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tabControl1.Location = new System.Drawing.Point(105, 227);
+            this.tabControl1.Location = new System.Drawing.Point(52, 227);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(20, 5);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(727, 366);
+            this.tabControl1.Size = new System.Drawing.Size(855, 366);
             this.tabControl1.TabIndex = 24;
             // 
             // tabPage1
@@ -124,7 +125,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(719, 324);
+            this.tabPage1.Size = new System.Drawing.Size(847, 324);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đơn hàng";
             // 
@@ -158,7 +159,7 @@
             this.searchBtn.FlatAppearance.BorderSize = 0;
             this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.Location = new System.Drawing.Point(715, 178);
+            this.searchBtn.Location = new System.Drawing.Point(762, 178);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(49, 30);
             this.searchBtn.TabIndex = 21;
@@ -192,7 +193,8 @@
             this.codeCol,
             this.nameCol,
             this.dateCol,
-            this.statusCol});
+            this.statusCol,
+            this.deliCol});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,7 +208,7 @@
             this.parcelGridView.Name = "parcelGridView";
             this.parcelGridView.RowHeadersWidth = 51;
             this.parcelGridView.RowTemplate.Height = 24;
-            this.parcelGridView.Size = new System.Drawing.Size(713, 318);
+            this.parcelGridView.Size = new System.Drawing.Size(841, 318);
             this.parcelGridView.TabIndex = 0;
             // 
             // deliveryGridView
@@ -249,10 +251,11 @@
             // 
             // sttCol
             // 
+            this.sttCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.sttCol.HeaderText = "STT";
             this.sttCol.MinimumWidth = 6;
             this.sttCol.Name = "sttCol";
-            this.sttCol.Width = 125;
+            this.sttCol.Width = 64;
             // 
             // codeCol
             // 
@@ -263,10 +266,10 @@
             // 
             // nameCol
             // 
+            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameCol.HeaderText = "Tên đơn hàng";
             this.nameCol.MinimumWidth = 6;
             this.nameCol.Name = "nameCol";
-            this.nameCol.Width = 125;
             // 
             // dateCol
             // 
@@ -281,6 +284,13 @@
             this.statusCol.MinimumWidth = 6;
             this.statusCol.Name = "statusCol";
             this.statusCol.Width = 125;
+            // 
+            // deliCol
+            // 
+            this.deliCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.deliCol.HeaderText = "Phân công giao";
+            this.deliCol.MinimumWidth = 6;
+            this.deliCol.Name = "deliCol";
             // 
             // AdminDashboard
             // 
@@ -332,5 +342,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deliCol;
     }
 }
