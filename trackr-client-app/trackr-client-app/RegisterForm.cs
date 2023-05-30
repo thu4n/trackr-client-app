@@ -36,5 +36,10 @@ namespace trackr_client_app
                 loginForm.Close();
             }
         }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

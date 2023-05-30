@@ -11,19 +11,21 @@ using trackr_client_app.Models;
 
 namespace trackr_client_app
 {
-    public partial class ParcelDetails : UserControl
+    public partial class CustomerParcelView : Form
     {
-        private Parcel parcel = new Parcel();
-        public ParcelDetails()
+        Parcel parcel;
+        public CustomerParcelView()
         {
             InitializeComponent();
         }
-        public ParcelDetails(Parcel newParcel)
+
+        public CustomerParcelView(Parcel parcel)
         {
             InitializeComponent();
-            this.parcel = newParcel;
+            this.parcel = parcel;
         }
-        private void ParcelDetails_Load(object sender, EventArgs e)
+
+        private void CustomerParcelView_Load(object sender, EventArgs e)
         {
             cusCodeTB.Text = UserSession.customer.CusID.ToString();
             cusAddressTB.Text = UserSession.customer.CusAddress;
@@ -32,7 +34,12 @@ namespace trackr_client_app
             parcelCodeTB.Text = parcel.ParID.ToString();
             parcelNameTB.Text = parcel.ParDescription;
             statusTB.Text = parcel.ParStatus;
-            //parcelImg.Image = Image.FromFile(@"tracker-client-app\Resources\logoSmall.png");
+            DisplayTrackingTree();
+        }
+
+        private void DisplayTrackingTree()
+        {
+            treeView1.Nodes.Add(parcel.ParLocation + " - " + parcel.Realtime + ", " + parcel.Realtime);
         }
     }
 }
