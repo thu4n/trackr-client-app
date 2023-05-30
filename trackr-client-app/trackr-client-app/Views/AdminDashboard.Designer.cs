@@ -46,6 +46,11 @@
             this.parcelGridView = new System.Windows.Forms.DataGridView();
             this.deliveryGridView = new System.Windows.Forms.DataGridView();
             this.customerGridView = new System.Windows.Forms.DataGridView();
+            this.sttCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -175,14 +180,20 @@
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.parcelGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.parcelGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.parcelGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sttCol,
+            this.codeCol,
+            this.nameCol,
+            this.dateCol,
+            this.statusCol});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
@@ -236,6 +247,41 @@
             this.customerGridView.Size = new System.Drawing.Size(719, 324);
             this.customerGridView.TabIndex = 25;
             // 
+            // sttCol
+            // 
+            this.sttCol.HeaderText = "STT";
+            this.sttCol.MinimumWidth = 6;
+            this.sttCol.Name = "sttCol";
+            this.sttCol.Width = 125;
+            // 
+            // codeCol
+            // 
+            this.codeCol.HeaderText = "Mã vận đơn";
+            this.codeCol.MinimumWidth = 6;
+            this.codeCol.Name = "codeCol";
+            this.codeCol.Width = 125;
+            // 
+            // nameCol
+            // 
+            this.nameCol.HeaderText = "Tên đơn hàng";
+            this.nameCol.MinimumWidth = 6;
+            this.nameCol.Name = "nameCol";
+            this.nameCol.Width = 125;
+            // 
+            // dateCol
+            // 
+            this.dateCol.HeaderText = "Ngày đặt hàng";
+            this.dateCol.MinimumWidth = 6;
+            this.dateCol.Name = "dateCol";
+            this.dateCol.Width = 125;
+            // 
+            // statusCol
+            // 
+            this.statusCol.HeaderText = "Trạng thái";
+            this.statusCol.MinimumWidth = 6;
+            this.statusCol.Name = "statusCol";
+            this.statusCol.Width = 125;
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -281,5 +327,10 @@
         private System.Windows.Forms.DataGridView parcelGridView;
         private System.Windows.Forms.DataGridView deliveryGridView;
         private System.Windows.Forms.DataGridView customerGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sttCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusCol;
     }
 }
