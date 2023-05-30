@@ -17,7 +17,9 @@ namespace trackr_client_app.Views
 {
     public partial class AdminDashboard : Form
     {
-        List<Parcel> data = new List<Parcel>();
+        private static readonly HttpClient client = new HttpClient();
+        List<DeliveryMan> deliveryMen = new List<DeliveryMan>();
+        List<Customer> customers = new List<Customer>();
         public AdminDashboard()
         {
             InitializeComponent();
@@ -34,37 +36,62 @@ namespace trackr_client_app.Views
             btn.UseColumnTextForButtonValue = true;
             dataGridView1.Rows.Add("thuan");*/
         }
-
+        #region Parcel Data
         private async void GetParcelData()
         {
-            HttpClient client = new HttpClient();
-            string cusID = UserSession.customer.CusID.ToString();
             var response = await client.GetAsync("https://trackrwebserver.azurewebsites.net/api/Parcel");
             var responseString = await response.Content.ReadAsStringAsync();
             var parcels = JArray.Parse(responseString);
-            /*var data = LoadData(parcels);
-            DisplayData(data);*/
+            LoadParcelData(parcels);
+            DisplayParcelData();
         }
-        private List<Parcel> LoadParcelData(JArray parcels)
+        private void LoadParcelData(JArray parcels)
         {
             foreach (JObject parcel in parcels.Cast<JObject>())
             {
                 Parcel newParcel = new Parcel();
                 newParcel = JsonConvert.DeserializeObject<Parcel>(parcel.ToString());
-                data.Add(newParcel);
+                UserSession.parcels.Add(newParcel);
             }
-            return data;
         }
 
-        private void DisplayParcelData(List<Parcel> data)
+        private void DisplayParcelData()
         {
             int i = 1;
-            foreach (Parcel parcel in data)
+            foreach (Parcel parcel in UserSession.parcels)
             {
-                //parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), parcel.ParStatus);
+                parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), parcel.ParStatus);
             }
         }
+        #endregion
 
+        #region DeliveryMan Data
+        private async void GetDeliveryManData()
+        {
+            var response = await client.GetAsync("https://trackrwebserver.azurewebsites.net/api/DeliveryMan");
+            var responseString = await response.Content.ReadAsStringAsync();
+            var deliveryMans = JArray.Parse(responseString);
+        }
+
+        private void LoadDeliveryManData(JArray deliveryMans)
+        {
+            foreach(JObject deliveryMan in deliveryMans.Cast<JObject>())
+            {
+                DeliveryMan newDeliveryMan = new DeliveryMan();
+                newDeliveryMan = JsonConvert.DeserializeObject<DeliveryMan>(deliveryMan.ToString());
+                deliveryMen.Add(newDeliveryMan);
+            }
+        }
+        
+        private void DisplayDeliveryManData()
+        {
+            int i = 1;
+            foreach(DeliveryMan deliveryMan in deliveryMen)
+            {
+                deliveryGridView.Rows.Add(i++, deliveryMan.ManID.ToString(), deliveryMan.ManName, deliveryMan.ManPhone);
+            }
+        }
+        #endregion
         private void AdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             var loginForm = (LoginForm)Tag;
