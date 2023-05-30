@@ -9,7 +9,7 @@ namespace trackr_client_app.Models
     public static class UserSession
     {
         public static Customer customer;
-        public static Parcel parcel;
-
+        public static Admin admin;
+        public static DeliveryMan delivery;
     }
 }

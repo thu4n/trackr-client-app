@@ -173,6 +173,7 @@
             this.Name = "RegisterForm";
             this.Text = "Trackr - Đăng ký";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegisterForm_FormClosed);
+            this.Load += new System.EventHandler(this.RegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

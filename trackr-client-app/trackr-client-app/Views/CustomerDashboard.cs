@@ -21,11 +21,6 @@ namespace trackr_client_app
         {
             InitializeComponent();
         }
-        public CustomerDashboard(string name)
-        {
-            InitializeComponent();
-            usernameLabel.Text = name;
-        }
 
         private async void searchBtn_Click(object sender, EventArgs e)
         {
@@ -40,9 +35,10 @@ namespace trackr_client_app
 
         private async void CustomerDashboard_Load(object sender, EventArgs e)
         {
+            usernameLabel.Text = UserSession.customer.CusName;
             HttpClient client = new HttpClient();
             string cusID = UserSession.customer.CusID.ToString();
-            var response = await client.GetAsync($"https://testtestserver20230526163638.azurewebsites.net/api/Customer/Parcel?id={cusID}");
+            var response = await client.GetAsync($"https://trackrwebserver.azurewebsites.net/api/Customer/Parcel?id={cusID}");
             var responseString = await response.Content.ReadAsStringAsync();
             var parcels = JArray.Parse(responseString);
             var data = LoadData(parcels);

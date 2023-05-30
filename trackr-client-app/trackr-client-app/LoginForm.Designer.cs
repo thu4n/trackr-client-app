@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.titleLabel = new System.Windows.Forms.Label();
-            this.logoBox = new System.Windows.Forms.PictureBox();
             this.accountTB = new System.Windows.Forms.TextBox();
             this.passwordTB = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
@@ -39,6 +38,7 @@
             this.navigateRegisterLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.logoBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,15 +52,6 @@
             this.titleLabel.Size = new System.Drawing.Size(215, 81);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Trackr!";
-            // 
-            // logoBox
-            // 
-            this.logoBox.Image = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.logoBox.Location = new System.Drawing.Point(342, 12);
-            this.logoBox.Name = "logoBox";
-            this.logoBox.Size = new System.Drawing.Size(116, 114);
-            this.logoBox.TabIndex = 1;
-            this.logoBox.TabStop = false;
             // 
             // accountTB
             // 
@@ -151,6 +142,15 @@
             this.label1.Size = new System.Drawing.Size(86, 23);
             this.label1.TabIndex = 9;
             this.label1.Text = "Mật khẩu";
+            // 
+            // logoBox
+            // 
+            this.logoBox.Image = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.logoBox.Location = new System.Drawing.Point(342, 12);
+            this.logoBox.Name = "logoBox";
+            this.logoBox.Size = new System.Drawing.Size(116, 114);
+            this.logoBox.TabIndex = 1;
+            this.logoBox.TabStop = false;
             // 
             // LoginForm
             // 
