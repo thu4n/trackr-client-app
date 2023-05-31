@@ -32,7 +32,7 @@ namespace trackr_client_app.Views
         private async void yesBtn_Click(object sender, EventArgs e)
         {
             HttpClient client = new HttpClient();
-            var response = await client.DeleteAsync(UserSession.apiUrl + objectType + $"/delete/{id}");
+            var response = await client.DeleteAsync(UserSession.apiUrl + objectType + $"/{id}");
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Đã xóa thành công");
