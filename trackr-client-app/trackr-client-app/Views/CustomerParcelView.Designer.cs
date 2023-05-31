@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerParcelView));
-            this.parcelImg = new System.Windows.Forms.PictureBox();
             this.cusAddressTB = new System.Windows.Forms.TextBox();
             this.cusPhoneTB = new System.Windows.Forms.TextBox();
             this.cusNameTB = new System.Windows.Forms.TextBox();
@@ -57,21 +56,11 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
+            this.parcelImg = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
             this.SuspendLayout();
-            // 
-            // parcelImg
-            // 
-            this.parcelImg.BackColor = System.Drawing.Color.White;
-            this.parcelImg.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.parcelImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.parcelImg.Location = new System.Drawing.Point(35, 90);
-            this.parcelImg.Name = "parcelImg";
-            this.parcelImg.Size = new System.Drawing.Size(172, 172);
-            this.parcelImg.TabIndex = 39;
-            this.parcelImg.TabStop = false;
             // 
             // cusAddressTB
             // 
@@ -376,6 +365,17 @@
             this.panel2.Size = new System.Drawing.Size(1015, 348);
             this.panel2.TabIndex = 44;
             // 
+            // parcelImg
+            // 
+            this.parcelImg.BackColor = System.Drawing.Color.Transparent;
+            this.parcelImg.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.parcelImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.parcelImg.Location = new System.Drawing.Point(35, 90);
+            this.parcelImg.Name = "parcelImg";
+            this.parcelImg.Size = new System.Drawing.Size(172, 172);
+            this.parcelImg.TabIndex = 39;
+            this.parcelImg.TabStop = false;
+            // 
             // CustomerParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -406,11 +406,11 @@
             this.Name = "CustomerParcelView";
             this.Text = "Trackr - Parcel Details";
             this.Load += new System.EventHandler(this.CustomerParcelView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

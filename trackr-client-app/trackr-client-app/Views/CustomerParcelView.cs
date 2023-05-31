@@ -35,7 +35,8 @@ namespace trackr_client_app
             parcelNameTB.Text = parcel.ParDescription;
             statusTB.Text = parcel.ParStatus;
             noteTB.Text = parcel.Note;
-            DisplayTrackingTree();
+            parcelImg.ImageLocation = parcel.ParImage;
+            parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void DisplayTrackingTree()
