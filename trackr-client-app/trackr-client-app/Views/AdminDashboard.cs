@@ -29,6 +29,8 @@ namespace trackr_client_app.Views
         {
             usernameLabel.Text = UserSession.admin.AdName;
             GetParcelData();
+            GetCustomerData();
+            GetDeliveryManData();
         }
         #region Parcel Data
         private async void GetParcelData()
@@ -52,6 +54,7 @@ namespace trackr_client_app.Views
         private void DisplayParcelData()
         {
             int i = 1;
+            parcelGridView.Rows.Clear();
             foreach (Parcel parcel in UserSession.parcels)
             {
                 parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), parcel.ParStatus);
@@ -63,8 +66,8 @@ namespace trackr_client_app.Views
             if (parcelGridView.CurrentCell.ColumnIndex == 1 && e.RowIndex != -1)
             {
                 Parcel parcel = UserSession.parcels[e.RowIndex];
-                CustomerParcelView customerParcelView = new CustomerParcelView(parcel);
-                customerParcelView.Show();
+                AdminParcelView adminParcelView = new AdminParcelView(parcel);
+                adminParcelView.Show();
             }
         }
         #endregion
@@ -76,7 +79,6 @@ namespace trackr_client_app.Views
             var responseString = await response.Content.ReadAsStringAsync();
             var deliveryManArray = JArray.Parse(responseString);
             LoadDeliveryManData(deliveryManArray);
-            DisplayDeliveryManData();
         }
 
         private void LoadDeliveryManData(JArray deliveryManArray)
@@ -92,6 +94,7 @@ namespace trackr_client_app.Views
         private void DisplayDeliveryManData()
         {
             int i = 1;
+            deliveryGridView.Rows.Clear();
             foreach(DeliveryMan deliveryMan in deliveryMen)
             {
                 deliveryGridView.Rows.Add(i++, deliveryMan.ManID.ToString(), deliveryMan.ManName, deliveryMan.ManPhone);
@@ -112,7 +115,6 @@ namespace trackr_client_app.Views
             var responseString = await response.Content.ReadAsStringAsync();
             var customerArray = JArray.Parse(responseString);
             LoadCustomerData(customerArray);
-            DisplayCustomerData();
         }
 
         private void LoadCustomerData(JArray customerArray)
@@ -128,6 +130,7 @@ namespace trackr_client_app.Views
         private void DisplayCustomerData()
         {
             int i = 1;
+            customerGridView.Rows.Clear();
             foreach(Customer customer in customers)
             {
                 customerGridView.Rows.Add(i++, customer.CusID.ToString(), customer.CusName, customer.CusAddress);
@@ -155,15 +158,15 @@ namespace trackr_client_app.Views
             switch(tabControl1.SelectedIndex){
                 case 0:
                     {
-                        GetParcelData(); break;
+                        DisplayParcelData(); break;
                     }
                 case 1: 
-                    { 
-                        GetDeliveryManData(); break;
+                    {
+                        DisplayDeliveryManData(); break;
                     }
                 case 2:
                     {
-                        GetCustomerData(); break;
+                        DisplayCustomerData(); break;
                     }
             }
         }

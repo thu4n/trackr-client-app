@@ -37,6 +37,7 @@ namespace trackr_client_app
             noteTB.Text = parcel.Note;
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            DisplayTrackingTree();
         }
 
         private void DisplayTrackingTree()
