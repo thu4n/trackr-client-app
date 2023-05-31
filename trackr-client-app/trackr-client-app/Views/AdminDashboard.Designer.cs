@@ -39,27 +39,35 @@
             this.searchTB = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.parcelGridView = new System.Windows.Forms.DataGridView();
-            this.deliveryGridView = new System.Windows.Forms.DataGridView();
-            this.customerGridView = new System.Windows.Forms.DataGridView();
             this.sttCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deliCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.deliveryGridView = new System.Windows.Forms.DataGridView();
+            this.sttCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.customerGridView = new System.Windows.Forms.DataGridView();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.sttCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryGridView)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -120,7 +128,7 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.parcelGridView);
-            this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
@@ -129,59 +137,11 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đơn hàng";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.deliveryGridView);
-            this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.tabPage2.Location = new System.Drawing.Point(4, 38);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(719, 324);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Nhân viên giao hàng";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.customerGridView);
-            this.tabPage3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.tabPage3.Location = new System.Drawing.Point(4, 38);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(719, 324);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Khách hàng";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.search_icon;
-            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.searchBtn.FlatAppearance.BorderSize = 0;
-            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.Location = new System.Drawing.Point(762, 178);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(49, 30);
-            this.searchBtn.TabIndex = 21;
-            this.searchBtn.UseVisualStyleBackColor = true;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.InitialImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.pictureBox1.Location = new System.Drawing.Point(771, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            // 
             // parcelGridView
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -197,8 +157,8 @@
             this.deliCol});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -211,51 +171,13 @@
             this.parcelGridView.Size = new System.Drawing.Size(841, 318);
             this.parcelGridView.TabIndex = 0;
             // 
-            // deliveryGridView
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.deliveryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.deliveryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.deliveryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.deliveryGridView.Location = new System.Drawing.Point(3, 3);
-            this.deliveryGridView.Name = "deliveryGridView";
-            this.deliveryGridView.RowHeadersWidth = 51;
-            this.deliveryGridView.RowTemplate.Height = 24;
-            this.deliveryGridView.Size = new System.Drawing.Size(713, 318);
-            this.deliveryGridView.TabIndex = 25;
-            // 
-            // customerGridView
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.customerGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.customerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customerGridView.Location = new System.Drawing.Point(0, 0);
-            this.customerGridView.Name = "customerGridView";
-            this.customerGridView.RowHeadersWidth = 51;
-            this.customerGridView.RowTemplate.Height = 24;
-            this.customerGridView.Size = new System.Drawing.Size(719, 324);
-            this.customerGridView.TabIndex = 25;
-            // 
             // sttCol
             // 
             this.sttCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.sttCol.HeaderText = "STT";
             this.sttCol.MinimumWidth = 6;
             this.sttCol.Name = "sttCol";
-            this.sttCol.Width = 64;
+            this.sttCol.Width = 62;
             // 
             // codeCol
             // 
@@ -292,6 +214,162 @@
             this.deliCol.MinimumWidth = 6;
             this.deliCol.Name = "deliCol";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.deliveryGridView);
+            this.tabPage2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.tabPage2.Location = new System.Drawing.Point(4, 38);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(847, 324);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Nhân viên giao hàng";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // deliveryGridView
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.deliveryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.deliveryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.deliveryGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sttCol2,
+            this.codeCol2,
+            this.nameCol2,
+            this.numberCol2});
+            this.deliveryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deliveryGridView.Location = new System.Drawing.Point(3, 3);
+            this.deliveryGridView.Name = "deliveryGridView";
+            this.deliveryGridView.RowHeadersWidth = 51;
+            this.deliveryGridView.RowTemplate.Height = 24;
+            this.deliveryGridView.Size = new System.Drawing.Size(841, 318);
+            this.deliveryGridView.TabIndex = 25;
+            // 
+            // sttCol2
+            // 
+            this.sttCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.sttCol2.HeaderText = "STT";
+            this.sttCol2.MinimumWidth = 6;
+            this.sttCol2.Name = "sttCol2";
+            this.sttCol2.Width = 62;
+            // 
+            // codeCol2
+            // 
+            this.codeCol2.HeaderText = "Mã nhân viên";
+            this.codeCol2.MinimumWidth = 6;
+            this.codeCol2.Name = "codeCol2";
+            this.codeCol2.Width = 125;
+            // 
+            // nameCol2
+            // 
+            this.nameCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCol2.HeaderText = "Tên nhân viên";
+            this.nameCol2.MinimumWidth = 6;
+            this.nameCol2.Name = "nameCol2";
+            // 
+            // numberCol2
+            // 
+            this.numberCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.numberCol2.HeaderText = "Số đơn đang giao";
+            this.numberCol2.MinimumWidth = 6;
+            this.numberCol2.Name = "numberCol2";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.customerGridView);
+            this.tabPage3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.tabPage3.Location = new System.Drawing.Point(4, 38);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(847, 324);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Khách hàng";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // customerGridView
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.customerGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.customerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sttCol3,
+            this.codeCol3,
+            this.nameCol3,
+            this.addrCol});
+            this.customerGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customerGridView.Location = new System.Drawing.Point(0, 0);
+            this.customerGridView.Name = "customerGridView";
+            this.customerGridView.RowHeadersWidth = 51;
+            this.customerGridView.RowTemplate.Height = 24;
+            this.customerGridView.Size = new System.Drawing.Size(847, 324);
+            this.customerGridView.TabIndex = 25;
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.search_icon;
+            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchBtn.FlatAppearance.BorderSize = 0;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.Location = new System.Drawing.Point(762, 178);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(49, 30);
+            this.searchBtn.TabIndex = 21;
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.pictureBox1.Location = new System.Drawing.Point(771, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // sttCol3
+            // 
+            this.sttCol3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.sttCol3.HeaderText = "STT";
+            this.sttCol3.MinimumWidth = 6;
+            this.sttCol3.Name = "sttCol3";
+            this.sttCol3.Width = 62;
+            // 
+            // codeCol3
+            // 
+            this.codeCol3.HeaderText = "Mã khách hàng";
+            this.codeCol3.MinimumWidth = 6;
+            this.codeCol3.Name = "codeCol3";
+            this.codeCol3.Width = 125;
+            // 
+            // nameCol3
+            // 
+            this.nameCol3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCol3.HeaderText = "Tên khách hàng";
+            this.nameCol3.MinimumWidth = 6;
+            this.nameCol3.Name = "nameCol3";
+            // 
+            // addrCol
+            // 
+            this.addrCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.addrCol.HeaderText = "Địa chỉ";
+            this.addrCol.MinimumWidth = 6;
+            this.addrCol.Name = "addrCol";
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -311,12 +389,12 @@
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.deliveryGridView)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,5 +421,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn deliCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sttCol2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeCol2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameCol2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberCol2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sttCol3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeCol3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameCol3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addrCol;
     }
 }

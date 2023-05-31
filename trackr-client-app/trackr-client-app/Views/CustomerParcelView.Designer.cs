@@ -30,17 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerParcelView));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node3");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Node4");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node3");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Node4");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Node5");
             this.parcelImg = new System.Windows.Forms.PictureBox();
             this.cusAddressTB = new System.Windows.Forms.TextBox();
             this.cusPhoneTB = new System.Windows.Forms.TextBox();
@@ -66,7 +55,10 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.noteLabel = new System.Windows.Forms.Label();
+            this.noteTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,7 +82,7 @@
             this.cusAddressTB.Multiline = true;
             this.cusAddressTB.Name = "cusAddressTB";
             this.cusAddressTB.ReadOnly = true;
-            this.cusAddressTB.Size = new System.Drawing.Size(335, 76);
+            this.cusAddressTB.Size = new System.Drawing.Size(335, 47);
             this.cusAddressTB.TabIndex = 38;
             this.cusAddressTB.Text = "Ký túc xá khu A: Đường Tạ Quang Bửu, khu phố 6, phường Linh Trung, thành phố Thủ " +
     "Đức, Thành phố Hồ Chí Minh.";
@@ -136,7 +128,7 @@
             this.estimateDateTB.BackColor = System.Drawing.Color.White;
             this.estimateDateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.estimateDateTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estimateDateTB.Location = new System.Drawing.Point(411, 240);
+            this.estimateDateTB.Location = new System.Drawing.Point(399, 226);
             this.estimateDateTB.Name = "estimateDateTB";
             this.estimateDateTB.ReadOnly = true;
             this.estimateDateTB.Size = new System.Drawing.Size(175, 23);
@@ -244,7 +236,7 @@
             this.estimateDateLabel.AutoSize = true;
             this.estimateDateLabel.BackColor = System.Drawing.Color.White;
             this.estimateDateLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estimateDateLabel.Location = new System.Drawing.Point(238, 240);
+            this.estimateDateLabel.Location = new System.Drawing.Point(226, 226);
             this.estimateDateLabel.Name = "estimateDateLabel";
             this.estimateDateLabel.Size = new System.Drawing.Size(167, 23);
             this.estimateDateLabel.TabIndex = 25;
@@ -309,9 +301,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.noteTB);
+            this.panel1.Controls.Add(this.noteLabel);
+            this.panel1.Controls.Add(this.estimateDateLabel);
+            this.panel1.Controls.Add(this.estimateDateTB);
             this.panel1.Location = new System.Drawing.Point(12, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 261);
+            this.panel1.Size = new System.Drawing.Size(1015, 284);
             this.panel1.TabIndex = 40;
             // 
             // titleLabel2
@@ -342,40 +338,6 @@
             this.treeView1.ItemHeight = 50;
             this.treeView1.Location = new System.Drawing.Point(0, 52);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "Node0";
-            treeNode2.Name = "Node1";
-            treeNode2.Text = "Node1";
-            treeNode3.Name = "Node2";
-            treeNode3.Text = "Node2";
-            treeNode4.Name = "Node3";
-            treeNode4.Text = "Node3";
-            treeNode5.Name = "Node4";
-            treeNode5.Text = "Node4";
-            treeNode6.Name = "Node0";
-            treeNode6.Text = "Node0";
-            treeNode7.Name = "Node1";
-            treeNode7.Text = "Node1";
-            treeNode8.Name = "Node2";
-            treeNode8.Text = "Node2";
-            treeNode9.Name = "Node3";
-            treeNode9.Text = "Node3";
-            treeNode10.Name = "Node4";
-            treeNode10.Text = "Node4";
-            treeNode11.Name = "Node5";
-            treeNode11.Text = "Node5";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6,
-            treeNode7,
-            treeNode8,
-            treeNode9,
-            treeNode10,
-            treeNode11});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(1015, 296);
             this.treeView1.TabIndex = 43;
@@ -385,10 +347,34 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.treeView1);
             this.panel2.Controls.Add(this.titleLabel2);
-            this.panel2.Location = new System.Drawing.Point(12, 314);
+            this.panel2.Location = new System.Drawing.Point(12, 329);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1015, 348);
             this.panel2.TabIndex = 44;
+            // 
+            // noteLabel
+            // 
+            this.noteLabel.AutoSize = true;
+            this.noteLabel.BackColor = System.Drawing.Color.White;
+            this.noteLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noteLabel.Location = new System.Drawing.Point(594, 226);
+            this.noteLabel.Name = "noteLabel";
+            this.noteLabel.Size = new System.Drawing.Size(75, 23);
+            this.noteLabel.TabIndex = 45;
+            this.noteLabel.Text = "Ghi chú:";
+            // 
+            // noteTB
+            // 
+            this.noteTB.BackColor = System.Drawing.Color.White;
+            this.noteTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.noteTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noteTB.Location = new System.Drawing.Point(670, 226);
+            this.noteTB.Multiline = true;
+            this.noteTB.Name = "noteTB";
+            this.noteTB.ReadOnly = true;
+            this.noteTB.Size = new System.Drawing.Size(335, 47);
+            this.noteTB.TabIndex = 45;
+            this.noteTB.Text = "blah";
             // 
             // CustomerParcelView
             // 
@@ -401,7 +387,6 @@
             this.Controls.Add(this.cusPhoneTB);
             this.Controls.Add(this.cusNameTB);
             this.Controls.Add(this.cusCodeTB);
-            this.Controls.Add(this.estimateDateTB);
             this.Controls.Add(this.statusTB);
             this.Controls.Add(this.orderDateTB);
             this.Controls.Add(this.parcelNameTB);
@@ -410,7 +395,6 @@
             this.Controls.Add(this.cusPhoneLabel);
             this.Controls.Add(this.cusNameLabel);
             this.Controls.Add(this.cusCodeLabel);
-            this.Controls.Add(this.estimateDateLabel);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.orderDateLabel);
             this.Controls.Add(this.parcelNameLabel);
@@ -423,6 +407,8 @@
             this.Text = "CustomerParcelView";
             this.Load += new System.EventHandler(this.CustomerParcelView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -457,5 +443,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label noteLabel;
+        private System.Windows.Forms.TextBox noteTB;
     }
 }

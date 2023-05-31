@@ -28,6 +28,7 @@ namespace trackr_client_app.Views
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
             usernameLabel.Text = UserSession.admin.AdName;
+            GetParcelData();
             /*DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             dataGridView1.Columns.Add(btn);
             btn.HeaderText = UserSession.admin.AdName;

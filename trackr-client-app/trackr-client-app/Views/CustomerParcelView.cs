@@ -34,12 +34,21 @@ namespace trackr_client_app
             parcelCodeTB.Text = parcel.ParID.ToString();
             parcelNameTB.Text = parcel.ParDescription;
             statusTB.Text = parcel.ParStatus;
+            noteTB.Text = parcel.Note;
             DisplayTrackingTree();
         }
 
         private void DisplayTrackingTree()
         {
-            treeView1.Nodes.Add(parcel.ParLocation + " - " + parcel.Realtime + ", " + parcel.Realtime);
+            string[] locationLog = parcel.ParLocation.Split('@');
+            string[] timeLog = parcel.Realtime.Split('@');
+            int i = 0;
+            foreach(var timeMark in timeLog) 
+            {
+                string locationMark = locationLog[i++];
+                treeView1.Nodes.Add(timeMark + " " + locationMark);
+
+            }
         }
     }
 }

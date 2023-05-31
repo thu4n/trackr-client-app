@@ -57,11 +57,11 @@ namespace trackr_client_app
             string username = accountTB.Text; 
             string password = passwordTB.Text;
             string padding = "@@@!0Di3m***";
-            string hash = ComputeSHA256(password + padding);
+            //string hash = ComputeSHA256(password + padding);
             var values = new Dictionary<string, string>
             {
                 { "account", username },
-                { "password", hash }
+                { "password", password }
             };
             string jsonString = JsonConvert.SerializeObject(values);
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
