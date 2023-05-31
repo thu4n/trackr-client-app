@@ -1,6 +1,6 @@
 ﻿namespace trackr_client_app
 {
-    partial class LoginScreen
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginScreen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.titleLabel = new System.Windows.Forms.Label();
-            this.logoBox = new System.Windows.Forms.PictureBox();
             this.accountTB = new System.Windows.Forms.TextBox();
             this.passwordTB = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
@@ -39,6 +38,7 @@
             this.navigateRegisterLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.logoBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,15 +52,6 @@
             this.titleLabel.Size = new System.Drawing.Size(215, 81);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Trackr!";
-            // 
-            // logoBox
-            // 
-            this.logoBox.Image = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.logoBox.Location = new System.Drawing.Point(342, 12);
-            this.logoBox.Name = "logoBox";
-            this.logoBox.Size = new System.Drawing.Size(116, 114);
-            this.logoBox.TabIndex = 1;
-            this.logoBox.TabStop = false;
             // 
             // accountTB
             // 
@@ -94,6 +85,7 @@
             this.loginBtn.TabIndex = 4;
             this.loginBtn.Text = "Đăng nhập";
             this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // registerLabel1
             // 
@@ -151,7 +143,16 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Mật khẩu";
             // 
-            // LoginScreen
+            // logoBox
+            // 
+            this.logoBox.Image = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.logoBox.Location = new System.Drawing.Point(342, 12);
+            this.logoBox.Name = "logoBox";
+            this.logoBox.Size = new System.Drawing.Size(116, 114);
+            this.logoBox.TabIndex = 1;
+            this.logoBox.TabStop = false;
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -167,7 +168,7 @@
             this.Controls.Add(this.logoBox);
             this.Controls.Add(this.titleLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "LoginScreen";
+            this.Name = "LoginForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.LoginScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).EndInit();
