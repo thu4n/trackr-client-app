@@ -51,12 +51,12 @@
             this.parcelCodeLabel = new System.Windows.Forms.Label();
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.noteTB = new System.Windows.Forms.TextBox();
+            this.noteLabel = new System.Windows.Forms.Label();
             this.titleLabel2 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.noteLabel = new System.Windows.Forms.Label();
-            this.noteTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -310,6 +310,30 @@
             this.panel1.Size = new System.Drawing.Size(1015, 284);
             this.panel1.TabIndex = 40;
             // 
+            // noteTB
+            // 
+            this.noteTB.BackColor = System.Drawing.Color.White;
+            this.noteTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.noteTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noteTB.Location = new System.Drawing.Point(670, 226);
+            this.noteTB.Multiline = true;
+            this.noteTB.Name = "noteTB";
+            this.noteTB.ReadOnly = true;
+            this.noteTB.Size = new System.Drawing.Size(335, 47);
+            this.noteTB.TabIndex = 45;
+            this.noteTB.Text = "blah";
+            // 
+            // noteLabel
+            // 
+            this.noteLabel.AutoSize = true;
+            this.noteLabel.BackColor = System.Drawing.Color.White;
+            this.noteLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noteLabel.Location = new System.Drawing.Point(594, 226);
+            this.noteLabel.Name = "noteLabel";
+            this.noteLabel.Size = new System.Drawing.Size(75, 23);
+            this.noteLabel.TabIndex = 45;
+            this.noteLabel.Text = "Ghi chú:";
+            // 
             // titleLabel2
             // 
             this.titleLabel2.AutoSize = true;
@@ -352,30 +376,6 @@
             this.panel2.Size = new System.Drawing.Size(1015, 348);
             this.panel2.TabIndex = 44;
             // 
-            // noteLabel
-            // 
-            this.noteLabel.AutoSize = true;
-            this.noteLabel.BackColor = System.Drawing.Color.White;
-            this.noteLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel.Location = new System.Drawing.Point(594, 226);
-            this.noteLabel.Name = "noteLabel";
-            this.noteLabel.Size = new System.Drawing.Size(75, 23);
-            this.noteLabel.TabIndex = 45;
-            this.noteLabel.Text = "Ghi chú:";
-            // 
-            // noteTB
-            // 
-            this.noteTB.BackColor = System.Drawing.Color.White;
-            this.noteTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.noteTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteTB.Location = new System.Drawing.Point(670, 226);
-            this.noteTB.Multiline = true;
-            this.noteTB.Name = "noteTB";
-            this.noteTB.ReadOnly = true;
-            this.noteTB.Size = new System.Drawing.Size(335, 47);
-            this.noteTB.TabIndex = 45;
-            this.noteTB.Text = "blah";
-            // 
             // CustomerParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -404,7 +404,7 @@
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomerParcelView";
-            this.Text = "CustomerParcelView";
+            this.Text = "Trackr - Parcel Details";
             this.Load += new System.EventHandler(this.CustomerParcelView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).EndInit();
             this.panel1.ResumeLayout(false);

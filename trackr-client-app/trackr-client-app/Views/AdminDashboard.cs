@@ -60,7 +60,12 @@ namespace trackr_client_app.Views
 
         private void parcelGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (parcelGridView.CurrentCell.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                Parcel parcel = UserSession.parcels[e.RowIndex];
+                CustomerParcelView customerParcelView = new CustomerParcelView(parcel);
+                customerParcelView.Show();
+            }
         }
         #endregion
 
