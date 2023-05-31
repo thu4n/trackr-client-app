@@ -170,5 +170,11 @@ namespace trackr_client_app.Views
                     }
             }
         }
+
+        private void createBtn_Click(object sender, EventArgs e)
+        {
+            AdminCreateParcelView adminCreateParcelView = new AdminCreateParcelView();
+            adminCreateParcelView.Show();
+        }
     }
 }

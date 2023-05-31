@@ -48,18 +48,19 @@
             this.deliCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.deliveryGridView = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.customerGridView = new System.Windows.Forms.DataGridView();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.sttCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sttCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.customerGridView = new System.Windows.Forms.DataGridView();
+            this.sttCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.createBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
@@ -254,6 +255,35 @@
             this.deliveryGridView.TabIndex = 25;
             this.deliveryGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deliveryGridView_CellContentDoubleClick);
             // 
+            // sttCol2
+            // 
+            this.sttCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.sttCol2.HeaderText = "STT";
+            this.sttCol2.MinimumWidth = 6;
+            this.sttCol2.Name = "sttCol2";
+            this.sttCol2.Width = 62;
+            // 
+            // codeCol2
+            // 
+            this.codeCol2.HeaderText = "Mã nhân viên";
+            this.codeCol2.MinimumWidth = 6;
+            this.codeCol2.Name = "codeCol2";
+            this.codeCol2.Width = 125;
+            // 
+            // nameCol2
+            // 
+            this.nameCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCol2.HeaderText = "Tên nhân viên";
+            this.nameCol2.MinimumWidth = 6;
+            this.nameCol2.Name = "nameCol2";
+            // 
+            // numberCol2
+            // 
+            this.numberCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.numberCol2.HeaderText = "SĐT";
+            this.numberCol2.MinimumWidth = 6;
+            this.numberCol2.Name = "numberCol2";
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.customerGridView);
@@ -291,31 +321,6 @@
             this.customerGridView.TabIndex = 25;
             this.customerGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerGridView_CellContentDoubleClick);
             // 
-            // searchBtn
-            // 
-            this.searchBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.search_icon;
-            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.searchBtn.FlatAppearance.BorderSize = 0;
-            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.Location = new System.Drawing.Point(762, 178);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(49, 30);
-            this.searchBtn.TabIndex = 21;
-            this.searchBtn.UseVisualStyleBackColor = true;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.InitialImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.pictureBox1.Location = new System.Drawing.Point(771, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            // 
             // sttCol3
             // 
             this.sttCol3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -345,40 +350,52 @@
             this.addrCol.MinimumWidth = 6;
             this.addrCol.Name = "addrCol";
             // 
-            // sttCol2
+            // searchBtn
             // 
-            this.sttCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.sttCol2.HeaderText = "STT";
-            this.sttCol2.MinimumWidth = 6;
-            this.sttCol2.Name = "sttCol2";
-            this.sttCol2.Width = 62;
+            this.searchBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.search_icon;
+            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchBtn.FlatAppearance.BorderSize = 0;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.Location = new System.Drawing.Point(762, 178);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(49, 30);
+            this.searchBtn.TabIndex = 21;
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // codeCol2
+            // pictureBox1
             // 
-            this.codeCol2.HeaderText = "Mã nhân viên";
-            this.codeCol2.MinimumWidth = 6;
-            this.codeCol2.Name = "codeCol2";
-            this.codeCol2.Width = 125;
+            this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.pictureBox1.Location = new System.Drawing.Point(771, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
             // 
-            // nameCol2
+            // createBtn
             // 
-            this.nameCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCol2.HeaderText = "Tên nhân viên";
-            this.nameCol2.MinimumWidth = 6;
-            this.nameCol2.Name = "nameCol2";
-            // 
-            // numberCol2
-            // 
-            this.numberCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.numberCol2.HeaderText = "SĐT";
-            this.numberCol2.MinimumWidth = 6;
-            this.numberCol2.Name = "numberCol2";
+            this.createBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.createBtn.FlatAppearance.BorderSize = 0;
+            this.createBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createBtn.ForeColor = System.Drawing.Color.White;
+            this.createBtn.Location = new System.Drawing.Point(52, 608);
+            this.createBtn.Name = "createBtn";
+            this.createBtn.Size = new System.Drawing.Size(324, 33);
+            this.createBtn.TabIndex = 25;
+            this.createBtn.Text = "Tạo đơn hàng mới";
+            this.createBtn.UseVisualStyleBackColor = false;
+            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
             // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 643);
+            this.ClientSize = new System.Drawing.Size(959, 668);
+            this.Controls.Add(this.createBtn);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.searchBtn);
@@ -433,5 +450,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codeCol2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameCol2;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberCol2;
+        private System.Windows.Forms.Button createBtn;
     }
 }

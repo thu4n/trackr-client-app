@@ -110,6 +110,7 @@
             // navigateRegisterLabel
             // 
             this.navigateRegisterLabel.AutoSize = true;
+            this.navigateRegisterLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.navigateRegisterLabel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navigateRegisterLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
             this.navigateRegisterLabel.Location = new System.Drawing.Point(409, 400);

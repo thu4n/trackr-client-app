@@ -79,6 +79,7 @@
             this.registerBtn.TabIndex = 14;
             this.registerBtn.Text = "Đăng ký";
             this.registerBtn.UseVisualStyleBackColor = false;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
             // passwordTB
             // 

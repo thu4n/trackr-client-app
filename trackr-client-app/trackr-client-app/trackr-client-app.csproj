@@ -68,6 +68,12 @@
   <ItemGroup>
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DeliveryMan.cs" />
+    <Compile Include="Views\AdminCreateParcelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminCreateParcelView.Designer.cs">
+      <DependentUpon>AdminCreateParcelView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminCreateParcelView.resx">
+      <DependentUpon>AdminCreateParcelView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>

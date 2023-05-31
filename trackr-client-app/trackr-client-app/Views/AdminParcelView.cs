@@ -72,5 +72,10 @@ namespace trackr_client_app.Views
             AdminDeleteView adminDeleteView = new AdminDeleteView(parcel.ParID, "parcel");
             adminDeleteView.Show();
         }
+
+        private void modBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

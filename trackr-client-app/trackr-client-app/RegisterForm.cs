@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,6 +41,27 @@ namespace trackr_client_app
         private void RegisterForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public static bool CheckEmail(string email)
+        {
+            try
+            {
+                MailAddress mailAddress = new MailAddress(email);
+                return true;
+            }
+            catch(FormatException)
+            { 
+                return false; 
+            }
+        }
+
+        private void registerBtn_Click(object sender, EventArgs e)
+        {
+            if (!CheckEmail(accountTB.Text))
+            {
+                MessageBox.Show("Địa chỉ email không hợp lệ");
+            }
         }
     }
 }

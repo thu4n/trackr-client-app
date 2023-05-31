@@ -230,6 +230,7 @@
             this.modBtn.TabIndex = 44;
             this.modBtn.Text = "Chỉnh sửa";
             this.modBtn.UseVisualStyleBackColor = false;
+            this.modBtn.Click += new System.EventHandler(this.modBtn_Click);
             // 
             // estimateDateLabel
             // 
