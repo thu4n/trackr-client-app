@@ -18,6 +18,7 @@ namespace trackr_client_app.Views
     {
         OpenFileDialog ofd = new OpenFileDialog();
         FileStream fs;
+        FileInfo fileInfo;
         public AdminCreateParcelView()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace trackr_client_app.Views
         {
             ofd.ShowDialog();
             fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
-            FileInfo fileInfo = new FileInfo(ofd.FileName);
+            fileInfo = new FileInfo(ofd.FileName);
             imgPathTB.Text = fileInfo.FullName;
         }
 
@@ -36,7 +37,7 @@ namespace trackr_client_app.Views
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://localhost:7111/api/Image");
             var content = new MultipartFormDataContent();
-            content.Add(new StreamContent(File.OpenRead("C:/Users/Admin/Downloads/lul.png")), "File", "lul.png");
+            content.Add(new StreamContent(File.OpenRead(fileInfo.FullName)), "File", fileInfo.Name);
             request.Content = content;
             var response = await client.SendAsync(request);
             string uriStr = await response.Content.ReadAsStringAsync();
