@@ -48,10 +48,6 @@
             this.deliCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.deliveryGridView = new System.Windows.Forms.DataGridView();
-            this.sttCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.customerGridView = new System.Windows.Forms.DataGridView();
             this.searchBtn = new System.Windows.Forms.Button();
@@ -60,6 +56,10 @@
             this.codeCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sttCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
@@ -123,6 +123,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(855, 366);
             this.tabControl1.TabIndex = 24;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -170,6 +171,7 @@
             this.parcelGridView.RowTemplate.Height = 24;
             this.parcelGridView.Size = new System.Drawing.Size(841, 318);
             this.parcelGridView.TabIndex = 0;
+            this.parcelGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.parcelGridView_CellContentDoubleClick);
             // 
             // sttCol
             // 
@@ -250,35 +252,7 @@
             this.deliveryGridView.RowTemplate.Height = 24;
             this.deliveryGridView.Size = new System.Drawing.Size(841, 318);
             this.deliveryGridView.TabIndex = 25;
-            // 
-            // sttCol2
-            // 
-            this.sttCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.sttCol2.HeaderText = "STT";
-            this.sttCol2.MinimumWidth = 6;
-            this.sttCol2.Name = "sttCol2";
-            this.sttCol2.Width = 62;
-            // 
-            // codeCol2
-            // 
-            this.codeCol2.HeaderText = "Mã nhân viên";
-            this.codeCol2.MinimumWidth = 6;
-            this.codeCol2.Name = "codeCol2";
-            this.codeCol2.Width = 125;
-            // 
-            // nameCol2
-            // 
-            this.nameCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCol2.HeaderText = "Tên nhân viên";
-            this.nameCol2.MinimumWidth = 6;
-            this.nameCol2.Name = "nameCol2";
-            // 
-            // numberCol2
-            // 
-            this.numberCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.numberCol2.HeaderText = "Số đơn đang giao";
-            this.numberCol2.MinimumWidth = 6;
-            this.numberCol2.Name = "numberCol2";
+            this.deliveryGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deliveryGridView_CellContentDoubleClick);
             // 
             // tabPage3
             // 
@@ -315,6 +289,7 @@
             this.customerGridView.RowTemplate.Height = 24;
             this.customerGridView.Size = new System.Drawing.Size(847, 324);
             this.customerGridView.TabIndex = 25;
+            this.customerGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerGridView_CellContentDoubleClick);
             // 
             // searchBtn
             // 
@@ -370,6 +345,35 @@
             this.addrCol.MinimumWidth = 6;
             this.addrCol.Name = "addrCol";
             // 
+            // sttCol2
+            // 
+            this.sttCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.sttCol2.HeaderText = "STT";
+            this.sttCol2.MinimumWidth = 6;
+            this.sttCol2.Name = "sttCol2";
+            this.sttCol2.Width = 62;
+            // 
+            // codeCol2
+            // 
+            this.codeCol2.HeaderText = "Mã nhân viên";
+            this.codeCol2.MinimumWidth = 6;
+            this.codeCol2.Name = "codeCol2";
+            this.codeCol2.Width = 125;
+            // 
+            // nameCol2
+            // 
+            this.nameCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCol2.HeaderText = "Tên nhân viên";
+            this.nameCol2.MinimumWidth = 6;
+            this.nameCol2.Name = "nameCol2";
+            // 
+            // numberCol2
+            // 
+            this.numberCol2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.numberCol2.HeaderText = "SĐT";
+            this.numberCol2.MinimumWidth = 6;
+            this.numberCol2.Name = "numberCol2";
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -421,13 +425,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn deliCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sttCol2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeCol2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameCol2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberCol2;
         private System.Windows.Forms.DataGridViewTextBoxColumn sttCol3;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeCol3;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameCol3;
         private System.Windows.Forms.DataGridViewTextBoxColumn addrCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sttCol2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeCol2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameCol2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberCol2;
     }
 }

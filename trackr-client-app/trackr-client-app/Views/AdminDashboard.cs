@@ -29,13 +29,6 @@ namespace trackr_client_app.Views
         {
             usernameLabel.Text = UserSession.admin.AdName;
             GetParcelData();
-            /*DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            dataGridView1.Columns.Add(btn);
-            btn.HeaderText = UserSession.admin.AdName;
-            btn.Name = UserSession.admin.AdName;
-            btn.Text = UserSession.admin.AdName;
-            btn.UseColumnTextForButtonValue = true;
-            dataGridView1.Rows.Add("thuan");*/
         }
         #region Parcel Data
         private async void GetParcelData()
@@ -63,6 +56,11 @@ namespace trackr_client_app.Views
             {
                 parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), parcel.ParStatus);
             }
+        }
+
+        private void parcelGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
         #endregion
 
@@ -94,10 +92,15 @@ namespace trackr_client_app.Views
                 deliveryGridView.Rows.Add(i++, deliveryMan.ManID.ToString(), deliveryMan.ManName, deliveryMan.ManPhone);
             }
         }
+
+        private void deliveryGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         #endregion
 
         #region Customer Data
-        
+
         private async void GetCustomerData()
         {
             var response = await client.GetAsync(UserSession.apiUrl + "Customer");
@@ -125,6 +128,11 @@ namespace trackr_client_app.Views
                 customerGridView.Rows.Add(i++, customer.CusID.ToString(), customer.CusName, customer.CusAddress);
             }
         }
+
+        private void customerGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         #endregion
         private void AdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -135,6 +143,24 @@ namespace trackr_client_app.Views
         private void searchBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(tabControl1.SelectedIndex){
+                case 0:
+                    {
+                        GetParcelData(); break;
+                    }
+                case 1: 
+                    { 
+                        GetDeliveryManData(); break;
+                    }
+                case 2:
+                    {
+                        GetCustomerData(); break;
+                    }
+            }
         }
     }
 }
