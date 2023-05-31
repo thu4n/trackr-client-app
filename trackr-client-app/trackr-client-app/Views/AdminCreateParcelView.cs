@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,8 +39,12 @@ namespace trackr_client_app.Views
             content.Add(new StreamContent(File.OpenRead("C:/Users/Admin/Downloads/lul.png")), "File", "lul.png");
             request.Content = content;
             var response = await client.SendAsync(request);
-            string str = await response.Content.ReadAsStringAsync();
-            MessageBox.Show(str);
+            string uriStr = await response.Content.ReadAsStringAsync();
+            JObject uri = JObject.Parse(uriStr);
+            uri.TryGetValue("blob", out var blobStr);
+            JObject blob = JObject.Parse(blobStr.ToString());
+            blob.TryGetValue("uri", out var blobUri);
+            MessageBox.Show(blobUri.ToString());
         }
     }
 }
