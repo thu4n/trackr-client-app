@@ -40,6 +40,10 @@
             this.nameTB = new System.Windows.Forms.TextBox();
             this.noteTB = new System.Windows.Forms.TextBox();
             this.dateTB = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.noBtn = new System.Windows.Forms.Button();
+            this.parcelSample = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.parcelSample)).BeginInit();
             this.SuspendLayout();
             // 
             // uploadBtn
@@ -49,9 +53,9 @@
             this.uploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uploadBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uploadBtn.ForeColor = System.Drawing.Color.White;
-            this.uploadBtn.Location = new System.Drawing.Point(507, 53);
+            this.uploadBtn.Location = new System.Drawing.Point(524, 89);
             this.uploadBtn.Name = "uploadBtn";
-            this.uploadBtn.Size = new System.Drawing.Size(179, 33);
+            this.uploadBtn.Size = new System.Drawing.Size(154, 33);
             this.uploadBtn.TabIndex = 26;
             this.uploadBtn.Text = "Chọn hình ảnh";
             this.uploadBtn.UseVisualStyleBackColor = false;
@@ -61,7 +65,7 @@
             // 
             this.imgPathTB.BackColor = System.Drawing.Color.White;
             this.imgPathTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imgPathTB.Location = new System.Drawing.Point(69, 53);
+            this.imgPathTB.Location = new System.Drawing.Point(86, 89);
             this.imgPathTB.Multiline = true;
             this.imgPathTB.Name = "imgPathTB";
             this.imgPathTB.ReadOnly = true;
@@ -76,11 +80,11 @@
             this.realUploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.realUploadBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.realUploadBtn.ForeColor = System.Drawing.Color.White;
-            this.realUploadBtn.Location = new System.Drawing.Point(69, 297);
+            this.realUploadBtn.Location = new System.Drawing.Point(86, 333);
             this.realUploadBtn.Name = "realUploadBtn";
             this.realUploadBtn.Size = new System.Drawing.Size(179, 33);
             this.realUploadBtn.TabIndex = 28;
-            this.realUploadBtn.Text = "Upload";
+            this.realUploadBtn.Text = "Xác nhận tạo";
             this.realUploadBtn.UseVisualStyleBackColor = false;
             this.realUploadBtn.Click += new System.EventHandler(this.realUploadBtn_Click);
             // 
@@ -88,7 +92,7 @@
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Location = new System.Drawing.Point(65, 117);
+            this.nameLabel.Location = new System.Drawing.Point(82, 153);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(124, 23);
             this.nameLabel.TabIndex = 29;
@@ -98,7 +102,7 @@
             // 
             this.noteLabel.AutoSize = true;
             this.noteLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel.Location = new System.Drawing.Point(65, 157);
+            this.noteLabel.Location = new System.Drawing.Point(82, 193);
             this.noteLabel.Name = "noteLabel";
             this.noteLabel.Size = new System.Drawing.Size(75, 23);
             this.noteLabel.TabIndex = 30;
@@ -108,7 +112,7 @@
             // 
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(65, 195);
+            this.dateLabel.Location = new System.Drawing.Point(82, 231);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(57, 23);
             this.dateLabel.TabIndex = 31;
@@ -118,7 +122,7 @@
             // 
             this.customerLabel.AutoSize = true;
             this.customerLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerLabel.Location = new System.Drawing.Point(65, 236);
+            this.customerLabel.Location = new System.Drawing.Point(82, 272);
             this.customerLabel.Name = "customerLabel";
             this.customerLabel.Size = new System.Drawing.Size(137, 23);
             this.customerLabel.TabIndex = 32;
@@ -131,37 +135,75 @@
             "111",
             "222",
             "333"});
-            this.cusTB.Location = new System.Drawing.Point(211, 236);
+            this.cusTB.Location = new System.Drawing.Point(228, 272);
             this.cusTB.Name = "cusTB";
             this.cusTB.Size = new System.Drawing.Size(279, 25);
             this.cusTB.TabIndex = 33;
             // 
             // nameTB
             // 
-            this.nameTB.Location = new System.Drawing.Point(211, 117);
+            this.nameTB.Location = new System.Drawing.Point(228, 153);
             this.nameTB.Name = "nameTB";
             this.nameTB.Size = new System.Drawing.Size(279, 25);
             this.nameTB.TabIndex = 34;
             // 
             // noteTB
             // 
-            this.noteTB.Location = new System.Drawing.Point(211, 155);
+            this.noteTB.Location = new System.Drawing.Point(228, 191);
             this.noteTB.Name = "noteTB";
             this.noteTB.Size = new System.Drawing.Size(279, 25);
             this.noteTB.TabIndex = 35;
             // 
             // dateTB
             // 
-            this.dateTB.Location = new System.Drawing.Point(211, 195);
+            this.dateTB.Location = new System.Drawing.Point(228, 231);
             this.dateTB.Name = "dateTB";
             this.dateTB.Size = new System.Drawing.Size(279, 25);
             this.dateTB.TabIndex = 36;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(254, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(276, 41);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Tạo đơn hàng mới";
+            // 
+            // noBtn
+            // 
+            this.noBtn.BackColor = System.Drawing.Color.White;
+            this.noBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.noBtn.FlatAppearance.BorderSize = 2;
+            this.noBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.noBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.noBtn.Location = new System.Drawing.Point(328, 333);
+            this.noBtn.Name = "noBtn";
+            this.noBtn.Size = new System.Drawing.Size(179, 33);
+            this.noBtn.TabIndex = 71;
+            this.noBtn.Text = "Hủy bỏ";
+            this.noBtn.UseVisualStyleBackColor = false;
+            // 
+            // parcelSample
+            // 
+            this.parcelSample.BackgroundImage = global::trackr_client_app.Properties.Resources.logo;
+            this.parcelSample.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.parcelSample.Location = new System.Drawing.Point(524, 155);
+            this.parcelSample.Name = "parcelSample";
+            this.parcelSample.Size = new System.Drawing.Size(154, 142);
+            this.parcelSample.TabIndex = 72;
+            this.parcelSample.TabStop = false;
             // 
             // AdminCreateParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 478);
+            this.Controls.Add(this.parcelSample);
+            this.Controls.Add(this.noBtn);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTB);
             this.Controls.Add(this.noteTB);
             this.Controls.Add(this.nameTB);
@@ -177,6 +219,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminCreateParcelView";
             this.Text = "Trackr - Create Parcel";
+            this.Load += new System.EventHandler(this.AdminCreateParcelView_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.parcelSample)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +239,8 @@
         private System.Windows.Forms.TextBox nameTB;
         private System.Windows.Forms.TextBox noteTB;
         private System.Windows.Forms.TextBox dateTB;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button noBtn;
+        private System.Windows.Forms.PictureBox parcelSample;
     }
 }

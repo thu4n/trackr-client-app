@@ -65,7 +65,7 @@ namespace trackr_client_app
             };
             string jsonString = JsonConvert.SerializeObject(values);
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("https://trackrwebserver.azurewebsites.net/api/Login", content);
+            var response = await client.PostAsync(UserSession.apiUrl + "Login", content);
             var responseString = await response.Content.ReadAsStringAsync();
             JObject json = JObject.Parse(responseString); // Chuyển string nhận được thành Json Object
             if (json.TryGetValue("id", out var id))  // Lấy thông tin từ trường token của Json Object

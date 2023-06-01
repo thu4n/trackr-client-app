@@ -27,12 +27,14 @@ namespace trackr_client_app.Views
             InitializeComponent();
         }
 
+        // Nút upload hình, do lười suy nghĩ nên không để tên khác
         private void uploadBtn_Click(object sender, EventArgs e)
         {
             ofd.ShowDialog();
             fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
             fileInfo = new FileInfo(ofd.FileName);
             imgPathTB.Text = fileInfo.FullName;
+            parcelSample.ImageLocation = fileInfo.FullName;
         }
 
         private async void PostParcel()
@@ -64,6 +66,12 @@ namespace trackr_client_app.Views
             var postResponse = await client.PostAsync("https://testtestserver20230526163638.azurewebsites.net/api/Parcel", jsonContent);
             var responseString = await postResponse.Content.ReadAsStringAsync();
             MessageBox.Show(postResponse.StatusCode.ToString());
+        }
+
+        private void AdminCreateParcelView_Load(object sender, EventArgs e)
+        {
+            dateTB.Text = DateTime.Now.ToString();
+            parcelSample.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }
