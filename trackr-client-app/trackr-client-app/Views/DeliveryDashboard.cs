@@ -16,7 +16,6 @@ namespace trackr_client_app.Views
 {
     public partial class DeliveryDashboard : Form
     {
-        int count;
         public DeliveryDashboard()
         {
             InitializeComponent();
@@ -33,10 +32,14 @@ namespace trackr_client_app.Views
 
         }
 
-        private async void DeliveryDashboard_Load(object sender, EventArgs e)
+        private void DeliveryDashboard_Load(object sender, EventArgs e)
         {
-            count = 0;
             usernameLabel.Text = UserSession.delivery.ManName;
+            GetData();
+        }
+
+        private async void GetData()
+        {
             HttpClient client = new HttpClient();
 
             // Lấy đơn hàng trước
@@ -50,17 +53,7 @@ namespace trackr_client_app.Views
             responseString = await response.Content.ReadAsStringAsync();
             var customers = JArray.Parse(responseString);
             LoadCustomerData(customers);
-
             DisplayData();
-        }
-
-        private async void GetCustomerData()
-        {
-            HttpClient client = new HttpClient();
-            var response = await client.GetAsync(UserSession.apiUrl + "Customer");
-            var responseString = await response.Content.ReadAsStringAsync();
-            var customers = JArray.Parse(responseString);
-            LoadCustomerData(customers);
         }
         private void LoadCustomerData(JArray customers)
         {
@@ -92,22 +85,16 @@ namespace trackr_client_app.Views
                 parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), customer.CusAddress);
             }
         }
-
-        private void parcelGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void parcelGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void confirmBtn_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in parcelGridView.Rows)
+            var senderGrid = (DataGridView)sender;
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                if (Convert.ToBoolean(row.Cells[5].Value))
-                {
-                    count++;
-                }
+                Parcel parcel = UserSession.parcels[e.RowIndex];
+                DeliveryConfirmView deliveryConfirmView = new DeliveryConfirmView(parcel);
+                deliveryConfirmView.StartPosition = FormStartPosition.CenterScreen;
+                deliveryConfirmView.Show();
             }
-            
         }
     }
 }

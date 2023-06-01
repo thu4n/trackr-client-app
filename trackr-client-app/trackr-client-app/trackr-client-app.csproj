@@ -121,6 +121,12 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\DeliveryConfirmView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DeliveryConfirmView.Designer.cs">
+      <DependentUpon>DeliveryConfirmView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DeliveryDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DeliveryConfirmView.resx">
+      <DependentUpon>DeliveryConfirmView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DeliveryDashboard.resx">
       <DependentUpon>DeliveryDashboard.cs</DependentUpon>

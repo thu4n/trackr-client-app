@@ -83,7 +83,6 @@ namespace trackr_client_app.Views
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
             var postResponse = await client.PostAsync("https://testtestserver20230526163638.azurewebsites.net/api/Parcel", jsonContent);
             var responseString = await postResponse.Content.ReadAsStringAsync();
-            MessageBox.Show(postResponse.StatusCode.ToString());
         }
 
         private void AdminCreateParcelView_Load(object sender, EventArgs e)
