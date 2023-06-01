@@ -34,6 +34,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryDashboard));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.parcelGridView = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.usernameLabel = new System.Windows.Forms.Label();
@@ -41,19 +42,18 @@
             this.searchBtn = new System.Windows.Forms.Button();
             this.searchTB = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.parcelGridView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.confirmBtn = new System.Windows.Forms.Button();
             this.sttCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.selectCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.confirmBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -62,11 +62,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tabControl1.Location = new System.Drawing.Point(149, 239);
+            this.tabControl1.Location = new System.Drawing.Point(56, 239);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(20, 5);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(727, 366);
+            this.tabControl1.Size = new System.Drawing.Size(912, 366);
             this.tabControl1.TabIndex = 25;
             // 
             // tabPage1
@@ -78,9 +78,45 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(719, 324);
+            this.tabPage1.Size = new System.Drawing.Size(904, 324);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đơn hàng cần giao";
+            // 
+            // parcelGridView
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.parcelGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.parcelGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.parcelGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sttCol,
+            this.codeCol,
+            this.nameCol,
+            this.dateCol,
+            this.addrCol,
+            this.selectCol});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.parcelGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.parcelGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parcelGridView.Location = new System.Drawing.Point(3, 3);
+            this.parcelGridView.Name = "parcelGridView";
+            this.parcelGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.parcelGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.parcelGridView.RowTemplate.Height = 24;
+            this.parcelGridView.Size = new System.Drawing.Size(898, 318);
+            this.parcelGridView.TabIndex = 32;
             // 
             // tabPage2
             // 
@@ -158,41 +194,29 @@
             this.titleLabel.TabIndex = 26;
             this.titleLabel.Text = "Danh sách đơn hàng";
             // 
-            // parcelGridView
+            // label1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.parcelGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.parcelGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.parcelGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sttCol,
-            this.codeCol,
-            this.nameCol,
-            this.dateCol,
-            this.addrCol,
-            this.selectCol});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.parcelGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.parcelGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parcelGridView.Location = new System.Drawing.Point(3, 3);
-            this.parcelGridView.Name = "parcelGridView";
-            this.parcelGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.parcelGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.parcelGridView.RowTemplate.Height = 24;
-            this.parcelGridView.Size = new System.Drawing.Size(713, 318);
-            this.parcelGridView.TabIndex = 32;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(354, 619);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 23);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Đã chọn 0 đơn hàng";
+            // 
+            // confirmBtn
+            // 
+            this.confirmBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.confirmBtn.FlatAppearance.BorderSize = 0;
+            this.confirmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmBtn.ForeColor = System.Drawing.Color.White;
+            this.confirmBtn.Location = new System.Drawing.Point(527, 614);
+            this.confirmBtn.Name = "confirmBtn";
+            this.confirmBtn.Size = new System.Drawing.Size(143, 33);
+            this.confirmBtn.TabIndex = 33;
+            this.confirmBtn.Text = "Bắt đầu giao";
+            this.confirmBtn.UseVisualStyleBackColor = false;
             // 
             // sttCol
             // 
@@ -218,10 +242,10 @@
             // 
             // dateCol
             // 
+            this.dateCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dateCol.HeaderText = "Ngày đặt hàng";
             this.dateCol.MinimumWidth = 6;
             this.dateCol.Name = "dateCol";
-            this.dateCol.Width = 125;
             // 
             // addrCol
             // 
@@ -232,34 +256,11 @@
             // 
             // selectCol
             // 
+            this.selectCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.selectCol.HeaderText = "Chọn";
             this.selectCol.MinimumWidth = 6;
             this.selectCol.Name = "selectCol";
-            this.selectCol.Width = 125;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(354, 619);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 23);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Đã chọn 0 đơn hàng";
-            // 
-            // confirmBtn
-            // 
-            this.confirmBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.confirmBtn.FlatAppearance.BorderSize = 0;
-            this.confirmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.confirmBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmBtn.ForeColor = System.Drawing.Color.White;
-            this.confirmBtn.Location = new System.Drawing.Point(527, 614);
-            this.confirmBtn.Name = "confirmBtn";
-            this.confirmBtn.Size = new System.Drawing.Size(143, 33);
-            this.confirmBtn.TabIndex = 33;
-            this.confirmBtn.Text = "Bắt đầu giao";
-            this.confirmBtn.UseVisualStyleBackColor = false;
+            this.selectCol.Width = 49;
             // 
             // DeliveryDashboard
             // 
@@ -279,10 +280,11 @@
             this.Name = "DeliveryDashboard";
             this.Text = "Trackr - Delivery Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DeliveryDashboard_FormClosed);
+            this.Load += new System.EventHandler(this.DeliveryDashboard_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,13 +302,13 @@
         private System.Windows.Forms.TextBox searchTB;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.DataGridView parcelGridView;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button confirmBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sttCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn addrCol;
         private System.Windows.Forms.DataGridViewCheckBoxColumn selectCol;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button confirmBtn;
     }
 }
