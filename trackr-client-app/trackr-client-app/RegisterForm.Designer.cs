@@ -39,6 +39,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.returnLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.phoneTB = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.addressTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +77,7 @@
             this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerBtn.ForeColor = System.Drawing.Color.White;
-            this.registerBtn.Location = new System.Drawing.Point(240, 426);
+            this.registerBtn.Location = new System.Drawing.Point(240, 563);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(324, 33);
             this.registerBtn.TabIndex = 14;
@@ -146,7 +150,7 @@
             this.returnLabel.AutoSize = true;
             this.returnLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.returnLabel.ForeColor = System.Drawing.Color.Black;
-            this.returnLabel.Location = new System.Drawing.Point(317, 476);
+            this.returnLabel.Location = new System.Drawing.Point(317, 613);
             this.returnLabel.Margin = new System.Windows.Forms.Padding(0);
             this.returnLabel.Name = "returnLabel";
             this.returnLabel.Size = new System.Drawing.Size(166, 23);
@@ -154,11 +158,59 @@
             this.returnLabel.Text = "Quay lại đăng nhập";
             this.returnLabel.Click += new System.EventHandler(this.returnLabel_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(236, 412);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 23);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Số điện thoại";
+            // 
+            // phoneTB
+            // 
+            this.phoneTB.BackColor = System.Drawing.Color.White;
+            this.phoneTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneTB.Location = new System.Drawing.Point(240, 438);
+            this.phoneTB.Name = "phoneTB";
+            this.phoneTB.PasswordChar = '●';
+            this.phoneTB.Size = new System.Drawing.Size(324, 30);
+            this.phoneTB.TabIndex = 23;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(236, 479);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 23);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Địa chỉ liên hệ";
+            // 
+            // addressTB
+            // 
+            this.addressTB.BackColor = System.Drawing.Color.White;
+            this.addressTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressTB.Location = new System.Drawing.Point(240, 505);
+            this.addressTB.Name = "addressTB";
+            this.addressTB.PasswordChar = '●';
+            this.addressTB.Size = new System.Drawing.Size(324, 30);
+            this.addressTB.TabIndex = 25;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 522);
+            this.ClientSize = new System.Drawing.Size(800, 654);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.addressTB);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.phoneTB);
             this.Controls.Add(this.returnLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
@@ -192,5 +244,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label returnLabel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox phoneTB;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox addressTB;
     }
 }
