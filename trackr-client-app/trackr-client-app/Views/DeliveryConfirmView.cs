@@ -40,6 +40,8 @@ namespace trackr_client_app.Views
             var response = await client.PutAsync(UserSession.apiUrl + $"Parcel/{parcel.ParID}", jsonContent);
             var responseString = await response.Content.ReadAsStringAsync();
             MessageBox.Show(responseString);
+            var dashboard = (DeliveryDashboard)Tag;
+            dashboard.RefreshData();
         }
 
         private void noBtn_Click(object sender, EventArgs e)

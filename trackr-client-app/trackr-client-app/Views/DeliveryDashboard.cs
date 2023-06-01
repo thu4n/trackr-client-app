@@ -93,8 +93,18 @@ namespace trackr_client_app.Views
                 Parcel parcel = UserSession.parcels[e.RowIndex];
                 DeliveryConfirmView deliveryConfirmView = new DeliveryConfirmView(parcel);
                 deliveryConfirmView.StartPosition = FormStartPosition.CenterScreen;
+                deliveryConfirmView.Tag = this;
                 deliveryConfirmView.Show();
             }
+        }
+
+        public void RefreshData()
+        {
+            UserSession.parcels.Clear();
+            UserSession.customers.Clear();
+            parcelGridView.Rows.Clear();
+            parcelGridView.Refresh();
+            GetData();
         }
     }
 }
