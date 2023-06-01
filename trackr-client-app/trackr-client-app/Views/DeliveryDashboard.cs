@@ -16,6 +16,7 @@ namespace trackr_client_app.Views
 {
     public partial class DeliveryDashboard : Form
     {
+        int count;
         public DeliveryDashboard()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace trackr_client_app.Views
 
         private async void DeliveryDashboard_Load(object sender, EventArgs e)
         {
+            count = 0;
             usernameLabel.Text = UserSession.delivery.ManName;
             HttpClient client = new HttpClient();
 
@@ -89,6 +91,23 @@ namespace trackr_client_app.Views
                 Customer customer = UserSession.customers.Find(x => x.CusID == parcel.CusID);
                 parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), customer.CusAddress);
             }
+        }
+
+        private void parcelGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void confirmBtn_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in parcelGridView.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[5].Value))
+                {
+                    count++;
+                }
+            }
+            
         }
     }
 }
