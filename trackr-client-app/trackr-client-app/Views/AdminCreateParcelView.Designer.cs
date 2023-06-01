@@ -132,33 +132,37 @@
             // 
             // cusCodeBox
             // 
+            this.cusCodeBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cusCodeBox.FormattingEnabled = true;
             this.cusCodeBox.Location = new System.Drawing.Point(228, 272);
             this.cusCodeBox.Name = "cusCodeBox";
-            this.cusCodeBox.Size = new System.Drawing.Size(279, 25);
+            this.cusCodeBox.Size = new System.Drawing.Size(279, 28);
             this.cusCodeBox.TabIndex = 33;
             this.cusCodeBox.SelectedValueChanged += new System.EventHandler(this.cusCodeBox_SelectedValueChanged);
             // 
             // nameTB
             // 
+            this.nameTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTB.Location = new System.Drawing.Point(228, 153);
             this.nameTB.Name = "nameTB";
-            this.nameTB.Size = new System.Drawing.Size(279, 25);
+            this.nameTB.Size = new System.Drawing.Size(279, 27);
             this.nameTB.TabIndex = 34;
             // 
             // noteTB
             // 
+            this.noteTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.noteTB.Location = new System.Drawing.Point(228, 191);
             this.noteTB.Name = "noteTB";
-            this.noteTB.Size = new System.Drawing.Size(279, 25);
+            this.noteTB.Size = new System.Drawing.Size(279, 27);
             this.noteTB.TabIndex = 35;
             // 
             // dateTB
             // 
+            this.dateTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTB.Location = new System.Drawing.Point(228, 231);
             this.dateTB.Name = "dateTB";
             this.dateTB.ReadOnly = true;
-            this.dateTB.Size = new System.Drawing.Size(279, 25);
+            this.dateTB.Size = new System.Drawing.Size(279, 27);
             this.dateTB.TabIndex = 36;
             // 
             // label1
@@ -209,10 +213,11 @@
             // 
             // cusNameTB
             // 
+            this.cusNameTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cusNameTB.Location = new System.Drawing.Point(227, 314);
             this.cusNameTB.Name = "cusNameTB";
             this.cusNameTB.ReadOnly = true;
-            this.cusNameTB.Size = new System.Drawing.Size(279, 25);
+            this.cusNameTB.Size = new System.Drawing.Size(279, 27);
             this.cusNameTB.TabIndex = 74;
             // 
             // AdminCreateParcelView
