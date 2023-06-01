@@ -22,6 +22,7 @@ namespace trackr_client_app.Views
         OpenFileDialog ofd = new OpenFileDialog();
         FileStream fs;
         FileInfo fileInfo;
+        public static readonly List<string> imgExtensions = new List<string> { ".png", ".jpg", ".jpeg", ".gif" };
         public AdminCreateParcelView()
         {
             InitializeComponent();
@@ -31,10 +32,25 @@ namespace trackr_client_app.Views
         private void uploadBtn_Click(object sender, EventArgs e)
         {
             ofd.ShowDialog();
-            fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
-            fileInfo = new FileInfo(ofd.FileName);
-            imgPathTB.Text = fileInfo.FullName;
-            parcelSample.ImageLocation = fileInfo.FullName;
+            try
+            {
+                fileInfo = new FileInfo(ofd.FileName);
+                if (imgExtensions.Contains(fileInfo.Extension.ToLowerInvariant()))
+                {
+                    fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
+                    imgPathTB.Text = fileInfo.FullName;
+                    parcelSample.ImageLocation = fileInfo.FullName;
+                }
+                else
+                {
+                    MessageBox.Show("Định dạng file hình ảnh không hợp lệ");
+                    return;
+                }
+            }
+            catch(ArgumentException)
+            {
+                MessageBox.Show("Không có file nào được chọn");
+            }
         }
 
         private async void PostParcel()
@@ -72,6 +88,11 @@ namespace trackr_client_app.Views
         {
             dateTB.Text = DateTime.Now.ToString();
             parcelSample.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

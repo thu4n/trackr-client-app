@@ -41,7 +41,7 @@
             this.noteTB = new System.Windows.Forms.TextBox();
             this.dateTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.noBtn = new System.Windows.Forms.Button();
+            this.cancelBtn = new System.Windows.Forms.Button();
             this.parcelSample = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.parcelSample)).BeginInit();
             this.SuspendLayout();
@@ -171,20 +171,21 @@
             this.label1.TabIndex = 37;
             this.label1.Text = "Tạo đơn hàng mới";
             // 
-            // noBtn
+            // cancelBtn
             // 
-            this.noBtn.BackColor = System.Drawing.Color.White;
-            this.noBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.noBtn.FlatAppearance.BorderSize = 2;
-            this.noBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.noBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.noBtn.Location = new System.Drawing.Point(328, 333);
-            this.noBtn.Name = "noBtn";
-            this.noBtn.Size = new System.Drawing.Size(179, 33);
-            this.noBtn.TabIndex = 71;
-            this.noBtn.Text = "Hủy bỏ";
-            this.noBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.BackColor = System.Drawing.Color.White;
+            this.cancelBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.cancelBtn.FlatAppearance.BorderSize = 2;
+            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.cancelBtn.Location = new System.Drawing.Point(328, 333);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(179, 33);
+            this.cancelBtn.TabIndex = 71;
+            this.cancelBtn.Text = "Hủy bỏ";
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // parcelSample
             // 
@@ -202,7 +203,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 478);
             this.Controls.Add(this.parcelSample);
-            this.Controls.Add(this.noBtn);
+            this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTB);
             this.Controls.Add(this.noteTB);
@@ -240,7 +241,7 @@
         private System.Windows.Forms.TextBox noteTB;
         private System.Windows.Forms.TextBox dateTB;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button noBtn;
+        private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.PictureBox parcelSample;
     }
 }
