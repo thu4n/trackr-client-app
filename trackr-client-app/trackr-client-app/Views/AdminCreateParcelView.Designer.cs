@@ -36,13 +36,15 @@
             this.noteLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.customerLabel = new System.Windows.Forms.Label();
-            this.cusTB = new System.Windows.Forms.ComboBox();
+            this.cusCodeBox = new System.Windows.Forms.ComboBox();
             this.nameTB = new System.Windows.Forms.TextBox();
             this.noteTB = new System.Windows.Forms.TextBox();
             this.dateTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.parcelSample = new System.Windows.Forms.PictureBox();
+            this.cusNameLabel = new System.Windows.Forms.Label();
+            this.cusNameTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.parcelSample)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +82,7 @@
             this.realUploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.realUploadBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.realUploadBtn.ForeColor = System.Drawing.Color.White;
-            this.realUploadBtn.Location = new System.Drawing.Point(86, 333);
+            this.realUploadBtn.Location = new System.Drawing.Point(86, 364);
             this.realUploadBtn.Name = "realUploadBtn";
             this.realUploadBtn.Size = new System.Drawing.Size(179, 33);
             this.realUploadBtn.TabIndex = 28;
@@ -128,17 +130,14 @@
             this.customerLabel.TabIndex = 32;
             this.customerLabel.Text = "Mã khách hàng:";
             // 
-            // cusTB
+            // cusCodeBox
             // 
-            this.cusTB.FormattingEnabled = true;
-            this.cusTB.Items.AddRange(new object[] {
-            "111",
-            "222",
-            "333"});
-            this.cusTB.Location = new System.Drawing.Point(228, 272);
-            this.cusTB.Name = "cusTB";
-            this.cusTB.Size = new System.Drawing.Size(279, 25);
-            this.cusTB.TabIndex = 33;
+            this.cusCodeBox.FormattingEnabled = true;
+            this.cusCodeBox.Location = new System.Drawing.Point(228, 272);
+            this.cusCodeBox.Name = "cusCodeBox";
+            this.cusCodeBox.Size = new System.Drawing.Size(279, 25);
+            this.cusCodeBox.TabIndex = 33;
+            this.cusCodeBox.SelectedValueChanged += new System.EventHandler(this.cusCodeBox_SelectedValueChanged);
             // 
             // nameTB
             // 
@@ -158,6 +157,7 @@
             // 
             this.dateTB.Location = new System.Drawing.Point(228, 231);
             this.dateTB.Name = "dateTB";
+            this.dateTB.ReadOnly = true;
             this.dateTB.Size = new System.Drawing.Size(279, 25);
             this.dateTB.TabIndex = 36;
             // 
@@ -179,7 +179,7 @@
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.cancelBtn.Location = new System.Drawing.Point(328, 333);
+            this.cancelBtn.Location = new System.Drawing.Point(328, 364);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(179, 33);
             this.cancelBtn.TabIndex = 71;
@@ -197,18 +197,38 @@
             this.parcelSample.TabIndex = 72;
             this.parcelSample.TabStop = false;
             // 
+            // cusNameLabel
+            // 
+            this.cusNameLabel.AutoSize = true;
+            this.cusNameLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cusNameLabel.Location = new System.Drawing.Point(82, 316);
+            this.cusNameLabel.Name = "cusNameLabel";
+            this.cusNameLabel.Size = new System.Drawing.Size(139, 23);
+            this.cusNameLabel.TabIndex = 73;
+            this.cusNameLabel.Text = "Tên khách hàng:";
+            // 
+            // cusNameTB
+            // 
+            this.cusNameTB.Location = new System.Drawing.Point(227, 314);
+            this.cusNameTB.Name = "cusNameTB";
+            this.cusNameTB.ReadOnly = true;
+            this.cusNameTB.Size = new System.Drawing.Size(279, 25);
+            this.cusNameTB.TabIndex = 74;
+            // 
             // AdminCreateParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 478);
+            this.Controls.Add(this.cusNameTB);
+            this.Controls.Add(this.cusNameLabel);
             this.Controls.Add(this.parcelSample);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTB);
             this.Controls.Add(this.noteTB);
             this.Controls.Add(this.nameTB);
-            this.Controls.Add(this.cusTB);
+            this.Controls.Add(this.cusCodeBox);
             this.Controls.Add(this.customerLabel);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.noteLabel);
@@ -236,12 +256,14 @@
         private System.Windows.Forms.Label noteLabel;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label customerLabel;
-        private System.Windows.Forms.ComboBox cusTB;
+        private System.Windows.Forms.ComboBox cusCodeBox;
         private System.Windows.Forms.TextBox nameTB;
         private System.Windows.Forms.TextBox noteTB;
         private System.Windows.Forms.TextBox dateTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.PictureBox parcelSample;
+        private System.Windows.Forms.Label cusNameLabel;
+        private System.Windows.Forms.TextBox cusNameTB;
     }
 }

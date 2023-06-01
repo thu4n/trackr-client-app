@@ -22,13 +22,14 @@ namespace trackr_client_app.Views
         OpenFileDialog ofd = new OpenFileDialog();
         FileStream fs;
         FileInfo fileInfo;
+        Dictionary<int, string> customerData = new Dictionary<int, string>();
         public static readonly List<string> imgExtensions = new List<string> { ".png", ".jpg", ".jpeg", ".gif" };
         public AdminCreateParcelView()
         {
             InitializeComponent();
         }
 
-        // Nút upload hình, do lười suy nghĩ nên không để tên khác
+        // Nút load hình, do lười suy nghĩ nên không để tên khác
         private void uploadBtn_Click(object sender, EventArgs e)
         {
             ofd.ShowDialog();
@@ -64,6 +65,7 @@ namespace trackr_client_app.Views
             var content = new MultipartFormDataContent();
             content.Add(new StreamContent(File.OpenRead(fileInfo.FullName)), "File", fileInfo.Name);
             request.Content = content;
+
             var response = await client.SendAsync(request);
             string uriStr = await response.Content.ReadAsStringAsync();
             JObject uri = JObject.Parse(uriStr);
@@ -74,7 +76,7 @@ namespace trackr_client_app.Views
             Parcel newParcel = new Parcel();
             newParcel.ParImage = blobUri.ToString();
             newParcel.Note = noteTB.Text;
-            newParcel.CusID = int.Parse(cusTB.Text);
+            newParcel.CusID = int.Parse(cusCodeBox.Text);
             newParcel.ParDescription = nameTB.Text;
 
             string jsonString = JsonConvert.SerializeObject(newParcel);
@@ -88,11 +90,24 @@ namespace trackr_client_app.Views
         {
             dateTB.Text = DateTime.Now.ToString();
             parcelSample.SizeMode = PictureBoxSizeMode.StretchImage;
+            foreach(var customer in AdminDashboard.customers)
+            {
+                customerData.Add(customer.CusID, customer.CusName);
+                cusCodeBox.Items.Add(customer.CusID);
+            }
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void cusCodeBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var obj = cusCodeBox.SelectedItem;
+            int id = int.Parse(obj.ToString());
+            customerData.TryGetValue(id, out var name);
+            cusNameTB.Text = name;
         }
     }
 }

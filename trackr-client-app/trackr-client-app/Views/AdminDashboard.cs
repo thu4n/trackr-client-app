@@ -18,8 +18,8 @@ namespace trackr_client_app.Views
     public partial class AdminDashboard : Form
     {
         private static readonly HttpClient client = new HttpClient();
-        List<DeliveryMan> deliveryMen = new List<DeliveryMan>();
-        List<Customer> customers = new List<Customer>();
+        public List<DeliveryMan> deliveryMen = new List<DeliveryMan>();
+        public static List<Customer> customers = new List<Customer>();
         public AdminDashboard()
         {
             InitializeComponent();
