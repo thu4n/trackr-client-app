@@ -174,7 +174,23 @@ namespace trackr_client_app.Views
         private void createBtn_Click(object sender, EventArgs e)
         {
             AdminCreateParcelView adminCreateParcelView = new AdminCreateParcelView();
+            adminCreateParcelView.Tag = this;
             adminCreateParcelView.Show();
+        }
+
+        public void RefreshData()
+        {
+            customers.Clear();
+            deliveryMen.Clear();
+            UserSession.parcels.Clear();
+            GetParcelData();
+            GetCustomerData();
+            GetDeliveryManData();
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }

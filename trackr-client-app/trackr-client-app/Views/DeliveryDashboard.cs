@@ -79,6 +79,7 @@ namespace trackr_client_app.Views
         private void DisplayData()
         {
             int i = 1;
+            parcelGridView.Rows.Clear();
             foreach (Parcel parcel in UserSession.parcels)
             {
                 Customer customer = UserSession.customers.Find(x => x.CusID == parcel.CusID);

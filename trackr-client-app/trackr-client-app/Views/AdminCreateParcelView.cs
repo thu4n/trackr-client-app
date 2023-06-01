@@ -88,6 +88,9 @@ namespace trackr_client_app.Views
                 MessageBox.Show("Đã tạo thành công");
             }
             else MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau");
+
+            var adminDashboard = (AdminDashboard)Tag;
+            adminDashboard.RefreshData();
             Close();
         }
 

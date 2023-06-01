@@ -62,9 +62,10 @@
             this.codeCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.createBtn = new System.Windows.Forms.Button();
+            this.refreshBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
@@ -374,6 +375,21 @@
             this.addrCol.MinimumWidth = 6;
             this.addrCol.Name = "addrCol";
             // 
+            // createBtn
+            // 
+            this.createBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.createBtn.FlatAppearance.BorderSize = 0;
+            this.createBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createBtn.ForeColor = System.Drawing.Color.White;
+            this.createBtn.Location = new System.Drawing.Point(52, 608);
+            this.createBtn.Name = "createBtn";
+            this.createBtn.Size = new System.Drawing.Size(324, 33);
+            this.createBtn.TabIndex = 25;
+            this.createBtn.Text = "Tạo đơn hàng mới";
+            this.createBtn.UseVisualStyleBackColor = false;
+            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
+            // 
             // searchBtn
             // 
             this.searchBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.search_icon;
@@ -399,26 +415,27 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // createBtn
+            // refreshBtn
             // 
-            this.createBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.createBtn.FlatAppearance.BorderSize = 0;
-            this.createBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createBtn.ForeColor = System.Drawing.Color.White;
-            this.createBtn.Location = new System.Drawing.Point(52, 608);
-            this.createBtn.Name = "createBtn";
-            this.createBtn.Size = new System.Drawing.Size(324, 33);
-            this.createBtn.TabIndex = 25;
-            this.createBtn.Text = "Tạo đơn hàng mới";
-            this.createBtn.UseVisualStyleBackColor = false;
-            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
+            this.refreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.refreshBtn.FlatAppearance.BorderSize = 0;
+            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.ForeColor = System.Drawing.Color.White;
+            this.refreshBtn.Location = new System.Drawing.Point(737, 608);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(163, 33);
+            this.refreshBtn.TabIndex = 34;
+            this.refreshBtn.Text = "Làm mới dữ liệu";
+            this.refreshBtn.UseVisualStyleBackColor = false;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 668);
+            this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.createBtn);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.searchLabel);
@@ -475,5 +492,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameCol2;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberCol2;
         private System.Windows.Forms.Button createBtn;
+        private System.Windows.Forms.Button refreshBtn;
     }
 }
