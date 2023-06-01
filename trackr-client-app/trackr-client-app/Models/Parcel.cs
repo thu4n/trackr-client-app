@@ -10,9 +10,8 @@ namespace trackr_client_app.Models
     {
         public Parcel() 
         { 
-            //ParID = 0;
             ParDescription = "";
-            ParStatus = "";
+            ParStatus = "READY_TO_SHIP";
             ParDeliveryDate = DateTime.Now;
             ParLocation = "";
             Realtime = "";

@@ -42,6 +42,7 @@ namespace trackr_client_app.Views
             MessageBox.Show(responseString);
             var dashboard = (DeliveryDashboard)Tag;
             dashboard.RefreshData();
+            Close();
         }
 
         private void noBtn_Click(object sender, EventArgs e)

@@ -106,5 +106,10 @@ namespace trackr_client_app.Views
             parcelGridView.Refresh();
             GetData();
         }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
     }
 }

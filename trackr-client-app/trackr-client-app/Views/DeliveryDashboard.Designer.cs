@@ -35,6 +35,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.parcelGridView = new System.Windows.Forms.DataGridView();
+            this.sttCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.searchLabel = new System.Windows.Forms.Label();
@@ -42,12 +48,7 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.sttCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.refreshBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
@@ -121,6 +122,52 @@
             this.parcelGridView.Size = new System.Drawing.Size(898, 318);
             this.parcelGridView.TabIndex = 32;
             this.parcelGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.parcelGridView_CellContentClick);
+            // 
+            // sttCol
+            // 
+            this.sttCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.sttCol.HeaderText = "STT";
+            this.sttCol.MinimumWidth = 6;
+            this.sttCol.Name = "sttCol";
+            this.sttCol.Width = 62;
+            // 
+            // codeCol
+            // 
+            this.codeCol.HeaderText = "Mã vận đơn";
+            this.codeCol.MinimumWidth = 6;
+            this.codeCol.Name = "codeCol";
+            this.codeCol.Width = 125;
+            // 
+            // nameCol
+            // 
+            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCol.HeaderText = "Tên đơn hàng";
+            this.nameCol.MinimumWidth = 6;
+            this.nameCol.Name = "nameCol";
+            // 
+            // dateCol
+            // 
+            this.dateCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dateCol.HeaderText = "Ngày đặt hàng";
+            this.dateCol.MinimumWidth = 6;
+            this.dateCol.Name = "dateCol";
+            // 
+            // addrCol
+            // 
+            this.addrCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.addrCol.HeaderText = "Địa chỉ";
+            this.addrCol.MinimumWidth = 6;
+            this.addrCol.Name = "addrCol";
+            // 
+            // btnCol
+            // 
+            this.btnCol.HeaderText = "";
+            this.btnCol.MinimumWidth = 6;
+            this.btnCol.Name = "btnCol";
+            this.btnCol.ReadOnly = true;
+            this.btnCol.Text = "Nhận giao";
+            this.btnCol.UseColumnTextForButtonValue = true;
+            this.btnCol.Width = 125;
             // 
             // tabPage2
             // 
@@ -198,57 +245,27 @@
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // sttCol
+            // refreshBtn
             // 
-            this.sttCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.sttCol.HeaderText = "STT";
-            this.sttCol.MinimumWidth = 6;
-            this.sttCol.Name = "sttCol";
-            this.sttCol.Width = 62;
-            // 
-            // codeCol
-            // 
-            this.codeCol.HeaderText = "Mã vận đơn";
-            this.codeCol.MinimumWidth = 6;
-            this.codeCol.Name = "codeCol";
-            this.codeCol.Width = 125;
-            // 
-            // nameCol
-            // 
-            this.nameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCol.HeaderText = "Tên đơn hàng";
-            this.nameCol.MinimumWidth = 6;
-            this.nameCol.Name = "nameCol";
-            // 
-            // dateCol
-            // 
-            this.dateCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dateCol.HeaderText = "Ngày đặt hàng";
-            this.dateCol.MinimumWidth = 6;
-            this.dateCol.Name = "dateCol";
-            // 
-            // addrCol
-            // 
-            this.addrCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.addrCol.HeaderText = "Địa chỉ";
-            this.addrCol.MinimumWidth = 6;
-            this.addrCol.Name = "addrCol";
-            // 
-            // btnCol
-            // 
-            this.btnCol.HeaderText = "";
-            this.btnCol.MinimumWidth = 6;
-            this.btnCol.Name = "btnCol";
-            this.btnCol.ReadOnly = true;
-            this.btnCol.Text = "Nhận giao";
-            this.btnCol.UseColumnTextForButtonValue = true;
-            this.btnCol.Width = 125;
+            this.refreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.refreshBtn.FlatAppearance.BorderSize = 0;
+            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.ForeColor = System.Drawing.Color.White;
+            this.refreshBtn.Location = new System.Drawing.Point(60, 611);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(163, 33);
+            this.refreshBtn.TabIndex = 33;
+            this.refreshBtn.Text = "Làm mới dữ liệu";
+            this.refreshBtn.UseVisualStyleBackColor = false;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // DeliveryDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 664);
+            this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.searchLabel);
@@ -288,5 +305,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn addrCol;
         private System.Windows.Forms.DataGridViewButtonColumn btnCol;
+        private System.Windows.Forms.Button refreshBtn;
     }
 }
