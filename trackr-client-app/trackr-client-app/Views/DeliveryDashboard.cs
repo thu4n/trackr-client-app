@@ -54,6 +54,7 @@ namespace trackr_client_app.Views
             var customers = JArray.Parse(responseString);
             LoadCustomerData(customers);
             DisplayData();
+            DisplayProcessedData();
         }
         private void LoadCustomerData(JArray customers)
         {
@@ -70,10 +71,7 @@ namespace trackr_client_app.Views
             {
                 Parcel newParcel = new Parcel();
                 newParcel = JsonConvert.DeserializeObject<Parcel>(parcel.ToString());
-                if(newParcel.ParStatus == "READY_TO_SHIP")
-                {
-                    UserSession.parcels.Add(newParcel);
-                }
+                UserSession.parcels.Add(newParcel);
             }
         }
         private void DisplayData()
@@ -82,8 +80,27 @@ namespace trackr_client_app.Views
             parcelGridView.Rows.Clear();
             foreach (Parcel parcel in UserSession.parcels)
             {
-                Customer customer = UserSession.customers.Find(x => x.CusID == parcel.CusID);
-                parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), customer.CusAddress);
+                if (parcel.ParStatus == "READY_TO_SHIP")
+                {
+                    Customer customer = UserSession.customers.Find(x => x.CusID == parcel.CusID);
+                    parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), customer.CusAddress);
+
+                }
+            }
+        }
+
+        private void DisplayProcessedData()
+        {
+            int i = 1;
+            parcelProcessedGridView.Rows.Clear();
+            foreach (Parcel parcel in UserSession.parcels)
+            {
+                if (parcel.ParStatus == "PROCESSED")
+                {
+                    Customer customer = UserSession.customers.Find(x => x.CusID == parcel.CusID);
+                    parcelProcessedGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), customer.CusAddress);
+
+                }
             }
         }
         private void parcelGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -105,12 +122,29 @@ namespace trackr_client_app.Views
             UserSession.customers.Clear();
             parcelGridView.Rows.Clear();
             parcelGridView.Refresh();
+            parcelProcessedGridView.Rows.Clear();
+            parcelProcessedGridView.Refresh();
             GetData();
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             RefreshData();
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0:
+                    {
+                        DisplayData(); break;
+                    }
+                case 1:
+                    {
+                        DisplayProcessedData(); break;
+                    }
+            }
         }
     }
 }
