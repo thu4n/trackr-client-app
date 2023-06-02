@@ -53,11 +53,6 @@ namespace trackr_client_app
 
         }
 
-        private void usernameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public static bool CheckEmail(string email)
         {
             try
