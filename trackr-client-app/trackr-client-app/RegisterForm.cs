@@ -115,7 +115,7 @@ namespace trackr_client_app
             JObject blob = JObject.Parse(blobStr.ToString());
             blob.TryGetValue("uri", out var blobUri);
 
-            newCustomer.CusImg = blobUri.ToString();
+            newCustomer.CusImage = blobUri.ToString();
 
             string jsonString = JsonConvert.SerializeObject(newCustomer);
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");

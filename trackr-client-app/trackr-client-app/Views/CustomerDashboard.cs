@@ -35,6 +35,11 @@ namespace trackr_client_app
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
             usernameLabel.Text = UserSession.customer.CusName;
+            if (UserSession.customer.CusImage != string.Empty)
+            {
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.Load(UserSession.customer.CusImage);
+            }
             GetData();
         }
 

@@ -16,6 +16,6 @@ namespace trackr_client_app.Models
         public DateTime CusDateRegister { get; set; }
         public string CusAccount { get; set; }
         public string CusPassword { get; set; }
-        public string CusImg { get; set; }
+        public string CusImage { get; set; }
     }
 }

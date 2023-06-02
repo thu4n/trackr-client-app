@@ -129,9 +129,9 @@
             this.usernameLabel.Location = new System.Drawing.Point(234, 210);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(0);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(117, 23);
+            this.usernameLabel.Size = new System.Drawing.Size(114, 23);
             this.usernameLabel.TabIndex = 8;
-            this.usernameLabel.Text = "Tên tài khoản";
+            this.usernameLabel.Text = "Địa chỉ email";
             // 
             // label1
             // 
