@@ -315,6 +315,7 @@
             this.parcelProcessedGridView.RowTemplate.Height = 24;
             this.parcelProcessedGridView.Size = new System.Drawing.Size(898, 318);
             this.parcelProcessedGridView.TabIndex = 34;
+            this.parcelProcessedGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.parcelProcessedGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
