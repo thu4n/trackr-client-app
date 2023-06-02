@@ -35,6 +35,7 @@ namespace trackr_client_app.Views
         private void DeliveryDashboard_Load(object sender, EventArgs e)
         {
             usernameLabel.Text = UserSession.delivery.ManName;
+            parcelProcessedGridView.Visible = false;
             GetData();
         }
 
@@ -99,16 +100,17 @@ namespace trackr_client_app.Views
                 {
                     Customer customer = UserSession.customers.Find(x => x.CusID == parcel.CusID);
                     parcelProcessedGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), customer.CusAddress);
-
                 }
             }
         }
         private void parcelGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
+            var stringValue = senderGrid.Rows[e.RowIndex].Cells[1].Value;
+            int value = int.Parse(stringValue.ToString());
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                Parcel parcel = UserSession.parcels[e.RowIndex];
+                Parcel parcel = UserSession.parcels.Find(x => x.ParID == value);
                 DeliveryConfirmView deliveryConfirmView = new DeliveryConfirmView(parcel);
                 deliveryConfirmView.StartPosition = FormStartPosition.CenterScreen;
                 deliveryConfirmView.Tag = this;
@@ -138,10 +140,14 @@ namespace trackr_client_app.Views
             {
                 case 0:
                     {
+                        parcelProcessedGridView.Visible = false;
+                        parcelGridView.Visible = true;
                         DisplayData(); break;
                     }
                 case 1:
                     {
+                        parcelProcessedGridView.Visible = true;
+                        parcelGridView.Visible = false;
                         DisplayProcessedData(); break;
                     }
             }
