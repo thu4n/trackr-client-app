@@ -38,6 +38,7 @@
             this.navigateRegisterLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.forgotPwdLabel = new System.Windows.Forms.Label();
             this.logoBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +80,7 @@
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.Color.White;
-            this.loginBtn.Location = new System.Drawing.Point(238, 349);
+            this.loginBtn.Location = new System.Drawing.Point(238, 364);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(324, 33);
             this.loginBtn.TabIndex = 4;
@@ -91,7 +92,7 @@
             // 
             this.registerLabel1.AutoSize = true;
             this.registerLabel1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerLabel1.Location = new System.Drawing.Point(235, 400);
+            this.registerLabel1.Location = new System.Drawing.Point(235, 415);
             this.registerLabel1.Name = "registerLabel1";
             this.registerLabel1.Size = new System.Drawing.Size(168, 17);
             this.registerLabel1.TabIndex = 5;
@@ -101,7 +102,7 @@
             // 
             this.registerLabel2.AutoSize = true;
             this.registerLabel2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerLabel2.Location = new System.Drawing.Point(468, 400);
+            this.registerLabel2.Location = new System.Drawing.Point(468, 415);
             this.registerLabel2.Name = "registerLabel2";
             this.registerLabel2.Size = new System.Drawing.Size(94, 17);
             this.registerLabel2.TabIndex = 6;
@@ -113,7 +114,7 @@
             this.navigateRegisterLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.navigateRegisterLabel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navigateRegisterLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.navigateRegisterLabel.Location = new System.Drawing.Point(409, 400);
+            this.navigateRegisterLabel.Location = new System.Drawing.Point(409, 415);
             this.navigateRegisterLabel.Name = "navigateRegisterLabel";
             this.navigateRegisterLabel.Size = new System.Drawing.Size(57, 17);
             this.navigateRegisterLabel.TabIndex = 7;
@@ -144,6 +145,19 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Mật khẩu";
             // 
+            // forgotPwdLabel
+            // 
+            this.forgotPwdLabel.AutoSize = true;
+            this.forgotPwdLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.forgotPwdLabel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotPwdLabel.ForeColor = System.Drawing.Color.Black;
+            this.forgotPwdLabel.Location = new System.Drawing.Point(235, 335);
+            this.forgotPwdLabel.Name = "forgotPwdLabel";
+            this.forgotPwdLabel.Size = new System.Drawing.Size(109, 17);
+            this.forgotPwdLabel.TabIndex = 10;
+            this.forgotPwdLabel.Text = "Quên mật khẩu?";
+            this.forgotPwdLabel.Click += new System.EventHandler(this.forgotPwdLabel_Click);
+            // 
             // logoBox
             // 
             this.logoBox.Image = global::trackr_client_app.Properties.Resources.logoSmall;
@@ -158,6 +172,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.forgotPwdLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.navigateRegisterLabel);
@@ -190,6 +205,7 @@
         private System.Windows.Forms.Label navigateRegisterLabel;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label forgotPwdLabel;
     }
 }
 

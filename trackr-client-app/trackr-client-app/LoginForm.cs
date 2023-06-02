@@ -56,8 +56,7 @@ namespace trackr_client_app
         {
             string username = accountTB.Text; 
             string password = passwordTB.Text;
-            string padding = "@@@!0Di3m***";
-            string hash = ComputeSHA256(password + padding);
+            string hash = ComputeSHA256(password);
             var values = new Dictionary<string, string>
             {
                 { "account", username },
@@ -145,6 +144,12 @@ namespace trackr_client_app
             customerDashboard.Location = this.Location;
             customerDashboard.Show();
             Hide();
+        }
+
+        private void forgotPwdLabel_Click(object sender, EventArgs e)
+        {
+            ForgotPasswordForm forgotPasswordForm = new ForgotPasswordForm();
+            forgotPasswordForm.Show();
         }
     }
 }
