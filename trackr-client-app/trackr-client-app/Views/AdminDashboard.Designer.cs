@@ -32,6 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.titleLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
@@ -48,18 +52,20 @@
             this.deliCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.deliveryGridView = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.customerGridView = new System.Windows.Forms.DataGridView();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.sttCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sttCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberCol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.customerGridView = new System.Windows.Forms.DataGridView();
+            this.sttCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.refreshBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
@@ -245,105 +251,24 @@
             this.codeCol2,
             this.nameCol2,
             this.numberCol2});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.deliveryGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.deliveryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.deliveryGridView.Location = new System.Drawing.Point(3, 3);
             this.deliveryGridView.Name = "deliveryGridView";
             this.deliveryGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.deliveryGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.deliveryGridView.RowTemplate.Height = 24;
             this.deliveryGridView.Size = new System.Drawing.Size(841, 318);
             this.deliveryGridView.TabIndex = 25;
             this.deliveryGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deliveryGridView_CellContentDoubleClick);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.customerGridView);
-            this.tabPage3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.tabPage3.Location = new System.Drawing.Point(4, 38);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(847, 324);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Khách hàng";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // customerGridView
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.customerGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.customerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sttCol3,
-            this.codeCol3,
-            this.nameCol3,
-            this.addrCol});
-            this.customerGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customerGridView.Location = new System.Drawing.Point(0, 0);
-            this.customerGridView.Name = "customerGridView";
-            this.customerGridView.RowHeadersWidth = 51;
-            this.customerGridView.RowTemplate.Height = 24;
-            this.customerGridView.Size = new System.Drawing.Size(847, 324);
-            this.customerGridView.TabIndex = 25;
-            this.customerGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerGridView_CellContentDoubleClick);
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.search_icon;
-            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.searchBtn.FlatAppearance.BorderSize = 0;
-            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.Location = new System.Drawing.Point(762, 178);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(49, 30);
-            this.searchBtn.TabIndex = 21;
-            this.searchBtn.UseVisualStyleBackColor = true;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.InitialImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.pictureBox1.Location = new System.Drawing.Point(771, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            // 
-            // sttCol3
-            // 
-            this.sttCol3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.sttCol3.HeaderText = "STT";
-            this.sttCol3.MinimumWidth = 6;
-            this.sttCol3.Name = "sttCol3";
-            this.sttCol3.Width = 62;
-            // 
-            // codeCol3
-            // 
-            this.codeCol3.HeaderText = "Mã khách hàng";
-            this.codeCol3.MinimumWidth = 6;
-            this.codeCol3.Name = "codeCol3";
-            this.codeCol3.Width = 125;
-            // 
-            // nameCol3
-            // 
-            this.nameCol3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameCol3.HeaderText = "Tên khách hàng";
-            this.nameCol3.MinimumWidth = 6;
-            this.nameCol3.Name = "nameCol3";
-            // 
-            // addrCol
-            // 
-            this.addrCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.addrCol.HeaderText = "Địa chỉ";
-            this.addrCol.MinimumWidth = 6;
-            this.addrCol.Name = "addrCol";
             // 
             // sttCol2
             // 
@@ -374,11 +299,144 @@
             this.numberCol2.MinimumWidth = 6;
             this.numberCol2.Name = "numberCol2";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.customerGridView);
+            this.tabPage3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.tabPage3.Location = new System.Drawing.Point(4, 38);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(847, 324);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Khách hàng";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // customerGridView
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.customerGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.customerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sttCol3,
+            this.codeCol3,
+            this.nameCol3,
+            this.addrCol});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.customerGridView.DefaultCellStyle = dataGridViewCellStyle7;
+            this.customerGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customerGridView.Location = new System.Drawing.Point(0, 0);
+            this.customerGridView.Name = "customerGridView";
+            this.customerGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.customerGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.customerGridView.RowTemplate.Height = 24;
+            this.customerGridView.Size = new System.Drawing.Size(847, 324);
+            this.customerGridView.TabIndex = 25;
+            this.customerGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerGridView_CellContentDoubleClick);
+            // 
+            // sttCol3
+            // 
+            this.sttCol3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.sttCol3.HeaderText = "STT";
+            this.sttCol3.MinimumWidth = 6;
+            this.sttCol3.Name = "sttCol3";
+            this.sttCol3.Width = 62;
+            // 
+            // codeCol3
+            // 
+            this.codeCol3.HeaderText = "Mã khách hàng";
+            this.codeCol3.MinimumWidth = 6;
+            this.codeCol3.Name = "codeCol3";
+            this.codeCol3.Width = 125;
+            // 
+            // nameCol3
+            // 
+            this.nameCol3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameCol3.HeaderText = "Tên khách hàng";
+            this.nameCol3.MinimumWidth = 6;
+            this.nameCol3.Name = "nameCol3";
+            // 
+            // addrCol
+            // 
+            this.addrCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.addrCol.HeaderText = "Địa chỉ";
+            this.addrCol.MinimumWidth = 6;
+            this.addrCol.Name = "addrCol";
+            // 
+            // createBtn
+            // 
+            this.createBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.createBtn.FlatAppearance.BorderSize = 0;
+            this.createBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createBtn.ForeColor = System.Drawing.Color.White;
+            this.createBtn.Location = new System.Drawing.Point(52, 608);
+            this.createBtn.Name = "createBtn";
+            this.createBtn.Size = new System.Drawing.Size(324, 33);
+            this.createBtn.TabIndex = 25;
+            this.createBtn.Text = "Tạo đơn hàng mới";
+            this.createBtn.UseVisualStyleBackColor = false;
+            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.search_icon;
+            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchBtn.FlatAppearance.BorderSize = 0;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.Location = new System.Drawing.Point(762, 178);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(49, 30);
+            this.searchBtn.TabIndex = 21;
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.pictureBox1.Location = new System.Drawing.Point(771, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.refreshBtn.FlatAppearance.BorderSize = 0;
+            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.ForeColor = System.Drawing.Color.White;
+            this.refreshBtn.Location = new System.Drawing.Point(737, 608);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(163, 33);
+            this.refreshBtn.TabIndex = 34;
+            this.refreshBtn.Text = "Làm mới dữ liệu";
+            this.refreshBtn.UseVisualStyleBackColor = false;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 643);
+            this.ClientSize = new System.Drawing.Size(959, 668);
+            this.Controls.Add(this.refreshBtn);
+            this.Controls.Add(this.createBtn);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.searchBtn);
@@ -433,5 +491,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codeCol2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameCol2;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberCol2;
+        private System.Windows.Forms.Button createBtn;
+        private System.Windows.Forms.Button refreshBtn;
     }
 }

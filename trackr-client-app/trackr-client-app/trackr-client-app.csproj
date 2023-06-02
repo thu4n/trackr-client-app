@@ -66,8 +66,20 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ForgotPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPasswordForm.Designer.cs">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DeliveryMan.cs" />
+    <Compile Include="Views\AdminCreateParcelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminCreateParcelView.Designer.cs">
+      <DependentUpon>AdminCreateParcelView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,14 +127,26 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\DeliveryConfirmView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DeliveryConfirmView.Designer.cs">
+      <DependentUpon>DeliveryConfirmView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DeliveryDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\DeliveryDashboard.Designer.cs">
       <DependentUpon>DeliveryDashboard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ForgotPasswordForm.resx">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminCreateParcelView.resx">
+      <DependentUpon>AdminCreateParcelView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
@@ -151,6 +175,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DeliveryConfirmView.resx">
+      <DependentUpon>DeliveryConfirmView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DeliveryDashboard.resx">
       <DependentUpon>DeliveryDashboard.cs</DependentUpon>
