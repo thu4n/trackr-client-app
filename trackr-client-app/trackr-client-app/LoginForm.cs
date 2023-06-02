@@ -54,6 +54,7 @@ namespace trackr_client_app
 
         private async void loginBtn_Click(object sender, EventArgs e)
         {
+            loginBtn.Text = "Đang đăng nhập...";
             string username = accountTB.Text; 
             string password = passwordTB.Text;
             string hash = ComputeSHA256(password);
@@ -75,6 +76,7 @@ namespace trackr_client_app
             else
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+                loginBtn.Text = "Đăng nhập";
             }
         }
         private void Authorize(string role, string id)

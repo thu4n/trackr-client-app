@@ -58,7 +58,6 @@ namespace trackr_client_app
         {
             
             string input = LoginForm.ComputeSHA256(otpTB.Text);
-            MessageBox.Show(input + " " + otp);
             if(input == otp)
             {
                 MessageBox.Show("OTP hợp lệ, vui lòng nhập lại mật khẩu mới");
