@@ -32,9 +32,14 @@ namespace trackr_client_app
             loginForm.Close();
         }
 
-        private async void CustomerDashboard_Load(object sender, EventArgs e)
+        private void CustomerDashboard_Load(object sender, EventArgs e)
         {
             usernameLabel.Text = UserSession.customer.CusName;
+            GetData();
+        }
+
+        private async void GetData()
+        {
             HttpClient client = new HttpClient();
             string cusID = UserSession.customer.CusID.ToString();
             var response = await client.GetAsync(UserSession.apiUrl + $"Customer/Parcel?id={cusID}");
@@ -42,6 +47,7 @@ namespace trackr_client_app
             var parcels = JArray.Parse(responseString);
             LoadData(parcels);
             DisplayData();
+
         }
         private void LoadData(JArray parcels)
         {
@@ -69,6 +75,18 @@ namespace trackr_client_app
                 CustomerParcelView customerParcelView = new CustomerParcelView(parcel);
                 customerParcelView.Show();
             }
+        }
+
+        public void RefreshData()
+        {
+            UserSession.parcels.Clear();
+            parcelGridView.Rows.Clear();
+            GetData();
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }
