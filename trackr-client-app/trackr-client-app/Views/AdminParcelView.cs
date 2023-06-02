@@ -56,13 +56,23 @@ namespace trackr_client_app.Views
         }
         private void DisplayTrackingTree()
         {
-            string[] locationLog = parcel.ParLocation.Split('@');
-            string[] timeLog = parcel.Realtime.Split('@');
-            int i = 0;
-            foreach (var timeMark in timeLog)
+            try
             {
-                string locationMark = locationLog[i++];
-                treeView1.Nodes.Add(timeMark + " " + locationMark);
+                if (parcel.ParLocation != string.Empty)
+                {
+                    string[] locationLog = parcel.ParLocation.Split('@');
+                    string[] timeLog = parcel.Realtime.Split('@');
+                    int i = 0;
+                    foreach (var timeMark in timeLog)
+                    {
+                        string locationMark = locationLog[i++];
+                        treeView1.Nodes.Add(timeMark + " " + locationMark);
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
 
             }
         }
