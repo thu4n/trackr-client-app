@@ -111,7 +111,7 @@ Ngoài ra còn có các đối tượng Parcel chứa mọi thông tin chi tiế
 
  1. IDE: Visual Studio 2019 hoặc 2022
  2. Ngôn ngữ sử dụng: C# (ngôn ngữ dùng chính), XAML , SQL.
- 3. Framework sử dụng: WPF, ASP.NET
+ 3. Framework sử dụng: ASP.NET
  4. Thư viện sử dụng: SignalR
  5. Network stack: Websocket (TCP), RESTful API HTTP request
  6. Loại project: Desktop application
