@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
-            this.label1 = new System.Windows.Forms.Label();
+            this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.registerBtn = new System.Windows.Forms.Button();
             this.passwordTB = new System.Windows.Forms.TextBox();
             this.accountTB = new System.Windows.Forms.TextBox();
             this.logoBox = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.repasswordLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.returnLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.phoneLabel = new System.Windows.Forms.Label();
             this.phoneTB = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.addressLabel = new System.Windows.Forms.Label();
             this.addressTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // passwordLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(236, 287);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 23);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Mật khẩu";
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.ForeColor = System.Drawing.Color.Black;
+            this.passwordLabel.Location = new System.Drawing.Point(236, 287);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(86, 23);
+            this.passwordLabel.TabIndex = 19;
+            this.passwordLabel.Text = "Mật khẩu";
             // 
             // usernameLabel
             // 
@@ -69,6 +69,7 @@
             this.usernameLabel.Size = new System.Drawing.Size(117, 23);
             this.usernameLabel.TabIndex = 18;
             this.usernameLabel.Text = "Tên tài khoản";
+            this.usernameLabel.Click += new System.EventHandler(this.usernameLabel_Click);
             // 
             // registerBtn
             // 
@@ -123,17 +124,17 @@
             this.titleLabel.TabIndex = 10;
             this.titleLabel.Text = "Trackr!";
             // 
-            // label2
+            // repasswordLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(236, 346);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(158, 23);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Nhập lại mật khẩu";
+            this.repasswordLabel.AutoSize = true;
+            this.repasswordLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repasswordLabel.ForeColor = System.Drawing.Color.Black;
+            this.repasswordLabel.Location = new System.Drawing.Point(236, 346);
+            this.repasswordLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.repasswordLabel.Name = "repasswordLabel";
+            this.repasswordLabel.Size = new System.Drawing.Size(158, 23);
+            this.repasswordLabel.TabIndex = 21;
+            this.repasswordLabel.Text = "Nhập lại mật khẩu";
             // 
             // textBox1
             // 
@@ -158,39 +159,39 @@
             this.returnLabel.Text = "Quay lại đăng nhập";
             this.returnLabel.Click += new System.EventHandler(this.returnLabel_Click);
             // 
-            // label3
+            // phoneLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(236, 412);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 23);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Số điện thoại";
+            this.phoneLabel.AutoSize = true;
+            this.phoneLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneLabel.ForeColor = System.Drawing.Color.Black;
+            this.phoneLabel.Location = new System.Drawing.Point(236, 412);
+            this.phoneLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.phoneLabel.Name = "phoneLabel";
+            this.phoneLabel.Size = new System.Drawing.Size(116, 23);
+            this.phoneLabel.TabIndex = 24;
+            this.phoneLabel.Text = "Số điện thoại";
             // 
             // phoneTB
             // 
             this.phoneTB.BackColor = System.Drawing.Color.White;
             this.phoneTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneTB.Location = new System.Drawing.Point(240, 438);
+            this.phoneTB.Location = new System.Drawing.Point(240, 437);
             this.phoneTB.Name = "phoneTB";
             this.phoneTB.PasswordChar = '●';
             this.phoneTB.Size = new System.Drawing.Size(324, 30);
             this.phoneTB.TabIndex = 23;
             // 
-            // label4
+            // addressLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(236, 479);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 23);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Địa chỉ liên hệ";
+            this.addressLabel.AutoSize = true;
+            this.addressLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressLabel.ForeColor = System.Drawing.Color.Black;
+            this.addressLabel.Location = new System.Drawing.Point(236, 479);
+            this.addressLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.addressLabel.Name = "addressLabel";
+            this.addressLabel.Size = new System.Drawing.Size(123, 23);
+            this.addressLabel.TabIndex = 26;
+            this.addressLabel.Text = "Địa chỉ liên hệ";
             // 
             // addressTB
             // 
@@ -207,14 +208,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 654);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.addressLabel);
             this.Controls.Add(this.addressTB);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.phoneLabel);
             this.Controls.Add(this.phoneTB);
             this.Controls.Add(this.returnLabel);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.repasswordLabel);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.registerBtn);
             this.Controls.Add(this.passwordTB);
@@ -234,19 +235,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Button registerBtn;
         private System.Windows.Forms.TextBox passwordTB;
         private System.Windows.Forms.TextBox accountTB;
         private System.Windows.Forms.PictureBox logoBox;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label repasswordLabel;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label returnLabel;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label phoneLabel;
         private System.Windows.Forms.TextBox phoneTB;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.TextBox addressTB;
     }
 }
