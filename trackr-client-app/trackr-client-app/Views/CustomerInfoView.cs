@@ -111,7 +111,7 @@ namespace trackr_client_app.Views
         private async void PostCustomer(Customer newCustomer)
         {
             var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Post, "https://testtestserver20230526163638.azurewebsites.net/api/Image");
+            var request = new HttpRequestMessage(HttpMethod.Post, UserSession.apiUrl + "Image");
             var content = new MultipartFormDataContent();
             content.Add(new StreamContent(File.OpenRead(fileInfo.FullName)), "File", fileInfo.Name);
             request.Content = content;
@@ -127,7 +127,7 @@ namespace trackr_client_app.Views
 
             string jsonString = JsonConvert.SerializeObject(newCustomer);
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            var postResponse = await client.PutAsync("https://testtestserver20230526163638.azurewebsites.net/api/Customer/" + newCustomer.CusID.ToString(), jsonContent);
+            var postResponse = await client.PutAsync(UserSession.apiUrl + $"Customer/{newCustomer.CusID}", jsonContent);
             var responseString = await postResponse.Content.ReadAsStringAsync();
             if (postResponse.StatusCode == HttpStatusCode.OK)
             {
