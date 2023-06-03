@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryConfirmView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryParcelView));
             this.confLabel = new System.Windows.Forms.Label();
             this.noBtn = new System.Windows.Forms.Button();
             this.yesBtn = new System.Windows.Forms.Button();

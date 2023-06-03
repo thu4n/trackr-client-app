@@ -47,7 +47,7 @@
             this.confBtn = new System.Windows.Forms.Button();
             this.noBtn = new System.Windows.Forms.Button();
             this.browseBtn = new System.Windows.Forms.Button();
-            this.districTB = new System.Windows.Forms.ComboBox();
+            this.districtTB = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -271,11 +271,11 @@
             this.browseBtn.Visible = false;
             this.browseBtn.Click += new System.EventHandler(this.browseBtn_Click);
             // 
-            // districTB
+            // districtTB
             // 
-            this.districTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.districTB.FormattingEnabled = true;
-            this.districTB.Items.AddRange(new object[] {
+            this.districtTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.districtTB.FormattingEnabled = true;
+            this.districtTB.Items.AddRange(new object[] {
             "Quận 1",
             "Quận 2",
             "Quận 3",
@@ -299,17 +299,17 @@
             "Huyện Bình Chánh",
             "Huyện Nhà Bè",
             "Huyện Cần Giờ"});
-            this.districTB.Location = new System.Drawing.Point(401, 235);
-            this.districTB.Name = "districTB";
-            this.districTB.Size = new System.Drawing.Size(324, 28);
-            this.districTB.TabIndex = 73;
+            this.districtTB.Location = new System.Drawing.Point(401, 235);
+            this.districtTB.Name = "districtTB";
+            this.districtTB.Size = new System.Drawing.Size(324, 28);
+            this.districtTB.TabIndex = 73;
             // 
             // CustomerInfoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 430);
-            this.Controls.Add(this.districTB);
+            this.Controls.Add(this.districtTB);
             this.Controls.Add(this.browseBtn);
             this.Controls.Add(this.noBtn);
             this.Controls.Add(this.confBtn);
@@ -358,6 +358,6 @@
         private System.Windows.Forms.Button confBtn;
         private System.Windows.Forms.Button noBtn;
         private System.Windows.Forms.Button browseBtn;
-        private System.Windows.Forms.ComboBox districTB;
+        private System.Windows.Forms.ComboBox districtTB;
     }
 }

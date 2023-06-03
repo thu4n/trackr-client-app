@@ -28,6 +28,7 @@ namespace trackr_client_app
         private void CustomerParcelView_Load(object sender, EventArgs e)
         {
             cusCodeTB.Text = UserSession.customer.CusID.ToString();
+            //cusAddressTB.Text = UserSession.customer.CusAddress.Replace('*',',');
             cusAddressTB.Text = UserSession.customer.CusAddress;
             cusNameTB.Text = UserSession.customer.CusName;
             cusPhoneTB.Text = UserSession.customer.CusPhone;
@@ -42,13 +43,29 @@ namespace trackr_client_app
 
         private void DisplayTrackingTree()
         {
-            string[] locationLog = parcel.ParLocation.Split('@');
+            string[] routeLog = parcel.ParRouteLocation.Split('@');
             string[] timeLog = parcel.Realtime.Split('@');
-            int i = 0;
-            foreach(var timeMark in timeLog) 
+            string[] locationLog = parcel.ParLocation.Split('@');
+            int mark = locationLog.Length - 2;
+            int distance = int.Parse(routeLog[0]);
+            distanceLabel.Text = $"Tổng khoảng cách ước tính: {distance} km";
+            for (int i = 1; i < routeLog.Length; i++)
             {
-                string locationMark = locationLog[i++];
-                treeView1.Nodes.Add(timeMark + " " + locationMark);
+                treeView1.Nodes.Add("done", routeLog[i], 0);
+            }
+            for(int i=0; i < timeLog.Length; i++)
+            {
+                treeView1.Nodes[i].Nodes.Add(Name, timeLog[i], 0);
+            }
+            if (mark >= 0)
+            {
+                treeView1.Nodes[mark].ImageIndex = 1;
+                treeView1.Nodes[mark].SelectedImageIndex = 1;
+                for (int i = 0; i < mark; i++)
+                {
+                    treeView1.Nodes[i].ImageIndex = 2;
+                    treeView1.Nodes[i].SelectedImageIndex = 2;
+                }
 
             }
         }

@@ -164,10 +164,12 @@ namespace trackr_client_app.Views
             int value = int.Parse(stringValue.ToString());
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                /*Parcel parcel = UserSession.parcels.Find(x => x.ParID == value);
-                DeliveryConfirmView deliveryConfirmView = new DeliveryConfirmView(parcel);
-                deliveryConfirmView.StartPosition = FormStartPosition.CenterScreen;
-                deliveryConfirmView.Tag = this;
+                Parcel parcel = UserSession.parcels.Find(x => x.ParID == value);
+                Customer customer = UserSession.customers.Find(x => x.CusID == parcel.CusID);
+                DeliveryParcelView deliveryParcelView = new DeliveryParcelView(parcel, customer);
+                deliveryParcelView.Show();
+                //deliveryConfirmView.StartPosition = FormStartPosition.CenterScreen;
+                /*deliveryConfirmView.Tag = this;
                 deliveryConfirmView.Show();*/
             }
         }

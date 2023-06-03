@@ -37,7 +37,6 @@ namespace trackr_client_app.Views
         {
             var response = await client.GetAsync(UserSession.apiUrl + "Parcel");
             var responseString = await response.Content.ReadAsStringAsync();
-            MessageBox.Show(responseString);
             var parcels = JArray.Parse(responseString);
             LoadParcelData(parcels);
             DisplayParcelData();

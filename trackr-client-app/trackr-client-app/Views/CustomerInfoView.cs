@@ -63,7 +63,7 @@ namespace trackr_client_app.Views
             accountTB.ReadOnly = !update;
             birthTB.ReadOnly = !update;
             streetTB.ReadOnly = !update;
-            districtTB.ReadOnly = !update;
+            //districtTB.ReadOnly = !update;
             cityTB.ReadOnly = !update;
             phoneTB.ReadOnly = !update;
             nameTB.ReadOnly = !update;

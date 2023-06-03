@@ -57,6 +57,7 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.parcelImg = new System.Windows.Forms.PictureBox();
+            this.distanceLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -338,26 +339,29 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "logoSmall.png");
+            this.imageList1.Images.SetKeyName(0, "waiting.png");
+            this.imageList1.Images.SetKeyName(1, "processed.png");
+            this.imageList1.Images.SetKeyName(2, "check.png");
             // 
             // treeView1
             // 
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.treeView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.ImageIndex = 0;
             this.treeView1.ImageList = this.imageList1;
             this.treeView1.Indent = 35;
             this.treeView1.ItemHeight = 50;
-            this.treeView1.Location = new System.Drawing.Point(0, 52);
+            this.treeView1.Location = new System.Drawing.Point(86, 52);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(1015, 296);
+            this.treeView1.ShowNodeToolTips = true;
+            this.treeView1.Size = new System.Drawing.Size(926, 296);
             this.treeView1.TabIndex = 43;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.distanceLabel);
             this.panel2.Controls.Add(this.treeView1);
             this.panel2.Controls.Add(this.titleLabel2);
             this.panel2.Location = new System.Drawing.Point(12, 329);
@@ -375,6 +379,16 @@
             this.parcelImg.Size = new System.Drawing.Size(172, 172);
             this.parcelImg.TabIndex = 39;
             this.parcelImg.TabStop = false;
+            // 
+            // distanceLabel
+            // 
+            this.distanceLabel.AutoSize = true;
+            this.distanceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.distanceLabel.Location = new System.Drawing.Point(316, 23);
+            this.distanceLabel.Name = "distanceLabel";
+            this.distanceLabel.Size = new System.Drawing.Size(249, 23);
+            this.distanceLabel.TabIndex = 44;
+            this.distanceLabel.Text = "Tổng khoảng cách ước lượng:";
             // 
             // CustomerParcelView
             // 
@@ -445,5 +459,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label noteLabel;
         private System.Windows.Forms.TextBox noteTB;
+        private System.Windows.Forms.Label distanceLabel;
     }
 }

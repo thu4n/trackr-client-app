@@ -52,7 +52,7 @@
             this.imgLabel = new System.Windows.Forms.Label();
             this.browseBtn = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.districTB = new System.Windows.Forms.ComboBox();
+            this.districtTB = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -317,11 +317,11 @@
             this.titleLabel.TabIndex = 38;
             this.titleLabel.Text = "Vui lòng điền đầy đủ thông tin";
             // 
-            // districTB
+            // districtTB
             // 
-            this.districTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.districTB.FormattingEnabled = true;
-            this.districTB.Items.AddRange(new object[] {
+            this.districtTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.districtTB.FormattingEnabled = true;
+            this.districtTB.Items.AddRange(new object[] {
             "Quận 1",
             "Quận 2",
             "Quận 3",
@@ -345,17 +345,17 @@
             "Huyện Bình Chánh",
             "Huyện Nhà Bè",
             "Huyện Cần Giờ"});
-            this.districTB.Location = new System.Drawing.Point(413, 288);
-            this.districTB.Name = "districTB";
-            this.districTB.Size = new System.Drawing.Size(324, 28);
-            this.districTB.TabIndex = 39;
+            this.districtTB.Location = new System.Drawing.Point(413, 288);
+            this.districtTB.Name = "districtTB";
+            this.districtTB.Size = new System.Drawing.Size(324, 28);
+            this.districtTB.TabIndex = 39;
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(826, 611);
-            this.Controls.Add(this.districTB);
+            this.Controls.Add(this.districtTB);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.browseBtn);
             this.Controls.Add(this.imgLabel);
@@ -415,6 +415,6 @@
         private System.Windows.Forms.Label imgLabel;
         private System.Windows.Forms.Button browseBtn;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.ComboBox districTB;
+        private System.Windows.Forms.ComboBox districtTB;
     }
 }

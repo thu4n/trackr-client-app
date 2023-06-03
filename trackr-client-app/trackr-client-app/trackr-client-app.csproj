@@ -145,6 +145,12 @@
     <Compile Include="Views\DeliveryDashboard.Designer.cs">
       <DependentUpon>DeliveryDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\DeliveryParcelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DeliveryParcelView.Designer.cs">
+      <DependentUpon>DeliveryParcelView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DeliveryDashboard.resx">
       <DependentUpon>DeliveryDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DeliveryParcelView.resx">
+      <DependentUpon>DeliveryParcelView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
