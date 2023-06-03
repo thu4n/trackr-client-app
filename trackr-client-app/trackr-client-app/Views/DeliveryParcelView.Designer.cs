@@ -33,7 +33,6 @@
             this.distanceLabel = new System.Windows.Forms.Label();
             this.routePanel = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.titleLabel2 = new System.Windows.Forms.Label();
             this.noteTB = new System.Windows.Forms.TextBox();
             this.noteLabel = new System.Windows.Forms.Label();
@@ -59,16 +58,17 @@
             this.cusCodeTB = new System.Windows.Forms.TextBox();
             this.parcelImg = new System.Windows.Forms.PictureBox();
             this.updatePanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.locationLabel = new System.Windows.Forms.Label();
-            this.timeLabel = new System.Windows.Forms.Label();
-            this.locationTB = new System.Windows.Forms.ComboBox();
-            this.timeTB = new System.Windows.Forms.TextBox();
-            this.yesBtn = new System.Windows.Forms.Button();
             this.infoLabel = new System.Windows.Forms.Label();
+            this.yesBtn = new System.Windows.Forms.Button();
+            this.timeTB = new System.Windows.Forms.TextBox();
+            this.locationTB = new System.Windows.Forms.ComboBox();
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.locationLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.chatPanel = new System.Windows.Forms.Panel();
-            this.contactLabel = new System.Windows.Forms.Label();
             this.chatBtn = new System.Windows.Forms.Button();
+            this.contactLabel = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.routePanel.SuspendLayout();
             this.infoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -101,24 +101,13 @@
             // 
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeView1.ImageIndex = 0;
-            this.treeView1.ImageList = this.imageList1;
             this.treeView1.Indent = 35;
             this.treeView1.ItemHeight = 50;
             this.treeView1.Location = new System.Drawing.Point(86, 52);
             this.treeView1.Name = "treeView1";
-            this.treeView1.SelectedImageIndex = 0;
             this.treeView1.ShowNodeToolTips = true;
             this.treeView1.Size = new System.Drawing.Size(926, 296);
             this.treeView1.TabIndex = 43;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "waiting.png");
-            this.imageList1.Images.SetKeyName(1, "processed.png");
-            this.imageList1.Images.SetKeyName(2, "check.png");
             // 
             // titleLabel2
             // 
@@ -418,56 +407,16 @@
             this.updatePanel.Size = new System.Drawing.Size(336, 228);
             this.updatePanel.TabIndex = 65;
             // 
-            // label1
+            // infoLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.label1.Location = new System.Drawing.Point(16, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(280, 38);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "Cập nhật hành trình";
-            // 
-            // locationLabel
-            // 
-            this.locationLabel.AutoSize = true;
-            this.locationLabel.BackColor = System.Drawing.Color.White;
-            this.locationLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locationLabel.Location = new System.Drawing.Point(19, 62);
-            this.locationLabel.Name = "locationLabel";
-            this.locationLabel.Size = new System.Drawing.Size(88, 23);
-            this.locationLabel.TabIndex = 66;
-            this.locationLabel.Text = "Địa điểm:";
-            // 
-            // timeLabel
-            // 
-            this.timeLabel.AutoSize = true;
-            this.timeLabel.BackColor = System.Drawing.Color.White;
-            this.timeLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLabel.Location = new System.Drawing.Point(19, 100);
-            this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(91, 23);
-            this.timeLabel.TabIndex = 67;
-            this.timeLabel.Text = "Thời gian:";
-            // 
-            // locationTB
-            // 
-            this.locationTB.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locationTB.FormattingEnabled = true;
-            this.locationTB.Location = new System.Drawing.Point(113, 61);
-            this.locationTB.Name = "locationTB";
-            this.locationTB.Size = new System.Drawing.Size(183, 25);
-            this.locationTB.TabIndex = 68;
-            // 
-            // timeTB
-            // 
-            this.timeTB.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeTB.Location = new System.Drawing.Point(113, 100);
-            this.timeTB.Name = "timeTB";
-            this.timeTB.ReadOnly = true;
-            this.timeTB.Size = new System.Drawing.Size(183, 25);
-            this.timeTB.TabIndex = 69;
+            this.infoLabel.AutoSize = true;
+            this.infoLabel.BackColor = System.Drawing.Color.White;
+            this.infoLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoLabel.Location = new System.Drawing.Point(19, 137);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(269, 20);
+            this.infoLabel.TabIndex = 73;
+            this.infoLabel.Text = "Lưu ý: Chỉ cập nhật khi đã đến địa điểm";
             // 
             // yesBtn
             // 
@@ -484,16 +433,56 @@
             this.yesBtn.UseVisualStyleBackColor = false;
             this.yesBtn.Click += new System.EventHandler(this.yesBtn_Click);
             // 
-            // infoLabel
+            // timeTB
             // 
-            this.infoLabel.AutoSize = true;
-            this.infoLabel.BackColor = System.Drawing.Color.White;
-            this.infoLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoLabel.Location = new System.Drawing.Point(19, 137);
-            this.infoLabel.Name = "infoLabel";
-            this.infoLabel.Size = new System.Drawing.Size(269, 20);
-            this.infoLabel.TabIndex = 73;
-            this.infoLabel.Text = "Lưu ý: Chỉ cập nhật khi đã đến địa điểm";
+            this.timeTB.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeTB.Location = new System.Drawing.Point(113, 100);
+            this.timeTB.Name = "timeTB";
+            this.timeTB.ReadOnly = true;
+            this.timeTB.Size = new System.Drawing.Size(183, 25);
+            this.timeTB.TabIndex = 69;
+            // 
+            // locationTB
+            // 
+            this.locationTB.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationTB.FormattingEnabled = true;
+            this.locationTB.Location = new System.Drawing.Point(113, 61);
+            this.locationTB.Name = "locationTB";
+            this.locationTB.Size = new System.Drawing.Size(183, 25);
+            this.locationTB.TabIndex = 68;
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.BackColor = System.Drawing.Color.White;
+            this.timeLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.Location = new System.Drawing.Point(19, 100);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(91, 23);
+            this.timeLabel.TabIndex = 67;
+            this.timeLabel.Text = "Thời gian:";
+            // 
+            // locationLabel
+            // 
+            this.locationLabel.AutoSize = true;
+            this.locationLabel.BackColor = System.Drawing.Color.White;
+            this.locationLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationLabel.Location = new System.Drawing.Point(19, 62);
+            this.locationLabel.Name = "locationLabel";
+            this.locationLabel.Size = new System.Drawing.Size(88, 23);
+            this.locationLabel.TabIndex = 66;
+            this.locationLabel.Text = "Địa điểm:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(280, 38);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Cập nhật hành trình";
             // 
             // chatPanel
             // 
@@ -504,17 +493,6 @@
             this.chatPanel.Name = "chatPanel";
             this.chatPanel.Size = new System.Drawing.Size(336, 105);
             this.chatPanel.TabIndex = 66;
-            // 
-            // contactLabel
-            // 
-            this.contactLabel.AutoSize = true;
-            this.contactLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.contactLabel.Location = new System.Drawing.Point(16, 12);
-            this.contactLabel.Name = "contactLabel";
-            this.contactLabel.Size = new System.Drawing.Size(271, 38);
-            this.contactLabel.TabIndex = 74;
-            this.contactLabel.Text = "Liên hệ khách hàng";
             // 
             // chatBtn
             // 
@@ -529,6 +507,26 @@
             this.chatBtn.TabIndex = 74;
             this.chatBtn.Text = "Nhắn tin trực tiếp";
             this.chatBtn.UseVisualStyleBackColor = false;
+            // 
+            // contactLabel
+            // 
+            this.contactLabel.AutoSize = true;
+            this.contactLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.contactLabel.Location = new System.Drawing.Point(16, 12);
+            this.contactLabel.Name = "contactLabel";
+            this.contactLabel.Size = new System.Drawing.Size(271, 38);
+            this.contactLabel.TabIndex = 74;
+            this.contactLabel.Text = "Liên hệ khách hàng";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "waiting.png");
+            this.imageList1.Images.SetKeyName(1, "processed.png");
+            this.imageList1.Images.SetKeyName(2, "check.png");
+            this.imageList1.Images.SetKeyName(3, "datetime.png");
             // 
             // DeliveryParcelView
             // 
@@ -580,7 +578,6 @@
         private System.Windows.Forms.Label distanceLabel;
         private System.Windows.Forms.Panel routePanel;
         private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label titleLabel2;
         private System.Windows.Forms.TextBox noteTB;
         private System.Windows.Forms.Label noteLabel;
@@ -616,5 +613,6 @@
         private System.Windows.Forms.Panel chatPanel;
         private System.Windows.Forms.Label contactLabel;
         private System.Windows.Forms.Button chatBtn;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

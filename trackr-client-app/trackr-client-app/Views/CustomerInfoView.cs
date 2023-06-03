@@ -22,6 +22,7 @@ namespace trackr_client_app.Views
         bool update = false;
         OpenFileDialog ofd = new OpenFileDialog();
         FileInfo fileInfo;
+        bool imageChanged = false;
         public CustomerInfoView()
         {
             InitializeComponent();
@@ -111,20 +112,22 @@ namespace trackr_client_app.Views
         private async void PostCustomer(Customer newCustomer)
         {
             var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Post, UserSession.apiUrl + "Image");
-            var content = new MultipartFormDataContent();
-            content.Add(new StreamContent(File.OpenRead(fileInfo.FullName)), "File", fileInfo.Name);
-            request.Content = content;
+            if (imageChanged) // Chỉ tạo post request cho hình ảnh nếu có thay đổi từ phía user
+            {
+                var request = new HttpRequestMessage(HttpMethod.Post, UserSession.apiUrl + "Image");
+                var content = new MultipartFormDataContent();
+                content.Add(new StreamContent(File.OpenRead(fileInfo.FullName)), "File", fileInfo.Name);
+                request.Content = content;
 
-            var response = await client.SendAsync(request);
-            string uriStr = await response.Content.ReadAsStringAsync();
-            JObject uri = JObject.Parse(uriStr);
-            uri.TryGetValue("blob", out var blobStr);
-            JObject blob = JObject.Parse(blobStr.ToString());
-            blob.TryGetValue("uri", out var blobUri);
+                var response = await client.SendAsync(request);
+                string uriStr = await response.Content.ReadAsStringAsync();
+                JObject uri = JObject.Parse(uriStr);
+                uri.TryGetValue("blob", out var blobStr);
+                JObject blob = JObject.Parse(blobStr.ToString());
+                blob.TryGetValue("uri", out var blobUri);
 
-            newCustomer.CusImage = blobUri.ToString();
-
+                newCustomer.CusImage = blobUri.ToString();
+            }
             string jsonString = JsonConvert.SerializeObject(newCustomer);
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
             var postResponse = await client.PutAsync(UserSession.apiUrl + $"Customer/{newCustomer.CusID}", jsonContent);
@@ -145,6 +148,7 @@ namespace trackr_client_app.Views
                 if(RegisterForm.imgExtensions.Contains(fileInfo.Extension))
                 {
                     pictureBox1.ImageLocation = ofd.FileName;
+                    imageChanged = true;
                 }
                 else
                 {
@@ -157,5 +161,6 @@ namespace trackr_client_app.Views
                 MessageBox.Show("Không có file nào được chọn");
             }
         }
+
     }
 }

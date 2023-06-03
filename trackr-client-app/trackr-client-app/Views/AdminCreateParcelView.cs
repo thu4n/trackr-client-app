@@ -78,6 +78,7 @@ namespace trackr_client_app.Views
             newParcel.Note = noteTB.Text;
             newParcel.CusID = int.Parse(cusCodeBox.Text);
             newParcel.ParDescription = nameTB.Text;
+            newParcel.ParLocation = "@Bưu điện Trung tâm Sài Gòn, 125 Công xã Paris, Bến Nghé, Quận 1,TPHCM";
 
             string jsonString = JsonConvert.SerializeObject(newParcel);
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");

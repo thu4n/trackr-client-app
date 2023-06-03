@@ -32,14 +32,15 @@ namespace trackr_client_app.Views
         private void DeliveryParcelView_Load(object sender, EventArgs e)
         {
             cusCodeTB.Text = customer.CusID.ToString();
-            //cusAddressTB.Text = UserSession.customer.CusAddress.Replace('*',',');
-            cusAddressTB.Text = customer.CusAddress;
+            cusAddressTB.Text = UserSession.customer.CusAddress.Replace('*',',');
             cusNameTB.Text = customer.CusName;
             cusPhoneTB.Text = customer.CusPhone;
             parcelCodeTB.Text = parcel.ParID.ToString();
             parcelNameTB.Text = parcel.ParDescription;
             statusTB.Text = parcel.ParStatus;
             noteTB.Text = parcel.Note;
+            orderDateTB.Text = parcel.ParDeliveryDate.ToShortDateString();
+            estimateDateTB.Text = parcel.ParDeliveryDate.AddDays(3).ToShortDateString();
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
             timeTB.Text = DateTime.Now.ToString();
@@ -57,6 +58,11 @@ namespace trackr_client_app.Views
             {
                 treeView1.Nodes.Add("done", routeLog[i], 0);
                 locationTB.Items.Add(routeLog[i]);
+            }
+            for (int i = 1; i < timeLog.Length; i++)
+            {
+                int j = i - 1;
+                treeView1.Nodes[j].Nodes.Add(Name, timeLog[i], 3, 3);
             }
             if (mark >= 0)
             {

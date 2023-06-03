@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminParcelView));
-            this.parcelImg = new System.Windows.Forms.PictureBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.titleLabel2 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.estimateDateLabel = new System.Windows.Forms.Label();
             this.estimateDateTB = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.distanceLabel = new System.Windows.Forms.Label();
             this.statusTB = new System.Windows.Forms.TextBox();
             this.orderDateTB = new System.Windows.Forms.TextBox();
             this.parcelNameTB = new System.Windows.Forms.TextBox();
@@ -59,21 +59,11 @@
             this.cusNameTB = new System.Windows.Forms.TextBox();
             this.cusCodeTB = new System.Windows.Forms.TextBox();
             this.cusCodeLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
+            this.parcelImg = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
             this.SuspendLayout();
-            // 
-            // parcelImg
-            // 
-            this.parcelImg.BackColor = System.Drawing.Color.White;
-            this.parcelImg.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.parcelImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.parcelImg.Location = new System.Drawing.Point(35, 93);
-            this.parcelImg.Name = "parcelImg";
-            this.parcelImg.Size = new System.Drawing.Size(172, 172);
-            this.parcelImg.TabIndex = 62;
-            this.parcelImg.TabStop = false;
             // 
             // treeView1
             // 
@@ -94,7 +84,10 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "logoSmall.png");
+            this.imageList1.Images.SetKeyName(0, "waiting.png");
+            this.imageList1.Images.SetKeyName(1, "processed.png");
+            this.imageList1.Images.SetKeyName(2, "check.png");
+            this.imageList1.Images.SetKeyName(3, "datetime.png");
             // 
             // titleLabel2
             // 
@@ -259,12 +252,23 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.distanceLabel);
             this.panel2.Controls.Add(this.treeView1);
             this.panel2.Controls.Add(this.titleLabel2);
             this.panel2.Location = new System.Drawing.Point(12, 332);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1015, 348);
             this.panel2.TabIndex = 64;
+            // 
+            // distanceLabel
+            // 
+            this.distanceLabel.AutoSize = true;
+            this.distanceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.distanceLabel.Location = new System.Drawing.Point(325, 23);
+            this.distanceLabel.Name = "distanceLabel";
+            this.distanceLabel.Size = new System.Drawing.Size(249, 23);
+            this.distanceLabel.TabIndex = 45;
+            this.distanceLabel.Text = "Tổng khoảng cách ước lượng:";
             // 
             // statusTB
             // 
@@ -411,6 +415,17 @@
             this.cusCodeLabel.TabIndex = 50;
             this.cusCodeLabel.Text = "Mã khách hàng:";
             // 
+            // parcelImg
+            // 
+            this.parcelImg.BackColor = System.Drawing.Color.White;
+            this.parcelImg.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.parcelImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.parcelImg.Location = new System.Drawing.Point(35, 93);
+            this.parcelImg.Name = "parcelImg";
+            this.parcelImg.Size = new System.Drawing.Size(172, 172);
+            this.parcelImg.TabIndex = 62;
+            this.parcelImg.TabStop = false;
+            // 
             // AdminParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -440,11 +455,11 @@
             this.Name = "AdminParcelView";
             this.Text = "Trackr - Parcel Details";
             this.Load += new System.EventHandler(this.AdminParcelView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,7 +469,6 @@
 
         private System.Windows.Forms.PictureBox parcelImg;
         private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label titleLabel2;
         private System.Windows.Forms.TextBox noteTB;
         private System.Windows.Forms.Label noteLabel;
@@ -481,5 +495,7 @@
         private System.Windows.Forms.Label cusCodeLabel;
         private System.Windows.Forms.Button modBtn;
         private System.Windows.Forms.Button delBtn;
+        private System.Windows.Forms.Label distanceLabel;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

@@ -56,8 +56,9 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.parcelImg = new System.Windows.Forms.PictureBox();
             this.distanceLabel = new System.Windows.Forms.Label();
+            this.parcelImg = new System.Windows.Forms.PictureBox();
+            this.chatBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -291,6 +292,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.chatBtn);
             this.panel1.Controls.Add(this.noteTB);
             this.panel1.Controls.Add(this.noteLabel);
             this.panel1.Controls.Add(this.estimateDateLabel);
@@ -342,6 +344,7 @@
             this.imageList1.Images.SetKeyName(0, "waiting.png");
             this.imageList1.Images.SetKeyName(1, "processed.png");
             this.imageList1.Images.SetKeyName(2, "check.png");
+            this.imageList1.Images.SetKeyName(3, "datetime.png");
             // 
             // treeView1
             // 
@@ -369,6 +372,16 @@
             this.panel2.Size = new System.Drawing.Size(1015, 348);
             this.panel2.TabIndex = 44;
             // 
+            // distanceLabel
+            // 
+            this.distanceLabel.AutoSize = true;
+            this.distanceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.distanceLabel.Location = new System.Drawing.Point(316, 23);
+            this.distanceLabel.Name = "distanceLabel";
+            this.distanceLabel.Size = new System.Drawing.Size(249, 23);
+            this.distanceLabel.TabIndex = 44;
+            this.distanceLabel.Text = "Tổng khoảng cách ước lượng:";
+            // 
             // parcelImg
             // 
             this.parcelImg.BackColor = System.Drawing.Color.Transparent;
@@ -380,15 +393,20 @@
             this.parcelImg.TabIndex = 39;
             this.parcelImg.TabStop = false;
             // 
-            // distanceLabel
+            // chatBtn
             // 
-            this.distanceLabel.AutoSize = true;
-            this.distanceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.distanceLabel.Location = new System.Drawing.Point(316, 23);
-            this.distanceLabel.Name = "distanceLabel";
-            this.distanceLabel.Size = new System.Drawing.Size(249, 23);
-            this.distanceLabel.TabIndex = 44;
-            this.distanceLabel.Text = "Tổng khoảng cách ước lượng:";
+            this.chatBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.chatBtn.FlatAppearance.BorderSize = 0;
+            this.chatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chatBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chatBtn.ForeColor = System.Drawing.Color.White;
+            this.chatBtn.Location = new System.Drawing.Point(269, 12);
+            this.chatBtn.Name = "chatBtn";
+            this.chatBtn.Size = new System.Drawing.Size(252, 33);
+            this.chatBtn.TabIndex = 75;
+            this.chatBtn.Text = "Liên hệ người giao hàng";
+            this.chatBtn.UseVisualStyleBackColor = false;
+            this.chatBtn.Click += new System.EventHandler(this.chatBtn_Click);
             // 
             // CustomerParcelView
             // 
@@ -460,5 +478,6 @@
         private System.Windows.Forms.Label noteLabel;
         private System.Windows.Forms.TextBox noteTB;
         private System.Windows.Forms.Label distanceLabel;
+        private System.Windows.Forms.Button chatBtn;
     }
 }

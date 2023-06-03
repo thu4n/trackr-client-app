@@ -49,30 +49,37 @@ namespace trackr_client_app.Views
             var data = JObject.Parse(responseString);
             Customer customer = JsonConvert.DeserializeObject<Customer>(data.ToString());
             cusCodeTB.Text = customer.CusID.ToString();
-            cusAddressTB.Text = customer.CusAddress;
+            cusAddressTB.Text = customer.CusAddress.Replace('*',',');
             cusNameTB.Text = customer.CusName;
             cusPhoneTB.Text = customer.CusPhone;
 
         }
         private void DisplayTrackingTree()
         {
-            try
+            string[] routeLog = parcel.ParRouteLocation.Split('@');
+            string[] timeLog = parcel.Realtime.Split('@');
+            string[] locationLog = parcel.ParLocation.Split('@');
+            int mark = locationLog.Length - 2;
+            int distance = int.Parse(routeLog[0]);
+            distanceLabel.Text = $"Tổng khoảng cách ước tính: {distance} km";
+            for (int i = 1; i < routeLog.Length; i++)
             {
-                if (parcel.ParLocation != string.Empty)
-                {
-                    string[] locationLog = parcel.ParLocation.Split('@');
-                    string[] timeLog = parcel.Realtime.Split('@');
-                    int i = 0;
-                    foreach (var timeMark in timeLog)
-                    {
-                        string locationMark = locationLog[i++];
-                        treeView1.Nodes.Add(timeMark + " " + locationMark);
-
-                    }
-                }
+                treeView1.Nodes.Add("done", routeLog[i], 0);
             }
-            catch (Exception)
+            for (int i = 1; i < timeLog.Length; i++)
             {
+                int j = i - 1;
+                treeView1.Nodes[j].Nodes.Add(Name, timeLog[i], 3, 3);
+            }
+            if (mark >= 0)
+            {
+                treeView1.Nodes[mark].ImageIndex = 1;
+                treeView1.Nodes[mark].SelectedImageIndex = 1;
+                for (int i = 0; i < mark; i++)
+                {
+                    treeView1.Nodes[i].ImageIndex = 2;
+                    treeView1.Nodes[i].SelectedImageIndex = 2;
+                }
 
             }
         }

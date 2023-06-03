@@ -61,7 +61,7 @@ namespace trackr_client_app
             var values = new Dictionary<string, string>
             {
                 { "account", username },
-                { "password", hash }
+                { "password", password }
             };
             string jsonString = JsonConvert.SerializeObject(values);
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");

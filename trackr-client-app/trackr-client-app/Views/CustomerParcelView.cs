@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,14 +29,15 @@ namespace trackr_client_app
         private void CustomerParcelView_Load(object sender, EventArgs e)
         {
             cusCodeTB.Text = UserSession.customer.CusID.ToString();
-            //cusAddressTB.Text = UserSession.customer.CusAddress.Replace('*',',');
-            cusAddressTB.Text = UserSession.customer.CusAddress;
+            cusAddressTB.Text = UserSession.customer.CusAddress.Replace('*',',');
             cusNameTB.Text = UserSession.customer.CusName;
             cusPhoneTB.Text = UserSession.customer.CusPhone;
             parcelCodeTB.Text = parcel.ParID.ToString();
             parcelNameTB.Text = parcel.ParDescription;
             statusTB.Text = parcel.ParStatus;
             noteTB.Text = parcel.Note;
+            orderDateTB.Text = parcel.ParDeliveryDate.ToString("dd-MM-yyyy");
+            estimateDateTB.Text = parcel.ParDeliveryDate.AddDays(3).ToString("dd-MM-yyyy");
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
             DisplayTrackingTree();
@@ -53,9 +55,12 @@ namespace trackr_client_app
             {
                 treeView1.Nodes.Add("done", routeLog[i], 0);
             }
-            for(int i=0; i < timeLog.Length; i++)
+            for(int i=1; i < timeLog.Length; i++)
             {
-                treeView1.Nodes[i].Nodes.Add(Name, timeLog[i], 0);
+                int j = i - 1;
+                MessageBox.Show(timeLog[i]);
+                string date = DateTime.ParseExact(timeLog[i], "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture).ToString();
+                treeView1.Nodes[j].Nodes.Add(Name, date , 3, 3);
             }
             if (mark >= 0)
             {
@@ -68,6 +73,11 @@ namespace trackr_client_app
                 }
 
             }
+        }
+
+        private void chatBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
