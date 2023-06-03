@@ -86,6 +86,7 @@ namespace trackr_client_app.Views
             if(postResponse.StatusCode == HttpStatusCode.OK)
             {
                 MessageBox.Show("Đã tạo thành công");
+                MessageBox.Show(responseString);
             }
             else MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau");
 

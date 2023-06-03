@@ -40,7 +40,6 @@
             this.streetLabel = new System.Windows.Forms.Label();
             this.streetTB = new System.Windows.Forms.TextBox();
             this.districtLabel = new System.Windows.Forms.Label();
-            this.districtTB = new System.Windows.Forms.TextBox();
             this.cityLabel = new System.Windows.Forms.Label();
             this.cityTB = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.imgLabel = new System.Windows.Forms.Label();
             this.browseBtn = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.districTB = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,15 +181,6 @@
             this.districtLabel.Size = new System.Drawing.Size(138, 23);
             this.districtLabel.TabIndex = 26;
             this.districtLabel.Text = "Tên quận/huyện";
-            // 
-            // districtTB
-            // 
-            this.districtTB.BackColor = System.Drawing.Color.White;
-            this.districtTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.districtTB.Location = new System.Drawing.Point(413, 288);
-            this.districtTB.Name = "districtTB";
-            this.districtTB.Size = new System.Drawing.Size(324, 30);
-            this.districtTB.TabIndex = 25;
             // 
             // cityLabel
             // 
@@ -326,11 +317,45 @@
             this.titleLabel.TabIndex = 38;
             this.titleLabel.Text = "Vui lòng điền đầy đủ thông tin";
             // 
+            // districTB
+            // 
+            this.districTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.districTB.FormattingEnabled = true;
+            this.districTB.Items.AddRange(new object[] {
+            "Quận 1",
+            "Quận 2",
+            "Quận 3",
+            "Quận 4",
+            "Quận 5",
+            "Quận 6",
+            "Quận 7",
+            "Quận 8",
+            "Quận 9",
+            "Quận 10",
+            "Quận 11",
+            "Quận 12",
+            "Quận Bình Tân",
+            "Quận Bình Thạnh",
+            "Quận Gò Vấp",
+            "Quận Phú Nhuận",
+            "Quận Tân Phú",
+            "Quận Thủ Đức",
+            "Huyện Hóc Môn",
+            "Huyện Củ Chi",
+            "Huyện Bình Chánh",
+            "Huyện Nhà Bè",
+            "Huyện Cần Giờ"});
+            this.districTB.Location = new System.Drawing.Point(413, 288);
+            this.districTB.Name = "districTB";
+            this.districTB.Size = new System.Drawing.Size(324, 28);
+            this.districTB.TabIndex = 39;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(826, 611);
+            this.Controls.Add(this.districTB);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.browseBtn);
             this.Controls.Add(this.imgLabel);
@@ -344,7 +369,6 @@
             this.Controls.Add(this.cityLabel);
             this.Controls.Add(this.cityTB);
             this.Controls.Add(this.districtLabel);
-            this.Controls.Add(this.districtTB);
             this.Controls.Add(this.streetLabel);
             this.Controls.Add(this.streetTB);
             this.Controls.Add(this.returnLabel);
@@ -379,7 +403,6 @@
         private System.Windows.Forms.Label streetLabel;
         private System.Windows.Forms.TextBox streetTB;
         private System.Windows.Forms.Label districtLabel;
-        private System.Windows.Forms.TextBox districtTB;
         private System.Windows.Forms.Label cityLabel;
         private System.Windows.Forms.TextBox cityTB;
         private System.Windows.Forms.Label nameLabel;
@@ -392,5 +415,6 @@
         private System.Windows.Forms.Label imgLabel;
         private System.Windows.Forms.Button browseBtn;
         private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.ComboBox districTB;
     }
 }
