@@ -35,6 +35,11 @@ namespace trackr_client_app.Views
         private void DeliveryDashboard_Load(object sender, EventArgs e)
         {
             usernameLabel.Text = UserSession.delivery.ManName;
+            if(UserSession.delivery.ManImage != null)
+            {
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.LoadAsync(UserSession.delivery.ManImage);
+            }
             parcelProcessedGridView.Visible = false;
             GetData();
         }

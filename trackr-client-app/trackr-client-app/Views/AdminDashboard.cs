@@ -193,5 +193,15 @@ namespace trackr_client_app.Views
         {
             RefreshData();
         }
+
+        private void usernameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

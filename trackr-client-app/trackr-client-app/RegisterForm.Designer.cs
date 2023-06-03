@@ -157,9 +157,9 @@
             this.streetLabel.Location = new System.Drawing.Point(409, 198);
             this.streetLabel.Margin = new System.Windows.Forms.Padding(0);
             this.streetLabel.Name = "streetLabel";
-            this.streetLabel.Size = new System.Drawing.Size(228, 23);
+            this.streetLabel.Size = new System.Drawing.Size(170, 23);
             this.streetLabel.TabIndex = 24;
-            this.streetLabel.Text = "Tên đường, phường, huyện";
+            this.streetLabel.Text = "Tên đường, phường";
             // 
             // streetTB
             // 
@@ -178,9 +178,9 @@
             this.districtLabel.Location = new System.Drawing.Point(409, 262);
             this.districtLabel.Margin = new System.Windows.Forms.Padding(0);
             this.districtLabel.Name = "districtLabel";
-            this.districtLabel.Size = new System.Drawing.Size(82, 23);
+            this.districtLabel.Size = new System.Drawing.Size(138, 23);
             this.districtLabel.TabIndex = 26;
-            this.districtLabel.Text = "Tên quận";
+            this.districtLabel.Text = "Tên quận/huyện";
             // 
             // districtTB
             // 

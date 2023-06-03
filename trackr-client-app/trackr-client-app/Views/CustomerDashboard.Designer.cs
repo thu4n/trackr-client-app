@@ -36,7 +36,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDashboard));
             this.titleLabel = new System.Windows.Forms.Label();
             this.searchTB = new System.Windows.Forms.TextBox();
-            this.searchBtn = new System.Windows.Forms.Button();
             this.searchLabel = new System.Windows.Forms.Label();
             this.parcelGridView = new System.Windows.Forms.DataGridView();
             this.sttColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,8 +44,9 @@
             this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.refreshBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.searchBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -69,20 +69,6 @@
             this.searchTB.Name = "searchTB";
             this.searchTB.Size = new System.Drawing.Size(436, 30);
             this.searchTB.TabIndex = 12;
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.search_icon;
-            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.searchBtn.FlatAppearance.BorderSize = 0;
-            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.Location = new System.Drawing.Point(729, 152);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(49, 30);
-            this.searchBtn.TabIndex = 13;
-            this.searchBtn.UseVisualStyleBackColor = true;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // searchLabel
             // 
@@ -197,17 +183,7 @@
             this.usernameLabel.Size = new System.Drawing.Size(104, 28);
             this.usernameLabel.TabIndex = 16;
             this.usernameLabel.Text = "Username";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.InitialImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.pictureBox1.Location = new System.Drawing.Point(820, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.usernameLabel.Click += new System.EventHandler(this.usernameLabel_Click);
             // 
             // refreshBtn
             // 
@@ -223,6 +199,32 @@
             this.refreshBtn.Text = "Làm mới dữ liệu";
             this.refreshBtn.UseVisualStyleBackColor = false;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(820, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.search_icon;
+            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchBtn.FlatAppearance.BorderSize = 0;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.Location = new System.Drawing.Point(729, 152);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(49, 30);
+            this.searchBtn.TabIndex = 13;
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // CustomerDashboard
             // 

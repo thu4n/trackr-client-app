@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,50 +8,73 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using trackr_client_app.Models;
-using System.Security.Cryptography;
-using Newtonsoft.Json;
-using System.Net;
 
-namespace trackr_client_app
+namespace trackr_client_app.Views
 {
-    public partial class RegisterForm : Form
+    public partial class CustomerInfoView : Form
     {
-        private bool returnToLogin = false;
+        bool update = false;
         OpenFileDialog ofd = new OpenFileDialog();
         FileInfo fileInfo;
-        public static readonly List<string> imgExtensions = new List<string> { ".png", ".jpg", ".jpeg", ".gif" };
-        public RegisterForm()
+        public CustomerInfoView()
         {
             InitializeComponent();
         }
 
-        private void returnLabel_Click(object sender, EventArgs e)
+        private void updateBtn_Click(object sender, EventArgs e)
         {
-            var loginForm = (LoginForm) Tag;
-            loginForm.StartPosition = FormStartPosition.Manual;
-            loginForm.Location = this.Location;
-            loginForm.Show();
-            returnToLogin = true;
-            Close();
+            update = true;
+            LoadView(update);
         }
 
-        private void RegisterForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void CustomerInfoView_Load(object sender, EventArgs e)
         {
-            if(!returnToLogin)
-            {
-                var loginForm = (LoginForm)Tag;
-                loginForm.Close();
-            }
+            LoadData();
+            LoadView(update);
         }
 
-        private void RegisterForm_Load(object sender, EventArgs e)
+        private void LoadData()
         {
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            accountTB.Text = UserSession.customer.CusAccount;
+            birthTB.Text = UserSession.customer.CusBirth.ToShortDateString();
+            string[] address = UserSession.customer.CusAddress.Split('*');
+            streetTB.Text = address[0];
+            districtTB.Text = address[1];
+            cityTB.Text = address[2];
+            phoneTB.Text = UserSession.customer.CusPhone;
+            nameTB.Text = UserSession.customer.CusName;
+            if (UserSession.customer.CusImage != null) pictureBox1.LoadAsync(UserSession.customer.CusImage);
+        }
 
+        private void LoadView(bool update)
+        {
+            confBtn.Visible = update;
+            noBtn.Visible = update;
+            browseBtn.Visible = update;
+
+            updateBtn.Visible = !update;
+            accountTB.ReadOnly = !update;
+            birthTB.ReadOnly = !update;
+            streetTB.ReadOnly = !update;
+            districtTB.ReadOnly = !update;
+            cityTB.ReadOnly = !update;
+            phoneTB.ReadOnly = !update;
+            nameTB.ReadOnly = !update;
+
+        }
+
+        private void noBtn_Click(object sender, EventArgs e)
+        {
+            LoadData();
+            update = false;
+            LoadView(update);
         }
 
         public static bool CheckEmail(string email)
@@ -60,45 +84,30 @@ namespace trackr_client_app
                 MailAddress mailAddress = new MailAddress(email);
                 return true;
             }
-            catch(FormatException)
-            { 
-                return false; 
+            catch (FormatException)
+            {
+                return false;
             }
         }
-
         private void FillCustomerData(Customer customer)
         {
             customer.CusName = nameTB.Text;
             customer.CusAccount = accountTB.Text;
-            customer.CusPassword = LoginForm.ComputeSHA256(passwordTB.Text);
             customer.CusBirth = Convert.ToDateTime(birthTB.Text);
             customer.CusPhone = phoneTB.Text;
             customer.CusAddress = streetTB.Text + "*" + districtTB.Text + "*" + cityTB.Text;
-            customer.CusDateRegister = DateTime.Now;
         }
-        private void registerBtn_Click(object sender, EventArgs e)
+        private void confBtn_Click(object sender, EventArgs e)
         {
             if (!CheckEmail(accountTB.Text))
             {
                 MessageBox.Show("Địa chỉ email không hợp lệ");
                 return;
             }
-            if(passwordTB.Text != repwdTB.Text)
-            {
-                MessageBox.Show("Mật khẩu nhập lại không giống");
-                return;
-            }
-            if(accountTB.Text == string.Empty || passwordTB.Text == string.Empty || repwdTB.Text == string.Empty )
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-                return;
-            }
-            Customer newCustomer = new Customer();
+            Customer newCustomer = UserSession.customer;
             FillCustomerData(newCustomer);
             PostCustomer(newCustomer);
-            registerBtn.Text = "Đang đăng ký...";
         }
-
         private async void PostCustomer(Customer newCustomer)
         {
             var client = new HttpClient();
@@ -118,18 +127,11 @@ namespace trackr_client_app
 
             string jsonString = JsonConvert.SerializeObject(newCustomer);
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            var postResponse = await client.PostAsync("https://testtestserver20230526163638.azurewebsites.net/api/Customer", jsonContent);
+            var postResponse = await client.PutAsync("https://testtestserver20230526163638.azurewebsites.net/api/Customer/" + newCustomer.CusID.ToString(), jsonContent);
             var responseString = await postResponse.Content.ReadAsStringAsync();
             if (postResponse.StatusCode == HttpStatusCode.OK)
             {
-                MessageBox.Show("Đã tạo thành công");
-                registerBtn.Text = "Đăng ký";
-                var loginForm = (LoginForm)Tag;
-                loginForm.StartPosition = FormStartPosition.Manual;
-                loginForm.Location = this.Location;
-                loginForm.Show();
-                returnToLogin = true;
-                Close();
+                MessageBox.Show("Đã cập nhật thành công");
             }
             else MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau");
 
@@ -140,16 +142,15 @@ namespace trackr_client_app
             try
             {
                 fileInfo = new FileInfo(ofd.FileName);
-                if (imgExtensions.Contains(fileInfo.Extension.ToLowerInvariant()))
+                if(RegisterForm.imgExtensions.Contains(fileInfo.Extension))
                 {
-                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                     pictureBox1.ImageLocation = ofd.FileName;
                 }
                 else
                 {
-                    MessageBox.Show("Định dạng file hình ảnh không hợp lệ");
-                    return;
+                    MessageBox.Show("Định dạng file hình ảnh không đúng");
                 }
+
             }
             catch(ArgumentException)
             {

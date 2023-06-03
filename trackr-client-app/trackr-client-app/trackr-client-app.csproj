@@ -104,6 +104,12 @@
     <Compile Include="Views\CustomerDashboard.Designer.cs">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CustomerInfoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerInfoView.Designer.cs">
+      <DependentUpon>CustomerInfoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomerParcelView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerInfoView.resx">
+      <DependentUpon>CustomerInfoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerParcelView.resx">
       <DependentUpon>CustomerParcelView.cs</DependentUpon>

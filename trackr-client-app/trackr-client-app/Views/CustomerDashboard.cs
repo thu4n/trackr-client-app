@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using trackr_client_app.Models;
+using trackr_client_app.Views;
 
 namespace trackr_client_app
 {
@@ -35,10 +36,10 @@ namespace trackr_client_app
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
             usernameLabel.Text = UserSession.customer.CusName;
-            if (UserSession.customer.CusImage != string.Empty)
+            if (UserSession.customer.CusImage != null)
             {
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox1.Load(UserSession.customer.CusImage);
+                pictureBox1.LoadAsync(UserSession.customer.CusImage);
             }
             GetData();
         }
@@ -92,6 +93,18 @@ namespace trackr_client_app
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             RefreshData();
+        }
+
+        private void usernameLabel_Click(object sender, EventArgs e)
+        {
+            CustomerInfoView customerInfoView = new CustomerInfoView();
+            customerInfoView.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            CustomerInfoView customerInfoView = new CustomerInfoView();
+            customerInfoView.Show();
         }
     }
 }
