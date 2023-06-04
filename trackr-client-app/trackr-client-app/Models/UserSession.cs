@@ -8,8 +8,6 @@ namespace trackr_client_app.Models
 {
     public static class UserSession
     {
-        // https://testtestserver20230526163638.azurewebsites.net/api/
-        // https://trackrwebserver.azurewebsites.net/api/
         public static readonly string apiUrl = "https://trackrwebserver.azurewebsites.net/api/";
         public static Customer customer;
         public static Admin admin;

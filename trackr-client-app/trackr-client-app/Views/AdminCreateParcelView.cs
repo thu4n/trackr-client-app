@@ -53,11 +53,6 @@ namespace trackr_client_app.Views
                 MessageBox.Show("Không có file nào được chọn");
             }
         }
-
-        private async void PostParcel()
-        {
-            //var value = 
-        }
         private async void realUploadBtn_Click(object sender, EventArgs e)
         {
             var client = new HttpClient();
@@ -87,7 +82,6 @@ namespace trackr_client_app.Views
             if(postResponse.StatusCode == HttpStatusCode.OK)
             {
                 MessageBox.Show("Đã tạo thành công");
-                MessageBox.Show(responseString);
             }
             else MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau");
 

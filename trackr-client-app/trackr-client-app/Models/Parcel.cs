@@ -32,7 +32,6 @@ namespace trackr_client_app.Models
         public int Price { get; set; }
         public int CusID { get; set; }
         public int ManID { get; set; }
-
         public string ParRouteLocation { get; set; }
 
     }
