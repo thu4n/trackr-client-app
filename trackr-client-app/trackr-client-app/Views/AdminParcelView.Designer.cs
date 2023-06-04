@@ -42,7 +42,6 @@
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.delBtn = new System.Windows.Forms.Button();
-            this.modBtn = new System.Windows.Forms.Button();
             this.estimateDateLabel = new System.Windows.Forms.Label();
             this.estimateDateTB = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -184,7 +183,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.delBtn);
-            this.panel1.Controls.Add(this.modBtn);
             this.panel1.Controls.Add(this.noteTB);
             this.panel1.Controls.Add(this.noteLabel);
             this.panel1.Controls.Add(this.estimateDateLabel);
@@ -202,28 +200,13 @@
             this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.delBtn.Location = new System.Drawing.Point(427, 14);
+            this.delBtn.Location = new System.Drawing.Point(269, 26);
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(147, 33);
             this.delBtn.TabIndex = 69;
             this.delBtn.Text = "Xóa đơn hàng";
             this.delBtn.UseVisualStyleBackColor = false;
             this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
-            // 
-            // modBtn
-            // 
-            this.modBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.modBtn.FlatAppearance.BorderSize = 0;
-            this.modBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modBtn.ForeColor = System.Drawing.Color.White;
-            this.modBtn.Location = new System.Drawing.Point(279, 14);
-            this.modBtn.Name = "modBtn";
-            this.modBtn.Size = new System.Drawing.Size(126, 33);
-            this.modBtn.TabIndex = 44;
-            this.modBtn.Text = "Chỉnh sửa";
-            this.modBtn.UseVisualStyleBackColor = false;
-            this.modBtn.Click += new System.EventHandler(this.modBtn_Click);
             // 
             // estimateDateLabel
             // 
@@ -493,7 +476,6 @@
         private System.Windows.Forms.TextBox cusNameTB;
         private System.Windows.Forms.TextBox cusCodeTB;
         private System.Windows.Forms.Label cusCodeLabel;
-        private System.Windows.Forms.Button modBtn;
         private System.Windows.Forms.Button delBtn;
         private System.Windows.Forms.Label distanceLabel;
         private System.Windows.Forms.ImageList imageList1;

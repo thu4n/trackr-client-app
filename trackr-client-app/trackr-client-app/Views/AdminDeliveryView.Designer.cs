@@ -85,6 +85,7 @@
             this.delBtn.TabIndex = 70;
             this.delBtn.Text = "Sa thải nhân viên";
             this.delBtn.UseVisualStyleBackColor = false;
+            this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
             // 
             // imgBox
             // 

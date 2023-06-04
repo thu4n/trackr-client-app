@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using trackr_client_app.Models;
 
@@ -53,6 +54,12 @@ namespace trackr_client_app.Views
 
                 }
             }
+        }
+
+        private void delBtn_Click(object sender, EventArgs e)
+        {
+            AdminDeleteView adminDeleteView = new AdminDeleteView(deliveryMan.ManID, "DeliveryMan");
+            adminDeleteView.Show();
         }
     }
 }
