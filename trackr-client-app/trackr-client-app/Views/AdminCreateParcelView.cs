@@ -60,6 +60,7 @@ namespace trackr_client_app.Views
             var content = new MultipartFormDataContent();
             content.Add(new StreamContent(File.OpenRead(fileInfo.FullName)), "File", fileInfo.Name);
             request.Content = content;
+            realUploadBtn.Text = "Đang tạo đơn...";
 
             var response = await client.SendAsync(request);
             string uriStr = await response.Content.ReadAsStringAsync();

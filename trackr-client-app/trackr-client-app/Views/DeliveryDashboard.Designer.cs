@@ -59,7 +59,6 @@
             this.refreshBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.chatBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
@@ -364,27 +363,11 @@
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // chatBtn
-            // 
-            this.chatBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.chatBtn.FlatAppearance.BorderSize = 0;
-            this.chatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chatBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chatBtn.ForeColor = System.Drawing.Color.White;
-            this.chatBtn.Location = new System.Drawing.Point(79, 100);
-            this.chatBtn.Name = "chatBtn";
-            this.chatBtn.Size = new System.Drawing.Size(163, 33);
-            this.chatBtn.TabIndex = 37;
-            this.chatBtn.Text = "Chat";
-            this.chatBtn.UseVisualStyleBackColor = false;
-            this.chatBtn.Click += new System.EventHandler(this.chatBtn_Click);
-            // 
             // DeliveryDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 664);
-            this.Controls.Add(this.chatBtn);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.usernameLabel);
@@ -435,6 +418,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
-        private System.Windows.Forms.Button chatBtn;
     }
 }
