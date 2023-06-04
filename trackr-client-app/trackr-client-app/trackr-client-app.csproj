@@ -110,12 +110,6 @@
     <Compile Include="Views\AdminParcelView.Designer.cs">
       <DependentUpon>AdminParcelView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ChatroomView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ChatroomView.Designer.cs">
-      <DependentUpon>ChatroomView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\CustomerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,9 +186,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminParcelView.resx">
       <DependentUpon>AdminParcelView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ChatroomView.resx">
-      <DependentUpon>ChatroomView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>

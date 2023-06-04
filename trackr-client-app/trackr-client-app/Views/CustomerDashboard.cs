@@ -127,12 +127,6 @@ namespace trackr_client_app
             customerInfoView.Show();
         }
 
-        private void chatBtn_Click(object sender, EventArgs e)
-        {
-            ChatroomView chatroomView = new ChatroomView();
-            chatroomView.Show();
-        }
-
         private void parcelGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             parcelGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;

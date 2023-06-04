@@ -214,10 +214,5 @@ namespace trackr_client_app.Views
             }
         }
 
-        private void chatBtn_Click(object sender, EventArgs e)
-        {
-            ChatroomView chatroomView = new ChatroomView();
-            chatroomView.Show();
-        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -32,6 +33,7 @@ namespace trackr_client_app
             cusAddressTB.Text = UserSession.customer.CusAddress.Replace('*',',');
             cusNameTB.Text = UserSession.customer.CusName;
             cusPhoneTB.Text = UserSession.customer.CusPhone;
+            priceTB.Text = parcel.Price.ToString();
             parcelCodeTB.Text = parcel.ParID.ToString();
             parcelNameTB.Text = parcel.ParDescription;
             statusTB.Text = parcel.ParStatus;
@@ -76,7 +78,8 @@ namespace trackr_client_app
 
         private void chatBtn_Click(object sender, EventArgs e)
         {
-
+            string command = $"mailto:trackrservice@gmail.com?subject= Trackr - Liên hệ về đơn hàng #{parcel.ParID}";
+            Process.Start(command);
         }
     }
 }

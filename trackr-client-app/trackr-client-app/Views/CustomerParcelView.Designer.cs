@@ -50,6 +50,7 @@
             this.parcelCodeLabel = new System.Windows.Forms.Label();
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chatBtn = new System.Windows.Forms.Button();
             this.noteTB = new System.Windows.Forms.TextBox();
             this.noteLabel = new System.Windows.Forms.Label();
             this.titleLabel2 = new System.Windows.Forms.Label();
@@ -58,7 +59,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.distanceLabel = new System.Windows.Forms.Label();
             this.parcelImg = new System.Windows.Forms.PictureBox();
-            this.chatBtn = new System.Windows.Forms.Button();
+            this.priceTB = new System.Windows.Forms.TextBox();
+            this.priceLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -292,7 +294,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.priceTB);
             this.panel1.Controls.Add(this.chatBtn);
+            this.panel1.Controls.Add(this.priceLabel);
             this.panel1.Controls.Add(this.noteTB);
             this.panel1.Controls.Add(this.noteLabel);
             this.panel1.Controls.Add(this.estimateDateLabel);
@@ -301,6 +305,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1015, 284);
             this.panel1.TabIndex = 40;
+            // 
+            // chatBtn
+            // 
+            this.chatBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.chatBtn.FlatAppearance.BorderSize = 0;
+            this.chatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chatBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chatBtn.ForeColor = System.Drawing.Color.White;
+            this.chatBtn.Location = new System.Drawing.Point(269, 12);
+            this.chatBtn.Name = "chatBtn";
+            this.chatBtn.Size = new System.Drawing.Size(252, 33);
+            this.chatBtn.TabIndex = 75;
+            this.chatBtn.Text = "Liên hệ người giao hàng";
+            this.chatBtn.UseVisualStyleBackColor = false;
+            this.chatBtn.Click += new System.EventHandler(this.chatBtn_Click);
             // 
             // noteTB
             // 
@@ -393,20 +412,28 @@
             this.parcelImg.TabIndex = 39;
             this.parcelImg.TabStop = false;
             // 
-            // chatBtn
+            // priceTB
             // 
-            this.chatBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.chatBtn.FlatAppearance.BorderSize = 0;
-            this.chatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chatBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chatBtn.ForeColor = System.Drawing.Color.White;
-            this.chatBtn.Location = new System.Drawing.Point(269, 12);
-            this.chatBtn.Name = "chatBtn";
-            this.chatBtn.Size = new System.Drawing.Size(252, 33);
-            this.chatBtn.TabIndex = 75;
-            this.chatBtn.Text = "Liên hệ người giao hàng";
-            this.chatBtn.UseVisualStyleBackColor = false;
-            this.chatBtn.Click += new System.EventHandler(this.chatBtn_Click);
+            this.priceTB.BackColor = System.Drawing.Color.White;
+            this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.priceTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceTB.Location = new System.Drawing.Point(737, 22);
+            this.priceTB.Name = "priceTB";
+            this.priceTB.ReadOnly = true;
+            this.priceTB.Size = new System.Drawing.Size(98, 23);
+            this.priceTB.TabIndex = 46;
+            this.priceTB.Text = "12345678";
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.BackColor = System.Drawing.Color.White;
+            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceLabel.Location = new System.Drawing.Point(594, 22);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(125, 23);
+            this.priceLabel.TabIndex = 45;
+            this.priceLabel.Text = "Phí giao hàng:";
             // 
             // CustomerParcelView
             // 
@@ -479,5 +506,7 @@
         private System.Windows.Forms.TextBox noteTB;
         private System.Windows.Forms.Label distanceLabel;
         private System.Windows.Forms.Button chatBtn;
+        private System.Windows.Forms.TextBox priceTB;
+        private System.Windows.Forms.Label priceLabel;
     }
 }
