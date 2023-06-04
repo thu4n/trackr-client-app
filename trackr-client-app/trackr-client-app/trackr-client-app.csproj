@@ -92,6 +92,12 @@
     <Compile Include="Views\AdminDeleteView.Designer.cs">
       <DependentUpon>AdminDeleteView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AdminDeliveryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminDeliveryView.Designer.cs">
+      <DependentUpon>AdminDeliveryView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminParcelView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminDeleteView.resx">
       <DependentUpon>AdminDeleteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminDeliveryView.resx">
+      <DependentUpon>AdminDeliveryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminParcelView.resx">
       <DependentUpon>AdminParcelView.cs</DependentUpon>

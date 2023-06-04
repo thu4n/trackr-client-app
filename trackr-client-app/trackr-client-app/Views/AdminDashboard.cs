@@ -28,9 +28,9 @@ namespace trackr_client_app.Views
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
             usernameLabel.Text = UserSession.admin.AdName;
+            GetDeliveryManData();
             GetParcelData();
             GetCustomerData();
-            GetDeliveryManData();
         }
         #region Parcel Data
         private async void GetParcelData()
@@ -57,7 +57,14 @@ namespace trackr_client_app.Views
             parcelGridView.Rows.Clear();
             foreach (Parcel parcel in UserSession.parcels)
             {
-                parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), parcel.ParStatus);
+                DeliveryMan delivery = new DeliveryMan();
+                if (parcel.ManID > 0)
+                {
+                    delivery = UserSession.deliveryMen.Find(x => x.ManID == parcel.ManID);
+
+                }
+                else delivery.ManName = "Chưa có người giao";
+                parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), parcel.ParStatus, delivery.ManName);
             }
         }
 
@@ -87,7 +94,7 @@ namespace trackr_client_app.Views
             {
                 DeliveryMan newDeliveryMan = new DeliveryMan();
                 newDeliveryMan = JsonConvert.DeserializeObject<DeliveryMan>(deliveryMan.ToString());
-                deliveryMen.Add(newDeliveryMan);
+                UserSession.deliveryMen.Add(newDeliveryMan);
             }
         }
         
@@ -95,7 +102,7 @@ namespace trackr_client_app.Views
         {
             int i = 1;
             deliveryGridView.Rows.Clear();
-            foreach(DeliveryMan deliveryMan in deliveryMen)
+            foreach(DeliveryMan deliveryMan in UserSession.deliveryMen)
             {
                 deliveryGridView.Rows.Add(i++, deliveryMan.ManID.ToString(), deliveryMan.ManName, deliveryMan.ManPhone);
             }
@@ -103,7 +110,12 @@ namespace trackr_client_app.Views
 
         private void deliveryGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (deliveryGridView.CurrentCell.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                DeliveryMan deli = UserSession.deliveryMen[e.RowIndex];
+                AdminDeliveryView adminDeliveryView = new AdminDeliveryView(deli);
+                adminDeliveryView.Show();
+            }
         }
         #endregion
 
@@ -123,7 +135,7 @@ namespace trackr_client_app.Views
             {
                 Customer newCustomer = new Customer();
                 newCustomer = JsonConvert.DeserializeObject<Customer>(customer.ToString());
-                customers.Add(newCustomer);
+                UserSession.customers.Add(newCustomer);
             }
         }
 
@@ -131,7 +143,7 @@ namespace trackr_client_app.Views
         {
             int i = 1;
             customerGridView.Rows.Clear();
-            foreach(Customer customer in customers)
+            foreach(Customer customer in UserSession.customers)
             {
                 customerGridView.Rows.Add(i++, customer.CusID.ToString(), customer.CusName, customer.CusAddress);
             }
@@ -180,8 +192,8 @@ namespace trackr_client_app.Views
 
         public void RefreshData()
         {
-            customers.Clear();
-            deliveryMen.Clear();
+            UserSession.customers.Clear();
+            UserSession.deliveryMen.Clear();
             UserSession.parcels.Clear();
             GetParcelData();
             GetCustomerData();

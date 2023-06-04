@@ -100,7 +100,7 @@ namespace trackr_client_app.Views
             parcelProcessedGridView.Rows.Clear();
             foreach (Parcel parcel in UserSession.parcels)
             {
-                if (parcel.ParStatus == "PROCESSED")
+                if (parcel.ParStatus == "PROCESSED" && parcel.ManID == UserSession.delivery.ManID)
                 {
                     Customer customer = UserSession.customers.Find(x => x.CusID == parcel.CusID);
                     parcelProcessedGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), customer.CusAddress);

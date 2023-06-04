@@ -20,16 +20,18 @@ namespace trackr_client_app.Views
         public ChatroomView()
         {
             InitializeComponent();
+            chatBox.Text = "";
         }
 
-        private void ChatroomView_Load(object sender, EventArgs e)
+        private async void ChatroomView_Load(object sender, EventArgs e)
         {
            client = new ClientWebSocket();
+            await InitalizeConnection();
         }
 
         public async Task InitalizeConnection()
         {
-           /*Uri serviceUri = new Uri("wss://trackrwebserver.azurewebsites.net:80");
+           Uri serviceUri = new Uri("wss://trackr.webpubsub.azure.com/client/hubs/Hub?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ3c3M6Ly90cmFja3Iud2VicHVic3ViLmF6dXJlLmNvbS9jbGllbnQvaHVicy9IdWIiLCJpYXQiOjE2ODU4NjA1NjAsImV4cCI6MTY4NTg2NDE2MH0.zSBGGEVeMBQdLeOihvT9m_FKhr0NWMkg70bTcKRhOm4");
            cts = new CancellationTokenSource();
            cts.CancelAfter(TimeSpan.FromSeconds(120));
            client.Options.KeepAliveInterval = TimeSpan.FromSeconds(10);
@@ -38,19 +40,14 @@ namespace trackr_client_app.Views
                await client.ConnectAsync(serviceUri, cts.Token);
                if(client.State == WebSocketState.Open)
                 {
-                    MessageBox.Show("Kết nối thành công");
+                    chatBox.Text += "Bạn đã tham gia vào cuộc trò chuyện\n";
                 }
             }
            catch (WebSocketException ex)
            {
              MessageBox.Show(ex.ToString());
-           }*/
-           TcpClient tcpclient = new TcpClient();
-            await tcpclient.ConnectAsync("20.212.38.176", 80);
-            if(tcpclient.Connected)
-            {
-                MessageBox.Show("ok kết nối" + tcpclient.Client.RemoteEndPoint.ToString());
-            }
+           }
+           
         }
 
         public async Task SendMsg()
@@ -83,7 +80,7 @@ namespace trackr_client_app.Views
 
         private async void sendBtn_Click(object sender, EventArgs e)
         {
-            await InitalizeConnection();
+            //await InitalizeConnection();
         }
     }
 }

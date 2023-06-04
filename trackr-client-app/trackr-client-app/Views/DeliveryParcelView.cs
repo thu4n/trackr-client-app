@@ -32,7 +32,8 @@ namespace trackr_client_app.Views
         private void DeliveryParcelView_Load(object sender, EventArgs e)
         {
             cusCodeTB.Text = customer.CusID.ToString();
-            cusAddressTB.Text = UserSession.customer.CusAddress.Replace('*',',');
+            if(customer.CusAddress.Contains('*')) 
+                cusAddressTB.Text = customer.CusAddress.Replace('*',',');
             cusNameTB.Text = customer.CusName;
             cusPhoneTB.Text = customer.CusPhone;
             parcelCodeTB.Text = parcel.ParID.ToString();
