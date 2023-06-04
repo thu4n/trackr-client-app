@@ -29,6 +29,7 @@ namespace trackr_client_app.Views
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            if(searchBtn.Text == null) return;
             string searchValue = searchTB.Text;
             if(tabControl1.SelectedIndex == 0)
             {
@@ -149,6 +150,7 @@ namespace trackr_client_app.Views
         }
         private void parcelGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            parcelGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
             var senderGrid = (DataGridView)sender;
             var stringValue = senderGrid.Rows[e.RowIndex].Cells[1].Value;
             int value = int.Parse(stringValue.ToString());
@@ -199,6 +201,7 @@ namespace trackr_client_app.Views
 
         private void parcelProcessedGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            parcelProcessedGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
             var senderGrid = (DataGridView)sender;
             var stringValue = senderGrid.Rows[e.RowIndex].Cells[1].Value;
             int value = int.Parse(stringValue.ToString());
@@ -208,9 +211,6 @@ namespace trackr_client_app.Views
                 Customer customer = UserSession.customers.Find(x => x.CusID == parcel.CusID);
                 DeliveryParcelView deliveryParcelView = new DeliveryParcelView(parcel, customer);
                 deliveryParcelView.Show();
-                //deliveryConfirmView.StartPosition = FormStartPosition.CenterScreen;
-                /*deliveryConfirmView.Tag = this;
-                deliveryConfirmView.Show();*/
             }
         }
 

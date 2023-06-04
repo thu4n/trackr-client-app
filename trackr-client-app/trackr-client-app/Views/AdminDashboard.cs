@@ -167,6 +167,74 @@ namespace trackr_client_app.Views
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            if (searchBtn.Text == null) return;
+            string searchValue = searchTB.Text;
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0:
+                    {
+                        parcelGridView.ClearSelection();
+                        parcelGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                        try
+                        {
+                            foreach (DataGridViewRow row in parcelGridView.Rows)
+                            {
+                                if (row.Cells[1].Value.ToString().Equals(searchValue))
+                                {
+                                    row.Selected = true;
+                                    break;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                        break;
+                    }
+                case 1:
+                    {
+                        deliveryGridView.ClearSelection();
+                        deliveryGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                        try
+                        {
+                            foreach (DataGridViewRow row in deliveryGridView.Rows)
+                            {
+                                if (row.Cells[1].Value.ToString().Equals(searchValue))
+                                {
+                                    row.Selected = true;
+                                    break;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        customerGridView.ClearSelection();
+                        customerGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                        try
+                        {
+                            foreach (DataGridViewRow row in customerGridView.Rows)
+                            {
+                                if (row.Cells[1].Value.ToString().Equals(searchValue))
+                                {
+                                    row.Selected = true;
+                                    break;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                        break;
+                    }
+            }
 
         }
 
@@ -218,6 +286,21 @@ namespace trackr_client_app.Views
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void parcelGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            parcelGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
+        }
+
+        private void deliveryGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            deliveryGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
+        }
+
+        private void customerGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            customerGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
         }
     }
 }

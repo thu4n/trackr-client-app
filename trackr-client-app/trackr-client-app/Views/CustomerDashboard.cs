@@ -25,11 +25,12 @@ namespace trackr_client_app
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            if (searchBtn.Text == null) return;
             string searchValue = searchTB.Text;
             parcelGridView.ClearSelection();
             parcelGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-           try
-           {
+            try
+            {
                 foreach (DataGridViewRow row in parcelGridView.Rows)
                 {
                     if (row.Cells[1].Value.ToString().Equals(searchValue))
@@ -38,11 +39,11 @@ namespace trackr_client_app
                         break;
                     }
                 }
-           }
-           catch (Exception ex)
-           {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.ToString());
-           }
+            }
             
         }
 
@@ -130,6 +131,11 @@ namespace trackr_client_app
         {
             ChatroomView chatroomView = new ChatroomView();
             chatroomView.Show();
+        }
+
+        private void parcelGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            parcelGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
         }
     }
 }

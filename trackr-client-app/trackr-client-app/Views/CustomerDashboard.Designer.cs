@@ -128,6 +128,7 @@
             this.parcelGridView.RowTemplate.Height = 24;
             this.parcelGridView.Size = new System.Drawing.Size(904, 363);
             this.parcelGridView.TabIndex = 15;
+            this.parcelGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.parcelGridView_CellContentClick);
             this.parcelGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.parcelGridView_CellMouseDoubleClick);
             // 
             // sttColumn
