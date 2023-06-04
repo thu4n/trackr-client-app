@@ -31,6 +31,7 @@ namespace trackr_client_app.Views
 
         private void DeliveryParcelView_Load(object sender, EventArgs e)
         {
+            priceTB.Text = parcel.Price.ToString();
             cusCodeTB.Text = customer.CusID.ToString();
             if(customer.CusAddress.Contains('*')) 
                 cusAddressTB.Text = customer.CusAddress.Replace('*',',');

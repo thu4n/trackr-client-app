@@ -59,6 +59,8 @@
             this.cusCodeTB = new System.Windows.Forms.TextBox();
             this.cusCodeLabel = new System.Windows.Forms.Label();
             this.parcelImg = new System.Windows.Forms.PictureBox();
+            this.priceTB = new System.Windows.Forms.TextBox();
+            this.priceLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -182,6 +184,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.priceTB);
+            this.panel1.Controls.Add(this.priceLabel);
             this.panel1.Controls.Add(this.delBtn);
             this.panel1.Controls.Add(this.noteTB);
             this.panel1.Controls.Add(this.noteLabel);
@@ -409,6 +413,29 @@
             this.parcelImg.TabIndex = 62;
             this.parcelImg.TabStop = false;
             // 
+            // priceTB
+            // 
+            this.priceTB.BackColor = System.Drawing.Color.White;
+            this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.priceTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceTB.Location = new System.Drawing.Point(725, 36);
+            this.priceTB.Name = "priceTB";
+            this.priceTB.ReadOnly = true;
+            this.priceTB.Size = new System.Drawing.Size(98, 23);
+            this.priceTB.TabIndex = 66;
+            this.priceTB.Text = "12345678";
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.BackColor = System.Drawing.Color.White;
+            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceLabel.Location = new System.Drawing.Point(594, 36);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(125, 23);
+            this.priceLabel.TabIndex = 65;
+            this.priceLabel.Text = "Phí giao hàng:";
+            // 
             // AdminParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -479,5 +506,7 @@
         private System.Windows.Forms.Button delBtn;
         private System.Windows.Forms.Label distanceLabel;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TextBox priceTB;
+        private System.Windows.Forms.Label priceLabel;
     }
 }

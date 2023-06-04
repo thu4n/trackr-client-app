@@ -38,6 +38,7 @@ namespace trackr_client_app.Views
             noteTB.Text = parcel.Note;
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            priceTB.Text = parcel.Price.ToString();
             DisplayTrackingTree();
         }
         private async void GetCustomerData()

@@ -66,6 +66,8 @@
             this.timeLabel = new System.Windows.Forms.Label();
             this.locationLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.priceTB = new System.Windows.Forms.TextBox();
+            this.priceLabel = new System.Windows.Forms.Label();
             this.routePanel.SuspendLayout();
             this.infoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -211,6 +213,8 @@
             // infoPanel
             // 
             this.infoPanel.BackColor = System.Drawing.Color.White;
+            this.infoPanel.Controls.Add(this.priceTB);
+            this.infoPanel.Controls.Add(this.priceLabel);
             this.infoPanel.Controls.Add(this.noteTB);
             this.infoPanel.Controls.Add(this.noteLabel);
             this.infoPanel.Controls.Add(this.estimateDateLabel);
@@ -492,6 +496,29 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "Cập nhật hành trình";
             // 
+            // priceTB
+            // 
+            this.priceTB.BackColor = System.Drawing.Color.White;
+            this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.priceTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceTB.Location = new System.Drawing.Point(725, 25);
+            this.priceTB.Name = "priceTB";
+            this.priceTB.ReadOnly = true;
+            this.priceTB.Size = new System.Drawing.Size(98, 23);
+            this.priceTB.TabIndex = 68;
+            this.priceTB.Text = "12345678";
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.BackColor = System.Drawing.Color.White;
+            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceLabel.Location = new System.Drawing.Point(594, 25);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(125, 23);
+            this.priceLabel.TabIndex = 67;
+            this.priceLabel.Text = "Phí giao hàng:";
+            // 
             // DeliveryParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -572,5 +599,7 @@
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.Button yesBtn;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TextBox priceTB;
+        private System.Windows.Forms.Label priceLabel;
     }
 }
