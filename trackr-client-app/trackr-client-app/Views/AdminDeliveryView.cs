@@ -36,6 +36,7 @@ namespace trackr_client_app.Views
             phoneTB.Text = deliveryMan.ManPhone;
             if(deliveryMan.ManImage != null )
             {
+                imgBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 imgBox.LoadAsync(deliveryMan.ManImage);
             }
             LoadParcelData();

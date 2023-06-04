@@ -147,6 +147,10 @@
             // 
             // parcelGridView
             // 
+            this.parcelGridView.AllowUserToAddRows = false;
+            this.parcelGridView.AllowUserToDeleteRows = false;
+            this.parcelGridView.AllowUserToResizeColumns = false;
+            this.parcelGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -238,6 +242,10 @@
             // 
             // deliveryGridView
             // 
+            this.deliveryGridView.AllowUserToAddRows = false;
+            this.deliveryGridView.AllowUserToDeleteRows = false;
+            this.deliveryGridView.AllowUserToResizeColumns = false;
+            this.deliveryGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -314,6 +322,10 @@
             // 
             // customerGridView
             // 
+            this.customerGridView.AllowUserToAddRows = false;
+            this.customerGridView.AllowUserToDeleteRows = false;
+            this.customerGridView.AllowUserToResizeColumns = false;
+            this.customerGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

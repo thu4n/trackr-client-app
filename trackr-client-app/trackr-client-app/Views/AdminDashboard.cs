@@ -151,7 +151,12 @@ namespace trackr_client_app.Views
 
         private void customerGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (customerGridView.CurrentCell.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                Customer customer = UserSession.customers[e.RowIndex];
+                AdminCustomerView customerView = new AdminCustomerView(customer);
+                customerView.Show();
+            }
         }
         #endregion
         private void AdminDashboard_FormClosed(object sender, FormClosedEventArgs e)

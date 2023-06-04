@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDeliveryView));
             this.infoPanel = new System.Windows.Forms.Panel();
             this.delBtn = new System.Windows.Forms.Button();
-            this.imgBox = new System.Windows.Forms.PictureBox();
             this.phoneLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -48,10 +47,11 @@
             this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLabel = new System.Windows.Forms.Label();
+            this.imgBox = new System.Windows.Forms.PictureBox();
             this.infoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
             this.SuspendLayout();
             // 
             // infoPanel
@@ -86,17 +86,6 @@
             this.delBtn.Text = "Sa thải nhân viên";
             this.delBtn.UseVisualStyleBackColor = false;
             this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
-            // 
-            // imgBox
-            // 
-            this.imgBox.BackColor = System.Drawing.Color.White;
-            this.imgBox.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.imgBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.imgBox.Location = new System.Drawing.Point(19, 66);
-            this.imgBox.Name = "imgBox";
-            this.imgBox.Size = new System.Drawing.Size(172, 172);
-            this.imgBox.TabIndex = 67;
-            this.imgBox.TabStop = false;
             // 
             // phoneLabel
             // 
@@ -191,6 +180,10 @@
             // 
             // parcelGridView
             // 
+            this.parcelGridView.AllowUserToAddRows = false;
+            this.parcelGridView.AllowUserToDeleteRows = false;
+            this.parcelGridView.AllowUserToResizeColumns = false;
+            this.parcelGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -262,6 +255,17 @@
             this.tableLabel.TabIndex = 46;
             this.tableLabel.Text = "Danh sách đơn hàng đang giao";
             // 
+            // imgBox
+            // 
+            this.imgBox.BackColor = System.Drawing.Color.White;
+            this.imgBox.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.imgBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.imgBox.Location = new System.Drawing.Point(19, 66);
+            this.imgBox.Name = "imgBox";
+            this.imgBox.Size = new System.Drawing.Size(172, 172);
+            this.imgBox.TabIndex = 67;
+            this.imgBox.TabStop = false;
+            // 
             // AdminDeliveryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -277,10 +281,10 @@
             this.Load += new System.EventHandler(this.AdminDeliveryView_Load);
             this.infoPanel.ResumeLayout(false);
             this.infoPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgBox)).EndInit();
             this.tablePanel.ResumeLayout(false);
             this.tablePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgBox)).EndInit();
             this.ResumeLayout(false);
 
         }
