@@ -1,6 +1,6 @@
 ﻿namespace trackr_client_app.Views
 {
-    partial class AdminParcelView
+    partial class DeliveryParcelView
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminParcelView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryParcelView));
+            this.distanceLabel = new System.Windows.Forms.Label();
+            this.routePanel = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.titleLabel2 = new System.Windows.Forms.Label();
             this.noteTB = new System.Windows.Forms.TextBox();
             this.noteLabel = new System.Windows.Forms.Label();
@@ -40,13 +41,9 @@
             this.parcelNameLabel = new System.Windows.Forms.Label();
             this.parcelCodeLabel = new System.Windows.Forms.Label();
             this.titleLabel1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.delBtn = new System.Windows.Forms.Button();
-            this.modBtn = new System.Windows.Forms.Button();
+            this.infoPanel = new System.Windows.Forms.Panel();
             this.estimateDateLabel = new System.Windows.Forms.Label();
             this.estimateDateTB = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.distanceLabel = new System.Windows.Forms.Label();
             this.statusTB = new System.Windows.Forms.TextBox();
             this.orderDateTB = new System.Windows.Forms.TextBox();
             this.parcelNameTB = new System.Windows.Forms.TextBox();
@@ -54,40 +51,63 @@
             this.cusAddressLabel = new System.Windows.Forms.Label();
             this.cusPhoneLabel = new System.Windows.Forms.Label();
             this.cusNameLabel = new System.Windows.Forms.Label();
+            this.cusCodeLabel = new System.Windows.Forms.Label();
             this.cusAddressTB = new System.Windows.Forms.TextBox();
             this.cusPhoneTB = new System.Windows.Forms.TextBox();
             this.cusNameTB = new System.Windows.Forms.TextBox();
             this.cusCodeTB = new System.Windows.Forms.TextBox();
-            this.cusCodeLabel = new System.Windows.Forms.Label();
             this.parcelImg = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.updatePanel = new System.Windows.Forms.Panel();
+            this.infoLabel = new System.Windows.Forms.Label();
+            this.yesBtn = new System.Windows.Forms.Button();
+            this.timeTB = new System.Windows.Forms.TextBox();
+            this.locationTB = new System.Windows.Forms.ComboBox();
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.locationLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chatPanel = new System.Windows.Forms.Panel();
+            this.chatBtn = new System.Windows.Forms.Button();
+            this.contactLabel = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.routePanel.SuspendLayout();
+            this.infoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
+            this.updatePanel.SuspendLayout();
+            this.chatPanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // distanceLabel
+            // 
+            this.distanceLabel.AutoSize = true;
+            this.distanceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.distanceLabel.Location = new System.Drawing.Point(316, 23);
+            this.distanceLabel.Name = "distanceLabel";
+            this.distanceLabel.Size = new System.Drawing.Size(249, 23);
+            this.distanceLabel.TabIndex = 44;
+            this.distanceLabel.Text = "Tổng khoảng cách ước lượng:";
+            // 
+            // routePanel
+            // 
+            this.routePanel.BackColor = System.Drawing.Color.White;
+            this.routePanel.Controls.Add(this.distanceLabel);
+            this.routePanel.Controls.Add(this.treeView1);
+            this.routePanel.Controls.Add(this.titleLabel2);
+            this.routePanel.Location = new System.Drawing.Point(368, 332);
+            this.routePanel.Name = "routePanel";
+            this.routePanel.Size = new System.Drawing.Size(659, 348);
+            this.routePanel.TabIndex = 64;
             // 
             // treeView1
             // 
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.treeView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeView1.ImageIndex = 0;
-            this.treeView1.ImageList = this.imageList1;
+            this.treeView1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.Indent = 35;
             this.treeView1.ItemHeight = 50;
-            this.treeView1.Location = new System.Drawing.Point(0, 52);
+            this.treeView1.Location = new System.Drawing.Point(86, 52);
             this.treeView1.Name = "treeView1";
-            this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(1015, 296);
+            this.treeView1.ShowNodeToolTips = true;
+            this.treeView1.Size = new System.Drawing.Size(926, 296);
             this.treeView1.TabIndex = 43;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "waiting.png");
-            this.imageList1.Images.SetKeyName(1, "processed.png");
-            this.imageList1.Images.SetKeyName(2, "check.png");
-            this.imageList1.Images.SetKeyName(3, "datetime.png");
             // 
             // titleLabel2
             // 
@@ -105,7 +125,7 @@
             this.noteTB.BackColor = System.Drawing.Color.White;
             this.noteTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.noteTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteTB.Location = new System.Drawing.Point(670, 247);
+            this.noteTB.Location = new System.Drawing.Point(670, 226);
             this.noteTB.Multiline = true;
             this.noteTB.Name = "noteTB";
             this.noteTB.ReadOnly = true;
@@ -118,7 +138,7 @@
             this.noteLabel.AutoSize = true;
             this.noteLabel.BackColor = System.Drawing.Color.White;
             this.noteLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel.Location = new System.Drawing.Point(594, 247);
+            this.noteLabel.Location = new System.Drawing.Point(594, 226);
             this.noteLabel.Name = "noteLabel";
             this.noteLabel.Size = new System.Drawing.Size(75, 23);
             this.noteLabel.TabIndex = 45;
@@ -180,57 +200,24 @@
             this.titleLabel1.TabIndex = 45;
             this.titleLabel1.Text = "Chi tiết đơn hàng";
             // 
-            // panel1
+            // infoPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.delBtn);
-            this.panel1.Controls.Add(this.modBtn);
-            this.panel1.Controls.Add(this.noteTB);
-            this.panel1.Controls.Add(this.noteLabel);
-            this.panel1.Controls.Add(this.estimateDateLabel);
-            this.panel1.Controls.Add(this.estimateDateTB);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 303);
-            this.panel1.TabIndex = 63;
-            // 
-            // delBtn
-            // 
-            this.delBtn.BackColor = System.Drawing.Color.White;
-            this.delBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.delBtn.FlatAppearance.BorderSize = 2;
-            this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.delBtn.Location = new System.Drawing.Point(427, 14);
-            this.delBtn.Name = "delBtn";
-            this.delBtn.Size = new System.Drawing.Size(147, 33);
-            this.delBtn.TabIndex = 69;
-            this.delBtn.Text = "Xóa đơn hàng";
-            this.delBtn.UseVisualStyleBackColor = false;
-            this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
-            // 
-            // modBtn
-            // 
-            this.modBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.modBtn.FlatAppearance.BorderSize = 0;
-            this.modBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modBtn.ForeColor = System.Drawing.Color.White;
-            this.modBtn.Location = new System.Drawing.Point(279, 14);
-            this.modBtn.Name = "modBtn";
-            this.modBtn.Size = new System.Drawing.Size(126, 33);
-            this.modBtn.TabIndex = 44;
-            this.modBtn.Text = "Chỉnh sửa";
-            this.modBtn.UseVisualStyleBackColor = false;
-            this.modBtn.Click += new System.EventHandler(this.modBtn_Click);
+            this.infoPanel.BackColor = System.Drawing.Color.White;
+            this.infoPanel.Controls.Add(this.noteTB);
+            this.infoPanel.Controls.Add(this.noteLabel);
+            this.infoPanel.Controls.Add(this.estimateDateLabel);
+            this.infoPanel.Controls.Add(this.estimateDateTB);
+            this.infoPanel.Location = new System.Drawing.Point(12, 23);
+            this.infoPanel.Name = "infoPanel";
+            this.infoPanel.Size = new System.Drawing.Size(1015, 284);
+            this.infoPanel.TabIndex = 63;
             // 
             // estimateDateLabel
             // 
             this.estimateDateLabel.AutoSize = true;
             this.estimateDateLabel.BackColor = System.Drawing.Color.White;
             this.estimateDateLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estimateDateLabel.Location = new System.Drawing.Point(226, 247);
+            this.estimateDateLabel.Location = new System.Drawing.Point(226, 226);
             this.estimateDateLabel.Name = "estimateDateLabel";
             this.estimateDateLabel.Size = new System.Drawing.Size(167, 23);
             this.estimateDateLabel.TabIndex = 25;
@@ -241,34 +228,13 @@
             this.estimateDateTB.BackColor = System.Drawing.Color.White;
             this.estimateDateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.estimateDateTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estimateDateTB.Location = new System.Drawing.Point(399, 247);
+            this.estimateDateTB.Location = new System.Drawing.Point(399, 226);
             this.estimateDateTB.Name = "estimateDateTB";
             this.estimateDateTB.ReadOnly = true;
             this.estimateDateTB.Size = new System.Drawing.Size(175, 23);
             this.estimateDateTB.TabIndex = 34;
             this.estimateDateTB.Text = "01/06/2023";
             this.estimateDateTB.WordWrap = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.distanceLabel);
-            this.panel2.Controls.Add(this.treeView1);
-            this.panel2.Controls.Add(this.titleLabel2);
-            this.panel2.Location = new System.Drawing.Point(12, 332);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1015, 348);
-            this.panel2.TabIndex = 64;
-            // 
-            // distanceLabel
-            // 
-            this.distanceLabel.AutoSize = true;
-            this.distanceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.distanceLabel.Location = new System.Drawing.Point(325, 23);
-            this.distanceLabel.Name = "distanceLabel";
-            this.distanceLabel.Size = new System.Drawing.Size(249, 23);
-            this.distanceLabel.TabIndex = 45;
-            this.distanceLabel.Text = "Tổng khoảng cách ước lượng:";
             // 
             // statusTB
             // 
@@ -354,6 +320,17 @@
             this.cusNameLabel.TabIndex = 51;
             this.cusNameLabel.Text = "Tên khách hàng:";
             // 
+            // cusCodeLabel
+            // 
+            this.cusCodeLabel.AutoSize = true;
+            this.cusCodeLabel.BackColor = System.Drawing.Color.White;
+            this.cusCodeLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cusCodeLabel.Location = new System.Drawing.Point(606, 94);
+            this.cusCodeLabel.Name = "cusCodeLabel";
+            this.cusCodeLabel.Size = new System.Drawing.Size(137, 23);
+            this.cusCodeLabel.TabIndex = 50;
+            this.cusCodeLabel.Text = "Mã khách hàng:";
+            // 
             // cusAddressTB
             // 
             this.cusAddressTB.BackColor = System.Drawing.Color.White;
@@ -404,20 +381,9 @@
             this.cusCodeTB.TabIndex = 58;
             this.cusCodeTB.Text = "12345678";
             // 
-            // cusCodeLabel
-            // 
-            this.cusCodeLabel.AutoSize = true;
-            this.cusCodeLabel.BackColor = System.Drawing.Color.White;
-            this.cusCodeLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cusCodeLabel.Location = new System.Drawing.Point(606, 94);
-            this.cusCodeLabel.Name = "cusCodeLabel";
-            this.cusCodeLabel.Size = new System.Drawing.Size(137, 23);
-            this.cusCodeLabel.TabIndex = 50;
-            this.cusCodeLabel.Text = "Mã khách hàng:";
-            // 
             // parcelImg
             // 
-            this.parcelImg.BackColor = System.Drawing.Color.White;
+            this.parcelImg.BackColor = System.Drawing.Color.Transparent;
             this.parcelImg.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
             this.parcelImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.parcelImg.Location = new System.Drawing.Point(35, 93);
@@ -426,11 +392,154 @@
             this.parcelImg.TabIndex = 62;
             this.parcelImg.TabStop = false;
             // 
-            // AdminParcelView
+            // updatePanel
+            // 
+            this.updatePanel.BackColor = System.Drawing.Color.White;
+            this.updatePanel.Controls.Add(this.infoLabel);
+            this.updatePanel.Controls.Add(this.yesBtn);
+            this.updatePanel.Controls.Add(this.timeTB);
+            this.updatePanel.Controls.Add(this.locationTB);
+            this.updatePanel.Controls.Add(this.timeLabel);
+            this.updatePanel.Controls.Add(this.locationLabel);
+            this.updatePanel.Controls.Add(this.label1);
+            this.updatePanel.Location = new System.Drawing.Point(12, 332);
+            this.updatePanel.Name = "updatePanel";
+            this.updatePanel.Size = new System.Drawing.Size(336, 228);
+            this.updatePanel.TabIndex = 65;
+            // 
+            // infoLabel
+            // 
+            this.infoLabel.AutoSize = true;
+            this.infoLabel.BackColor = System.Drawing.Color.White;
+            this.infoLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoLabel.Location = new System.Drawing.Point(19, 137);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(269, 20);
+            this.infoLabel.TabIndex = 73;
+            this.infoLabel.Text = "Lưu ý: Chỉ cập nhật khi đã đến địa điểm";
+            // 
+            // yesBtn
+            // 
+            this.yesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.yesBtn.FlatAppearance.BorderSize = 0;
+            this.yesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.yesBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yesBtn.ForeColor = System.Drawing.Color.White;
+            this.yesBtn.Location = new System.Drawing.Point(23, 171);
+            this.yesBtn.Name = "yesBtn";
+            this.yesBtn.Size = new System.Drawing.Size(273, 33);
+            this.yesBtn.TabIndex = 72;
+            this.yesBtn.Text = "Cập nhật";
+            this.yesBtn.UseVisualStyleBackColor = false;
+            this.yesBtn.Click += new System.EventHandler(this.yesBtn_Click);
+            // 
+            // timeTB
+            // 
+            this.timeTB.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeTB.Location = new System.Drawing.Point(113, 100);
+            this.timeTB.Name = "timeTB";
+            this.timeTB.ReadOnly = true;
+            this.timeTB.Size = new System.Drawing.Size(183, 25);
+            this.timeTB.TabIndex = 69;
+            // 
+            // locationTB
+            // 
+            this.locationTB.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationTB.FormattingEnabled = true;
+            this.locationTB.Location = new System.Drawing.Point(113, 61);
+            this.locationTB.Name = "locationTB";
+            this.locationTB.Size = new System.Drawing.Size(183, 25);
+            this.locationTB.TabIndex = 68;
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.BackColor = System.Drawing.Color.White;
+            this.timeLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.Location = new System.Drawing.Point(19, 100);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(91, 23);
+            this.timeLabel.TabIndex = 67;
+            this.timeLabel.Text = "Thời gian:";
+            // 
+            // locationLabel
+            // 
+            this.locationLabel.AutoSize = true;
+            this.locationLabel.BackColor = System.Drawing.Color.White;
+            this.locationLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationLabel.Location = new System.Drawing.Point(19, 62);
+            this.locationLabel.Name = "locationLabel";
+            this.locationLabel.Size = new System.Drawing.Size(88, 23);
+            this.locationLabel.TabIndex = 66;
+            this.locationLabel.Text = "Địa điểm:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(280, 38);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Cập nhật hành trình";
+            // 
+            // chatPanel
+            // 
+            this.chatPanel.BackColor = System.Drawing.Color.White;
+            this.chatPanel.Controls.Add(this.chatBtn);
+            this.chatPanel.Controls.Add(this.contactLabel);
+            this.chatPanel.Location = new System.Drawing.Point(12, 575);
+            this.chatPanel.Name = "chatPanel";
+            this.chatPanel.Size = new System.Drawing.Size(336, 105);
+            this.chatPanel.TabIndex = 66;
+            // 
+            // chatBtn
+            // 
+            this.chatBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.chatBtn.FlatAppearance.BorderSize = 0;
+            this.chatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chatBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chatBtn.ForeColor = System.Drawing.Color.White;
+            this.chatBtn.Location = new System.Drawing.Point(23, 58);
+            this.chatBtn.Name = "chatBtn";
+            this.chatBtn.Size = new System.Drawing.Size(273, 33);
+            this.chatBtn.TabIndex = 74;
+            this.chatBtn.Text = "Nhắn tin trực tiếp";
+            this.chatBtn.UseVisualStyleBackColor = false;
+            // 
+            // contactLabel
+            // 
+            this.contactLabel.AutoSize = true;
+            this.contactLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.contactLabel.Location = new System.Drawing.Point(16, 12);
+            this.contactLabel.Name = "contactLabel";
+            this.contactLabel.Size = new System.Drawing.Size(271, 38);
+            this.contactLabel.TabIndex = 74;
+            this.contactLabel.Text = "Liên hệ khách hàng";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "waiting.png");
+            this.imageList1.Images.SetKeyName(1, "processed.png");
+            this.imageList1.Images.SetKeyName(2, "check.png");
+            this.imageList1.Images.SetKeyName(3, "datetime.png");
+            // 
+            // DeliveryParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 707);
+            this.Controls.Add(this.chatPanel);
+            this.Controls.Add(this.updatePanel);
+            this.Controls.Add(this.statusLabel);
+            this.Controls.Add(this.orderDateLabel);
+            this.Controls.Add(this.parcelNameLabel);
+            this.Controls.Add(this.parcelCodeLabel);
+            this.Controls.Add(this.titleLabel1);
             this.Controls.Add(this.statusTB);
             this.Controls.Add(this.orderDateTB);
             this.Controls.Add(this.parcelNameTB);
@@ -438,28 +547,27 @@
             this.Controls.Add(this.cusAddressLabel);
             this.Controls.Add(this.cusPhoneLabel);
             this.Controls.Add(this.cusNameLabel);
+            this.Controls.Add(this.cusCodeLabel);
+            this.Controls.Add(this.parcelImg);
             this.Controls.Add(this.cusAddressTB);
             this.Controls.Add(this.cusPhoneTB);
             this.Controls.Add(this.cusNameTB);
             this.Controls.Add(this.cusCodeTB);
-            this.Controls.Add(this.cusCodeLabel);
-            this.Controls.Add(this.parcelImg);
-            this.Controls.Add(this.statusLabel);
-            this.Controls.Add(this.orderDateLabel);
-            this.Controls.Add(this.parcelNameLabel);
-            this.Controls.Add(this.parcelCodeLabel);
-            this.Controls.Add(this.titleLabel1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.routePanel);
+            this.Controls.Add(this.infoPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AdminParcelView";
-            this.Text = "Trackr - Parcel Details";
-            this.Load += new System.EventHandler(this.AdminParcelView_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.Name = "DeliveryParcelView";
+            this.Text = "Trackr - Cập nhật đơn hàng";
+            this.Load += new System.EventHandler(this.DeliveryParcelView_Load);
+            this.routePanel.ResumeLayout(false);
+            this.routePanel.PerformLayout();
+            this.infoPanel.ResumeLayout(false);
+            this.infoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).EndInit();
+            this.updatePanel.ResumeLayout(false);
+            this.updatePanel.PerformLayout();
+            this.chatPanel.ResumeLayout(false);
+            this.chatPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,7 +575,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox parcelImg;
+        private System.Windows.Forms.Label distanceLabel;
+        private System.Windows.Forms.Panel routePanel;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Label titleLabel2;
         private System.Windows.Forms.TextBox noteTB;
@@ -477,10 +586,9 @@
         private System.Windows.Forms.Label parcelNameLabel;
         private System.Windows.Forms.Label parcelCodeLabel;
         private System.Windows.Forms.Label titleLabel1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel infoPanel;
         private System.Windows.Forms.Label estimateDateLabel;
         private System.Windows.Forms.TextBox estimateDateTB;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox statusTB;
         private System.Windows.Forms.TextBox orderDateTB;
         private System.Windows.Forms.TextBox parcelNameTB;
@@ -488,14 +596,23 @@
         private System.Windows.Forms.Label cusAddressLabel;
         private System.Windows.Forms.Label cusPhoneLabel;
         private System.Windows.Forms.Label cusNameLabel;
+        private System.Windows.Forms.Label cusCodeLabel;
+        private System.Windows.Forms.PictureBox parcelImg;
         private System.Windows.Forms.TextBox cusAddressTB;
         private System.Windows.Forms.TextBox cusPhoneTB;
         private System.Windows.Forms.TextBox cusNameTB;
         private System.Windows.Forms.TextBox cusCodeTB;
-        private System.Windows.Forms.Label cusCodeLabel;
-        private System.Windows.Forms.Button modBtn;
-        private System.Windows.Forms.Button delBtn;
-        private System.Windows.Forms.Label distanceLabel;
+        private System.Windows.Forms.Panel updatePanel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label locationLabel;
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.ComboBox locationTB;
+        private System.Windows.Forms.TextBox timeTB;
+        private System.Windows.Forms.Label infoLabel;
+        private System.Windows.Forms.Button yesBtn;
+        private System.Windows.Forms.Panel chatPanel;
+        private System.Windows.Forms.Label contactLabel;
+        private System.Windows.Forms.Button chatBtn;
         private System.Windows.Forms.ImageList imageList1;
     }
 }

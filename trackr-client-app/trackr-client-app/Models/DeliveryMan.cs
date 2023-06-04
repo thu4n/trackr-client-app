@@ -13,5 +13,7 @@ namespace trackr_client_app.Models
         public string ManPhone { get; set; }
         public string ManAccount { get; set; }
         public string ManPassword { get; set; }
+
+        public string ManImage { get; set; }
     }
 }

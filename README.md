@@ -3,17 +3,13 @@
 ![img](/logoSmall.png)
 
 Một ứng dụng desktop giúp theo dõi hành trình đơn hàng, đây là đồ án cho môn học Lập trình mạng căn bản tại UIT.
+Đây là repository cho ứng dụng ở phía client. Phía server được lưu trữ ở repository riêng: https://github.com/howtodie123/Trackr-WebServer
 
 ## Table of Contents
 
 - [Trackr](#trackr)
   - [Table of Contents](#table-of-contents)
   - [Quy tắc làm việc chung trên GitHub](#quy-tắc-làm-việc-chung-trên-github)
-  - [Quy ước chung về code và tên biến](#quy-ước-chung-về-code-và-tên-biến)
-    - [Kiểu dữ liệu](#kiểu-dữ-liệu)
-    - [Kiểu toolbox in C# khi lập trình](#kiểu-toolbox-in-c-khi-lập-trình)
-    - [Ý nghĩa](#ý-nghĩa)
-    - [Quy ước code clean](#quy-ước-code-clean)
   - [Tổng quan về đồ án](#tổng-quan-về-đồ-án)
   - [Các tính năng chính của ứng dụng](#các-tính-năng-chính-của-ứng-dụng)
   - [Kiến trúc hệ thống và công nghệ sử dụng](#kiến-trúc-hệ-thống-và-công-nghệ-sử-dụng)
@@ -31,56 +27,11 @@ Một ứng dụng desktop giúp theo dõi hành trình đơn hàng, đây là �
 - Khi commit các thay đổi của mình, phải ghi rõ nội dung commit và quy tắc là commit sau khi hoàn thành một tính năng cụ thể nào đó, KHÔNG commit dồn.
 - Khi push lên GitHub, **tuyệt đối** không push lên nhánh `main` (Đã có set protection rule). Push lên nhánh `dev` cho các tính năng *chung* và sửa đổi *tổng thể*.
 - Khi muốn thay đổi của mình được merge vào `main`, tạo pull request và nhờ người khác trong team vào review request.
-- Hai nhánh để làm việc chính là nhánh `server-side` và nhánh `client-side`. Mỗi khi có tính năng được hoàn thiện ở 1 trong 2 nhánh, tiến hành `merge` vào nhánh `dev` và kiểm tra conflict.
-- Nếu nhánh `server-side` hoặc nhánh `client-side` bị tụt lại so với `dev`, thực hiện lệnh `git pull origin dev` để kéo thay đổi về nhánh mà mình **đang làm**.
-- Khi có bug, khó fix thì tạo thêm nhánh `fix-bug-x-in-y` từ nhánh mình **đang làm** với `x` là tên bug và `y` là tên nhánh. Sau khi đã kiểm chứng không còn xuất hiện bug, tiến hành merge vào nhánh **gốc** và xóa nhánh hiện tại đi.
+- Hai repository để làm việc chính là repo `server-side` và nhánh `client-side`.
+- Xây dựng một tính năng nào quan trọng thì tạo nhánh riêng từ `dev` với quy tắc đặt tên là `<tên feature>-feature`. Hoàn thành tính năng đó thì merge vào `dev` rồi xóa nhánh feature đó đi hoặc giữ lại nếu còn tồn tại bug nào đó. 
+- Khi có bug nặng, khó fix thì tạo thêm nhánh `fix-bug-x-in-y` từ nhánh mình **đang làm** với `x` là tên bug và `y` là tên nhánh. Sau khi đã kiểm chứng không còn xuất hiện bug, tiến hành merge vào nhánh **gốc** và xóa nhánh hiện tại đi.
 
-- Nâng cao: [link](https://github.com/thu4n/trackr-app/issues/21#issuecomment-1538659063)
-
-## Quy ước chung về code và tên biến
-
-Áp dụng: **trùng tên biến**
-
-Nếu khác tên thì chỉ cần comment trực tiếp vào code và ghi vào document
-
-Khi đặt tên biến hoặc tên hàm, ta sẽ thống nhất đặt thứ tự prefix + `_` để phân cách, đây là các thứ tự ưu tiên sẽ liệt kê từ trên xuống
-
-### Kiểu dữ liệu
-
-- Thống nhất theo kiểu toán học về số học, ta có:
-  - Số nguyên: int, long
-  - Số thực:float, double
-
-> Ví dụ: int_a, long_a, float_a, double _a
-
-- Thống nhất về kiểu dữ liệu:
-  - Mảng: arr
-
-> Ví dụ: arr_a
-
-### Kiểu toolbox in C# khi lập trình
-
-Thống nhất ghi cụ thể ra
-
-> Ví dụ: textbox, richtextbox, ...
-
-### Ý nghĩa
-
-Cái này mình thống nhất ghi ý nghĩa tên biến vào file docx và phải có comment dưới tên biến và tên hàm. Comment ý nghĩa bằng tiếng việt
-
-### Quy ước code clean
-
-- Khi viết `{}` thì phải xuống hàng luôn.
-
-> Ví dụ: while(1)
-> {
-> }
-
-- Ở các lần commit, ghi rõ theo cú pháp: nội dung sửa đổi - ngày
-
-- Các file có đánh số cần có `[]`
-
-> Ví dụ: main[1].cpp, test[1].cpp
+- Nói thêm: [link](https://github.com/thu4n/trackr-app/issues/21#issuecomment-1538659063)
 
 ## Tổng quan về đồ án
 
@@ -111,7 +62,7 @@ Ngoài ra còn có các đối tượng Parcel chứa mọi thông tin chi tiế
 
  1. IDE: Visual Studio 2019 hoặc 2022
  2. Ngôn ngữ sử dụng: C# (ngôn ngữ dùng chính), XAML , SQL.
- 3. Framework sử dụng: WPF, ASP.NET
+ 3. Framework sử dụng: Window Forms, ASP.NET Core
  4. Thư viện sử dụng: SignalR
  5. Network stack: Websocket (TCP), RESTful API HTTP request
  6. Loại project: Desktop application

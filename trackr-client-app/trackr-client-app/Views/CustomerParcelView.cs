@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,13 +29,15 @@ namespace trackr_client_app
         private void CustomerParcelView_Load(object sender, EventArgs e)
         {
             cusCodeTB.Text = UserSession.customer.CusID.ToString();
-            cusAddressTB.Text = UserSession.customer.CusAddress;
+            cusAddressTB.Text = UserSession.customer.CusAddress.Replace('*',',');
             cusNameTB.Text = UserSession.customer.CusName;
             cusPhoneTB.Text = UserSession.customer.CusPhone;
             parcelCodeTB.Text = parcel.ParID.ToString();
             parcelNameTB.Text = parcel.ParDescription;
             statusTB.Text = parcel.ParStatus;
             noteTB.Text = parcel.Note;
+            orderDateTB.Text = parcel.ParDeliveryDate.ToString("dd-MM-yyyy");
+            estimateDateTB.Text = parcel.ParDeliveryDate.AddDays(3).ToString("dd-MM-yyyy");
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
             DisplayTrackingTree();
@@ -42,15 +45,39 @@ namespace trackr_client_app
 
         private void DisplayTrackingTree()
         {
-            string[] locationLog = parcel.ParLocation.Split('@');
+            string[] routeLog = parcel.ParRouteLocation.Split('@');
             string[] timeLog = parcel.Realtime.Split('@');
-            int i = 0;
-            foreach(var timeMark in timeLog) 
+            string[] locationLog = parcel.ParLocation.Split('@');
+            int mark = locationLog.Length - 2;
+            int distance = int.Parse(routeLog[0]);
+            distanceLabel.Text = $"Tổng khoảng cách ước tính: {distance} km";
+            for (int i = 1; i < routeLog.Length; i++)
             {
-                string locationMark = locationLog[i++];
-                treeView1.Nodes.Add(timeMark + " " + locationMark);
+                treeView1.Nodes.Add("done", routeLog[i], 0);
+            }
+            for(int i=1; i < timeLog.Length; i++)
+            {
+                int j = i - 1;
+                MessageBox.Show(timeLog[i]);
+                string date = DateTime.ParseExact(timeLog[i], "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture).ToString();
+                treeView1.Nodes[j].Nodes.Add(Name, date , 3, 3);
+            }
+            if (mark >= 0)
+            {
+                treeView1.Nodes[mark].ImageIndex = 1;
+                treeView1.Nodes[mark].SelectedImageIndex = 1;
+                for (int i = 0; i < mark; i++)
+                {
+                    treeView1.Nodes[i].ImageIndex = 2;
+                    treeView1.Nodes[i].SelectedImageIndex = 2;
+                }
 
             }
+        }
+
+        private void chatBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

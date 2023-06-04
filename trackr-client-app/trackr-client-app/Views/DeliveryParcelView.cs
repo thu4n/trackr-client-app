@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,50 +8,43 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Forms;
 using trackr_client_app.Models;
 
 namespace trackr_client_app.Views
 {
-    public partial class AdminParcelView : Form
+    public partial class DeliveryParcelView : Form
     {
-        Parcel parcel;
-        public AdminParcelView()
+        Parcel parcel = new Parcel();
+        Customer customer = new Customer();
+        public DeliveryParcelView()
         {
             InitializeComponent();
         }
 
-        public AdminParcelView(Parcel parcel)
+        public DeliveryParcelView(Parcel parcel, Customer customer)
         {
             this.parcel = parcel;
+            this.customer = customer;
             InitializeComponent();
         }
 
-        private void AdminParcelView_Load(object sender, EventArgs e)
+        private void DeliveryParcelView_Load(object sender, EventArgs e)
         {
-            GetCustomerData();
+            cusCodeTB.Text = customer.CusID.ToString();
+            cusAddressTB.Text = UserSession.customer.CusAddress.Replace('*',',');
+            cusNameTB.Text = customer.CusName;
+            cusPhoneTB.Text = customer.CusPhone;
             parcelCodeTB.Text = parcel.ParID.ToString();
             parcelNameTB.Text = parcel.ParDescription;
             statusTB.Text = parcel.ParStatus;
             noteTB.Text = parcel.Note;
+            orderDateTB.Text = parcel.ParDeliveryDate.ToShortDateString();
+            estimateDateTB.Text = parcel.ParDeliveryDate.AddDays(3).ToShortDateString();
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            timeTB.Text = DateTime.Now.ToString();
             DisplayTrackingTree();
-        }
-        private async void GetCustomerData()
-        {
-            HttpClient client = new HttpClient();
-            string cusID = parcel.CusID.ToString();
-            var response = await client.GetAsync(UserSession.apiUrl + $"Customer/{cusID}");
-            var responseString = await response.Content.ReadAsStringAsync();
-            var data = JObject.Parse(responseString);
-            Customer customer = JsonConvert.DeserializeObject<Customer>(data.ToString());
-            cusCodeTB.Text = customer.CusID.ToString();
-            cusAddressTB.Text = customer.CusAddress.Replace('*',',');
-            cusNameTB.Text = customer.CusName;
-            cusPhoneTB.Text = customer.CusPhone;
-
         }
         private void DisplayTrackingTree()
         {
@@ -65,6 +57,7 @@ namespace trackr_client_app.Views
             for (int i = 1; i < routeLog.Length; i++)
             {
                 treeView1.Nodes.Add("done", routeLog[i], 0);
+                locationTB.Items.Add(routeLog[i]);
             }
             for (int i = 1; i < timeLog.Length; i++)
             {
@@ -75,24 +68,36 @@ namespace trackr_client_app.Views
             {
                 treeView1.Nodes[mark].ImageIndex = 1;
                 treeView1.Nodes[mark].SelectedImageIndex = 1;
-                for (int i = 0; i < mark; i++)
+                for (int i =0; i < mark; i++)
                 {
                     treeView1.Nodes[i].ImageIndex = 2;
                     treeView1.Nodes[i].SelectedImageIndex = 2;
                 }
 
             }
+
         }
 
-        private void delBtn_Click(object sender, EventArgs e)
+        private void yesBtn_Click(object sender, EventArgs e)
         {
-            AdminDeleteView adminDeleteView = new AdminDeleteView(parcel.ParID, "parcel");
-            adminDeleteView.Show();
+            string location = locationTB.Text;
+            string realtime = timeTB.Text;
+            UpdateRoute(location, realtime);
         }
 
-        private void modBtn_Click(object sender, EventArgs e)
+        private async void UpdateRoute(string location, string realtime)
         {
-
+            var client = new HttpClient();
+            parcel.ParLocation += "@" + location;
+            parcel.Realtime += "@" + realtime;
+            string jsonString = JsonConvert.SerializeObject(parcel);
+            var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            var response = await client.PutAsync(UserSession.apiUrl + $"Parcel/{parcel.ParID}", jsonContent);
+            var responseString = await response.Content.ReadAsStringAsync();
+            MessageBox.Show(responseString);
+            /*var dashboard = (DeliveryDashboard)Tag;
+            dashboard.RefreshData();*/
+            Close();
         }
     }
 }

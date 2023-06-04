@@ -36,16 +36,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDashboard));
             this.titleLabel = new System.Windows.Forms.Label();
             this.searchTB = new System.Windows.Forms.TextBox();
-            this.searchBtn = new System.Windows.Forms.Button();
             this.searchLabel = new System.Windows.Forms.Label();
             this.parcelGridView = new System.Windows.Forms.DataGridView();
-            this.usernameLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sttColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.refreshBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.chatBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,20 +70,6 @@
             this.searchTB.Name = "searchTB";
             this.searchTB.Size = new System.Drawing.Size(436, 30);
             this.searchTB.TabIndex = 12;
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.search_icon;
-            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.searchBtn.FlatAppearance.BorderSize = 0;
-            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.Location = new System.Drawing.Point(729, 152);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(49, 30);
-            this.searchBtn.TabIndex = 13;
-            this.searchBtn.UseVisualStyleBackColor = true;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // searchLabel
             // 
@@ -142,28 +130,6 @@
             this.parcelGridView.TabIndex = 15;
             this.parcelGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.parcelGridView_CellMouseDoubleClick);
             // 
-            // usernameLabel
-            // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Location = new System.Drawing.Point(866, 24);
-            this.usernameLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(104, 28);
-            this.usernameLabel.TabIndex = 16;
-            this.usernameLabel.Text = "Username";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.InitialImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.pictureBox1.Location = new System.Drawing.Point(820, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            // 
             // sttColumn
             // 
             this.sttColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -208,11 +174,81 @@
             this.statusColum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.statusColum.Width = 198;
             // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.Location = new System.Drawing.Point(866, 24);
+            this.usernameLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(104, 28);
+            this.usernameLabel.TabIndex = 16;
+            this.usernameLabel.Text = "Username";
+            this.usernameLabel.Click += new System.EventHandler(this.usernameLabel_Click);
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.refreshBtn.FlatAppearance.BorderSize = 0;
+            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.ForeColor = System.Drawing.Color.White;
+            this.refreshBtn.Location = new System.Drawing.Point(807, 150);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(163, 33);
+            this.refreshBtn.TabIndex = 35;
+            this.refreshBtn.Text = "Làm mới dữ liệu";
+            this.refreshBtn.UseVisualStyleBackColor = false;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(820, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.search_icon;
+            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchBtn.FlatAppearance.BorderSize = 0;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.Location = new System.Drawing.Point(729, 152);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(49, 30);
+            this.searchBtn.TabIndex = 13;
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // chatBtn
+            // 
+            this.chatBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.chatBtn.FlatAppearance.BorderSize = 0;
+            this.chatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chatBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chatBtn.ForeColor = System.Drawing.Color.White;
+            this.chatBtn.Location = new System.Drawing.Point(107, 104);
+            this.chatBtn.Name = "chatBtn";
+            this.chatBtn.Size = new System.Drawing.Size(163, 33);
+            this.chatBtn.TabIndex = 36;
+            this.chatBtn.Text = "Chat";
+            this.chatBtn.UseVisualStyleBackColor = false;
+            this.chatBtn.Click += new System.EventHandler(this.chatBtn_Click);
+            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 577);
+            this.Controls.Add(this.chatBtn);
+            this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.parcelGridView);
@@ -246,5 +282,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusColum;
+        private System.Windows.Forms.Button refreshBtn;
+        private System.Windows.Forms.Button chatBtn;
     }
 }

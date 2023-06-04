@@ -66,8 +66,20 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ForgotPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPasswordForm.Designer.cs">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DeliveryMan.cs" />
+    <Compile Include="Views\AdminCreateParcelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminCreateParcelView.Designer.cs">
+      <DependentUpon>AdminCreateParcelView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +98,23 @@
     <Compile Include="Views\AdminParcelView.Designer.cs">
       <DependentUpon>AdminParcelView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ChatroomView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChatroomView.Designer.cs">
+      <DependentUpon>ChatroomView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\CustomerDashboard.Designer.cs">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerInfoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerInfoView.Designer.cs">
+      <DependentUpon>CustomerInfoView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomerParcelView.cs">
       <SubType>Form</SubType>
@@ -115,14 +139,32 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\DeliveryConfirmView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DeliveryConfirmView.Designer.cs">
+      <DependentUpon>DeliveryConfirmView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DeliveryDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\DeliveryDashboard.Designer.cs">
       <DependentUpon>DeliveryDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\DeliveryParcelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DeliveryParcelView.Designer.cs">
+      <DependentUpon>DeliveryParcelView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ForgotPasswordForm.resx">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminCreateParcelView.resx">
+      <DependentUpon>AdminCreateParcelView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
@@ -133,8 +175,14 @@
     <EmbeddedResource Include="Views\AdminParcelView.resx">
       <DependentUpon>AdminParcelView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChatroomView.resx">
+      <DependentUpon>ChatroomView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerInfoView.resx">
+      <DependentUpon>CustomerInfoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerParcelView.resx">
       <DependentUpon>CustomerParcelView.cs</DependentUpon>
@@ -152,8 +200,14 @@
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\DeliveryConfirmView.resx">
+      <DependentUpon>DeliveryConfirmView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DeliveryDashboard.resx">
       <DependentUpon>DeliveryDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DeliveryParcelView.resx">
+      <DependentUpon>DeliveryParcelView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

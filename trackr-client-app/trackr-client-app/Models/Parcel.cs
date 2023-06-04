@@ -10,16 +10,16 @@ namespace trackr_client_app.Models
     {
         public Parcel() 
         { 
-            ParID = 0;
             ParDescription = "";
-            ParStatus = "";
+            ParStatus = "READY_TO_SHIP";
             ParDeliveryDate = DateTime.Now;
             ParLocation = "";
             Realtime = "";
             Note = "";
             Price = 0;
-            CusID = 0;
-            ManID = 0;
+            CusID = -99;
+            ManID = -99;
+            ParRouteLocation = "";
         }
         public int ParID { get; set; }
         public string ParImage { get; set; }
@@ -32,5 +32,8 @@ namespace trackr_client_app.Models
         public int Price { get; set; }
         public int CusID { get; set; }
         public int ManID { get; set; }
+
+        public string ParRouteLocation { get; set; }
+
     }
 }
