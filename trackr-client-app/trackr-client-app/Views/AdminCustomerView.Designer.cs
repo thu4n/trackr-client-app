@@ -31,8 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminCustomerView));
             this.infoPanel = new System.Windows.Forms.Panel();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.imgBox = new System.Windows.Forms.PictureBox();
+            this.cusBirthTB = new System.Windows.Forms.TextBox();
+            this.cusBirthLabel = new System.Windows.Forms.Label();
             this.cusAddressTB = new System.Windows.Forms.TextBox();
             this.cusPhoneTB = new System.Windows.Forms.TextBox();
             this.cusNameTB = new System.Windows.Forms.TextBox();
@@ -41,16 +41,17 @@
             this.cusPhoneLabel = new System.Windows.Forms.Label();
             this.cusNameLabel = new System.Windows.Forms.Label();
             this.cusCodeLabel = new System.Windows.Forms.Label();
+            this.imgBox = new System.Windows.Forms.PictureBox();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.tablePanel = new System.Windows.Forms.Panel();
             this.parcelGridView = new System.Windows.Forms.DataGridView();
-            this.tableLabel = new System.Windows.Forms.Label();
             this.sttCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cusBirthTB = new System.Windows.Forms.TextBox();
-            this.cusBirthLabel = new System.Windows.Forms.Label();
+            this.tableLabel = new System.Windows.Forms.Label();
+            this.delBtn = new System.Windows.Forms.Button();
             this.infoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgBox)).BeginInit();
             this.tablePanel.SuspendLayout();
@@ -60,6 +61,7 @@
             // infoPanel
             // 
             this.infoPanel.BackColor = System.Drawing.Color.White;
+            this.infoPanel.Controls.Add(this.delBtn);
             this.infoPanel.Controls.Add(this.cusBirthTB);
             this.infoPanel.Controls.Add(this.cusBirthLabel);
             this.infoPanel.Controls.Add(this.cusAddressTB);
@@ -78,28 +80,28 @@
             this.infoPanel.Size = new System.Drawing.Size(1015, 264);
             this.infoPanel.TabIndex = 0;
             // 
-            // titleLabel
+            // cusBirthTB
             // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.BackColor = System.Drawing.Color.White;
-            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.titleLabel.Location = new System.Drawing.Point(14, 11);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(305, 38);
-            this.titleLabel.TabIndex = 47;
-            this.titleLabel.Text = "Thông tin khách hàng";
+            this.cusBirthTB.BackColor = System.Drawing.Color.White;
+            this.cusBirthTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cusBirthTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cusBirthTB.Location = new System.Drawing.Point(343, 162);
+            this.cusBirthTB.Name = "cusBirthTB";
+            this.cusBirthTB.ReadOnly = true;
+            this.cusBirthTB.Size = new System.Drawing.Size(96, 23);
+            this.cusBirthTB.TabIndex = 78;
+            this.cusBirthTB.Text = "0785987612";
             // 
-            // imgBox
+            // cusBirthLabel
             // 
-            this.imgBox.BackColor = System.Drawing.Color.White;
-            this.imgBox.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.imgBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.imgBox.Location = new System.Drawing.Point(21, 61);
-            this.imgBox.Name = "imgBox";
-            this.imgBox.Size = new System.Drawing.Size(172, 172);
-            this.imgBox.TabIndex = 68;
-            this.imgBox.TabStop = false;
+            this.cusBirthLabel.AutoSize = true;
+            this.cusBirthLabel.BackColor = System.Drawing.Color.White;
+            this.cusBirthLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cusBirthLabel.Location = new System.Drawing.Point(243, 162);
+            this.cusBirthLabel.Name = "cusBirthLabel";
+            this.cusBirthLabel.Size = new System.Drawing.Size(94, 23);
+            this.cusBirthLabel.TabIndex = 77;
+            this.cusBirthLabel.Text = "Ngày sinh:";
             // 
             // cusAddressTB
             // 
@@ -195,6 +197,29 @@
             this.cusCodeLabel.TabIndex = 69;
             this.cusCodeLabel.Text = "Mã khách hàng:";
             // 
+            // imgBox
+            // 
+            this.imgBox.BackColor = System.Drawing.Color.White;
+            this.imgBox.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
+            this.imgBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.imgBox.Location = new System.Drawing.Point(21, 61);
+            this.imgBox.Name = "imgBox";
+            this.imgBox.Size = new System.Drawing.Size(172, 172);
+            this.imgBox.TabIndex = 68;
+            this.imgBox.TabStop = false;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.Color.White;
+            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.titleLabel.Location = new System.Drawing.Point(14, 11);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(305, 38);
+            this.titleLabel.TabIndex = 47;
+            this.titleLabel.Text = "Thông tin khách hàng";
+            // 
             // tablePanel
             // 
             this.tablePanel.BackColor = System.Drawing.Color.White;
@@ -234,18 +259,6 @@
             this.parcelGridView.Size = new System.Drawing.Size(1015, 279);
             this.parcelGridView.TabIndex = 47;
             // 
-            // tableLabel
-            // 
-            this.tableLabel.AutoSize = true;
-            this.tableLabel.BackColor = System.Drawing.Color.White;
-            this.tableLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.tableLabel.Location = new System.Drawing.Point(12, 10);
-            this.tableLabel.Name = "tableLabel";
-            this.tableLabel.Size = new System.Drawing.Size(405, 38);
-            this.tableLabel.TabIndex = 46;
-            this.tableLabel.Text = "Danh sách đơn hàng đặt mua\r\n";
-            // 
             // sttCol
             // 
             this.sttCol.HeaderText = "STT";
@@ -282,28 +295,33 @@
             this.statusCol.MinimumWidth = 6;
             this.statusCol.Name = "statusCol";
             // 
-            // cusBirthTB
+            // tableLabel
             // 
-            this.cusBirthTB.BackColor = System.Drawing.Color.White;
-            this.cusBirthTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cusBirthTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cusBirthTB.Location = new System.Drawing.Point(343, 162);
-            this.cusBirthTB.Name = "cusBirthTB";
-            this.cusBirthTB.ReadOnly = true;
-            this.cusBirthTB.Size = new System.Drawing.Size(96, 23);
-            this.cusBirthTB.TabIndex = 78;
-            this.cusBirthTB.Text = "0785987612";
+            this.tableLabel.AutoSize = true;
+            this.tableLabel.BackColor = System.Drawing.Color.White;
+            this.tableLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.tableLabel.Location = new System.Drawing.Point(12, 10);
+            this.tableLabel.Name = "tableLabel";
+            this.tableLabel.Size = new System.Drawing.Size(405, 38);
+            this.tableLabel.TabIndex = 46;
+            this.tableLabel.Text = "Danh sách đơn hàng đặt mua\r\n";
             // 
-            // cusBirthLabel
+            // delBtn
             // 
-            this.cusBirthLabel.AutoSize = true;
-            this.cusBirthLabel.BackColor = System.Drawing.Color.White;
-            this.cusBirthLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cusBirthLabel.Location = new System.Drawing.Point(243, 162);
-            this.cusBirthLabel.Name = "cusBirthLabel";
-            this.cusBirthLabel.Size = new System.Drawing.Size(94, 23);
-            this.cusBirthLabel.TabIndex = 77;
-            this.cusBirthLabel.Text = "Ngày sinh:";
+            this.delBtn.BackColor = System.Drawing.Color.White;
+            this.delBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.delBtn.FlatAppearance.BorderSize = 2;
+            this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.delBtn.Location = new System.Drawing.Point(325, 18);
+            this.delBtn.Name = "delBtn";
+            this.delBtn.Size = new System.Drawing.Size(189, 33);
+            this.delBtn.TabIndex = 73;
+            this.delBtn.Text = "Xóa khách hàng";
+            this.delBtn.UseVisualStyleBackColor = false;
+            this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
             // 
             // AdminCustomerView
             // 
@@ -349,5 +367,6 @@
         private System.Windows.Forms.Label tableLabel;
         private System.Windows.Forms.TextBox cusBirthTB;
         private System.Windows.Forms.Label cusBirthLabel;
+        private System.Windows.Forms.Button delBtn;
     }
 }

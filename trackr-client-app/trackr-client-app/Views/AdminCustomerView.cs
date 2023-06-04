@@ -52,5 +52,11 @@ namespace trackr_client_app.Views
                 }
             }
         }
+
+        private void delBtn_Click(object sender, EventArgs e)
+        {
+            AdminDeleteView adminDeleteView = new AdminDeleteView(customer.CusID, "Customer");
+            adminDeleteView.Show();
+        }
     }
 }

@@ -79,7 +79,7 @@
             this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.delBtn.Location = new System.Drawing.Point(235, 205);
+            this.delBtn.Location = new System.Drawing.Point(300, 15);
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(189, 33);
             this.delBtn.TabIndex = 70;
