@@ -115,6 +115,7 @@
             this.parcelGridView.EnableHeadersVisualStyles = false;
             this.parcelGridView.Location = new System.Drawing.Point(66, 202);
             this.parcelGridView.Name = "parcelGridView";
+            this.parcelGridView.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,6 +148,7 @@
             this.codeColumn.HeaderText = "Mã vận đơn";
             this.codeColumn.MinimumWidth = 6;
             this.codeColumn.Name = "codeColumn";
+            this.codeColumn.ReadOnly = true;
             this.codeColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.codeColumn.Width = 198;
             // 
@@ -155,6 +157,7 @@
             this.nameColumn.HeaderText = "Tên đơn hàng";
             this.nameColumn.MinimumWidth = 6;
             this.nameColumn.Name = "nameColumn";
+            this.nameColumn.ReadOnly = true;
             this.nameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.nameColumn.Width = 198;
             // 
@@ -163,6 +166,7 @@
             this.dateColumn.HeaderText = "Ngày đặt hàng";
             this.dateColumn.MinimumWidth = 6;
             this.dateColumn.Name = "dateColumn";
+            this.dateColumn.ReadOnly = true;
             this.dateColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dateColumn.Width = 197;
             // 
@@ -171,6 +175,7 @@
             this.statusColum.HeaderText = "Trạng thái";
             this.statusColum.MinimumWidth = 6;
             this.statusColum.Name = "statusColum";
+            this.statusColum.ReadOnly = true;
             this.statusColum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.statusColum.Width = 198;
             // 

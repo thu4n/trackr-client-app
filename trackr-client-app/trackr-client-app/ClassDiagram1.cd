@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="trackr_client_app.Models.Admin">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAiAAAAAAAAAAAABAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Models\Admin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="trackr_client_app.Models.Customer">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAIABAAAABAAAAAAAAAAAIAAAAAAAAEIAgAA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="trackr_client_app.Models.DeliveryMan">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAIAAABAAAAAAAAAAIAAAEEA=</HashCode>
+      <FileName>Models\DeliveryMan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="trackr_client_app.Models.Parcel">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAICQQAAACAAAIAAAAAIABAIAAAABAAAAEAAAA=</HashCode>
+      <FileName>Models\Parcel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="trackr_client_app.Models.UserSession">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAARAAAAAEAAAAAAAAAAAAEAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
