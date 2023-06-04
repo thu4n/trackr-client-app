@@ -100,7 +100,7 @@ namespace trackr_client_app.Views
         {
             dateTB.Text = DateTime.Now.ToString();
             parcelSample.SizeMode = PictureBoxSizeMode.StretchImage;
-            foreach(var customer in AdminDashboard.customers)
+            foreach(var customer in UserSession.customers)
             {
                 customerData.Add(customer.CusID, customer.CusName);
                 cusCodeBox.Items.Add(customer.CusID);

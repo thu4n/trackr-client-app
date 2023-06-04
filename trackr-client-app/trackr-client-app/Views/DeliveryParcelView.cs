@@ -53,12 +53,18 @@ namespace trackr_client_app.Views
             string[] timeLog = parcel.Realtime.Split('@');
             string[] locationLog = parcel.ParLocation.Split('@');
             int mark = locationLog.Length - 2;
-            int distance = int.Parse(routeLog[0]);
+            int.TryParse(routeLog[0], out var distance);
+
             distanceLabel.Text = $"Tổng khoảng cách ước tính: {distance} km";
             for (int i = 1; i < routeLog.Length; i++)
             {
-                treeView1.Nodes.Add("done", routeLog[i], 0);
-                locationTB.Items.Add(routeLog[i]);
+                string log = routeLog[i];
+                if(i > mark) locationTB.Items.Add(log);
+                if(i == routeLog.Length - 1)
+                {
+                    log = routeLog[i].Replace('*',',');
+                }
+                treeView1.Nodes.Add("done", log, 0);
             }
             for (int i = 1; i < timeLog.Length; i++)
             {
@@ -91,13 +97,15 @@ namespace trackr_client_app.Views
             var client = new HttpClient();
             parcel.ParLocation += "@" + location;
             parcel.Realtime += "@" + realtime;
+            if(location == customer.CusAddress)
+            {
+                parcel.ParStatus = "COMPLETED";
+            }
             string jsonString = JsonConvert.SerializeObject(parcel);
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
             var response = await client.PutAsync(UserSession.apiUrl + $"Parcel/{parcel.ParID}", jsonContent);
             var responseString = await response.Content.ReadAsStringAsync();
             MessageBox.Show(responseString);
-            /*var dashboard = (DeliveryDashboard)Tag;
-            dashboard.RefreshData();*/
             Close();
         }
     }

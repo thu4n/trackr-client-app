@@ -58,9 +58,8 @@ namespace trackr_client_app
             for(int i=1; i < timeLog.Length; i++)
             {
                 int j = i - 1;
-                MessageBox.Show(timeLog[i]);
-                string date = DateTime.ParseExact(timeLog[i], "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture).ToString();
-                treeView1.Nodes[j].Nodes.Add(Name, date , 3, 3);
+                //string date = DateTime.ParseExact(timeLog[i], "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture).ToString();
+                treeView1.Nodes[j].Nodes.Add(Name, timeLog[i], 3, 3);
             }
             if (mark >= 0)
             {

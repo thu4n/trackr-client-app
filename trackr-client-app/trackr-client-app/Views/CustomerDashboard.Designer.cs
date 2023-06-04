@@ -178,6 +178,7 @@
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.Location = new System.Drawing.Point(866, 24);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(0);
@@ -206,6 +207,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(820, 18);
             this.pictureBox1.Name = "pictureBox1";

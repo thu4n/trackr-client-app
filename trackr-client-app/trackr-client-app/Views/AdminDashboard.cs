@@ -34,8 +34,9 @@ namespace trackr_client_app.Views
                 pictureBox1.LoadAsync(UserSession.admin.AdImage);
             }
             GetDeliveryManData();
-            GetParcelData();
             GetCustomerData();
+            MessageBox.Show("Xin chào quản lý cửa hàng");
+            GetParcelData();
         }
         #region Parcel Data
         private async void GetParcelData()
@@ -66,7 +67,6 @@ namespace trackr_client_app.Views
                 if (parcel.ManID > 0)
                 {
                     delivery = UserSession.deliveryMen.Find(x => x.ManID == parcel.ManID);
-
                 }
                 else delivery.ManName = "Chưa có người giao";
                 parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), parcel.ParStatus, delivery.ManName);
@@ -101,8 +101,9 @@ namespace trackr_client_app.Views
                 newDeliveryMan = JsonConvert.DeserializeObject<DeliveryMan>(deliveryMan.ToString());
                 UserSession.deliveryMen.Add(newDeliveryMan);
             }
+            GetParcelData();
         }
-        
+
         private void DisplayDeliveryManData()
         {
             int i = 1;
@@ -273,7 +274,6 @@ namespace trackr_client_app.Views
             UserSession.customers.Clear();
             UserSession.deliveryMen.Clear();
             UserSession.parcels.Clear();
-            GetParcelData();
             GetCustomerData();
             GetDeliveryManData();
         }

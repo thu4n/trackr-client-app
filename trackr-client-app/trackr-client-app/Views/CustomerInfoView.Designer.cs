@@ -273,6 +273,7 @@
             // 
             // districtTB
             // 
+            this.districtTB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.districtTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.districtTB.FormattingEnabled = true;
             this.districtTB.Items.AddRange(new object[] {
