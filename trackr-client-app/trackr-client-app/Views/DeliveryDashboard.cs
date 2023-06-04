@@ -29,7 +29,48 @@ namespace trackr_client_app.Views
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-
+            if(searchBtn.Text == null) return;
+            string searchValue = searchTB.Text;
+            if(tabControl1.SelectedIndex == 0)
+            {
+                parcelGridView.ClearSelection();
+                parcelGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                try
+                {
+                    foreach (DataGridViewRow row in parcelGridView.Rows)
+                    {
+                        if (row.Cells[1].Value.ToString().Equals(searchValue))
+                        {
+                            row.Selected = true;
+                            break;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else if(tabControl1.SelectedIndex == 1)
+            {
+                parcelProcessedGridView.ClearSelection();
+                parcelProcessedGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                try
+                {
+                    foreach (DataGridViewRow row in parcelProcessedGridView.Rows)
+                    {
+                        if (row.Cells[1].Value.ToString().Equals(searchValue))
+                        {
+                            row.Selected = true;
+                            break;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
 
         private void DeliveryDashboard_Load(object sender, EventArgs e)
@@ -100,7 +141,7 @@ namespace trackr_client_app.Views
             parcelProcessedGridView.Rows.Clear();
             foreach (Parcel parcel in UserSession.parcels)
             {
-                if (parcel.ParStatus == "PROCESSED")
+                if (parcel.ParStatus == "PROCESSED" && parcel.ManID == UserSession.delivery.ManID)
                 {
                     Customer customer = UserSession.customers.Find(x => x.CusID == parcel.CusID);
                     parcelProcessedGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), customer.CusAddress);
@@ -109,6 +150,7 @@ namespace trackr_client_app.Views
         }
         private void parcelGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            parcelGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
             var senderGrid = (DataGridView)sender;
             var stringValue = senderGrid.Rows[e.RowIndex].Cells[1].Value;
             int value = int.Parse(stringValue.ToString());
@@ -159,6 +201,7 @@ namespace trackr_client_app.Views
 
         private void parcelProcessedGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            parcelProcessedGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
             var senderGrid = (DataGridView)sender;
             var stringValue = senderGrid.Rows[e.RowIndex].Cells[1].Value;
             int value = int.Parse(stringValue.ToString());
@@ -168,16 +211,8 @@ namespace trackr_client_app.Views
                 Customer customer = UserSession.customers.Find(x => x.CusID == parcel.CusID);
                 DeliveryParcelView deliveryParcelView = new DeliveryParcelView(parcel, customer);
                 deliveryParcelView.Show();
-                //deliveryConfirmView.StartPosition = FormStartPosition.CenterScreen;
-                /*deliveryConfirmView.Tag = this;
-                deliveryConfirmView.Show();*/
             }
         }
 
-        private void chatBtn_Click(object sender, EventArgs e)
-        {
-            ChatroomView chatroomView = new ChatroomView();
-            chatroomView.Show();
-        }
     }
 }

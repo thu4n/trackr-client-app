@@ -28,9 +28,15 @@ namespace trackr_client_app.Views
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
             usernameLabel.Text = UserSession.admin.AdName;
-            GetParcelData();
-            GetCustomerData();
+            if(UserSession.admin.AdImage != null)
+            {
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.LoadAsync(UserSession.admin.AdImage);
+            }
             GetDeliveryManData();
+            GetCustomerData();
+            MessageBox.Show("Xin chào quản lý cửa hàng");
+            GetParcelData();
         }
         #region Parcel Data
         private async void GetParcelData()
@@ -57,7 +63,13 @@ namespace trackr_client_app.Views
             parcelGridView.Rows.Clear();
             foreach (Parcel parcel in UserSession.parcels)
             {
-                parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), parcel.ParStatus);
+                DeliveryMan delivery = new DeliveryMan();
+                if (parcel.ManID > 0)
+                {
+                    delivery = UserSession.deliveryMen.Find(x => x.ManID == parcel.ManID);
+                }
+                else delivery.ManName = "Chưa có người giao";
+                parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), parcel.ParStatus, delivery.ManName);
             }
         }
 
@@ -87,15 +99,16 @@ namespace trackr_client_app.Views
             {
                 DeliveryMan newDeliveryMan = new DeliveryMan();
                 newDeliveryMan = JsonConvert.DeserializeObject<DeliveryMan>(deliveryMan.ToString());
-                deliveryMen.Add(newDeliveryMan);
+                UserSession.deliveryMen.Add(newDeliveryMan);
             }
+            GetParcelData();
         }
-        
+
         private void DisplayDeliveryManData()
         {
             int i = 1;
             deliveryGridView.Rows.Clear();
-            foreach(DeliveryMan deliveryMan in deliveryMen)
+            foreach(DeliveryMan deliveryMan in UserSession.deliveryMen)
             {
                 deliveryGridView.Rows.Add(i++, deliveryMan.ManID.ToString(), deliveryMan.ManName, deliveryMan.ManPhone);
             }
@@ -103,7 +116,12 @@ namespace trackr_client_app.Views
 
         private void deliveryGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (deliveryGridView.CurrentCell.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                DeliveryMan deli = UserSession.deliveryMen[e.RowIndex];
+                AdminDeliveryView adminDeliveryView = new AdminDeliveryView(deli);
+                adminDeliveryView.Show();
+            }
         }
         #endregion
 
@@ -123,7 +141,7 @@ namespace trackr_client_app.Views
             {
                 Customer newCustomer = new Customer();
                 newCustomer = JsonConvert.DeserializeObject<Customer>(customer.ToString());
-                customers.Add(newCustomer);
+                UserSession.customers.Add(newCustomer);
             }
         }
 
@@ -131,7 +149,7 @@ namespace trackr_client_app.Views
         {
             int i = 1;
             customerGridView.Rows.Clear();
-            foreach(Customer customer in customers)
+            foreach(Customer customer in UserSession.customers)
             {
                 customerGridView.Rows.Add(i++, customer.CusID.ToString(), customer.CusName, customer.CusAddress);
             }
@@ -139,7 +157,12 @@ namespace trackr_client_app.Views
 
         private void customerGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (customerGridView.CurrentCell.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                Customer customer = UserSession.customers[e.RowIndex];
+                AdminCustomerView customerView = new AdminCustomerView(customer);
+                customerView.Show();
+            }
         }
         #endregion
         private void AdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -150,6 +173,74 @@ namespace trackr_client_app.Views
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            if (searchBtn.Text == null) return;
+            string searchValue = searchTB.Text;
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0:
+                    {
+                        parcelGridView.ClearSelection();
+                        parcelGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                        try
+                        {
+                            foreach (DataGridViewRow row in parcelGridView.Rows)
+                            {
+                                if (row.Cells[1].Value.ToString().Equals(searchValue))
+                                {
+                                    row.Selected = true;
+                                    break;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                        break;
+                    }
+                case 1:
+                    {
+                        deliveryGridView.ClearSelection();
+                        deliveryGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                        try
+                        {
+                            foreach (DataGridViewRow row in deliveryGridView.Rows)
+                            {
+                                if (row.Cells[1].Value.ToString().Equals(searchValue))
+                                {
+                                    row.Selected = true;
+                                    break;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        customerGridView.ClearSelection();
+                        customerGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                        try
+                        {
+                            foreach (DataGridViewRow row in customerGridView.Rows)
+                            {
+                                if (row.Cells[1].Value.ToString().Equals(searchValue))
+                                {
+                                    row.Selected = true;
+                                    break;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                        break;
+                    }
+            }
 
         }
 
@@ -180,10 +271,9 @@ namespace trackr_client_app.Views
 
         public void RefreshData()
         {
-            customers.Clear();
-            deliveryMen.Clear();
+            UserSession.customers.Clear();
+            UserSession.deliveryMen.Clear();
             UserSession.parcels.Clear();
-            GetParcelData();
             GetCustomerData();
             GetDeliveryManData();
         }
@@ -201,6 +291,21 @@ namespace trackr_client_app.Views
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void parcelGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            parcelGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
+        }
+
+        private void deliveryGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            deliveryGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
+        }
+
+        private void customerGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            customerGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
         }
     }
 }

@@ -33,6 +33,7 @@
             this.distanceLabel = new System.Windows.Forms.Label();
             this.routePanel = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.titleLabel2 = new System.Windows.Forms.Label();
             this.noteTB = new System.Windows.Forms.TextBox();
             this.noteLabel = new System.Windows.Forms.Label();
@@ -65,15 +66,10 @@
             this.timeLabel = new System.Windows.Forms.Label();
             this.locationLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.chatPanel = new System.Windows.Forms.Panel();
-            this.chatBtn = new System.Windows.Forms.Button();
-            this.contactLabel = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.routePanel.SuspendLayout();
             this.infoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
             this.updatePanel.SuspendLayout();
-            this.chatPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // distanceLabel
@@ -101,13 +97,25 @@
             // 
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageList1;
             this.treeView1.Indent = 35;
             this.treeView1.ItemHeight = 50;
             this.treeView1.Location = new System.Drawing.Point(86, 52);
             this.treeView1.Name = "treeView1";
+            this.treeView1.SelectedImageIndex = 0;
             this.treeView1.ShowNodeToolTips = true;
-            this.treeView1.Size = new System.Drawing.Size(926, 296);
+            this.treeView1.Size = new System.Drawing.Size(570, 296);
             this.treeView1.TabIndex = 43;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "waiting.png");
+            this.imageList1.Images.SetKeyName(1, "processed.png");
+            this.imageList1.Images.SetKeyName(2, "check.png");
+            this.imageList1.Images.SetKeyName(3, "datetime.png");
             // 
             // titleLabel2
             // 
@@ -404,7 +412,7 @@
             this.updatePanel.Controls.Add(this.label1);
             this.updatePanel.Location = new System.Drawing.Point(12, 332);
             this.updatePanel.Name = "updatePanel";
-            this.updatePanel.Size = new System.Drawing.Size(336, 228);
+            this.updatePanel.Size = new System.Drawing.Size(336, 348);
             this.updatePanel.TabIndex = 65;
             // 
             // infoLabel
@@ -484,56 +492,11 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "Cập nhật hành trình";
             // 
-            // chatPanel
-            // 
-            this.chatPanel.BackColor = System.Drawing.Color.White;
-            this.chatPanel.Controls.Add(this.chatBtn);
-            this.chatPanel.Controls.Add(this.contactLabel);
-            this.chatPanel.Location = new System.Drawing.Point(12, 575);
-            this.chatPanel.Name = "chatPanel";
-            this.chatPanel.Size = new System.Drawing.Size(336, 105);
-            this.chatPanel.TabIndex = 66;
-            // 
-            // chatBtn
-            // 
-            this.chatBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.chatBtn.FlatAppearance.BorderSize = 0;
-            this.chatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chatBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chatBtn.ForeColor = System.Drawing.Color.White;
-            this.chatBtn.Location = new System.Drawing.Point(23, 58);
-            this.chatBtn.Name = "chatBtn";
-            this.chatBtn.Size = new System.Drawing.Size(273, 33);
-            this.chatBtn.TabIndex = 74;
-            this.chatBtn.Text = "Nhắn tin trực tiếp";
-            this.chatBtn.UseVisualStyleBackColor = false;
-            // 
-            // contactLabel
-            // 
-            this.contactLabel.AutoSize = true;
-            this.contactLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.contactLabel.Location = new System.Drawing.Point(16, 12);
-            this.contactLabel.Name = "contactLabel";
-            this.contactLabel.Size = new System.Drawing.Size(271, 38);
-            this.contactLabel.TabIndex = 74;
-            this.contactLabel.Text = "Liên hệ khách hàng";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "waiting.png");
-            this.imageList1.Images.SetKeyName(1, "processed.png");
-            this.imageList1.Images.SetKeyName(2, "check.png");
-            this.imageList1.Images.SetKeyName(3, "datetime.png");
-            // 
             // DeliveryParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 707);
-            this.Controls.Add(this.chatPanel);
             this.Controls.Add(this.updatePanel);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.orderDateLabel);
@@ -566,8 +529,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).EndInit();
             this.updatePanel.ResumeLayout(false);
             this.updatePanel.PerformLayout();
-            this.chatPanel.ResumeLayout(false);
-            this.chatPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -610,9 +571,6 @@
         private System.Windows.Forms.TextBox timeTB;
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.Button yesBtn;
-        private System.Windows.Forms.Panel chatPanel;
-        private System.Windows.Forms.Label contactLabel;
-        private System.Windows.Forms.Button chatBtn;
         private System.Windows.Forms.ImageList imageList1;
     }
 }

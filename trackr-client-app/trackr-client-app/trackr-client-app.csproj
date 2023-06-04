@@ -80,6 +80,12 @@
     <Compile Include="Views\AdminCreateParcelView.Designer.cs">
       <DependentUpon>AdminCreateParcelView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AdminCustomerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminCustomerView.Designer.cs">
+      <DependentUpon>AdminCustomerView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,17 +98,17 @@
     <Compile Include="Views\AdminDeleteView.Designer.cs">
       <DependentUpon>AdminDeleteView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AdminDeliveryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminDeliveryView.Designer.cs">
+      <DependentUpon>AdminDeliveryView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminParcelView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\AdminParcelView.Designer.cs">
       <DependentUpon>AdminParcelView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ChatroomView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ChatroomView.Designer.cs">
-      <DependentUpon>ChatroomView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomerDashboard.cs">
       <SubType>Form</SubType>
@@ -166,17 +172,20 @@
     <EmbeddedResource Include="Views\AdminCreateParcelView.resx">
       <DependentUpon>AdminCreateParcelView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminCustomerView.resx">
+      <DependentUpon>AdminCustomerView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminDeleteView.resx">
       <DependentUpon>AdminDeleteView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminDeliveryView.resx">
+      <DependentUpon>AdminDeliveryView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminParcelView.resx">
       <DependentUpon>AdminParcelView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ChatroomView.resx">
-      <DependentUpon>ChatroomView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>

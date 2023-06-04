@@ -12,5 +12,6 @@ namespace trackr_client_app.Models
         public string AdName { get; set; }
         public string AdAccount { get; set; }
         public string AdPassword { get; set; }
+        public string AdImage { get; set; }
     }
 }

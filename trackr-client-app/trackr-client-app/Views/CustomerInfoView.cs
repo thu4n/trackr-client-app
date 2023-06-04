@@ -45,7 +45,7 @@ namespace trackr_client_app.Views
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             accountTB.Text = UserSession.customer.CusAccount;
             birthTB.Text = UserSession.customer.CusBirth.ToShortDateString();
-            string[] address = UserSession.customer.CusAddress.Split('*');
+            string[] address = UserSession.customer.CusAddress.Split(',');
             streetTB.Text = address[0];
             districtTB.Text = address[1];
             cityTB.Text = address[2];
@@ -64,7 +64,6 @@ namespace trackr_client_app.Views
             accountTB.ReadOnly = !update;
             birthTB.ReadOnly = !update;
             streetTB.ReadOnly = !update;
-            //districtTB.ReadOnly = !update;
             cityTB.ReadOnly = !update;
             phoneTB.ReadOnly = !update;
             nameTB.ReadOnly = !update;

@@ -103,16 +103,16 @@
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(148, 181);
+            this.searchLabel.Location = new System.Drawing.Point(161, 181);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(166, 23);
+            this.searchLabel.Size = new System.Drawing.Size(139, 23);
             this.searchLabel.TabIndex = 22;
-            this.searchLabel.Text = "Tra cứu mã vận đơn:";
+            this.searchLabel.Text = "Tra cứu theo mã:";
             // 
             // searchTB
             // 
             this.searchTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTB.Location = new System.Drawing.Point(320, 178);
+            this.searchTB.Location = new System.Drawing.Point(306, 178);
             this.searchTB.Name = "searchTB";
             this.searchTB.Size = new System.Drawing.Size(436, 30);
             this.searchTB.TabIndex = 20;
@@ -147,6 +147,10 @@
             // 
             // parcelGridView
             // 
+            this.parcelGridView.AllowUserToAddRows = false;
+            this.parcelGridView.AllowUserToDeleteRows = false;
+            this.parcelGridView.AllowUserToResizeColumns = false;
+            this.parcelGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,6 +182,7 @@
             this.parcelGridView.RowTemplate.Height = 24;
             this.parcelGridView.Size = new System.Drawing.Size(841, 318);
             this.parcelGridView.TabIndex = 0;
+            this.parcelGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.parcelGridView_CellContentClick);
             this.parcelGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.parcelGridView_CellContentDoubleClick);
             // 
             // sttCol
@@ -238,6 +243,10 @@
             // 
             // deliveryGridView
             // 
+            this.deliveryGridView.AllowUserToAddRows = false;
+            this.deliveryGridView.AllowUserToDeleteRows = false;
+            this.deliveryGridView.AllowUserToResizeColumns = false;
+            this.deliveryGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -269,6 +278,7 @@
             this.deliveryGridView.RowTemplate.Height = 24;
             this.deliveryGridView.Size = new System.Drawing.Size(841, 318);
             this.deliveryGridView.TabIndex = 25;
+            this.deliveryGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deliveryGridView_CellContentClick);
             this.deliveryGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deliveryGridView_CellContentDoubleClick);
             // 
             // sttCol2
@@ -314,6 +324,10 @@
             // 
             // customerGridView
             // 
+            this.customerGridView.AllowUserToAddRows = false;
+            this.customerGridView.AllowUserToDeleteRows = false;
+            this.customerGridView.AllowUserToResizeColumns = false;
+            this.customerGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -345,6 +359,7 @@
             this.customerGridView.RowTemplate.Height = 24;
             this.customerGridView.Size = new System.Drawing.Size(847, 324);
             this.customerGridView.TabIndex = 25;
+            this.customerGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerGridView_CellContentClick);
             this.customerGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerGridView_CellContentDoubleClick);
             // 
             // sttCol3
@@ -398,7 +413,7 @@
             this.searchBtn.FlatAppearance.BorderSize = 0;
             this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.Location = new System.Drawing.Point(762, 178);
+            this.searchBtn.Location = new System.Drawing.Point(748, 178);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(49, 30);
             this.searchBtn.TabIndex = 21;

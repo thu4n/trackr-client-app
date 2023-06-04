@@ -35,11 +35,15 @@ namespace trackr_client_app.Views
         {
             var client = new HttpClient();
             parcel.ParStatus = "PROCESSED";
+            parcel.ManID = UserSession.delivery.ManID;
             string jsonString = JsonConvert.SerializeObject(parcel);
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
             var response = await client.PutAsync(UserSession.apiUrl + $"Parcel/{parcel.ParID}", jsonContent);
             var responseString = await response.Content.ReadAsStringAsync();
-            MessageBox.Show(responseString);
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Đã nhận giao đơn hàng thành công");
+            }
             var dashboard = (DeliveryDashboard)Tag;
             dashboard.RefreshData();
             Close();

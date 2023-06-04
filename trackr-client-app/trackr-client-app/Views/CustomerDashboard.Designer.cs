@@ -47,7 +47,6 @@
             this.refreshBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.chatBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -116,6 +115,7 @@
             this.parcelGridView.EnableHeadersVisualStyles = false;
             this.parcelGridView.Location = new System.Drawing.Point(66, 202);
             this.parcelGridView.Name = "parcelGridView";
+            this.parcelGridView.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,6 +128,7 @@
             this.parcelGridView.RowTemplate.Height = 24;
             this.parcelGridView.Size = new System.Drawing.Size(904, 363);
             this.parcelGridView.TabIndex = 15;
+            this.parcelGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.parcelGridView_CellContentClick);
             this.parcelGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.parcelGridView_CellMouseDoubleClick);
             // 
             // sttColumn
@@ -147,6 +148,7 @@
             this.codeColumn.HeaderText = "Mã vận đơn";
             this.codeColumn.MinimumWidth = 6;
             this.codeColumn.Name = "codeColumn";
+            this.codeColumn.ReadOnly = true;
             this.codeColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.codeColumn.Width = 198;
             // 
@@ -155,6 +157,7 @@
             this.nameColumn.HeaderText = "Tên đơn hàng";
             this.nameColumn.MinimumWidth = 6;
             this.nameColumn.Name = "nameColumn";
+            this.nameColumn.ReadOnly = true;
             this.nameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.nameColumn.Width = 198;
             // 
@@ -163,6 +166,7 @@
             this.dateColumn.HeaderText = "Ngày đặt hàng";
             this.dateColumn.MinimumWidth = 6;
             this.dateColumn.Name = "dateColumn";
+            this.dateColumn.ReadOnly = true;
             this.dateColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dateColumn.Width = 197;
             // 
@@ -171,12 +175,14 @@
             this.statusColum.HeaderText = "Trạng thái";
             this.statusColum.MinimumWidth = 6;
             this.statusColum.Name = "statusColum";
+            this.statusColum.ReadOnly = true;
             this.statusColum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.statusColum.Width = 198;
             // 
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.Location = new System.Drawing.Point(866, 24);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(0);
@@ -205,6 +211,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(820, 18);
             this.pictureBox1.Name = "pictureBox1";
@@ -227,27 +234,11 @@
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // chatBtn
-            // 
-            this.chatBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.chatBtn.FlatAppearance.BorderSize = 0;
-            this.chatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chatBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chatBtn.ForeColor = System.Drawing.Color.White;
-            this.chatBtn.Location = new System.Drawing.Point(107, 104);
-            this.chatBtn.Name = "chatBtn";
-            this.chatBtn.Size = new System.Drawing.Size(163, 33);
-            this.chatBtn.TabIndex = 36;
-            this.chatBtn.Text = "Chat";
-            this.chatBtn.UseVisualStyleBackColor = false;
-            this.chatBtn.Click += new System.EventHandler(this.chatBtn_Click);
-            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 577);
-            this.Controls.Add(this.chatBtn);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.usernameLabel);
@@ -283,6 +274,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusColum;
         private System.Windows.Forms.Button refreshBtn;
-        private System.Windows.Forms.Button chatBtn;
     }
 }

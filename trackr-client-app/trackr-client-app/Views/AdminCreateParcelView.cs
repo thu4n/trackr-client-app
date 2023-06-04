@@ -53,11 +53,6 @@ namespace trackr_client_app.Views
                 MessageBox.Show("Không có file nào được chọn");
             }
         }
-
-        private async void PostParcel()
-        {
-            //var value = 
-        }
         private async void realUploadBtn_Click(object sender, EventArgs e)
         {
             var client = new HttpClient();
@@ -65,6 +60,7 @@ namespace trackr_client_app.Views
             var content = new MultipartFormDataContent();
             content.Add(new StreamContent(File.OpenRead(fileInfo.FullName)), "File", fileInfo.Name);
             request.Content = content;
+            realUploadBtn.Text = "Đang tạo đơn...";
 
             var response = await client.SendAsync(request);
             string uriStr = await response.Content.ReadAsStringAsync();
@@ -87,7 +83,6 @@ namespace trackr_client_app.Views
             if(postResponse.StatusCode == HttpStatusCode.OK)
             {
                 MessageBox.Show("Đã tạo thành công");
-                MessageBox.Show(responseString);
             }
             else MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau");
 
@@ -100,7 +95,7 @@ namespace trackr_client_app.Views
         {
             dateTB.Text = DateTime.Now.ToString();
             parcelSample.SizeMode = PictureBoxSizeMode.StretchImage;
-            foreach(var customer in AdminDashboard.customers)
+            foreach(var customer in UserSession.customers)
             {
                 customerData.Add(customer.CusID, customer.CusName);
                 cusCodeBox.Items.Add(customer.CusID);
