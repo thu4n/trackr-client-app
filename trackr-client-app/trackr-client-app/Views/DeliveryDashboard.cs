@@ -29,7 +29,47 @@ namespace trackr_client_app.Views
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-
+            string searchValue = searchTB.Text;
+            if(tabControl1.SelectedIndex == 0)
+            {
+                parcelGridView.ClearSelection();
+                parcelGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                try
+                {
+                    foreach (DataGridViewRow row in parcelGridView.Rows)
+                    {
+                        if (row.Cells[1].Value.ToString().Equals(searchValue))
+                        {
+                            row.Selected = true;
+                            break;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else if(tabControl1.SelectedIndex == 1)
+            {
+                parcelProcessedGridView.ClearSelection();
+                parcelProcessedGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                try
+                {
+                    foreach (DataGridViewRow row in parcelProcessedGridView.Rows)
+                    {
+                        if (row.Cells[1].Value.ToString().Equals(searchValue))
+                        {
+                            row.Selected = true;
+                            break;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
 
         private void DeliveryDashboard_Load(object sender, EventArgs e)
