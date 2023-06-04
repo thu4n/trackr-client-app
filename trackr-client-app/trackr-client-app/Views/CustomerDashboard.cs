@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -22,8 +23,26 @@ namespace trackr_client_app
             InitializeComponent();
         }
 
-        private async void searchBtn_Click(object sender, EventArgs e)
+        private void searchBtn_Click(object sender, EventArgs e)
         {
+            string searchValue = searchTB.Text;
+            parcelGridView.ClearSelection();
+            parcelGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+           try
+           {
+                foreach (DataGridViewRow row in parcelGridView.Rows)
+                {
+                    if (row.Cells[1].Value.ToString().Equals(searchValue))
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+           }
+           catch (Exception ex)
+           {
+                MessageBox.Show(ex.ToString());
+           }
             
         }
 
