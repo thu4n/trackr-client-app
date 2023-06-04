@@ -28,6 +28,11 @@ namespace trackr_client_app.Views
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
             usernameLabel.Text = UserSession.admin.AdName;
+            if(UserSession.admin.AdImage != null)
+            {
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.LoadAsync(UserSession.admin.AdImage);
+            }
             GetDeliveryManData();
             GetParcelData();
             GetCustomerData();
