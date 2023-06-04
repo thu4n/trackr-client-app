@@ -160,6 +160,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ForgotPasswordForm";
             this.Text = "Trackr - Quên mật khẩu";
+            this.Load += new System.EventHandler(this.ForgotPasswordForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

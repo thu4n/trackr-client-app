@@ -20,6 +20,7 @@ namespace trackr_client_app
     {
         string otp = "t";
         string id = "";
+        string role = "";
         public ForgotPasswordForm()
         {
             InitializeComponent();
@@ -46,6 +47,8 @@ namespace trackr_client_app
                     otp = code.ToString();
                     json.TryGetValue("id", out var id);
                     this.id = id.ToString();
+                    json.TryGetValue("role", out var role);
+                    this.role = role.ToString();
                 }
             }
             else
@@ -75,14 +78,14 @@ namespace trackr_client_app
         {
             confBtn.Text = "Đang gửi yêu cầu...";
             var client = new HttpClient();
-            var response = await client.GetAsync(UserSession.apiUrl + $"Customer/{id}");
+            var response = await client.GetAsync(UserSession.apiUrl + role + $"/{id}");
             var responseString = await response.Content.ReadAsStringAsync();
             JObject json = JObject.Parse(responseString);
             Customer customer = JsonConvert.DeserializeObject<Customer>(json.ToString());
             customer.CusPassword = LoginForm.ComputeSHA256(pwdTB.Text);
             string jsonString = JsonConvert.SerializeObject(customer);
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            response = await client.PutAsync(UserSession.apiUrl + $"Customer/{id}", jsonContent);
+            response = await client.PutAsync(UserSession.apiUrl + role + $"/{id}", jsonContent);
             if(response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Đổi mật khẩu mới thành công");
@@ -92,6 +95,11 @@ namespace trackr_client_app
             {
                 MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau");
             }
+        }
+
+        private void ForgotPasswordForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
