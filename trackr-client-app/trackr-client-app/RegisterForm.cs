@@ -21,6 +21,7 @@ namespace trackr_client_app
     public partial class RegisterForm : Form
     {
         private bool returnToLogin = false;
+        private bool imageSet = false;
         OpenFileDialog ofd = new OpenFileDialog();
         FileInfo fileInfo;
         public static readonly List<string> imgExtensions = new List<string> { ".png", ".jpg", ".jpeg", ".gif" };
@@ -78,6 +79,12 @@ namespace trackr_client_app
         }
         private void registerBtn_Click(object sender, EventArgs e)
         {
+            if (accountTB.Text == string.Empty || passwordTB.Text == string.Empty || repwdTB.Text == string.Empty || streetTB.Text == string.Empty || districtTB.Text == string.Empty || phoneTB.Text == string.Empty || birthTB.Text == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                return;
+            }
+
             if (!CheckEmail(accountTB.Text))
             {
                 MessageBox.Show("Địa chỉ email không hợp lệ");
@@ -86,11 +93,6 @@ namespace trackr_client_app
             if(passwordTB.Text != repwdTB.Text)
             {
                 MessageBox.Show("Mật khẩu nhập lại không giống");
-                return;
-            }
-            if(accountTB.Text == string.Empty || passwordTB.Text == string.Empty || repwdTB.Text == string.Empty )
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 return;
             }
             Customer newCustomer = new Customer();
@@ -104,17 +106,21 @@ namespace trackr_client_app
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, UserSession.apiUrl + "Image");
             var content = new MultipartFormDataContent();
-            content.Add(new StreamContent(File.OpenRead(fileInfo.FullName)), "File", fileInfo.Name);
-            request.Content = content;
+            if (imageSet)
+            {
+                content.Add(new StreamContent(File.OpenRead(fileInfo.FullName)), "File", fileInfo.Name);
+                request.Content = content;
 
-            var response = await client.SendAsync(request);
-            string uriStr = await response.Content.ReadAsStringAsync();
-            JObject uri = JObject.Parse(uriStr);
-            uri.TryGetValue("blob", out var blobStr);
-            JObject blob = JObject.Parse(blobStr.ToString());
-            blob.TryGetValue("uri", out var blobUri);
+                var response = await client.SendAsync(request);
+                string uriStr = await response.Content.ReadAsStringAsync();
+                JObject uri = JObject.Parse(uriStr);
+                uri.TryGetValue("blob", out var blobStr);
+                JObject blob = JObject.Parse(blobStr.ToString());
+                blob.TryGetValue("uri", out var blobUri);
 
-            newCustomer.CusImage = blobUri.ToString();
+                newCustomer.CusImage = blobUri.ToString();
+
+            }
 
             string jsonString = JsonConvert.SerializeObject(newCustomer);
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
@@ -144,6 +150,7 @@ namespace trackr_client_app
                 {
                     pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                     pictureBox1.ImageLocation = ofd.FileName;
+                    imageSet = true;
                 }
                 else
                 {

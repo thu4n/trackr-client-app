@@ -483,8 +483,10 @@
             // 
             // locationTB
             // 
+            this.locationTB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.locationTB.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.locationTB.FormattingEnabled = true;
+            this.locationTB.ItemHeight = 17;
             this.locationTB.Location = new System.Drawing.Point(113, 61);
             this.locationTB.Name = "locationTB";
             this.locationTB.Size = new System.Drawing.Size(183, 25);
