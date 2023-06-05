@@ -15,7 +15,7 @@ Một ứng dụng desktop giúp theo dõi hành trình đơn hàng, đây là �
   - [Kiến trúc hệ thống và công nghệ sử dụng](#kiến-trúc-hệ-thống-và-công-nghệ-sử-dụng)
   - [Đặc tả database](#đặc-tả-database)
   - [Đặc tả các giao thức truyền thông trong ứng dụng](#đặc-tả-các-giao-thức-truyền-thông-trong-ứng-dụng)
-  - [Demo ứng dụng](#demo-ứng-dụng)
+  - [Đặc tả Message Structure](#đặc-tả-message-structure)
     - [Tại màn hình đăng nhập](#tại-màn-hình-đăng-nhập)
       - [Quản lý cửa hàng](#quản-lý-cửa-hàng)
       - [Nhân viên giao hàng](#nhân-viên-giao-hàng)
@@ -75,9 +75,64 @@ Ngoài ra còn có các đối tượng Parcel chứa mọi thông tin chi tiế
 
 ## Đặc tả các giao thức truyền thông trong ứng dụng
 
-(Network Stack)
+![img4](/NetworkStack.png)
 
-## Demo ứng dụng
+- Đặc tả các giao thức:
+
+  - Giao thức ở tầng Physical: Kết nối thông qua mạng Wifi hoặc mạng có dây
+  - Giao thức ở tầng DataLink: nhận biết thông qua  chương trình Wireshark, phân tích gói tin có giao thức Ethernet
+  - Giao thức ở tầng Network: Sử dụng địa chỉ Ipv4
+  - Giao thức ở tầng Transport: Sử dụng giao thức TCP
+  - Giao thức ở tầng Session: Sử dụng giao thức RPC có cơ chế hỗ trợ giao tiếp giữa hai tiến trình
+  - Giao thức ở tầng Presentation: SSL, TLS dùng để xác thực danh tính
+  - Giao thức ở tầng Application: DNS dùng để phân giải tên miền, kết nối kiểu HTTP và SMTP dùng để gửi mail
+  
+## Đặc tả Message Structure
+
+![img5](/MesageStructure.png)
+
+GET /api/deliveryman HTTP/1.1
+Host: trackrwebserver.azurewebsites.net
+
+POST /api/Customer HTTP/1.1
+Host: trackrwebserver.azurewebsites.net
+Content-Type: application/json
+Cookie: ARRAffinity=a6e48b9e9d2653435be7b61998d8624b44115214104213d6c8b8c526cc56dc70; ARRAffinitySameSite=a6e48b9e9d2653435be7b61998d8624b44115214104213d6c8b8c526cc56dc70
+Content-Length: 268
+
+{
+        "cusName": "Thuận Test",
+        "cusAddress": "Cần Thơ",
+        "cusPhone": "0903090309",
+        "cusBirth": "2003-05-05T00:00:00",
+        "cusDateRegister": "2012-06-05T00:00:00",
+        "cusAccount": "ThuanTest",
+        "cusPassword": "123"
+}
+
+GET /api/customer/20000002 HTTP/1.1
+Host: trackrwebserver.azurewebsites.net
+
+PUT /api/Parcel/ HTTP/1.1
+Host: trackrwebserver.azurewebsites.net
+Content-Type: application/json
+Content-Length: 471
+
+[
+    {
+        "parID": 30000000,
+        "parImage": "https://gift.adcbook.net.vn/web/image/product.template/74802/image_1920?unique=ce02538",
+        "parDescription": "Bút bi Thiên Long ok",
+        "parStatus": "READY_TO_SHIP",
+        "parDeliveryDate": "2023-11-01T00:00:00",
+        "parLocation": "Kho Củ Chi - TPHCM",
+        "realtime": "",
+        "note": "Dùng để viết",
+        "price": 5000,
+        "cusID": 111,
+        "manID": 555
+    }
+]
 
 ### Tại màn hình đăng nhập
 
