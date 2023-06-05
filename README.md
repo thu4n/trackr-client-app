@@ -56,7 +56,7 @@ Ngoài ra còn có các đối tượng Parcel chứa mọi thông tin chi tiế
 
 - Kiến trúc hệ thống
 
-![img2](/system-architecture-diagram.png)
+![img2](/documents/diagrams/system-architecture-diagram.png)
 
 - Công nghệ sử dụng:
 
