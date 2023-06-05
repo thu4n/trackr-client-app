@@ -110,5 +110,13 @@ namespace trackr_client_app.Views
             MessageBox.Show(responseString);
             Close();
         }
+
+        private void payBtn_Click(object sender, EventArgs e)
+        {
+            if (parcel.ParStatus != "COMPLETED") return;
+            payBtn.BackColor = Color.Green;
+            CustomerPaymentView customerPaymentView = new CustomerPaymentView(parcel.Price, parcel.ParID);
+            customerPaymentView.Show();
+        }
     }
 }

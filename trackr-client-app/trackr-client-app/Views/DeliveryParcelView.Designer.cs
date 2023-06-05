@@ -43,6 +43,8 @@
             this.parcelCodeLabel = new System.Windows.Forms.Label();
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.infoPanel = new System.Windows.Forms.Panel();
+            this.priceTB = new System.Windows.Forms.TextBox();
+            this.priceLabel = new System.Windows.Forms.Label();
             this.estimateDateLabel = new System.Windows.Forms.Label();
             this.estimateDateTB = new System.Windows.Forms.TextBox();
             this.statusTB = new System.Windows.Forms.TextBox();
@@ -66,12 +68,14 @@
             this.timeLabel = new System.Windows.Forms.Label();
             this.locationLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.priceTB = new System.Windows.Forms.TextBox();
-            this.priceLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.paymentLabel = new System.Windows.Forms.Label();
+            this.payBtn = new System.Windows.Forms.Button();
             this.routePanel.SuspendLayout();
             this.infoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
             this.updatePanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // distanceLabel
@@ -92,7 +96,7 @@
             this.routePanel.Controls.Add(this.titleLabel2);
             this.routePanel.Location = new System.Drawing.Point(368, 332);
             this.routePanel.Name = "routePanel";
-            this.routePanel.Size = new System.Drawing.Size(659, 348);
+            this.routePanel.Size = new System.Drawing.Size(659, 369);
             this.routePanel.TabIndex = 64;
             // 
             // treeView1
@@ -107,7 +111,7 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.ShowNodeToolTips = true;
-            this.treeView1.Size = new System.Drawing.Size(570, 296);
+            this.treeView1.Size = new System.Drawing.Size(570, 314);
             this.treeView1.TabIndex = 43;
             // 
             // imageList1
@@ -223,6 +227,29 @@
             this.infoPanel.Name = "infoPanel";
             this.infoPanel.Size = new System.Drawing.Size(1015, 284);
             this.infoPanel.TabIndex = 63;
+            // 
+            // priceTB
+            // 
+            this.priceTB.BackColor = System.Drawing.Color.White;
+            this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.priceTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceTB.Location = new System.Drawing.Point(725, 25);
+            this.priceTB.Name = "priceTB";
+            this.priceTB.ReadOnly = true;
+            this.priceTB.Size = new System.Drawing.Size(98, 23);
+            this.priceTB.TabIndex = 68;
+            this.priceTB.Text = "12345678";
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.BackColor = System.Drawing.Color.White;
+            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceLabel.Location = new System.Drawing.Point(594, 25);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(125, 23);
+            this.priceLabel.TabIndex = 67;
+            this.priceLabel.Text = "Phí giao hàng:";
             // 
             // estimateDateLabel
             // 
@@ -416,7 +443,7 @@
             this.updatePanel.Controls.Add(this.label1);
             this.updatePanel.Location = new System.Drawing.Point(12, 332);
             this.updatePanel.Name = "updatePanel";
-            this.updatePanel.Size = new System.Drawing.Size(336, 348);
+            this.updatePanel.Size = new System.Drawing.Size(336, 224);
             this.updatePanel.TabIndex = 65;
             // 
             // infoLabel
@@ -496,34 +523,48 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "Cập nhật hành trình";
             // 
-            // priceTB
+            // panel1
             // 
-            this.priceTB.BackColor = System.Drawing.Color.White;
-            this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.priceTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceTB.Location = new System.Drawing.Point(725, 25);
-            this.priceTB.Name = "priceTB";
-            this.priceTB.ReadOnly = true;
-            this.priceTB.Size = new System.Drawing.Size(98, 23);
-            this.priceTB.TabIndex = 68;
-            this.priceTB.Text = "12345678";
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.payBtn);
+            this.panel1.Controls.Add(this.paymentLabel);
+            this.panel1.Location = new System.Drawing.Point(13, 581);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(335, 117);
+            this.panel1.TabIndex = 66;
             // 
-            // priceLabel
+            // paymentLabel
             // 
-            this.priceLabel.AutoSize = true;
-            this.priceLabel.BackColor = System.Drawing.Color.White;
-            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceLabel.Location = new System.Drawing.Point(594, 25);
-            this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(125, 23);
-            this.priceLabel.TabIndex = 67;
-            this.priceLabel.Text = "Phí giao hàng:";
+            this.paymentLabel.AutoSize = true;
+            this.paymentLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.paymentLabel.Location = new System.Drawing.Point(7, 9);
+            this.paymentLabel.Name = "paymentLabel";
+            this.paymentLabel.Size = new System.Drawing.Size(302, 38);
+            this.paymentLabel.TabIndex = 74;
+            this.paymentLabel.Text = "Thanh toán đơn hàng";
+            // 
+            // payBtn
+            // 
+            this.payBtn.BackColor = System.Drawing.Color.Gray;
+            this.payBtn.FlatAppearance.BorderSize = 0;
+            this.payBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.payBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payBtn.ForeColor = System.Drawing.Color.White;
+            this.payBtn.Location = new System.Drawing.Point(35, 59);
+            this.payBtn.Name = "payBtn";
+            this.payBtn.Size = new System.Drawing.Size(252, 33);
+            this.payBtn.TabIndex = 77;
+            this.payBtn.Text = "Thanh toán qua ZaloPay";
+            this.payBtn.UseVisualStyleBackColor = false;
+            this.payBtn.Click += new System.EventHandler(this.payBtn_Click);
             // 
             // DeliveryParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 707);
+            this.ClientSize = new System.Drawing.Size(1039, 725);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.updatePanel);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.orderDateLabel);
@@ -556,6 +597,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).EndInit();
             this.updatePanel.ResumeLayout(false);
             this.updatePanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,5 +644,8 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TextBox priceTB;
         private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label paymentLabel;
+        private System.Windows.Forms.Button payBtn;
     }
 }

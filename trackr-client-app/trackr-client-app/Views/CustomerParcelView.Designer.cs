@@ -50,7 +50,6 @@
             this.parcelCodeLabel = new System.Windows.Forms.Label();
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.payBtn = new System.Windows.Forms.Button();
             this.priceTB = new System.Windows.Forms.TextBox();
             this.chatBtn = new System.Windows.Forms.Button();
             this.priceLabel = new System.Windows.Forms.Label();
@@ -295,7 +294,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.payBtn);
             this.panel1.Controls.Add(this.priceTB);
             this.panel1.Controls.Add(this.chatBtn);
             this.panel1.Controls.Add(this.priceLabel);
@@ -307,22 +305,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1015, 318);
             this.panel1.TabIndex = 40;
-            // 
-            // payBtn
-            // 
-            this.payBtn.BackColor = System.Drawing.Color.Green;
-            this.payBtn.FlatAppearance.BorderSize = 0;
-            this.payBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.payBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.payBtn.ForeColor = System.Drawing.Color.White;
-            this.payBtn.Location = new System.Drawing.Point(737, 269);
-            this.payBtn.Name = "payBtn";
-            this.payBtn.Size = new System.Drawing.Size(252, 33);
-            this.payBtn.TabIndex = 76;
-            this.payBtn.Text = "Thanh toán qua ZaloPay";
-            this.payBtn.UseVisualStyleBackColor = false;
-            this.payBtn.Visible = false;
-            this.payBtn.Click += new System.EventHandler(this.payBtn_Click);
             // 
             // priceTB
             // 
@@ -526,6 +508,5 @@
         private System.Windows.Forms.Button chatBtn;
         private System.Windows.Forms.TextBox priceTB;
         private System.Windows.Forms.Label priceLabel;
-        private System.Windows.Forms.Button payBtn;
     }
 }
