@@ -96,10 +96,6 @@ Ngoài ra còn có các đối tượng Parcel chứa mọi thông tin chi tiế
 
 ![img7](/documents/diagrams/message-structure-3.png)
 
-![img8](/documents/diagrams/message-structure-4.png)
-
-![img9](/documents/diagrams/message-structure-5.png)
-
 ## Đặc tả luồng người dùng
 
 ![img10](/documents/diagrams/use-case-diagram.png)
