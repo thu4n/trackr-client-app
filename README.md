@@ -15,7 +15,8 @@ Một ứng dụng desktop giúp theo dõi hành trình đơn hàng, đây là �
   - [Kiến trúc hệ thống và công nghệ sử dụng](#kiến-trúc-hệ-thống-và-công-nghệ-sử-dụng)
   - [Đặc tả database](#đặc-tả-database)
   - [Đặc tả các giao thức truyền thông trong ứng dụng](#đặc-tả-các-giao-thức-truyền-thông-trong-ứng-dụng)
-  - [Demo ứng dụng](#demo-ứng-dụng)
+  - [Đặc tả Message Structure](#đặc-tả-message-structure)
+  - [Đặc tả luồng người dùng](#đặc-tả-luồng-người-dùng)
     - [Tại màn hình đăng nhập](#tại-màn-hình-đăng-nhập)
       - [Quản lý cửa hàng](#quản-lý-cửa-hàng)
       - [Nhân viên giao hàng](#nhân-viên-giao-hàng)
@@ -75,9 +76,29 @@ Ngoài ra còn có các đối tượng Parcel chứa mọi thông tin chi tiế
 
 ## Đặc tả các giao thức truyền thông trong ứng dụng
 
-(Network Stack)
+![img4](/documents/diagrams/network-stack.png)
 
-## Demo ứng dụng
+- Đặc tả các giao thức:
+
+  - Giao thức ở tầng Physical: Kết nối thông qua mạng Wifi hoặc mạng có dây
+  - Giao thức ở tầng DataLink: nhận biết thông qua  chương trình Wireshark, phân tích gói tin có giao thức Ethernet
+  - Giao thức ở tầng Network: Sử dụng địa chỉ Ipv4
+  - Giao thức ở tầng Transport: Sử dụng giao thức TCP
+  - Giao thức ở tầng Session: Sử dụng giao thức RPC có cơ chế hỗ trợ giao tiếp giữa hai tiến trình
+  - Giao thức ở tầng Presentation: SSL, TLS dùng để xác thực danh tính
+  - Giao thức ở tầng Application: DNS dùng để phân giải tên miền, kết nối kiểu HTTP và SMTP dùng để gửi mail
+  
+## Đặc tả Message Structure
+
+![img5](/documents/diagrams/message-structure.png)
+
+![img6](/documents/diagrams/message-structure-2.png)
+
+![img7](/documents/diagrams/message-structure-3.png)
+
+## Đặc tả luồng người dùng
+
+![img10](/documents/diagrams/use-case-diagram.png)
 
 ### Tại màn hình đăng nhập
 
