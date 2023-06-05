@@ -53,6 +53,7 @@ namespace trackr_client_app
 
         private void DisplayTrackingTree()
         {
+            if (parcel.ParRouteLocation == null || parcel.ParRouteLocation.Length <= 0) return;
             string[] routeLog = parcel.ParRouteLocation.Split('@');
             string[] timeLog = parcel.Realtime.Split('@');
             string[] locationLog = parcel.ParLocation.Split('@');
