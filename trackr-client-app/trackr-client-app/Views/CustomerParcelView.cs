@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using trackr_client_app.Models;
+using trackr_client_app.Views;
 
 namespace trackr_client_app
 {
@@ -42,6 +43,11 @@ namespace trackr_client_app
             estimateDateTB.Text = parcel.ParDeliveryDate.AddDays(3).ToString("dd-MM-yyyy");
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            if(parcel.ParStatus == "COMPLETED")
+            {
+                payBtn.Visible = true;
+            }
+            payBtn.Visible = true;
             DisplayTrackingTree();
         }
 
@@ -80,6 +86,12 @@ namespace trackr_client_app
         {
             string command = $"mailto:trackrservice@gmail.com?subject= Trackr - Liên hệ về đơn hàng #{parcel.ParID}";
             Process.Start(command);
+        }
+
+        private void payBtn_Click(object sender, EventArgs e)
+        {
+            CustomerPaymentView customerPaymentView = new CustomerPaymentView(parcel.Price,parcel.ParID);
+            customerPaymentView.Show();
         }
     }
 }
