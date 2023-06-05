@@ -46,6 +46,10 @@ namespace trackr_client_app.Views
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
             timeTB.Text = DateTime.Now.ToString();
+            if(parcel.ParStatus == "TO_CONFIRM_PAYMENT")
+            {
+                payBtn.BackColor = Color.Green;
+            }
             DisplayTrackingTree();
         }
         private void DisplayTrackingTree()
@@ -101,7 +105,7 @@ namespace trackr_client_app.Views
             parcel.Realtime += "@" + realtime;
             if(location == customer.CusAddress)
             {
-                parcel.ParStatus = "COMPLETED";
+                parcel.ParStatus = "TO_CONFIRM_PAYMENT";
             }
             string jsonString = JsonConvert.SerializeObject(parcel);
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
@@ -113,9 +117,8 @@ namespace trackr_client_app.Views
 
         private void payBtn_Click(object sender, EventArgs e)
         {
-            if (parcel.ParStatus != "COMPLETED") return;
-            payBtn.BackColor = Color.Green;
-            CustomerPaymentView customerPaymentView = new CustomerPaymentView(parcel.Price, parcel.ParID);
+            if (parcel.ParStatus != "TO_CONFIRM_PAYMENT") return;
+            CustomerPaymentView customerPaymentView = new CustomerPaymentView(parcel);
             customerPaymentView.Show();
         }
     }

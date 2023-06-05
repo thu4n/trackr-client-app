@@ -36,6 +36,7 @@
             this.codeLabel = new System.Windows.Forms.Label();
             this.codeLabel2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.confBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,11 +116,27 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Thanh toán thông qua ZaloPay";
             // 
+            // confBtn
+            // 
+            this.confBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.confBtn.FlatAppearance.BorderSize = 0;
+            this.confBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confBtn.ForeColor = System.Drawing.Color.White;
+            this.confBtn.Location = new System.Drawing.Point(69, 269);
+            this.confBtn.Name = "confBtn";
+            this.confBtn.Size = new System.Drawing.Size(252, 33);
+            this.confBtn.TabIndex = 76;
+            this.confBtn.Text = "Xác nhận đã thanh toán";
+            this.confBtn.UseVisualStyleBackColor = false;
+            this.confBtn.Click += new System.EventHandler(this.confBtn_Click);
+            // 
             // CustomerPaymentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 343);
+            this.Controls.Add(this.confBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.codeLabel2);
             this.Controls.Add(this.codeLabel);
@@ -148,5 +165,6 @@
         private System.Windows.Forms.Label codeLabel;
         private System.Windows.Forms.Label codeLabel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button confBtn;
     }
 }

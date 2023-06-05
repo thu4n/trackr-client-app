@@ -29,7 +29,6 @@ namespace trackr_client_app.Views
             InitializeComponent();
         }
 
-        // Nút load hình, do lười suy nghĩ nên không để tên khác
         private void uploadBtn_Click(object sender, EventArgs e)
         {
             ofd.ShowDialog();
