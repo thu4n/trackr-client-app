@@ -50,7 +50,11 @@ namespace trackr_client_app.Views
             {
                 if(deliveryMan.ManID == parcel.ManID)
                 {
-                    string[] locations = parcel.ParRouteLocation.Split('@');
+                    string[] locations = new string[] { "" };
+                    if (parcel.ParRouteLocation != null)
+                    {
+                        locations = parcel.ParRouteLocation.Split('@');
+                    }
                     parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), locations.Last());
 
                 }

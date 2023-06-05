@@ -50,7 +50,9 @@
             this.parcelCodeLabel = new System.Windows.Forms.Label();
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.priceTB = new System.Windows.Forms.TextBox();
             this.chatBtn = new System.Windows.Forms.Button();
+            this.priceLabel = new System.Windows.Forms.Label();
             this.noteTB = new System.Windows.Forms.TextBox();
             this.noteLabel = new System.Windows.Forms.Label();
             this.titleLabel2 = new System.Windows.Forms.Label();
@@ -59,8 +61,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.distanceLabel = new System.Windows.Forms.Label();
             this.parcelImg = new System.Windows.Forms.PictureBox();
-            this.priceTB = new System.Windows.Forms.TextBox();
-            this.priceLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -303,8 +303,20 @@
             this.panel1.Controls.Add(this.estimateDateTB);
             this.panel1.Location = new System.Drawing.Point(12, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 284);
+            this.panel1.Size = new System.Drawing.Size(1015, 318);
             this.panel1.TabIndex = 40;
+            // 
+            // priceTB
+            // 
+            this.priceTB.BackColor = System.Drawing.Color.White;
+            this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.priceTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceTB.Location = new System.Drawing.Point(737, 22);
+            this.priceTB.Name = "priceTB";
+            this.priceTB.ReadOnly = true;
+            this.priceTB.Size = new System.Drawing.Size(98, 23);
+            this.priceTB.TabIndex = 46;
+            this.priceTB.Text = "12345678";
             // 
             // chatBtn
             // 
@@ -320,6 +332,17 @@
             this.chatBtn.Text = "Liên hệ người giao hàng";
             this.chatBtn.UseVisualStyleBackColor = false;
             this.chatBtn.Click += new System.EventHandler(this.chatBtn_Click);
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.BackColor = System.Drawing.Color.White;
+            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceLabel.Location = new System.Drawing.Point(594, 22);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(125, 23);
+            this.priceLabel.TabIndex = 45;
+            this.priceLabel.Text = "Phí giao hàng:";
             // 
             // noteTB
             // 
@@ -386,9 +409,9 @@
             this.panel2.Controls.Add(this.distanceLabel);
             this.panel2.Controls.Add(this.treeView1);
             this.panel2.Controls.Add(this.titleLabel2);
-            this.panel2.Location = new System.Drawing.Point(12, 329);
+            this.panel2.Location = new System.Drawing.Point(12, 361);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1015, 348);
+            this.panel2.Size = new System.Drawing.Size(1015, 334);
             this.panel2.TabIndex = 44;
             // 
             // distanceLabel
@@ -411,29 +434,6 @@
             this.parcelImg.Size = new System.Drawing.Size(172, 172);
             this.parcelImg.TabIndex = 39;
             this.parcelImg.TabStop = false;
-            // 
-            // priceTB
-            // 
-            this.priceTB.BackColor = System.Drawing.Color.White;
-            this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.priceTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceTB.Location = new System.Drawing.Point(737, 22);
-            this.priceTB.Name = "priceTB";
-            this.priceTB.ReadOnly = true;
-            this.priceTB.Size = new System.Drawing.Size(98, 23);
-            this.priceTB.TabIndex = 46;
-            this.priceTB.Text = "12345678";
-            // 
-            // priceLabel
-            // 
-            this.priceLabel.AutoSize = true;
-            this.priceLabel.BackColor = System.Drawing.Color.White;
-            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceLabel.Location = new System.Drawing.Point(594, 22);
-            this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(125, 23);
-            this.priceLabel.TabIndex = 45;
-            this.priceLabel.Text = "Phí giao hàng:";
             // 
             // CustomerParcelView
             // 

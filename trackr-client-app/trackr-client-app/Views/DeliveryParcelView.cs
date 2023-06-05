@@ -31,6 +31,7 @@ namespace trackr_client_app.Views
 
         private void DeliveryParcelView_Load(object sender, EventArgs e)
         {
+            priceTB.Text = parcel.Price.ToString();
             cusCodeTB.Text = customer.CusID.ToString();
             if(customer.CusAddress.Contains('*')) 
                 cusAddressTB.Text = customer.CusAddress.Replace('*',',');
@@ -45,10 +46,15 @@ namespace trackr_client_app.Views
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
             timeTB.Text = DateTime.Now.ToString();
+            if(parcel.ParStatus == "TO_CONFIRM_PAYMENT")
+            {
+                payBtn.BackColor = Color.Green;
+            }
             DisplayTrackingTree();
         }
         private void DisplayTrackingTree()
         {
+            if (parcel.ParRouteLocation == null || parcel.ParRouteLocation.Length <= 0) return;
             string[] routeLog = parcel.ParRouteLocation.Split('@');
             string[] timeLog = parcel.Realtime.Split('@');
             string[] locationLog = parcel.ParLocation.Split('@');
@@ -99,7 +105,7 @@ namespace trackr_client_app.Views
             parcel.Realtime += "@" + realtime;
             if(location == customer.CusAddress)
             {
-                parcel.ParStatus = "COMPLETED";
+                parcel.ParStatus = "TO_CONFIRM_PAYMENT";
             }
             string jsonString = JsonConvert.SerializeObject(parcel);
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
@@ -107,6 +113,13 @@ namespace trackr_client_app.Views
             var responseString = await response.Content.ReadAsStringAsync();
             MessageBox.Show(responseString);
             Close();
+        }
+
+        private void payBtn_Click(object sender, EventArgs e)
+        {
+            if (parcel.ParStatus != "TO_CONFIRM_PAYMENT") return;
+            CustomerPaymentView customerPaymentView = new CustomerPaymentView(parcel);
+            customerPaymentView.Show();
         }
     }
 }

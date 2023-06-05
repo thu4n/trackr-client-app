@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using trackr_client_app.Models;
+using trackr_client_app.Views;
 
 namespace trackr_client_app
 {
@@ -47,6 +48,7 @@ namespace trackr_client_app
 
         private void DisplayTrackingTree()
         {
+            if (parcel.ParRouteLocation == null || parcel.ParRouteLocation.Length <= 0) return;
             string[] routeLog = parcel.ParRouteLocation.Split('@');
             string[] timeLog = parcel.Realtime.Split('@');
             string[] locationLog = parcel.ParLocation.Split('@');
@@ -81,5 +83,6 @@ namespace trackr_client_app
             string command = $"mailto:trackrservice@gmail.com?subject= Trackr - Liên hệ về đơn hàng #{parcel.ParID}";
             Process.Start(command);
         }
+
     }
 }

@@ -38,6 +38,7 @@ namespace trackr_client_app.Views
             noteTB.Text = parcel.Note;
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            priceTB.Text = parcel.Price.ToString();
             DisplayTrackingTree();
         }
         private async void GetCustomerData()
@@ -56,6 +57,7 @@ namespace trackr_client_app.Views
         }
         private void DisplayTrackingTree()
         {
+            if (parcel.ParRouteLocation == null || parcel.ParRouteLocation.Length <= 0) return;
             string[] routeLog = parcel.ParRouteLocation.Split('@');
             string[] timeLog = parcel.Realtime.Split('@');
             string[] locationLog = parcel.ParLocation.Split('@');

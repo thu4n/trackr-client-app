@@ -101,7 +101,6 @@ namespace trackr_client_app.Views
                 newDeliveryMan = JsonConvert.DeserializeObject<DeliveryMan>(deliveryMan.ToString());
                 UserSession.deliveryMen.Add(newDeliveryMan);
             }
-            GetParcelData();
         }
 
         private void DisplayDeliveryManData()
