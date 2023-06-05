@@ -16,6 +16,7 @@ Một ứng dụng desktop giúp theo dõi hành trình đơn hàng, đây là �
   - [Đặc tả database](#đặc-tả-database)
   - [Đặc tả các giao thức truyền thông trong ứng dụng](#đặc-tả-các-giao-thức-truyền-thông-trong-ứng-dụng)
   - [Đặc tả Message Structure](#đặc-tả-message-structure)
+  - [Đặc tả luồng người dùng](#đặc-tả-luồng-người-dùng)
     - [Tại màn hình đăng nhập](#tại-màn-hình-đăng-nhập)
       - [Quản lý cửa hàng](#quản-lý-cửa-hàng)
       - [Nhân viên giao hàng](#nhân-viên-giao-hàng)
@@ -75,7 +76,7 @@ Ngoài ra còn có các đối tượng Parcel chứa mọi thông tin chi tiế
 
 ## Đặc tả các giao thức truyền thông trong ứng dụng
 
-![img4](/NetworkStack.png)
+![img4](/documents/diagrams/network-stack.png)
 
 - Đặc tả các giao thức:
 
@@ -89,50 +90,19 @@ Ngoài ra còn có các đối tượng Parcel chứa mọi thông tin chi tiế
   
 ## Đặc tả Message Structure
 
-![img5](/MesageStructure.png)
+![img5](/documents/diagrams/message-structure.png)
 
-GET /api/deliveryman HTTP/1.1
-Host: trackrwebserver.azurewebsites.net
+![img6](/documents/diagrams/message-structure-2.png)
 
-POST /api/Customer HTTP/1.1
-Host: trackrwebserver.azurewebsites.net
-Content-Type: application/json
-Cookie: ARRAffinity=a6e48b9e9d2653435be7b61998d8624b44115214104213d6c8b8c526cc56dc70; ARRAffinitySameSite=a6e48b9e9d2653435be7b61998d8624b44115214104213d6c8b8c526cc56dc70
-Content-Length: 268
+![img7](/documents/diagrams/message-structure-3.png)
 
-{
-        "cusName": "Thuận Test",
-        "cusAddress": "Cần Thơ",
-        "cusPhone": "0903090309",
-        "cusBirth": "2003-05-05T00:00:00",
-        "cusDateRegister": "2012-06-05T00:00:00",
-        "cusAccount": "ThuanTest",
-        "cusPassword": "123"
-}
+![img8](/documents/diagrams/message-structure-4.png)
 
-GET /api/customer/20000002 HTTP/1.1
-Host: trackrwebserver.azurewebsites.net
+![img9](/documents/diagrams/message-structure-5.png)
 
-PUT /api/Parcel/ HTTP/1.1
-Host: trackrwebserver.azurewebsites.net
-Content-Type: application/json
-Content-Length: 471
+## Đặc tả luồng người dùng
 
-[
-    {
-        "parID": 30000000,
-        "parImage": "https://gift.adcbook.net.vn/web/image/product.template/74802/image_1920?unique=ce02538",
-        "parDescription": "Bút bi Thiên Long ok",
-        "parStatus": "READY_TO_SHIP",
-        "parDeliveryDate": "2023-11-01T00:00:00",
-        "parLocation": "Kho Củ Chi - TPHCM",
-        "realtime": "",
-        "note": "Dùng để viết",
-        "price": 5000,
-        "cusID": 111,
-        "manID": 555
-    }
-]
+![img10](/documents/diagrams/use-case-diagram.png)
 
 ### Tại màn hình đăng nhập
 
