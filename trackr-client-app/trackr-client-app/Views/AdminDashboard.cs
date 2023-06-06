@@ -268,13 +268,14 @@ namespace trackr_client_app.Views
             adminCreateParcelView.Show();
         }
 
-        public void RefreshData()
+        public async void RefreshData()
         {
             UserSession.customers.Clear();
             UserSession.deliveryMen.Clear();
             UserSession.parcels.Clear();
             GetCustomerData();
-            GetDeliveryManData();
+            await Task.Run(() => { GetDeliveryManData(); });
+            GetParcelData();
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)
