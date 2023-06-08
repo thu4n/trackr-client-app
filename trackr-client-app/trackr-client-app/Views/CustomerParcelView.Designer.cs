@@ -329,7 +329,7 @@
             this.chatBtn.Name = "chatBtn";
             this.chatBtn.Size = new System.Drawing.Size(252, 33);
             this.chatBtn.TabIndex = 75;
-            this.chatBtn.Text = "Liên hệ người giao hàng";
+            this.chatBtn.Text = "Thắc mắc về đơn hàng";
             this.chatBtn.UseVisualStyleBackColor = false;
             this.chatBtn.Click += new System.EventHandler(this.chatBtn_Click);
             // 
