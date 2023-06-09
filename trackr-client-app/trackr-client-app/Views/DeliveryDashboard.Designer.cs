@@ -73,11 +73,12 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tabControl1.Location = new System.Drawing.Point(56, 239);
+            this.tabControl1.Location = new System.Drawing.Point(63, 299);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(20, 5);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(912, 366);
+            this.tabControl1.Size = new System.Drawing.Size(1026, 458);
             this.tabControl1.TabIndex = 25;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -87,10 +88,11 @@
             this.tabPage1.Controls.Add(this.parcelGridView);
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.ForeColor = System.Drawing.Color.Black;
-            this.tabPage1.Location = new System.Drawing.Point(4, 38);
+            this.tabPage1.Location = new System.Drawing.Point(4, 43);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(904, 324);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1018, 411);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đơn hàng cần giao";
             // 
@@ -126,13 +128,14 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.parcelGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.parcelGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parcelGridView.Location = new System.Drawing.Point(3, 3);
+            this.parcelGridView.Location = new System.Drawing.Point(3, 4);
+            this.parcelGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.parcelGridView.Name = "parcelGridView";
             this.parcelGridView.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.parcelGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.parcelGridView.RowTemplate.Height = 24;
-            this.parcelGridView.Size = new System.Drawing.Size(898, 318);
+            this.parcelGridView.Size = new System.Drawing.Size(1012, 403);
             this.parcelGridView.TabIndex = 32;
             this.parcelGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.parcelGridView_CellContentClick);
             // 
@@ -142,7 +145,7 @@
             this.sttCol.HeaderText = "STT";
             this.sttCol.MinimumWidth = 6;
             this.sttCol.Name = "sttCol";
-            this.sttCol.Width = 62;
+            this.sttCol.Width = 76;
             // 
             // codeCol
             // 
@@ -187,10 +190,11 @@
             this.tabPage2.Controls.Add(this.parcelProcessedGridView);
             this.tabPage2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.tabPage2.Location = new System.Drawing.Point(4, 38);
+            this.tabPage2.Location = new System.Drawing.Point(4, 43);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(904, 324);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1018, 411);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Đơn hàng đang giao";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -227,13 +231,14 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.parcelProcessedGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.parcelProcessedGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parcelProcessedGridView.Location = new System.Drawing.Point(3, 3);
+            this.parcelProcessedGridView.Location = new System.Drawing.Point(3, 4);
+            this.parcelProcessedGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.parcelProcessedGridView.Name = "parcelProcessedGridView";
             this.parcelProcessedGridView.RowHeadersWidth = 51;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.parcelProcessedGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.parcelProcessedGridView.RowTemplate.Height = 24;
-            this.parcelProcessedGridView.Size = new System.Drawing.Size(898, 318);
+            this.parcelProcessedGridView.Size = new System.Drawing.Size(1012, 403);
             this.parcelProcessedGridView.TabIndex = 34;
             this.parcelProcessedGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.parcelProcessedGridView_CellContentClick);
             // 
@@ -243,7 +248,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "STT";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 62;
+            this.dataGridViewTextBoxColumn1.Width = 76;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -287,10 +292,10 @@
             // 
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Location = new System.Drawing.Point(904, 18);
+            this.usernameLabel.Location = new System.Drawing.Point(1017, 22);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(0);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(104, 28);
+            this.usernameLabel.Size = new System.Drawing.Size(124, 32);
             this.usernameLabel.TabIndex = 30;
             this.usernameLabel.Text = "Username";
             // 
@@ -298,18 +303,19 @@
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(157, 178);
+            this.searchLabel.Location = new System.Drawing.Point(177, 222);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(166, 23);
+            this.searchLabel.Size = new System.Drawing.Size(202, 30);
             this.searchLabel.TabIndex = 29;
             this.searchLabel.Text = "Tra cứu mã vận đơn:";
             // 
             // searchTB
             // 
             this.searchTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTB.Location = new System.Drawing.Point(329, 175);
+            this.searchTB.Location = new System.Drawing.Point(370, 219);
+            this.searchTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(436, 30);
+            this.searchTB.Size = new System.Drawing.Size(490, 35);
             this.searchTB.TabIndex = 27;
             // 
             // titleLabel
@@ -317,24 +323,26 @@
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.titleLabel.Location = new System.Drawing.Point(280, 100);
+            this.titleLabel.Location = new System.Drawing.Point(315, 125);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(465, 62);
+            this.titleLabel.Size = new System.Drawing.Size(565, 76);
             this.titleLabel.TabIndex = 26;
             this.titleLabel.Text = "Danh sách đơn hàng";
             // 
             // refreshBtn
             // 
-            this.refreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.refreshBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.refreshBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.Refresh_icon;
+            this.refreshBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.refreshBtn.FlatAppearance.BorderSize = 0;
             this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshBtn.ForeColor = System.Drawing.Color.White;
-            this.refreshBtn.Location = new System.Drawing.Point(60, 611);
+            this.refreshBtn.Location = new System.Drawing.Point(928, 214);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(163, 33);
+            this.refreshBtn.Size = new System.Drawing.Size(67, 43);
             this.refreshBtn.TabIndex = 33;
-            this.refreshBtn.Text = "Làm mới dữ liệu";
             this.refreshBtn.UseVisualStyleBackColor = false;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
@@ -343,9 +351,10 @@
             this.pictureBox1.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.InitialImage = global::trackr_client_app.Properties.Resources.logoSmall;
-            this.pictureBox1.Location = new System.Drawing.Point(858, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(965, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.Size = new System.Drawing.Size(45, 50);
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
@@ -356,18 +365,19 @@
             this.searchBtn.FlatAppearance.BorderSize = 0;
             this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.Location = new System.Drawing.Point(771, 175);
+            this.searchBtn.Location = new System.Drawing.Point(867, 219);
+            this.searchBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(49, 30);
+            this.searchBtn.Size = new System.Drawing.Size(55, 38);
             this.searchBtn.TabIndex = 28;
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // DeliveryDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 664);
+            this.ClientSize = new System.Drawing.Size(1153, 830);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.usernameLabel);
@@ -377,6 +387,7 @@
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DeliveryDashboard";
             this.Text = "Trackr - Delivery Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DeliveryDashboard_FormClosed);

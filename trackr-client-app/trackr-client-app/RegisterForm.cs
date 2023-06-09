@@ -72,14 +72,14 @@ namespace trackr_client_app
             customer.CusName = nameTB.Text;
             customer.CusAccount = accountTB.Text;
             customer.CusPassword = LoginForm.ComputeSHA256(passwordTB.Text);
-            customer.CusBirth = Convert.ToDateTime(birthTB.Text);
+            customer.CusBirth = Convert.ToDateTime(birthDTP.Text);
             customer.CusPhone = phoneTB.Text;
             customer.CusAddress = streetTB.Text + "*" + districtTB.Text + "*" + cityTB.Text;
             customer.CusDateRegister = DateTime.Now;
         }
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            if (accountTB.Text == string.Empty || passwordTB.Text == string.Empty || repwdTB.Text == string.Empty || streetTB.Text == string.Empty || districtTB.Text == string.Empty || phoneTB.Text == string.Empty || birthTB.Text == string.Empty)
+            if (accountTB.Text == string.Empty || passwordTB.Text == string.Empty || repwdTB.Text == string.Empty || streetTB.Text == string.Empty || districtTB.Text == string.Empty || phoneTB.Text == string.Empty || birthDTP.Text == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 return;

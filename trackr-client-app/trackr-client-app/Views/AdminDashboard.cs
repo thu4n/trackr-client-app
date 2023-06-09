@@ -307,5 +307,11 @@ namespace trackr_client_app.Views
         {
             customerGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
         }
+        
+
+        private void adminRefreshBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
