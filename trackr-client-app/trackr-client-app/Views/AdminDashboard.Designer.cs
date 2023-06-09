@@ -178,6 +178,7 @@
             this.parcelGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.parcelGridView.Location = new System.Drawing.Point(3, 3);
             this.parcelGridView.Name = "parcelGridView";
+            this.parcelGridView.ReadOnly = true;
             this.parcelGridView.RowHeadersWidth = 51;
             this.parcelGridView.RowTemplate.Height = 24;
             this.parcelGridView.Size = new System.Drawing.Size(841, 318);
@@ -191,6 +192,7 @@
             this.sttCol.HeaderText = "STT";
             this.sttCol.MinimumWidth = 6;
             this.sttCol.Name = "sttCol";
+            this.sttCol.ReadOnly = true;
             this.sttCol.Width = 62;
             // 
             // codeCol
@@ -198,6 +200,7 @@
             this.codeCol.HeaderText = "Mã vận đơn";
             this.codeCol.MinimumWidth = 6;
             this.codeCol.Name = "codeCol";
+            this.codeCol.ReadOnly = true;
             this.codeCol.Width = 125;
             // 
             // nameCol
@@ -206,12 +209,14 @@
             this.nameCol.HeaderText = "Tên đơn hàng";
             this.nameCol.MinimumWidth = 6;
             this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
             // 
             // dateCol
             // 
             this.dateCol.HeaderText = "Ngày đặt hàng";
             this.dateCol.MinimumWidth = 6;
             this.dateCol.Name = "dateCol";
+            this.dateCol.ReadOnly = true;
             this.dateCol.Width = 125;
             // 
             // statusCol
@@ -219,6 +224,7 @@
             this.statusCol.HeaderText = "Trạng thái";
             this.statusCol.MinimumWidth = 6;
             this.statusCol.Name = "statusCol";
+            this.statusCol.ReadOnly = true;
             this.statusCol.Width = 125;
             // 
             // deliCol
@@ -227,6 +233,7 @@
             this.deliCol.HeaderText = "Phân công giao";
             this.deliCol.MinimumWidth = 6;
             this.deliCol.Name = "deliCol";
+            this.deliCol.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -272,6 +279,7 @@
             this.deliveryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.deliveryGridView.Location = new System.Drawing.Point(3, 3);
             this.deliveryGridView.Name = "deliveryGridView";
+            this.deliveryGridView.ReadOnly = true;
             this.deliveryGridView.RowHeadersWidth = 51;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.deliveryGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
@@ -287,6 +295,7 @@
             this.sttCol2.HeaderText = "STT";
             this.sttCol2.MinimumWidth = 6;
             this.sttCol2.Name = "sttCol2";
+            this.sttCol2.ReadOnly = true;
             this.sttCol2.Width = 62;
             // 
             // codeCol2
@@ -294,6 +303,7 @@
             this.codeCol2.HeaderText = "Mã nhân viên";
             this.codeCol2.MinimumWidth = 6;
             this.codeCol2.Name = "codeCol2";
+            this.codeCol2.ReadOnly = true;
             this.codeCol2.Width = 125;
             // 
             // nameCol2
@@ -302,6 +312,7 @@
             this.nameCol2.HeaderText = "Tên nhân viên";
             this.nameCol2.MinimumWidth = 6;
             this.nameCol2.Name = "nameCol2";
+            this.nameCol2.ReadOnly = true;
             // 
             // numberCol2
             // 
@@ -309,6 +320,7 @@
             this.numberCol2.HeaderText = "SĐT";
             this.numberCol2.MinimumWidth = 6;
             this.numberCol2.Name = "numberCol2";
+            this.numberCol2.ReadOnly = true;
             // 
             // tabPage3
             // 
@@ -353,6 +365,7 @@
             this.customerGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customerGridView.Location = new System.Drawing.Point(0, 0);
             this.customerGridView.Name = "customerGridView";
+            this.customerGridView.ReadOnly = true;
             this.customerGridView.RowHeadersWidth = 51;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.customerGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
@@ -368,6 +381,7 @@
             this.sttCol3.HeaderText = "STT";
             this.sttCol3.MinimumWidth = 6;
             this.sttCol3.Name = "sttCol3";
+            this.sttCol3.ReadOnly = true;
             this.sttCol3.Width = 62;
             // 
             // codeCol3
@@ -375,6 +389,7 @@
             this.codeCol3.HeaderText = "Mã khách hàng";
             this.codeCol3.MinimumWidth = 6;
             this.codeCol3.Name = "codeCol3";
+            this.codeCol3.ReadOnly = true;
             this.codeCol3.Width = 125;
             // 
             // nameCol3
@@ -383,6 +398,7 @@
             this.nameCol3.HeaderText = "Tên khách hàng";
             this.nameCol3.MinimumWidth = 6;
             this.nameCol3.Name = "nameCol3";
+            this.nameCol3.ReadOnly = true;
             // 
             // addrCol
             // 
@@ -390,6 +406,7 @@
             this.addrCol.HeaderText = "Địa chỉ";
             this.addrCol.MinimumWidth = 6;
             this.addrCol.Name = "addrCol";
+            this.addrCol.ReadOnly = true;
             // 
             // createBtn
             // 
