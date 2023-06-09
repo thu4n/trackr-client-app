@@ -131,5 +131,6 @@ namespace trackr_client_app
         {
             parcelGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
         }
+
     }
 }
