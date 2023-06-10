@@ -46,6 +46,11 @@ namespace trackr_client_app
             estimateDateTB.Text = parcel.ParDeliveryDate.AddDays(3).ToString("dd-MM-yyyy");
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            if(parcel.ParStatus == "COMPLETED")
+            {
+                reviewBtn.Enabled = true;
+                reviewBtn.BackColor = ColorTranslator.FromHtml("226, 111, 111");
+            }
             DisplayTrackingTree();
         }
 
@@ -88,5 +93,10 @@ namespace trackr_client_app
             Process.Start(command);
         }
 
+        private void reviewBtn_Click(object sender, EventArgs e)
+        {
+            CustomerReview customerReview = new CustomerReview();
+            customerReview.Show();
+        }
     }
 }

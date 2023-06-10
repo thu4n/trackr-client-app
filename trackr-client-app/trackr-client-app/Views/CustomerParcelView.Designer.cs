@@ -62,8 +62,8 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.distanceLabel = new System.Windows.Forms.Label();
-            this.parcelImg = new System.Windows.Forms.PictureBox();
             this.reviewBtn = new System.Windows.Forms.Button();
+            this.parcelImg = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -449,6 +449,22 @@
             this.distanceLabel.TabIndex = 44;
             this.distanceLabel.Text = "Tổng khoảng cách ước lượng:";
             // 
+            // reviewBtn
+            // 
+            this.reviewBtn.BackColor = System.Drawing.Color.Silver;
+            this.reviewBtn.Enabled = false;
+            this.reviewBtn.FlatAppearance.BorderSize = 0;
+            this.reviewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reviewBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewBtn.ForeColor = System.Drawing.Color.White;
+            this.reviewBtn.Location = new System.Drawing.Point(23, 262);
+            this.reviewBtn.Name = "reviewBtn";
+            this.reviewBtn.Size = new System.Drawing.Size(172, 33);
+            this.reviewBtn.TabIndex = 77;
+            this.reviewBtn.Text = "Đánh giá dịch vụ";
+            this.reviewBtn.UseVisualStyleBackColor = false;
+            this.reviewBtn.Click += new System.EventHandler(this.reviewBtn_Click);
+            // 
             // parcelImg
             // 
             this.parcelImg.BackColor = System.Drawing.Color.Transparent;
@@ -459,20 +475,6 @@
             this.parcelImg.Size = new System.Drawing.Size(172, 172);
             this.parcelImg.TabIndex = 39;
             this.parcelImg.TabStop = false;
-            // 
-            // reviewBtn
-            // 
-            this.reviewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.reviewBtn.FlatAppearance.BorderSize = 0;
-            this.reviewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reviewBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reviewBtn.ForeColor = System.Drawing.Color.White;
-            this.reviewBtn.Location = new System.Drawing.Point(23, 267);
-            this.reviewBtn.Name = "reviewBtn";
-            this.reviewBtn.Size = new System.Drawing.Size(172, 33);
-            this.reviewBtn.TabIndex = 77;
-            this.reviewBtn.Text = "Đánh giá dịch vụ";
-            this.reviewBtn.UseVisualStyleBackColor = false;
             // 
             // CustomerParcelView
             // 
