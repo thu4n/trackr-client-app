@@ -184,6 +184,7 @@
     </Compile>
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DeliveryMan.cs" />
+    <Compile Include="Models\Review.cs" />
     <Compile Include="Views\AdminCreateParcelView.cs">
       <SubType>Form</SubType>
     </Compile>

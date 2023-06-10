@@ -298,6 +298,7 @@
             this.Name = "CustomerReview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trackr - Đánh giá dịch vụ giao hàng";
+            this.Load += new System.EventHandler(this.CustomerReview_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

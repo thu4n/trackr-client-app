@@ -95,7 +95,7 @@ namespace trackr_client_app
 
         private void reviewBtn_Click(object sender, EventArgs e)
         {
-            CustomerReview customerReview = new CustomerReview();
+            CustomerReview customerReview = new CustomerReview(parcel.ParID, parcel.ParDescription);
             customerReview.Show();
         }
     }
