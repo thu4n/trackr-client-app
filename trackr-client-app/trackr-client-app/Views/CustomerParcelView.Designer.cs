@@ -495,43 +495,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerParcelView));
-            this.cusAddressTB = new System.Windows.Forms.TextBox();
-            this.cusPhoneTB = new System.Windows.Forms.TextBox();
-            this.cusNameTB = new System.Windows.Forms.TextBox();
-            this.cusCodeTB = new System.Windows.Forms.TextBox();
-            this.estimateDateTB = new System.Windows.Forms.TextBox();
-            this.statusTB = new System.Windows.Forms.TextBox();
-            this.orderDateTB = new System.Windows.Forms.TextBox();
-            this.parcelNameTB = new System.Windows.Forms.TextBox();
-            this.parcelCodeTB = new System.Windows.Forms.TextBox();
-            this.cusAddressLabel = new System.Windows.Forms.Label();
-            this.cusPhoneLabel = new System.Windows.Forms.Label();
-            this.cusNameLabel = new System.Windows.Forms.Label();
-            this.cusCodeLabel = new System.Windows.Forms.Label();
-            this.estimateDateLabel = new System.Windows.Forms.Label();
-            this.statusLabel = new System.Windows.Forms.Label();
-            this.orderDateLabel = new System.Windows.Forms.Label();
-            this.parcelNameLabel = new System.Windows.Forms.Label();
-            this.parcelCodeLabel = new System.Windows.Forms.Label();
-            this.titleLabel1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.priceTB = new System.Windows.Forms.TextBox();
-            this.chatBtn = new System.Windows.Forms.Button();
-            this.priceLabel = new System.Windows.Forms.Label();
-            this.noteTB = new System.Windows.Forms.TextBox();
-            this.noteLabel = new System.Windows.Forms.Label();
-            this.titleLabel2 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.distanceLabel = new System.Windows.Forms.Label();
-            this.parcelImg = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
-            this.SuspendLayout();
             // 
             // cusAddressTB
             // 
