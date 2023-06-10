@@ -41,8 +41,6 @@
             this.parcelCodeLabel = new System.Windows.Forms.Label();
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.reasonCancelParcelComboBox = new System.Windows.Forms.ComboBox();
-            this.reasonCancelParcel_lb = new System.Windows.Forms.Label();
             this.priceTB = new System.Windows.Forms.TextBox();
             this.priceLabel = new System.Windows.Forms.Label();
             this.delBtn = new System.Windows.Forms.Button();
@@ -63,6 +61,8 @@
             this.cusCodeTB = new System.Windows.Forms.TextBox();
             this.cusCodeLabel = new System.Windows.Forms.Label();
             this.parcelImg = new System.Windows.Forms.PictureBox();
+            this.reasonCancelParcelComboBox = new System.Windows.Forms.ComboBox();
+            this.reasonCancelParcel_lb = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -77,11 +77,10 @@
             this.treeView1.ImageList = this.imageList1;
             this.treeView1.Indent = 35;
             this.treeView1.ItemHeight = 50;
-            this.treeView1.Location = new System.Drawing.Point(0, 65);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.treeView1.Location = new System.Drawing.Point(0, 52);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(1142, 370);
+            this.treeView1.Size = new System.Drawing.Size(1015, 296);
             this.treeView1.TabIndex = 43;
             // 
             // imageList1
@@ -98,9 +97,9 @@
             this.titleLabel2.AutoSize = true;
             this.titleLabel2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.titleLabel2.Location = new System.Drawing.Point(18, 14);
+            this.titleLabel2.Location = new System.Drawing.Point(16, 11);
             this.titleLabel2.Name = "titleLabel2";
-            this.titleLabel2.Size = new System.Drawing.Size(345, 45);
+            this.titleLabel2.Size = new System.Drawing.Size(294, 38);
             this.titleLabel2.TabIndex = 41;
             this.titleLabel2.Text = "Hành trình đơn hàng";
             // 
@@ -109,12 +108,11 @@
             this.noteTB.BackColor = System.Drawing.Color.White;
             this.noteTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.noteTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteTB.Location = new System.Drawing.Point(754, 309);
-            this.noteTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.noteTB.Location = new System.Drawing.Point(670, 247);
             this.noteTB.Multiline = true;
             this.noteTB.Name = "noteTB";
             this.noteTB.ReadOnly = true;
-            this.noteTB.Size = new System.Drawing.Size(377, 59);
+            this.noteTB.Size = new System.Drawing.Size(335, 47);
             this.noteTB.TabIndex = 45;
             this.noteTB.Text = "blah";
             // 
@@ -123,9 +121,9 @@
             this.noteLabel.AutoSize = true;
             this.noteLabel.BackColor = System.Drawing.Color.White;
             this.noteLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel.Location = new System.Drawing.Point(668, 309);
+            this.noteLabel.Location = new System.Drawing.Point(594, 247);
             this.noteLabel.Name = "noteLabel";
-            this.noteLabel.Size = new System.Drawing.Size(95, 30);
+            this.noteLabel.Size = new System.Drawing.Size(75, 23);
             this.noteLabel.TabIndex = 45;
             this.noteLabel.Text = "Ghi chú:";
             // 
@@ -134,9 +132,9 @@
             this.statusLabel.AutoSize = true;
             this.statusLabel.BackColor = System.Drawing.Color.White;
             this.statusLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusLabel.Location = new System.Drawing.Point(268, 258);
+            this.statusLabel.Location = new System.Drawing.Point(238, 206);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(219, 30);
+            this.statusLabel.Size = new System.Drawing.Size(179, 23);
             this.statusLabel.TabIndex = 49;
             this.statusLabel.Text = "Trạng thái đơn hàng:";
             // 
@@ -145,9 +143,9 @@
             this.orderDateLabel.AutoSize = true;
             this.orderDateLabel.BackColor = System.Drawing.Color.White;
             this.orderDateLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderDateLabel.Location = new System.Drawing.Point(268, 211);
+            this.orderDateLabel.Location = new System.Drawing.Point(238, 169);
             this.orderDateLabel.Name = "orderDateLabel";
-            this.orderDateLabel.Size = new System.Drawing.Size(165, 30);
+            this.orderDateLabel.Size = new System.Drawing.Size(134, 23);
             this.orderDateLabel.TabIndex = 48;
             this.orderDateLabel.Text = "Ngày đặt hàng:";
             // 
@@ -156,9 +154,9 @@
             this.parcelNameLabel.AutoSize = true;
             this.parcelNameLabel.BackColor = System.Drawing.Color.White;
             this.parcelNameLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parcelNameLabel.Location = new System.Drawing.Point(268, 164);
+            this.parcelNameLabel.Location = new System.Drawing.Point(238, 131);
             this.parcelNameLabel.Name = "parcelNameLabel";
-            this.parcelNameLabel.Size = new System.Drawing.Size(154, 30);
+            this.parcelNameLabel.Size = new System.Drawing.Size(124, 23);
             this.parcelNameLabel.TabIndex = 47;
             this.parcelNameLabel.Text = "Tên đơn hàng:";
             // 
@@ -167,9 +165,9 @@
             this.parcelCodeLabel.AutoSize = true;
             this.parcelCodeLabel.BackColor = System.Drawing.Color.White;
             this.parcelCodeLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parcelCodeLabel.Location = new System.Drawing.Point(268, 118);
+            this.parcelCodeLabel.Location = new System.Drawing.Point(238, 94);
             this.parcelCodeLabel.Name = "parcelCodeLabel";
-            this.parcelCodeLabel.Size = new System.Drawing.Size(136, 30);
+            this.parcelCodeLabel.Size = new System.Drawing.Size(110, 23);
             this.parcelCodeLabel.TabIndex = 46;
             this.parcelCodeLabel.Text = "Mã vận đơn:";
             // 
@@ -179,9 +177,9 @@
             this.titleLabel1.BackColor = System.Drawing.Color.White;
             this.titleLabel1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.titleLabel1.Location = new System.Drawing.Point(32, 41);
+            this.titleLabel1.Location = new System.Drawing.Point(28, 33);
             this.titleLabel1.Name = "titleLabel1";
-            this.titleLabel1.Size = new System.Drawing.Size(290, 45);
+            this.titleLabel1.Size = new System.Drawing.Size(247, 38);
             this.titleLabel1.TabIndex = 45;
             this.titleLabel1.Text = "Chi tiết đơn hàng";
             // 
@@ -197,44 +195,20 @@
             this.panel1.Controls.Add(this.noteLabel);
             this.panel1.Controls.Add(this.estimateDateLabel);
             this.panel1.Controls.Add(this.estimateDateTB);
-            this.panel1.Location = new System.Drawing.Point(14, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1142, 411);
+            this.panel1.Size = new System.Drawing.Size(1015, 329);
             this.panel1.TabIndex = 63;
-            // 
-            // reasonCancelParcelComboBox
-            // 
-            this.reasonCancelParcelComboBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.reasonCancelParcelComboBox.FormattingEnabled = true;
-            this.reasonCancelParcelComboBox.Items.AddRange(new object[] {
-            "Không sẵn sàng giao hàng"});
-            this.reasonCancelParcelComboBox.Location = new System.Drawing.Point(423, 345);
-            this.reasonCancelParcelComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.reasonCancelParcelComboBox.Name = "reasonCancelParcelComboBox";
-            this.reasonCancelParcelComboBox.Size = new System.Drawing.Size(210, 36);
-            this.reasonCancelParcelComboBox.TabIndex = 78;
-            // 
-            // reasonCancelParcel_lb
-            // 
-            this.reasonCancelParcel_lb.AutoSize = true;
-            this.reasonCancelParcel_lb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.reasonCancelParcel_lb.Location = new System.Drawing.Point(252, 349);
-            this.reasonCancelParcel_lb.Name = "reasonCancelParcel_lb";
-            this.reasonCancelParcel_lb.Size = new System.Drawing.Size(160, 30);
-            this.reasonCancelParcel_lb.TabIndex = 77;
-            this.reasonCancelParcel_lb.Text = "Lý do hủy đơn:";
             // 
             // priceTB
             // 
             this.priceTB.BackColor = System.Drawing.Color.White;
             this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.priceTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceTB.Location = new System.Drawing.Point(816, 45);
-            this.priceTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.priceTB.Location = new System.Drawing.Point(725, 36);
             this.priceTB.Name = "priceTB";
             this.priceTB.ReadOnly = true;
-            this.priceTB.Size = new System.Drawing.Size(110, 28);
+            this.priceTB.Size = new System.Drawing.Size(98, 23);
             this.priceTB.TabIndex = 66;
             this.priceTB.Text = "12345678";
             // 
@@ -243,9 +217,9 @@
             this.priceLabel.AutoSize = true;
             this.priceLabel.BackColor = System.Drawing.Color.White;
             this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceLabel.Location = new System.Drawing.Point(668, 45);
+            this.priceLabel.Location = new System.Drawing.Point(594, 36);
             this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(156, 30);
+            this.priceLabel.Size = new System.Drawing.Size(125, 23);
             this.priceLabel.TabIndex = 65;
             this.priceLabel.Text = "Phí giao hàng:";
             // 
@@ -257,10 +231,9 @@
             this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.delBtn.Location = new System.Drawing.Point(303, 32);
-            this.delBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.delBtn.Location = new System.Drawing.Point(269, 26);
             this.delBtn.Name = "delBtn";
-            this.delBtn.Size = new System.Drawing.Size(165, 41);
+            this.delBtn.Size = new System.Drawing.Size(147, 33);
             this.delBtn.TabIndex = 69;
             this.delBtn.Text = "Xóa đơn hàng";
             this.delBtn.UseVisualStyleBackColor = false;
@@ -271,9 +244,9 @@
             this.estimateDateLabel.AutoSize = true;
             this.estimateDateLabel.BackColor = System.Drawing.Color.White;
             this.estimateDateLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estimateDateLabel.Location = new System.Drawing.Point(254, 309);
+            this.estimateDateLabel.Location = new System.Drawing.Point(226, 247);
             this.estimateDateLabel.Name = "estimateDateLabel";
-            this.estimateDateLabel.Size = new System.Drawing.Size(204, 30);
+            this.estimateDateLabel.Size = new System.Drawing.Size(167, 23);
             this.estimateDateLabel.TabIndex = 25;
             this.estimateDateLabel.Text = "Dự kiến giao trước:";
             // 
@@ -282,11 +255,10 @@
             this.estimateDateTB.BackColor = System.Drawing.Color.White;
             this.estimateDateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.estimateDateTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estimateDateTB.Location = new System.Drawing.Point(449, 309);
-            this.estimateDateTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.estimateDateTB.Location = new System.Drawing.Point(399, 247);
             this.estimateDateTB.Name = "estimateDateTB";
             this.estimateDateTB.ReadOnly = true;
-            this.estimateDateTB.Size = new System.Drawing.Size(197, 28);
+            this.estimateDateTB.Size = new System.Drawing.Size(175, 23);
             this.estimateDateTB.TabIndex = 34;
             this.estimateDateTB.Text = "01/06/2023";
             this.estimateDateTB.WordWrap = false;
@@ -297,19 +269,18 @@
             this.panel2.Controls.Add(this.distanceLabel);
             this.panel2.Controls.Add(this.treeView1);
             this.panel2.Controls.Add(this.titleLabel2);
-            this.panel2.Location = new System.Drawing.Point(14, 449);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(12, 359);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1142, 435);
+            this.panel2.Size = new System.Drawing.Size(1015, 348);
             this.panel2.TabIndex = 64;
             // 
             // distanceLabel
             // 
             this.distanceLabel.AutoSize = true;
             this.distanceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.distanceLabel.Location = new System.Drawing.Point(366, 29);
+            this.distanceLabel.Location = new System.Drawing.Point(325, 23);
             this.distanceLabel.Name = "distanceLabel";
-            this.distanceLabel.Size = new System.Drawing.Size(309, 30);
+            this.distanceLabel.Size = new System.Drawing.Size(249, 23);
             this.distanceLabel.TabIndex = 45;
             this.distanceLabel.Text = "Tổng khoảng cách ước lượng:";
             // 
@@ -318,11 +289,10 @@
             this.statusTB.BackColor = System.Drawing.Color.White;
             this.statusTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.statusTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusTB.Location = new System.Drawing.Point(476, 258);
-            this.statusTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.statusTB.Location = new System.Drawing.Point(423, 206);
             this.statusTB.Name = "statusTB";
             this.statusTB.ReadOnly = true;
-            this.statusTB.Size = new System.Drawing.Size(197, 28);
+            this.statusTB.Size = new System.Drawing.Size(175, 23);
             this.statusTB.TabIndex = 57;
             this.statusTB.Text = "Đang chuẩn bị";
             this.statusTB.WordWrap = false;
@@ -332,11 +302,10 @@
             this.orderDateTB.BackColor = System.Drawing.Color.White;
             this.orderDateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.orderDateTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderDateTB.Location = new System.Drawing.Point(425, 211);
-            this.orderDateTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.orderDateTB.Location = new System.Drawing.Point(378, 169);
             this.orderDateTB.Name = "orderDateTB";
             this.orderDateTB.ReadOnly = true;
-            this.orderDateTB.Size = new System.Drawing.Size(197, 28);
+            this.orderDateTB.Size = new System.Drawing.Size(175, 23);
             this.orderDateTB.TabIndex = 56;
             this.orderDateTB.Text = "26/05/2023";
             this.orderDateTB.WordWrap = false;
@@ -346,11 +315,10 @@
             this.parcelNameTB.BackColor = System.Drawing.Color.White;
             this.parcelNameTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.parcelNameTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parcelNameTB.Location = new System.Drawing.Point(414, 164);
-            this.parcelNameTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.parcelNameTB.Location = new System.Drawing.Point(368, 131);
             this.parcelNameTB.Name = "parcelNameTB";
             this.parcelNameTB.ReadOnly = true;
-            this.parcelNameTB.Size = new System.Drawing.Size(197, 28);
+            this.parcelNameTB.Size = new System.Drawing.Size(175, 23);
             this.parcelNameTB.TabIndex = 55;
             this.parcelNameTB.Text = "Random parcel name";
             this.parcelNameTB.WordWrap = false;
@@ -360,11 +328,10 @@
             this.parcelCodeTB.BackColor = System.Drawing.Color.White;
             this.parcelCodeTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.parcelCodeTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parcelCodeTB.Location = new System.Drawing.Point(398, 118);
-            this.parcelCodeTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.parcelCodeTB.Location = new System.Drawing.Point(354, 94);
             this.parcelCodeTB.Name = "parcelCodeTB";
             this.parcelCodeTB.ReadOnly = true;
-            this.parcelCodeTB.Size = new System.Drawing.Size(110, 28);
+            this.parcelCodeTB.Size = new System.Drawing.Size(98, 23);
             this.parcelCodeTB.TabIndex = 54;
             this.parcelCodeTB.Text = "12345678";
             // 
@@ -373,9 +340,9 @@
             this.cusAddressLabel.AutoSize = true;
             this.cusAddressLabel.BackColor = System.Drawing.Color.White;
             this.cusAddressLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cusAddressLabel.Location = new System.Drawing.Point(682, 258);
+            this.cusAddressLabel.Location = new System.Drawing.Point(606, 206);
             this.cusAddressLabel.Name = "cusAddressLabel";
-            this.cusAddressLabel.Size = new System.Drawing.Size(86, 30);
+            this.cusAddressLabel.Size = new System.Drawing.Size(70, 23);
             this.cusAddressLabel.TabIndex = 53;
             this.cusAddressLabel.Text = "Địa chỉ:";
             // 
@@ -384,9 +351,9 @@
             this.cusPhoneLabel.AutoSize = true;
             this.cusPhoneLabel.BackColor = System.Drawing.Color.White;
             this.cusPhoneLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cusPhoneLabel.Location = new System.Drawing.Point(682, 211);
+            this.cusPhoneLabel.Location = new System.Drawing.Point(606, 169);
             this.cusPhoneLabel.Name = "cusPhoneLabel";
-            this.cusPhoneLabel.Size = new System.Drawing.Size(58, 30);
+            this.cusPhoneLabel.Size = new System.Drawing.Size(48, 23);
             this.cusPhoneLabel.TabIndex = 52;
             this.cusPhoneLabel.Text = "SĐT:";
             // 
@@ -395,9 +362,9 @@
             this.cusNameLabel.AutoSize = true;
             this.cusNameLabel.BackColor = System.Drawing.Color.White;
             this.cusNameLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cusNameLabel.Location = new System.Drawing.Point(682, 164);
+            this.cusNameLabel.Location = new System.Drawing.Point(606, 131);
             this.cusNameLabel.Name = "cusNameLabel";
-            this.cusNameLabel.Size = new System.Drawing.Size(174, 30);
+            this.cusNameLabel.Size = new System.Drawing.Size(139, 23);
             this.cusNameLabel.TabIndex = 51;
             this.cusNameLabel.Text = "Tên khách hàng:";
             // 
@@ -406,12 +373,11 @@
             this.cusAddressTB.BackColor = System.Drawing.Color.White;
             this.cusAddressTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cusAddressTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cusAddressTB.Location = new System.Drawing.Point(767, 258);
-            this.cusAddressTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cusAddressTB.Location = new System.Drawing.Point(682, 206);
             this.cusAddressTB.Multiline = true;
             this.cusAddressTB.Name = "cusAddressTB";
             this.cusAddressTB.ReadOnly = true;
-            this.cusAddressTB.Size = new System.Drawing.Size(377, 59);
+            this.cusAddressTB.Size = new System.Drawing.Size(335, 47);
             this.cusAddressTB.TabIndex = 61;
             this.cusAddressTB.Text = "Ký túc xá khu A: Đường Tạ Quang Bửu, khu phố 6, phường Linh Trung, thành phố Thủ " +
     "Đức, Thành phố Hồ Chí Minh.";
@@ -421,11 +387,10 @@
             this.cusPhoneTB.BackColor = System.Drawing.Color.White;
             this.cusPhoneTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cusPhoneTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cusPhoneTB.Location = new System.Drawing.Point(742, 211);
-            this.cusPhoneTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cusPhoneTB.Location = new System.Drawing.Point(660, 169);
             this.cusPhoneTB.Name = "cusPhoneTB";
             this.cusPhoneTB.ReadOnly = true;
-            this.cusPhoneTB.Size = new System.Drawing.Size(220, 28);
+            this.cusPhoneTB.Size = new System.Drawing.Size(196, 23);
             this.cusPhoneTB.TabIndex = 60;
             this.cusPhoneTB.Text = "0785987612";
             // 
@@ -434,11 +399,10 @@
             this.cusNameTB.BackColor = System.Drawing.Color.White;
             this.cusNameTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cusNameTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cusNameTB.Location = new System.Drawing.Point(843, 164);
-            this.cusNameTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cusNameTB.Location = new System.Drawing.Point(749, 131);
             this.cusNameTB.Name = "cusNameTB";
             this.cusNameTB.ReadOnly = true;
-            this.cusNameTB.Size = new System.Drawing.Size(220, 28);
+            this.cusNameTB.Size = new System.Drawing.Size(196, 23);
             this.cusNameTB.TabIndex = 59;
             this.cusNameTB.Text = "Tống Võ Anh Thuận";
             // 
@@ -447,11 +411,10 @@
             this.cusCodeTB.BackColor = System.Drawing.Color.White;
             this.cusCodeTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cusCodeTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cusCodeTB.Location = new System.Drawing.Point(843, 118);
-            this.cusCodeTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cusCodeTB.Location = new System.Drawing.Point(749, 94);
             this.cusCodeTB.Name = "cusCodeTB";
             this.cusCodeTB.ReadOnly = true;
-            this.cusCodeTB.Size = new System.Drawing.Size(110, 28);
+            this.cusCodeTB.Size = new System.Drawing.Size(98, 23);
             this.cusCodeTB.TabIndex = 58;
             this.cusCodeTB.Text = "12345678";
             // 
@@ -460,9 +423,9 @@
             this.cusCodeLabel.AutoSize = true;
             this.cusCodeLabel.BackColor = System.Drawing.Color.White;
             this.cusCodeLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cusCodeLabel.Location = new System.Drawing.Point(682, 118);
+            this.cusCodeLabel.Location = new System.Drawing.Point(606, 94);
             this.cusCodeLabel.Name = "cusCodeLabel";
-            this.cusCodeLabel.Size = new System.Drawing.Size(171, 30);
+            this.cusCodeLabel.Size = new System.Drawing.Size(137, 23);
             this.cusCodeLabel.TabIndex = 50;
             this.cusCodeLabel.Text = "Mã khách hàng:";
             // 
@@ -471,18 +434,36 @@
             this.parcelImg.BackColor = System.Drawing.Color.White;
             this.parcelImg.BackgroundImage = global::trackr_client_app.Properties.Resources.logoSmall;
             this.parcelImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.parcelImg.Location = new System.Drawing.Point(39, 116);
-            this.parcelImg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.parcelImg.Location = new System.Drawing.Point(35, 93);
             this.parcelImg.Name = "parcelImg";
-            this.parcelImg.Size = new System.Drawing.Size(194, 215);
+            this.parcelImg.Size = new System.Drawing.Size(172, 172);
             this.parcelImg.TabIndex = 62;
             this.parcelImg.TabStop = false;
             // 
+            // reasonCancelParcelComboBox
+            // 
+            this.reasonCancelParcelComboBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.reasonCancelParcelComboBox.FormattingEnabled = true;
+            this.reasonCancelParcelComboBox.Location = new System.Drawing.Point(376, 276);
+            this.reasonCancelParcelComboBox.Name = "reasonCancelParcelComboBox";
+            this.reasonCancelParcelComboBox.Size = new System.Drawing.Size(187, 31);
+            this.reasonCancelParcelComboBox.TabIndex = 78;
+            // 
+            // reasonCancelParcel_lb
+            // 
+            this.reasonCancelParcel_lb.AutoSize = true;
+            this.reasonCancelParcel_lb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.reasonCancelParcel_lb.Location = new System.Drawing.Point(224, 279);
+            this.reasonCancelParcel_lb.Name = "reasonCancelParcel_lb";
+            this.reasonCancelParcel_lb.Size = new System.Drawing.Size(130, 23);
+            this.reasonCancelParcel_lb.TabIndex = 77;
+            this.reasonCancelParcel_lb.Text = "Lý do hủy đơn:";
+            // 
             // AdminParcelView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 899);
+            this.ClientSize = new System.Drawing.Size(1039, 719);
             this.Controls.Add(this.statusTB);
             this.Controls.Add(this.orderDateTB);
             this.Controls.Add(this.parcelNameTB);
@@ -504,7 +485,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AdminParcelView";
             this.Text = "Trackr - Parcel Details";
             this.Load += new System.EventHandler(this.AdminParcelView_Load);
