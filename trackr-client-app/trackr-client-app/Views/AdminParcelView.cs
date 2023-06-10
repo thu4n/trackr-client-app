@@ -97,9 +97,10 @@ namespace trackr_client_app.Views
             adminDeleteView.Show();
         }
 
-        private void modBtn_Click(object sender, EventArgs e)
+        private void reviewBtn_Click(object sender, EventArgs e)
         {
-
+            AdminReviewView adminReviewView = new AdminReviewView(parcel.ParID);
+            adminReviewView.Show();
         }
     }
 }
