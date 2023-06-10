@@ -41,6 +41,8 @@
             this.parcelCodeLabel = new System.Windows.Forms.Label();
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.priceTB = new System.Windows.Forms.TextBox();
+            this.priceLabel = new System.Windows.Forms.Label();
             this.delBtn = new System.Windows.Forms.Button();
             this.estimateDateLabel = new System.Windows.Forms.Label();
             this.estimateDateTB = new System.Windows.Forms.TextBox();
@@ -59,8 +61,8 @@
             this.cusCodeTB = new System.Windows.Forms.TextBox();
             this.cusCodeLabel = new System.Windows.Forms.Label();
             this.parcelImg = new System.Windows.Forms.PictureBox();
-            this.priceTB = new System.Windows.Forms.TextBox();
-            this.priceLabel = new System.Windows.Forms.Label();
+            this.reasonCancelParcelComboBox = new System.Windows.Forms.ComboBox();
+            this.reasonCancelParcel_lb = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -184,6 +186,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.reasonCancelParcelComboBox);
+            this.panel1.Controls.Add(this.reasonCancelParcel_lb);
             this.panel1.Controls.Add(this.priceTB);
             this.panel1.Controls.Add(this.priceLabel);
             this.panel1.Controls.Add(this.delBtn);
@@ -193,8 +197,31 @@
             this.panel1.Controls.Add(this.estimateDateTB);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 303);
+            this.panel1.Size = new System.Drawing.Size(1015, 329);
             this.panel1.TabIndex = 63;
+            // 
+            // priceTB
+            // 
+            this.priceTB.BackColor = System.Drawing.Color.White;
+            this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.priceTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceTB.Location = new System.Drawing.Point(725, 36);
+            this.priceTB.Name = "priceTB";
+            this.priceTB.ReadOnly = true;
+            this.priceTB.Size = new System.Drawing.Size(98, 23);
+            this.priceTB.TabIndex = 66;
+            this.priceTB.Text = "12345678";
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.BackColor = System.Drawing.Color.White;
+            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceLabel.Location = new System.Drawing.Point(594, 36);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(125, 23);
+            this.priceLabel.TabIndex = 65;
+            this.priceLabel.Text = "Phí giao hàng:";
             // 
             // delBtn
             // 
@@ -242,7 +269,7 @@
             this.panel2.Controls.Add(this.distanceLabel);
             this.panel2.Controls.Add(this.treeView1);
             this.panel2.Controls.Add(this.titleLabel2);
-            this.panel2.Location = new System.Drawing.Point(12, 332);
+            this.panel2.Location = new System.Drawing.Point(12, 359);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1015, 348);
             this.panel2.TabIndex = 64;
@@ -413,34 +440,30 @@
             this.parcelImg.TabIndex = 62;
             this.parcelImg.TabStop = false;
             // 
-            // priceTB
+            // reasonCancelParcelComboBox
             // 
-            this.priceTB.BackColor = System.Drawing.Color.White;
-            this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.priceTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceTB.Location = new System.Drawing.Point(725, 36);
-            this.priceTB.Name = "priceTB";
-            this.priceTB.ReadOnly = true;
-            this.priceTB.Size = new System.Drawing.Size(98, 23);
-            this.priceTB.TabIndex = 66;
-            this.priceTB.Text = "12345678";
+            this.reasonCancelParcelComboBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.reasonCancelParcelComboBox.FormattingEnabled = true;
+            this.reasonCancelParcelComboBox.Location = new System.Drawing.Point(376, 276);
+            this.reasonCancelParcelComboBox.Name = "reasonCancelParcelComboBox";
+            this.reasonCancelParcelComboBox.Size = new System.Drawing.Size(187, 31);
+            this.reasonCancelParcelComboBox.TabIndex = 78;
             // 
-            // priceLabel
+            // reasonCancelParcel_lb
             // 
-            this.priceLabel.AutoSize = true;
-            this.priceLabel.BackColor = System.Drawing.Color.White;
-            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceLabel.Location = new System.Drawing.Point(594, 36);
-            this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(125, 23);
-            this.priceLabel.TabIndex = 65;
-            this.priceLabel.Text = "Phí giao hàng:";
+            this.reasonCancelParcel_lb.AutoSize = true;
+            this.reasonCancelParcel_lb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.reasonCancelParcel_lb.Location = new System.Drawing.Point(224, 279);
+            this.reasonCancelParcel_lb.Name = "reasonCancelParcel_lb";
+            this.reasonCancelParcel_lb.Size = new System.Drawing.Size(130, 23);
+            this.reasonCancelParcel_lb.TabIndex = 77;
+            this.reasonCancelParcel_lb.Text = "Lý do hủy đơn:";
             // 
             // AdminParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 707);
+            this.ClientSize = new System.Drawing.Size(1039, 719);
             this.Controls.Add(this.statusTB);
             this.Controls.Add(this.orderDateTB);
             this.Controls.Add(this.parcelNameTB);
@@ -508,5 +531,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TextBox priceTB;
         private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.ComboBox reasonCancelParcelComboBox;
+        private System.Windows.Forms.Label reasonCancelParcel_lb;
     }
 }
