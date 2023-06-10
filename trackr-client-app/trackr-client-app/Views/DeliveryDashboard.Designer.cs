@@ -131,6 +131,7 @@
             this.parcelGridView.Location = new System.Drawing.Point(3, 4);
             this.parcelGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.parcelGridView.Name = "parcelGridView";
+            this.parcelGridView.ReadOnly = true;
             this.parcelGridView.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.parcelGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
@@ -145,13 +146,15 @@
             this.sttCol.HeaderText = "STT";
             this.sttCol.MinimumWidth = 6;
             this.sttCol.Name = "sttCol";
-            this.sttCol.Width = 76;
+            this.sttCol.ReadOnly = true;
+            this.sttCol.Width = 62;
             // 
             // codeCol
             // 
             this.codeCol.HeaderText = "Mã vận đơn";
             this.codeCol.MinimumWidth = 6;
             this.codeCol.Name = "codeCol";
+            this.codeCol.ReadOnly = true;
             this.codeCol.Width = 125;
             // 
             // nameCol
@@ -160,6 +163,7 @@
             this.nameCol.HeaderText = "Tên đơn hàng";
             this.nameCol.MinimumWidth = 6;
             this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
             // 
             // dateCol
             // 
@@ -167,6 +171,7 @@
             this.dateCol.HeaderText = "Ngày đặt hàng";
             this.dateCol.MinimumWidth = 6;
             this.dateCol.Name = "dateCol";
+            this.dateCol.ReadOnly = true;
             // 
             // addrCol
             // 
@@ -174,6 +179,7 @@
             this.addrCol.HeaderText = "Địa chỉ";
             this.addrCol.MinimumWidth = 6;
             this.addrCol.Name = "addrCol";
+            this.addrCol.ReadOnly = true;
             // 
             // btnCol
             // 
@@ -234,6 +240,7 @@
             this.parcelProcessedGridView.Location = new System.Drawing.Point(3, 4);
             this.parcelProcessedGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.parcelProcessedGridView.Name = "parcelProcessedGridView";
+            this.parcelProcessedGridView.ReadOnly = true;
             this.parcelProcessedGridView.RowHeadersWidth = 51;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.parcelProcessedGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
@@ -248,13 +255,15 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "STT";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 76;
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 62;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Mã vận đơn";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
@@ -263,6 +272,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Tên đơn hàng";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -270,6 +280,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Ngày đặt hàng";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -277,6 +288,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Địa chỉ";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewButtonColumn1
             // 
