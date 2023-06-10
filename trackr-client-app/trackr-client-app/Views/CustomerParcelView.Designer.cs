@@ -496,7 +496,6 @@
             this.ResumeLayout(false);
             this.PerformLayout();
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerParcelView));
             this.cusAddressTB = new System.Windows.Forms.TextBox();
             this.cusPhoneTB = new System.Windows.Forms.TextBox();
             this.cusNameTB = new System.Windows.Forms.TextBox();
