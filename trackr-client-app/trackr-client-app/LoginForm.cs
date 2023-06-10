@@ -72,6 +72,7 @@ namespace trackr_client_app
             {
                 json.TryGetValue("role", out var role);
                 Authorize(role.ToString(), id.ToString());
+                response.Dispose();
             }
             else
             {
@@ -110,6 +111,7 @@ namespace trackr_client_app
             adminDashboard.StartPosition = FormStartPosition.Manual;
             adminDashboard.Location = this.Location;
             adminDashboard.Show();
+            client.Dispose();
             Hide();
         }
 
@@ -128,6 +130,7 @@ namespace trackr_client_app
             dashboard.StartPosition = FormStartPosition.Manual;
             dashboard.Location = this.Location;
             dashboard.Show();
+            client.Dispose();
             Hide();
         }
         private async void GetCustomerInfo(string id)
@@ -145,6 +148,7 @@ namespace trackr_client_app
             customerDashboard.StartPosition = FormStartPosition.Manual;
             customerDashboard.Location = this.Location;
             customerDashboard.Show();
+            client.Dispose();
             Hide();
         }
 
