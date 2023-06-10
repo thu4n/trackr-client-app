@@ -95,5 +95,10 @@ namespace trackr_client_app.Views
                     }
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

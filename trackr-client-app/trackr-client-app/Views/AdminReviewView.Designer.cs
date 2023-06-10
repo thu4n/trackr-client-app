@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminReviewView));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.star5 = new System.Windows.Forms.Button();
-            this.star4 = new System.Windows.Forms.Button();
-            this.star3 = new System.Windows.Forms.Button();
-            this.star2 = new System.Windows.Forms.Button();
-            this.star1 = new System.Windows.Forms.Button();
             this.feedbackTB = new System.Windows.Forms.TextBox();
             this.feedbackLabel = new System.Windows.Forms.Label();
             this.starLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.star1 = new System.Windows.Forms.Button();
+            this.star2 = new System.Windows.Forms.Button();
+            this.star3 = new System.Windows.Forms.Button();
+            this.star5 = new System.Windows.Forms.Button();
+            this.star4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,71 +50,6 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "RatingStar.png");
             this.imageList1.Images.SetKeyName(1, "RatingStar_Fill.png");
-            // 
-            // star5
-            // 
-            this.star5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.star5.FlatAppearance.BorderSize = 0;
-            this.star5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.star5.ImageIndex = 0;
-            this.star5.ImageList = this.imageList1;
-            this.star5.Location = new System.Drawing.Point(268, 76);
-            this.star5.Name = "star5";
-            this.star5.Size = new System.Drawing.Size(49, 49);
-            this.star5.TabIndex = 93;
-            this.star5.UseVisualStyleBackColor = true;
-            // 
-            // star4
-            // 
-            this.star4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.star4.FlatAppearance.BorderSize = 0;
-            this.star4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.star4.ImageIndex = 0;
-            this.star4.ImageList = this.imageList1;
-            this.star4.Location = new System.Drawing.Point(209, 76);
-            this.star4.Name = "star4";
-            this.star4.Size = new System.Drawing.Size(49, 49);
-            this.star4.TabIndex = 92;
-            this.star4.UseVisualStyleBackColor = true;
-            // 
-            // star3
-            // 
-            this.star3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.star3.FlatAppearance.BorderSize = 0;
-            this.star3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.star3.ImageIndex = 0;
-            this.star3.ImageList = this.imageList1;
-            this.star3.Location = new System.Drawing.Point(150, 76);
-            this.star3.Name = "star3";
-            this.star3.Size = new System.Drawing.Size(49, 49);
-            this.star3.TabIndex = 91;
-            this.star3.UseVisualStyleBackColor = true;
-            // 
-            // star2
-            // 
-            this.star2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.star2.FlatAppearance.BorderSize = 0;
-            this.star2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.star2.ImageIndex = 0;
-            this.star2.ImageList = this.imageList1;
-            this.star2.Location = new System.Drawing.Point(91, 76);
-            this.star2.Name = "star2";
-            this.star2.Size = new System.Drawing.Size(49, 49);
-            this.star2.TabIndex = 90;
-            this.star2.UseVisualStyleBackColor = true;
-            // 
-            // star1
-            // 
-            this.star1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.star1.FlatAppearance.BorderSize = 0;
-            this.star1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.star1.ImageIndex = 0;
-            this.star1.ImageList = this.imageList1;
-            this.star1.Location = new System.Drawing.Point(32, 76);
-            this.star1.Name = "star1";
-            this.star1.Size = new System.Drawing.Size(49, 49);
-            this.star1.TabIndex = 89;
-            this.star1.UseVisualStyleBackColor = true;
             // 
             // feedbackTB
             // 
@@ -176,6 +111,72 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(499, 292);
             this.panel1.TabIndex = 98;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // star1
+            // 
+            this.star1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.star1.FlatAppearance.BorderSize = 0;
+            this.star1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.star1.ImageIndex = 0;
+            this.star1.ImageList = this.imageList1;
+            this.star1.Location = new System.Drawing.Point(32, 76);
+            this.star1.Name = "star1";
+            this.star1.Size = new System.Drawing.Size(49, 49);
+            this.star1.TabIndex = 89;
+            this.star1.UseVisualStyleBackColor = true;
+            // 
+            // star2
+            // 
+            this.star2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.star2.FlatAppearance.BorderSize = 0;
+            this.star2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.star2.ImageIndex = 0;
+            this.star2.ImageList = this.imageList1;
+            this.star2.Location = new System.Drawing.Point(91, 76);
+            this.star2.Name = "star2";
+            this.star2.Size = new System.Drawing.Size(49, 49);
+            this.star2.TabIndex = 90;
+            this.star2.UseVisualStyleBackColor = true;
+            // 
+            // star3
+            // 
+            this.star3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.star3.FlatAppearance.BorderSize = 0;
+            this.star3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.star3.ImageIndex = 0;
+            this.star3.ImageList = this.imageList1;
+            this.star3.Location = new System.Drawing.Point(150, 76);
+            this.star3.Name = "star3";
+            this.star3.Size = new System.Drawing.Size(49, 49);
+            this.star3.TabIndex = 91;
+            this.star3.UseVisualStyleBackColor = true;
+            // 
+            // star5
+            // 
+            this.star5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.star5.FlatAppearance.BorderSize = 0;
+            this.star5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.star5.ImageIndex = 0;
+            this.star5.ImageList = this.imageList1;
+            this.star5.Location = new System.Drawing.Point(268, 76);
+            this.star5.Name = "star5";
+            this.star5.Size = new System.Drawing.Size(49, 49);
+            this.star5.TabIndex = 93;
+            this.star5.UseVisualStyleBackColor = true;
+            // 
+            // star4
+            // 
+            this.star4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.star4.FlatAppearance.BorderSize = 0;
+            this.star4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.star4.ImageIndex = 0;
+            this.star4.ImageList = this.imageList1;
+            this.star4.Location = new System.Drawing.Point(209, 76);
+            this.star4.Name = "star4";
+            this.star4.Size = new System.Drawing.Size(49, 49);
+            this.star4.TabIndex = 92;
+            this.star4.UseVisualStyleBackColor = true;
             // 
             // AdminReviewView
             // 

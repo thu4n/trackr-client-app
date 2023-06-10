@@ -310,7 +310,8 @@ namespace trackr_client_app.Views
         
         private void reviewBtn_Click(object sender, EventArgs e)
         {
-            
+            AdminReviewDashboard adminReviewDashboard = new AdminReviewDashboard();
+            adminReviewDashboard.Show();
         }
     }
 }
