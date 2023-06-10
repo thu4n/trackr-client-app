@@ -15,5 +15,6 @@ namespace trackr_client_app.Models
         public static List<Parcel> parcels = new List<Parcel>();
         public static List<DeliveryMan> deliveryMen = new List<DeliveryMan>();
         public static List<Customer> customers = new List<Customer>();
+        public static List<Review> reviews = new List<Review>();
     }
 }

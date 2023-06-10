@@ -41,6 +41,8 @@
             this.parcelCodeLabel = new System.Windows.Forms.Label();
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.reasonCancelParcelComboBox = new System.Windows.Forms.ComboBox();
+            this.reasonCancelParcel_lb = new System.Windows.Forms.Label();
             this.priceTB = new System.Windows.Forms.TextBox();
             this.priceLabel = new System.Windows.Forms.Label();
             this.delBtn = new System.Windows.Forms.Button();
@@ -60,9 +62,8 @@
             this.cusNameTB = new System.Windows.Forms.TextBox();
             this.cusCodeTB = new System.Windows.Forms.TextBox();
             this.cusCodeLabel = new System.Windows.Forms.Label();
+            this.reviewBtn = new System.Windows.Forms.Button();
             this.parcelImg = new System.Windows.Forms.PictureBox();
-            this.reasonCancelParcelComboBox = new System.Windows.Forms.ComboBox();
-            this.reasonCancelParcel_lb = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -186,6 +187,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.reviewBtn);
             this.panel1.Controls.Add(this.reasonCancelParcelComboBox);
             this.panel1.Controls.Add(this.reasonCancelParcel_lb);
             this.panel1.Controls.Add(this.priceTB);
@@ -199,6 +201,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1015, 329);
             this.panel1.TabIndex = 63;
+            // 
+            // reasonCancelParcelComboBox
+            // 
+            this.reasonCancelParcelComboBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.reasonCancelParcelComboBox.FormattingEnabled = true;
+            this.reasonCancelParcelComboBox.Location = new System.Drawing.Point(376, 276);
+            this.reasonCancelParcelComboBox.Name = "reasonCancelParcelComboBox";
+            this.reasonCancelParcelComboBox.Size = new System.Drawing.Size(187, 31);
+            this.reasonCancelParcelComboBox.TabIndex = 78;
+            // 
+            // reasonCancelParcel_lb
+            // 
+            this.reasonCancelParcel_lb.AutoSize = true;
+            this.reasonCancelParcel_lb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.reasonCancelParcel_lb.Location = new System.Drawing.Point(224, 279);
+            this.reasonCancelParcel_lb.Name = "reasonCancelParcel_lb";
+            this.reasonCancelParcel_lb.Size = new System.Drawing.Size(130, 23);
+            this.reasonCancelParcel_lb.TabIndex = 77;
+            this.reasonCancelParcel_lb.Text = "Lý do hủy đơn:";
             // 
             // priceTB
             // 
@@ -429,6 +450,21 @@
             this.cusCodeLabel.TabIndex = 50;
             this.cusCodeLabel.Text = "Mã khách hàng:";
             // 
+            // reviewBtn
+            // 
+            this.reviewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.reviewBtn.FlatAppearance.BorderSize = 0;
+            this.reviewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reviewBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewBtn.ForeColor = System.Drawing.Color.White;
+            this.reviewBtn.Location = new System.Drawing.Point(23, 269);
+            this.reviewBtn.Name = "reviewBtn";
+            this.reviewBtn.Size = new System.Drawing.Size(172, 33);
+            this.reviewBtn.TabIndex = 78;
+            this.reviewBtn.Text = "Xem đánh giá";
+            this.reviewBtn.UseVisualStyleBackColor = false;
+            this.reviewBtn.Click += new System.EventHandler(this.reviewBtn_Click);
+            // 
             // parcelImg
             // 
             this.parcelImg.BackColor = System.Drawing.Color.White;
@@ -439,25 +475,6 @@
             this.parcelImg.Size = new System.Drawing.Size(172, 172);
             this.parcelImg.TabIndex = 62;
             this.parcelImg.TabStop = false;
-            // 
-            // reasonCancelParcelComboBox
-            // 
-            this.reasonCancelParcelComboBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.reasonCancelParcelComboBox.FormattingEnabled = true;
-            this.reasonCancelParcelComboBox.Location = new System.Drawing.Point(376, 276);
-            this.reasonCancelParcelComboBox.Name = "reasonCancelParcelComboBox";
-            this.reasonCancelParcelComboBox.Size = new System.Drawing.Size(187, 31);
-            this.reasonCancelParcelComboBox.TabIndex = 78;
-            // 
-            // reasonCancelParcel_lb
-            // 
-            this.reasonCancelParcel_lb.AutoSize = true;
-            this.reasonCancelParcel_lb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.reasonCancelParcel_lb.Location = new System.Drawing.Point(224, 279);
-            this.reasonCancelParcel_lb.Name = "reasonCancelParcel_lb";
-            this.reasonCancelParcel_lb.Size = new System.Drawing.Size(130, 23);
-            this.reasonCancelParcel_lb.TabIndex = 77;
-            this.reasonCancelParcel_lb.Text = "Lý do hủy đơn:";
             // 
             // AdminParcelView
             // 
@@ -533,5 +550,6 @@
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.ComboBox reasonCancelParcelComboBox;
         private System.Windows.Forms.Label reasonCancelParcel_lb;
+        private System.Windows.Forms.Button reviewBtn;
     }
 }
