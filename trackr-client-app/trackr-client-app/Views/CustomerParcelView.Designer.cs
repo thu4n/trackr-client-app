@@ -61,6 +61,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.distanceLabel = new System.Windows.Forms.Label();
             this.parcelImg = new System.Windows.Forms.PictureBox();
+            this.reasonCancelParcel_lb = new System.Windows.Forms.Label();
+            this.reasonCancelParcelComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -294,6 +296,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.reasonCancelParcelComboBox);
+            this.panel1.Controls.Add(this.reasonCancelParcel_lb);
             this.panel1.Controls.Add(this.priceTB);
             this.panel1.Controls.Add(this.chatBtn);
             this.panel1.Controls.Add(this.priceLabel);
@@ -435,6 +439,25 @@
             this.parcelImg.TabIndex = 39;
             this.parcelImg.TabStop = false;
             // 
+            // reasonCancelParcel_lb
+            // 
+            this.reasonCancelParcel_lb.AutoSize = true;
+            this.reasonCancelParcel_lb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.reasonCancelParcel_lb.Location = new System.Drawing.Point(226, 272);
+            this.reasonCancelParcel_lb.Name = "reasonCancelParcel_lb";
+            this.reasonCancelParcel_lb.Size = new System.Drawing.Size(130, 23);
+            this.reasonCancelParcel_lb.TabIndex = 45;
+            this.reasonCancelParcel_lb.Text = "Lý do hủy đơn:";
+            // 
+            // reasonCancelParcelComboBox
+            // 
+            this.reasonCancelParcelComboBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.reasonCancelParcelComboBox.FormattingEnabled = true;
+            this.reasonCancelParcelComboBox.Location = new System.Drawing.Point(378, 269);
+            this.reasonCancelParcelComboBox.Name = "reasonCancelParcelComboBox";
+            this.reasonCancelParcelComboBox.Size = new System.Drawing.Size(187, 31);
+            this.reasonCancelParcelComboBox.TabIndex = 76;
+            // 
             // CustomerParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -508,5 +531,7 @@
         private System.Windows.Forms.Button chatBtn;
         private System.Windows.Forms.TextBox priceTB;
         private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.ComboBox reasonCancelParcelComboBox;
+        private System.Windows.Forms.Label reasonCancelParcel_lb;
     }
 }

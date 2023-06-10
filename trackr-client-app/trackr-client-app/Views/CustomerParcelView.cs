@@ -20,6 +20,9 @@ namespace trackr_client_app
         public CustomerParcelView()
         {
             InitializeComponent();
+            reasonCancelParcelComboBox.Items.Add("Không thích mua nữa");
+            reasonCancelParcelComboBox.Items.Add("Giá ở đây quá mắc");
+            reasonCancelParcelComboBox.Items.Add("Dịch vụ này không ship đến chỗ tôi");
         }
 
         public CustomerParcelView(Parcel parcel)
