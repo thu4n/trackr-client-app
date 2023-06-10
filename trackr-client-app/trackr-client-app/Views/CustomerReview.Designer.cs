@@ -224,6 +224,7 @@
             this.reviewBtn.TabIndex = 78;
             this.reviewBtn.Text = "Gửi đánh giá";
             this.reviewBtn.UseVisualStyleBackColor = false;
+            this.reviewBtn.Click += new System.EventHandler(this.reviewBtn_Click);
             // 
             // label2
             // 

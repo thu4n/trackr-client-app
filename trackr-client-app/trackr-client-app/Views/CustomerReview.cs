@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using trackr_client_app.Models;
 
 namespace trackr_client_app.Views
 {
@@ -16,7 +18,7 @@ namespace trackr_client_app.Views
         {
             InitializeComponent();
         }
-
+        #region StarRating
         private void star1_Click(object sender, EventArgs e)
         {
             star1.ImageIndex = 1;
@@ -65,6 +67,12 @@ namespace trackr_client_app.Views
         private void noBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        #endregion
+        private async void reviewBtn_Click(object sender, EventArgs e)
+        {
+            var client = new HttpClient();
+            //var response = await client.PostAsync(UserSession.apiUrl + "review",content);
         }
     }
 }
