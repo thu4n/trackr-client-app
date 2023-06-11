@@ -50,9 +50,9 @@
             this.parcelCodeLabel = new System.Windows.Forms.Label();
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cancelBtn = new System.Windows.Forms.Button();
             this.reviewBtn = new System.Windows.Forms.Button();
             this.priceTB = new System.Windows.Forms.TextBox();
-            this.chatBtn = new System.Windows.Forms.Button();
             this.priceLabel = new System.Windows.Forms.Label();
             this.noteTB = new System.Windows.Forms.TextBox();
             this.noteLabel = new System.Windows.Forms.Label();
@@ -62,7 +62,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.distanceLabel = new System.Windows.Forms.Label();
             this.parcelImg = new System.Windows.Forms.PictureBox();
-            this.cancelBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -308,7 +307,6 @@
             this.panel1.Controls.Add(this.cancelBtn);
             this.panel1.Controls.Add(this.reviewBtn);
             this.panel1.Controls.Add(this.priceTB);
-            this.panel1.Controls.Add(this.chatBtn);
             this.panel1.Controls.Add(this.priceLabel);
             this.panel1.Controls.Add(this.noteTB);
             this.panel1.Controls.Add(this.noteLabel);
@@ -319,6 +317,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1142, 398);
             this.panel1.TabIndex = 40;
+            // 
+            // cancelBtn
+            // 
+            this.cancelBtn.BackColor = System.Drawing.Color.White;
+            this.cancelBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.cancelBtn.FlatAppearance.BorderSize = 2;
+            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.cancelBtn.Location = new System.Drawing.Point(677, 340);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(185, 41);
+            this.cancelBtn.TabIndex = 78;
+            this.cancelBtn.Text = "Hủy đơn hàng";
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // reviewBtn
             // 
@@ -349,22 +364,6 @@
             this.priceTB.Size = new System.Drawing.Size(110, 28);
             this.priceTB.TabIndex = 46;
             this.priceTB.Text = "12345678";
-            // 
-            // chatBtn
-            // 
-            this.chatBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.chatBtn.FlatAppearance.BorderSize = 0;
-            this.chatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chatBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chatBtn.ForeColor = System.Drawing.Color.White;
-            this.chatBtn.Location = new System.Drawing.Point(303, 15);
-            this.chatBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.chatBtn.Name = "chatBtn";
-            this.chatBtn.Size = new System.Drawing.Size(284, 41);
-            this.chatBtn.TabIndex = 75;
-            this.chatBtn.Text = "Liên hệ người giao hàng";
-            this.chatBtn.UseVisualStyleBackColor = false;
-            this.chatBtn.Click += new System.EventHandler(this.chatBtn_Click);
             // 
             // priceLabel
             // 
@@ -472,23 +471,6 @@
             this.parcelImg.TabIndex = 39;
             this.parcelImg.TabStop = false;
             // 
-            // cancelBtn
-            // 
-            this.cancelBtn.BackColor = System.Drawing.Color.White;
-            this.cancelBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.cancelBtn.FlatAppearance.BorderSize = 2;
-            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.cancelBtn.Location = new System.Drawing.Point(677, 340);
-            this.cancelBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(185, 41);
-            this.cancelBtn.TabIndex = 78;
-            this.cancelBtn.Text = "Hủy đơn hàng";
-            this.cancelBtn.UseVisualStyleBackColor = false;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
-            // 
             // CustomerParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -560,7 +542,6 @@
         private System.Windows.Forms.Label noteLabel;
         private System.Windows.Forms.TextBox noteTB;
         private System.Windows.Forms.Label distanceLabel;
-        private System.Windows.Forms.Button chatBtn;
         private System.Windows.Forms.TextBox priceTB;
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Button reviewBtn;

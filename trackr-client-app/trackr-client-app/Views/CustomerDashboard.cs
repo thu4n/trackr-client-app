@@ -18,12 +18,15 @@ namespace trackr_client_app
 {
     public partial class CustomerDashboard : Form
     {
+        private HttpClient httpClient;
+        private string apiUrl = "https://example.com/api/orders";
         public CustomerDashboard()
         {
             InitializeComponent();
+            httpClient = new HttpClient();
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
+    private void searchBtn_Click(object sender, EventArgs e)
         {
             if (searchBtn.Text == null) return;
             string searchValue = searchTB.Text;
@@ -44,6 +47,7 @@ namespace trackr_client_app
             {
                 MessageBox.Show(ex.ToString());
             }
+
             
         }
 
