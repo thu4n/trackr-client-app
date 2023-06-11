@@ -65,7 +65,7 @@
             this.getCodeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.getCodeBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.getCodeBtn.ForeColor = System.Drawing.Color.White;
-            this.getCodeBtn.Location = new System.Drawing.Point(645, 59);
+            this.getCodeBtn.Location = new System.Drawing.Point(645, 54);
             this.getCodeBtn.Name = "getCodeBtn";
             this.getCodeBtn.Size = new System.Drawing.Size(176, 33);
             this.getCodeBtn.TabIndex = 5;
@@ -109,7 +109,7 @@
             this.validateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.validateBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validateBtn.ForeColor = System.Drawing.Color.White;
-            this.validateBtn.Location = new System.Drawing.Point(645, 110);
+            this.validateBtn.Location = new System.Drawing.Point(645, 115);
             this.validateBtn.Name = "validateBtn";
             this.validateBtn.Size = new System.Drawing.Size(176, 33);
             this.validateBtn.TabIndex = 9;

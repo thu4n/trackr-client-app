@@ -119,7 +119,7 @@ namespace trackr_client_app
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            CustomerParcelCancel customerParcelCancel = new CustomerParcelCancel();
+            CustomerParcelCancel customerParcelCancel = new CustomerParcelCancel(parcel.ParID);
             customerParcelCancel.Show();
         }
     }

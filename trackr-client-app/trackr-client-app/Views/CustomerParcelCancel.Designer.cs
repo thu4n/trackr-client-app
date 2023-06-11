@@ -375,7 +375,6 @@
             this.reasonCancelParcelCB.Name = "reasonCancelParcelCB";
             this.reasonCancelParcelCB.Size = new System.Drawing.Size(663, 36);
             this.reasonCancelParcelCB.TabIndex = 114;
-            this.reasonCancelParcelCB.SelectedIndexChanged += new System.EventHandler(this.reasonCancelParcelCB_SelectedIndexChanged);
             // 
             // label2
             // 

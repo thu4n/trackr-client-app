@@ -11,62 +11,48 @@ using System.Windows.Forms;
 using trackr_client_app.Models;
 using trackr_client_app.Views;
 using System.Net.Http;
+using Newtonsoft.Json;
+using System.Windows.Controls;
+using System.Linq.Expressions;
 
 namespace trackr_client_app.Views
 {
     public partial class CustomerConfirmView : Form
     {
+        Parcel parcel = new Parcel();
+        Customer customer = new Customer();
         int id;
-        string objectType;
-        /*private readonly HttpClient client = new HttpClient();
-        private Parcel parcel;*/
-        public CustomerConfirmView(Parcel selectedParcel)
+        public CustomerConfirmView()
         {
-            this.id = id;
-            this.objectType = objectType;
             InitializeComponent();
+        }
+
+        public CustomerConfirmView(int id)
+        {
+            InitializeComponent();
+            this.id = id;
         }
 
         private async void yesBtn_Click(object sender, EventArgs e)
         {
-            /*if (string.IsNullOrEmpty(parcel.CancellationReason))
-            {
-                using (HttpClient httpClient = new HttpClient())
-                {
-                    // Dẫn link API toàn bộ đơn
-                    string apiUrl = $"testtestserver20230526163638.azurewebsites.net/api/Parcel/{parcel.ParID}";
-
-                    // Gửi yêu cầu DELETE lên API để hủy đơn hàng
-                    HttpResponseMessage response = await httpClient.DeleteAsync(apiUrl);
-
-                    // Kiểm tra kết quả trả về từ API
-                    if (response.IsSuccessStatusCode)
-                    {
-                        MessageBox.Show("Đơn hàng đã được hủy thành công.");
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không thể hủy đơn hàng. Vui lòng thử lại sau.");
-                    }
-                }*/
-                HttpClient client = new HttpClient();
-                var response = await client.DeleteAsync(UserSession.apiUrl + objectType + $"/{id}");
+            var client = new HttpClient();
+            parcel.ParStatus = "IN_CANCEL";
+            parcel.ParID = this.id;
+            string jsonString = JsonConvert.SerializeObject(parcel);
+            var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            var response = await client.PutAsync(UserSession.apiUrl + $"Parcel/{parcel.ParID}", jsonContent);
+            var responseString = await response.Content.ReadAsStringAsync();
+            
                 if (response.IsSuccessStatusCode)
-                    {
-                    MessageBox.Show("Đã xóa thành công");
-                    }
+                {
+                    MessageBox.Show("Đã gửi thành công yêu cầu hủy đơn hàng", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else
-                    {
-                MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại");
-                    }
-                Close();
+                {
+                    MessageBox.Show("Yêu cầu bị lỗi");
+                }
+            Close();
         }
-
-            /*else
-            {
-                MessageBox.Show("Vui lòng chọn lý do huỷ đơn hàng.");
-            }*/
         
 
         private void noBtn_Click(object sender, EventArgs e)

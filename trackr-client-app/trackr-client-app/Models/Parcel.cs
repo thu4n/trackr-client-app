@@ -34,7 +34,7 @@ namespace trackr_client_app.Models
         public int CusID { get; set; }
         public int ManID { get; set; }
         public string ParRouteLocation { get; set; }
-        public string CancellationReason { get; set; }
+        public string SelectedCancelReason { get; set; }
         
 
     }
