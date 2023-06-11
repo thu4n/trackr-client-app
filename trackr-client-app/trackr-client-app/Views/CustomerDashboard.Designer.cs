@@ -65,10 +65,10 @@
             // searchTB
             // 
             this.searchTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTB.Location = new System.Drawing.Point(323, 190);
+            this.searchTB.Location = new System.Drawing.Point(337, 190);
             this.searchTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(490, 35);
+            this.searchTB.Size = new System.Drawing.Size(476, 35);
             this.searchTB.TabIndex = 12;
             // 
             // searchLabel

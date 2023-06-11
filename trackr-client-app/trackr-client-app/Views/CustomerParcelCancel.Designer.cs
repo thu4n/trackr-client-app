@@ -417,6 +417,7 @@
             this.cancelConfirmBtn.TabIndex = 117;
             this.cancelConfirmBtn.Text = "Xác nhận lý do hủy đơn";
             this.cancelConfirmBtn.UseVisualStyleBackColor = false;
+            this.cancelConfirmBtn.Click += new System.EventHandler(this.cancelConfirmBtn_Click);
             // 
             // parcelImg
             // 
