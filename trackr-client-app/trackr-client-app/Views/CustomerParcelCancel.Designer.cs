@@ -42,7 +42,6 @@
             this.cusNameTB = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.cusCodeTB = new System.Windows.Forms.TextBox();
-            this.parcelImg = new System.Windows.Forms.PictureBox();
             this.cusCodeLabel = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
             this.orderDateLabel = new System.Windows.Forms.Label();
@@ -51,14 +50,16 @@
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.priceTB = new System.Windows.Forms.TextBox();
             this.priceLabel = new System.Windows.Forms.Label();
-            this.reviewBtn = new System.Windows.Forms.Button();
             this.noteTB = new System.Windows.Forms.TextBox();
             this.noteLabel = new System.Windows.Forms.Label();
             this.estimateDateLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.reasonCancelParcelComboBox = new System.Windows.Forms.ComboBox();
+            this.reasonCancelParcelCB = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.reviewBtn = new System.Windows.Forms.Button();
+            this.cancelConfirmBtn = new System.Windows.Forms.Button();
+            this.parcelImg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -213,18 +214,6 @@
             this.cusCodeTB.TabIndex = 97;
             this.cusCodeTB.Text = "12345678";
             // 
-            // parcelImg
-            // 
-            this.parcelImg.BackColor = System.Drawing.Color.White;
-            this.parcelImg.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("parcelImg.BackgroundImage")));
-            this.parcelImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.parcelImg.Location = new System.Drawing.Point(51, 131);
-            this.parcelImg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.parcelImg.Name = "parcelImg";
-            this.parcelImg.Size = new System.Drawing.Size(194, 215);
-            this.parcelImg.TabIndex = 101;
-            this.parcelImg.TabStop = false;
-            // 
             // cusCodeLabel
             // 
             this.cusCodeLabel.AutoSize = true;
@@ -316,21 +305,6 @@
             this.priceLabel.TabIndex = 103;
             this.priceLabel.Text = "Phí giao hàng:";
             // 
-            // reviewBtn
-            // 
-            this.reviewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.reviewBtn.FlatAppearance.BorderSize = 0;
-            this.reviewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reviewBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reviewBtn.ForeColor = System.Drawing.Color.White;
-            this.reviewBtn.Location = new System.Drawing.Point(52, 354);
-            this.reviewBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.reviewBtn.Name = "reviewBtn";
-            this.reviewBtn.Size = new System.Drawing.Size(194, 41);
-            this.reviewBtn.TabIndex = 110;
-            this.reviewBtn.Text = "Xem đánh giá";
-            this.reviewBtn.UseVisualStyleBackColor = false;
-            // 
             // noteTB
             // 
             this.noteTB.BackColor = System.Drawing.Color.White;
@@ -392,15 +366,16 @@
             this.label1.TabIndex = 115;
             this.label1.Text = "Lý do hủy đơn:";
             // 
-            // reasonCancelParcelComboBox
+            // reasonCancelParcelCB
             // 
-            this.reasonCancelParcelComboBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.reasonCancelParcelComboBox.FormattingEnabled = true;
-            this.reasonCancelParcelComboBox.Location = new System.Drawing.Point(475, 379);
-            this.reasonCancelParcelComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.reasonCancelParcelComboBox.Name = "reasonCancelParcelComboBox";
-            this.reasonCancelParcelComboBox.Size = new System.Drawing.Size(663, 36);
-            this.reasonCancelParcelComboBox.TabIndex = 114;
+            this.reasonCancelParcelCB.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.reasonCancelParcelCB.FormattingEnabled = true;
+            this.reasonCancelParcelCB.Location = new System.Drawing.Point(475, 379);
+            this.reasonCancelParcelCB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.reasonCancelParcelCB.Name = "reasonCancelParcelCB";
+            this.reasonCancelParcelCB.Size = new System.Drawing.Size(663, 36);
+            this.reasonCancelParcelCB.TabIndex = 114;
+            this.reasonCancelParcelCB.SelectedIndexChanged += new System.EventHandler(this.reasonCancelParcelCB_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -413,15 +388,58 @@
             this.label2.TabIndex = 116;
             this.label2.Text = "Mời bạn xem lại đơn hàng và chọn lý do hủy đơn";
             // 
+            // reviewBtn
+            // 
+            this.reviewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.reviewBtn.FlatAppearance.BorderSize = 0;
+            this.reviewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reviewBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewBtn.ForeColor = System.Drawing.Color.White;
+            this.reviewBtn.Location = new System.Drawing.Point(52, 354);
+            this.reviewBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.reviewBtn.Name = "reviewBtn";
+            this.reviewBtn.Size = new System.Drawing.Size(194, 41);
+            this.reviewBtn.TabIndex = 110;
+            this.reviewBtn.Text = "Xem đánh giá";
+            this.reviewBtn.UseVisualStyleBackColor = false;
+            // 
+            // cancelConfirmBtn
+            // 
+            this.cancelConfirmBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.cancelConfirmBtn.FlatAppearance.BorderSize = 0;
+            this.cancelConfirmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelConfirmBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelConfirmBtn.ForeColor = System.Drawing.Color.White;
+            this.cancelConfirmBtn.Location = new System.Drawing.Point(475, 439);
+            this.cancelConfirmBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cancelConfirmBtn.Name = "cancelConfirmBtn";
+            this.cancelConfirmBtn.Size = new System.Drawing.Size(194, 41);
+            this.cancelConfirmBtn.TabIndex = 117;
+            this.cancelConfirmBtn.Text = "Xác nhận lý do hủy đơn";
+            this.cancelConfirmBtn.UseVisualStyleBackColor = false;
+            // 
+            // parcelImg
+            // 
+            this.parcelImg.BackColor = System.Drawing.Color.White;
+            this.parcelImg.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("parcelImg.BackgroundImage")));
+            this.parcelImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.parcelImg.Location = new System.Drawing.Point(51, 131);
+            this.parcelImg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.parcelImg.Name = "parcelImg";
+            this.parcelImg.Size = new System.Drawing.Size(194, 215);
+            this.parcelImg.TabIndex = 101;
+            this.parcelImg.TabStop = false;
+            // 
             // CustomerParcelCancel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1194, 578);
+            this.Controls.Add(this.cancelConfirmBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.reasonCancelParcelComboBox);
+            this.Controls.Add(this.reasonCancelParcelCB);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.reviewBtn);
             this.Controls.Add(this.noteTB);
@@ -479,13 +497,14 @@
         private System.Windows.Forms.Label titleLabel1;
         private System.Windows.Forms.TextBox priceTB;
         private System.Windows.Forms.Label priceLabel;
-        private System.Windows.Forms.Button reviewBtn;
         private System.Windows.Forms.TextBox noteTB;
         private System.Windows.Forms.Label noteLabel;
         private System.Windows.Forms.Label estimateDateLabel;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox reasonCancelParcelComboBox;
+        private System.Windows.Forms.ComboBox reasonCancelParcelCB;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button reviewBtn;
+        private System.Windows.Forms.Button cancelConfirmBtn;
     }
 }
