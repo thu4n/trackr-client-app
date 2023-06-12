@@ -233,6 +233,12 @@
     <Compile Include="Views\AdminReviewView.Designer.cs">
       <DependentUpon>AdminReviewView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CustomerConfirmView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerConfirmView.Designer.cs">
+      <DependentUpon>CustomerConfirmView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,12 @@
     </Compile>
     <Compile Include="Views\CustomerInfoView.Designer.cs">
       <DependentUpon>CustomerInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerParcelCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerParcelCancel.Designer.cs">
+      <DependentUpon>CustomerParcelCancel.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomerParcelView.cs">
       <SubType>Form</SubType>
@@ -328,11 +340,17 @@
     <EmbeddedResource Include="Views\AdminReviewView.resx">
       <DependentUpon>AdminReviewView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerConfirmView.resx">
+      <DependentUpon>CustomerConfirmView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerInfoView.resx">
       <DependentUpon>CustomerInfoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerParcelCancel.resx">
+      <DependentUpon>CustomerParcelCancel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerParcelView.resx">
       <DependentUpon>CustomerParcelView.cs</DependentUpon>

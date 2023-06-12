@@ -47,6 +47,7 @@
             this.refreshBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchBtn = new System.Windows.Forms.Button();
+            this.logOutBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,28 +57,27 @@
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.titleLabel.Location = new System.Drawing.Point(310, 96);
+            this.titleLabel.Location = new System.Drawing.Point(276, 77);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(565, 76);
+            this.titleLabel.Size = new System.Drawing.Size(465, 62);
             this.titleLabel.TabIndex = 11;
             this.titleLabel.Text = "Danh sách đơn hàng";
             // 
             // searchTB
             // 
             this.searchTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTB.Location = new System.Drawing.Point(323, 190);
-            this.searchTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchTB.Location = new System.Drawing.Point(300, 152);
             this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(490, 35);
+            this.searchTB.Size = new System.Drawing.Size(424, 30);
             this.searchTB.TabIndex = 12;
             // 
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(129, 194);
+            this.searchLabel.Location = new System.Drawing.Point(115, 155);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(202, 30);
+            this.searchLabel.Size = new System.Drawing.Size(166, 23);
             this.searchLabel.TabIndex = 14;
             this.searchLabel.Text = "Tra cứu mã vận đơn:";
             // 
@@ -114,8 +114,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.parcelGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.parcelGridView.EnableHeadersVisualStyles = false;
-            this.parcelGridView.Location = new System.Drawing.Point(74, 252);
-            this.parcelGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.parcelGridView.Location = new System.Drawing.Point(66, 202);
             this.parcelGridView.Name = "parcelGridView";
             this.parcelGridView.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -128,7 +127,7 @@
             this.parcelGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.parcelGridView.RowHeadersWidth = 51;
             this.parcelGridView.RowTemplate.Height = 24;
-            this.parcelGridView.Size = new System.Drawing.Size(1017, 454);
+            this.parcelGridView.Size = new System.Drawing.Size(904, 363);
             this.parcelGridView.TabIndex = 15;
             this.parcelGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.parcelGridView_CellContentClick);
             this.parcelGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.parcelGridView_CellMouseDoubleClick);
@@ -142,7 +141,7 @@
             this.sttColumn.MinimumWidth = 6;
             this.sttColumn.Name = "sttColumn";
             this.sttColumn.ReadOnly = true;
-            this.sttColumn.Width = 73;
+            this.sttColumn.Width = 60;
             // 
             // codeColumn
             // 
@@ -186,10 +185,10 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Location = new System.Drawing.Point(974, 30);
+            this.usernameLabel.Location = new System.Drawing.Point(866, 24);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(0);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(124, 32);
+            this.usernameLabel.Size = new System.Drawing.Size(104, 28);
             this.usernameLabel.TabIndex = 16;
             this.usernameLabel.Text = "Username";
             this.usernameLabel.Click += new System.EventHandler(this.usernameLabel_Click);
@@ -203,10 +202,9 @@
             this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshBtn.ForeColor = System.Drawing.Color.White;
-            this.refreshBtn.Location = new System.Drawing.Point(872, 187);
-            this.refreshBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.refreshBtn.Location = new System.Drawing.Point(775, 150);
             this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(79, 40);
+            this.refreshBtn.Size = new System.Drawing.Size(70, 32);
             this.refreshBtn.TabIndex = 35;
             this.refreshBtn.UseVisualStyleBackColor = false;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
@@ -217,10 +215,9 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(922, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(820, 18);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -232,19 +229,30 @@
             this.searchBtn.FlatAppearance.BorderSize = 0;
             this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.Location = new System.Drawing.Point(820, 190);
-            this.searchBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchBtn.Location = new System.Drawing.Point(729, 152);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(55, 38);
+            this.searchBtn.Size = new System.Drawing.Size(49, 30);
             this.searchBtn.TabIndex = 13;
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
+            // logOutBtn
+            // 
+            this.logOutBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.logOutBtn.Location = new System.Drawing.Point(12, 12);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(109, 40);
+            this.logOutBtn.TabIndex = 36;
+            this.logOutBtn.Text = "logOut";
+            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
+            // 
             // CustomerDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1143, 721);
+            this.ClientSize = new System.Drawing.Size(1016, 577);
+            this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.usernameLabel);
@@ -254,7 +262,6 @@
             this.Controls.Add(this.searchTB);
             this.Controls.Add(this.titleLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CustomerDashboard";
             this.Text = "Trackr - Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CustomerDashboard_FormClosed);
@@ -281,5 +288,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusColum;
         private System.Windows.Forms.Button refreshBtn;
+        private System.Windows.Forms.Button logOutBtn;
     }
 }

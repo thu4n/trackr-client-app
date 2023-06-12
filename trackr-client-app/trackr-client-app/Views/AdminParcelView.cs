@@ -21,10 +21,7 @@ namespace trackr_client_app.Views
         public AdminParcelView()
         {
             InitializeComponent();
-            reasonCancelParcelComboBox.Items.Add("Không thích mua nữa");
-            reasonCancelParcelComboBox.Items.Add("Giá ở đây quá mắc");
-            reasonCancelParcelComboBox.Items.Add("Dịch vụ này không ship đến chỗ tôi");
-            reasonCancelParcelComboBox.Items.Add("Hết hàng");
+            
         }
 
         public AdminParcelView(Parcel parcel)
