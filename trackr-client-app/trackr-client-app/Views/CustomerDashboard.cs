@@ -136,5 +136,14 @@ namespace trackr_client_app
             parcelGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
         }
 
+        private void logOutBtn_Click(object sender, EventArgs e)
+        {
+            LoginForm f = new LoginForm();
+            f.Tag = this;
+            f.StartPosition = FormStartPosition.Manual;
+            f.Location = this.Location;
+            f.Show();
+            Hide();
+        }
     }
 }

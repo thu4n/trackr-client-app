@@ -67,6 +67,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.reviewBtn = new System.Windows.Forms.Button();
+            this.logOutBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
@@ -141,7 +142,7 @@
             this.tabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(847, 324);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đơn hàng";
@@ -243,7 +244,7 @@
             this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(847, 324);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nhân viên giao hàng";
@@ -481,11 +482,23 @@
             this.reviewBtn.UseVisualStyleBackColor = false;
             this.reviewBtn.Click += new System.EventHandler(this.reviewBtn_Click);
             // 
+            // logOutBtn
+            // 
+            this.logOutBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.logOutBtn.Location = new System.Drawing.Point(12, 15);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(109, 40);
+            this.logOutBtn.TabIndex = 37;
+            this.logOutBtn.Text = "logOut";
+            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 668);
+            this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.reviewBtn);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.createBtn);
@@ -546,5 +559,6 @@
         private System.Windows.Forms.Button createBtn;
         private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.Button reviewBtn;
+        private System.Windows.Forms.Button logOutBtn;
     }
 }
