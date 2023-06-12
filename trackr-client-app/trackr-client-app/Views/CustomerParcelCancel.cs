@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,27 +21,43 @@ namespace trackr_client_app.Views
         public CustomerParcelCancel()
         {
             InitializeComponent();
-            reasonCancelParcelCB.Items.Add("Không thích mua nữa");
-            reasonCancelParcelCB.Items.Add("Giá ở đây quá mắc");
-            reasonCancelParcelCB.Items.Add("Dịch vụ này không ship đến chỗ tôi");
         }
 
         public CustomerParcelCancel(int id)
         {
-            InitializeComponent();
-            reasonCancelParcelCB.Items.Add("Không thích mua nữa");
-            reasonCancelParcelCB.Items.Add("Giá ở đây quá mắc");
-            reasonCancelParcelCB.Items.Add("Dịch vụ này không ship đến chỗ tôi");
             this.id = id;
+            InitializeComponent();
         }
 
-
-        private void cancelConfirmBtn_Click(object sender, EventArgs e)
+        private async void cancelConfirmBtn_Click(object sender, EventArgs e)
         {
-            //parcel.SelectedCancelReason = reasonCancelParcelCB.SelectedItem.ToString();
-            
-            CustomerConfirmView customerConfirmView = new CustomerConfirmView(this.id);
-            customerConfirmView.Show();
+            if(reasonTB.Text.Length <= 3)
+            {
+                MessageBox.Show("Vui lòng điền lý do hủy đơn hàng");
+                return;
+            }
+            Parcel cancelParcel = UserSession.parcels.Find(x => x.ParID == id);
+            cancelParcel.ParStatus = "IN_CANCEL";
+            cancelConfirmBtn.Text = "Đang gửi yêu cầu";
+            string json = JsonConvert.SerializeObject(cancelParcel);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var client = new HttpClient();
+            var response = await client.PutAsync(UserSession.apiUrl + $"Parcel/{id}", content);
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Đã gửi yêu cầu hủy đơn hàng");
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Đã có lỗi xảy ra, vui lòng thử lại sau");
+                Close();
+            }
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -46,10 +46,24 @@ namespace trackr_client_app
             estimateDateTB.Text = parcel.ParDeliveryDate.AddDays(3).ToString("dd-MM-yyyy");
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            GetCancelStatus();
             GetReivewStatus();
             DisplayTrackingTree();
         }
 
+        private void GetCancelStatus()
+        {
+            if(parcel.ParStatus == "IN_CANCEL")
+            {
+                cancelBtn.Enabled = false;
+                cancelBtn.Text = "Đã gửi yêu cầu hủy đơn";
+            }
+            else if(parcel.ParStatus == "CANCELLED")
+            {
+                cancelBtn.Enabled = false;
+                cancelBtn.Text = "Đơn hàng đã bị hủy";
+            }
+        }
         private async void GetReivewStatus()
         {
             var client = new HttpClient();
