@@ -28,6 +28,7 @@ namespace trackr_client_app
 
         private void LoginScreen_Load(object sender, EventArgs e)
         {
+
             Text = "Trackr - Đăng nhập";
         }
 
