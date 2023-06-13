@@ -33,6 +33,7 @@ namespace trackr_client_app
 
         private void CustomerParcelView_Load(object sender, EventArgs e)
         {
+            GetCancelStatus();
             cusCodeTB.Text = UserSession.customer.CusID.ToString();
             cusAddressTB.Text = UserSession.customer.CusAddress.Replace('*',',');
             cusNameTB.Text = UserSession.customer.CusName;
@@ -46,7 +47,6 @@ namespace trackr_client_app
             estimateDateTB.Text = parcel.ParDeliveryDate.AddDays(3).ToString("dd-MM-yyyy");
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
-            GetCancelStatus();
             GetReivewStatus();
             DisplayTrackingTree();
         }

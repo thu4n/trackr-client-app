@@ -185,6 +185,12 @@
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DeliveryMan.cs" />
     <Compile Include="Models\Review.cs" />
+    <Compile Include="Views\AdminCancelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminCancelView.Designer.cs">
+      <DependentUpon>AdminCancelView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminCreateParcelView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminCancelView.resx">
+      <DependentUpon>AdminCancelView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminCreateParcelView.resx">
       <DependentUpon>AdminCreateParcelView.cs</DependentUpon>

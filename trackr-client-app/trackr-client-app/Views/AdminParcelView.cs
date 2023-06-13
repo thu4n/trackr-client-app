@@ -33,10 +33,10 @@ namespace trackr_client_app.Views
 
         private void AdminParcelView_Load(object sender, EventArgs e)
         {
+            GetCancelStatus();
             GetCustomerData();
             parcelCodeTB.Text = parcel.ParID.ToString();
             parcelNameTB.Text = parcel.ParDescription;
-            GetCancelStatus();
             noteTB.Text = parcel.Note;
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
