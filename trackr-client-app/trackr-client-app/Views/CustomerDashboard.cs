@@ -20,6 +20,7 @@ namespace trackr_client_app
     {
         private HttpClient httpClient;
         private string apiUrl = "https://example.com/api/orders";
+        bool signout = false;
         public CustomerDashboard()
         {
             InitializeComponent();
@@ -53,6 +54,7 @@ namespace trackr_client_app
 
         private void CustomerDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (signout) return;
             var loginForm = (LoginForm)Tag;
             loginForm.Close();
         }
@@ -143,12 +145,10 @@ namespace trackr_client_app
 
         private void logOutBtn_Click(object sender, EventArgs e)
         {
-            LoginForm f = new LoginForm();
-            f.Tag = this;
-            f.StartPosition = FormStartPosition.Manual;
-            f.Location = this.Location;
-            f.Show();
-            Hide();
+            signout = true;
+            var loginForm = (LoginForm)Tag;
+            loginForm.Show();
+            Close();
         }
     }
 }
