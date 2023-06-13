@@ -233,12 +233,6 @@
     <Compile Include="Views\AdminReviewView.Designer.cs">
       <DependentUpon>AdminReviewView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CustomerConfirmView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\CustomerConfirmView.Designer.cs">
-      <DependentUpon>CustomerConfirmView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\CustomerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,9 +333,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminReviewView.resx">
       <DependentUpon>AdminReviewView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\CustomerConfirmView.resx">
-      <DependentUpon>CustomerConfirmView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>

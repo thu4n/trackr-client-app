@@ -53,10 +53,11 @@ namespace trackr_client_app
 
         private void GetCancelStatus()
         {
-            if(parcel.ParStatus == "IN_CANCEL")
+            if(parcel.ParStatus.Contains('@'))
             {
                 cancelBtn.Enabled = false;
                 cancelBtn.Text = "Đã gửi yêu cầu hủy đơn";
+                statusTB.Text = "IN_CANCEL";
             }
             else if(parcel.ParStatus == "CANCELLED")
             {

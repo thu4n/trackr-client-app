@@ -37,7 +37,7 @@ namespace trackr_client_app.Views
                 return;
             }
             Parcel cancelParcel = UserSession.parcels.Find(x => x.ParID == id);
-            cancelParcel.ParStatus = "IN_CANCEL";
+            cancelParcel.ParStatus = "IN_CANCEL@" + reasonTB.Text;
             cancelConfirmBtn.Text = "Đang gửi yêu cầu";
             string json = JsonConvert.SerializeObject(cancelParcel);
             var content = new StringContent(json, Encoding.UTF8, "application/json");

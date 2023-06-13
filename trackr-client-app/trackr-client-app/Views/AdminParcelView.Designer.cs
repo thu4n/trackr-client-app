@@ -62,6 +62,7 @@
             this.cusCodeTB = new System.Windows.Forms.TextBox();
             this.cusCodeLabel = new System.Windows.Forms.Label();
             this.parcelImg = new System.Windows.Forms.PictureBox();
+            this.cancelBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -185,6 +186,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.cancelBtn);
             this.panel1.Controls.Add(this.priceTB);
             this.panel1.Controls.Add(this.priceLabel);
             this.panel1.Controls.Add(this.noteTB);
@@ -453,6 +455,20 @@
             this.parcelImg.TabIndex = 62;
             this.parcelImg.TabStop = false;
             // 
+            // cancelBtn
+            // 
+            this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.cancelBtn.FlatAppearance.BorderSize = 0;
+            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.ForeColor = System.Drawing.Color.White;
+            this.cancelBtn.Location = new System.Drawing.Point(434, 26);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(220, 33);
+            this.cancelBtn.TabIndex = 79;
+            this.cancelBtn.Text = "Duyệt yêu cầu hủy đơn";
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            // 
             // AdminParcelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -526,5 +542,6 @@
         private System.Windows.Forms.TextBox priceTB;
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Button reviewBtn;
+        private System.Windows.Forms.Button cancelBtn;
     }
 }

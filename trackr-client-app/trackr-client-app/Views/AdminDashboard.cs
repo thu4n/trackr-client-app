@@ -63,13 +63,18 @@ namespace trackr_client_app.Views
             parcelGridView.Rows.Clear();
             foreach (Parcel parcel in UserSession.parcels)
             {
+                string status = parcel.ParStatus;
+                if (parcel.ParStatus.Contains('@'))
+                {
+                    status = parcel.ParStatus.Split('@')[0];
+                }
                 DeliveryMan delivery = new DeliveryMan();
                 if (parcel.ManID > 0)
                 {
                     delivery = UserSession.deliveryMen.Find(x => x.ManID == parcel.ManID);
                 }
                 else delivery.ManName = "Chưa có người giao";
-                parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), parcel.ParStatus, delivery.ManName);
+                parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), status, delivery.ManName);
             }
         }
 
