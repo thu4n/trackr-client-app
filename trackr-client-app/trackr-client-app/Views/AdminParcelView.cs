@@ -114,6 +114,8 @@ namespace trackr_client_app.Views
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             var reason = parcel.ParStatus.Split('@')[1];
+            AdminCancelView adminCancelView = new AdminCancelView(parcel, reason);
+            adminCancelView.Show();
         }
     }
 }

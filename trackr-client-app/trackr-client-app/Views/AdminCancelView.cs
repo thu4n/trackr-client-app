@@ -24,8 +24,8 @@ namespace trackr_client_app.Views
         public AdminCancelView(Parcel parcel,string reason)
         {
             this.parcel = parcel;
-            reasonTB.Text = reason;
             InitializeComponent();
+            reasonTB.Text = reason;
         }
 
         private async void yesBtn_Click(object sender, EventArgs e)
