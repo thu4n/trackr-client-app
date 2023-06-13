@@ -28,7 +28,6 @@ namespace trackr_client_app
 
         private void LoginScreen_Load(object sender, EventArgs e)
         {
-
             Text = "Trackr - Đăng nhập";
         }
 
@@ -73,6 +72,7 @@ namespace trackr_client_app
             {
                 json.TryGetValue("role", out var role);
                 Authorize(role.ToString(), id.ToString());
+                loginBtn.Text = "Đăng nhập";
             }
             else
             {
