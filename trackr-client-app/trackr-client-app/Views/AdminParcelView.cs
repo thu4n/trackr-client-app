@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using trackr_client_app.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace trackr_client_app.Views
 {
@@ -32,15 +33,25 @@ namespace trackr_client_app.Views
 
         private void AdminParcelView_Load(object sender, EventArgs e)
         {
+            GetCancelStatus();
             GetCustomerData();
             parcelCodeTB.Text = parcel.ParID.ToString();
             parcelNameTB.Text = parcel.ParDescription;
-            statusTB.Text = parcel.ParStatus;
             noteTB.Text = parcel.Note;
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
             priceTB.Text = parcel.Price.ToString();
             DisplayTrackingTree();
+        }
+        private void GetCancelStatus()
+        {
+            string status = parcel.ParStatus;
+            if (parcel.ParStatus.Contains('@'))
+            {
+                status = parcel.ParStatus.Split('@')[0];
+                cancelBtn.Visible = true;
+            }
+            statusTB.Text = status;
         }
         private async void GetCustomerData()
         {
@@ -98,6 +109,13 @@ namespace trackr_client_app.Views
         {
             AdminReviewView adminReviewView = new AdminReviewView(parcel.ParID);
             adminReviewView.Show();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            var reason = parcel.ParStatus.Split('@')[1];
+            AdminCancelView adminCancelView = new AdminCancelView(parcel, reason);
+            adminCancelView.Show();
         }
     }
 }

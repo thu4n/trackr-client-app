@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -63,11 +64,12 @@
             this.nameCol3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createBtn = new System.Windows.Forms.Button();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.refreshBtn = new System.Windows.Forms.Button();
             this.reviewBtn = new System.Windows.Forms.Button();
             this.logOutBtn = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.refreshBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
@@ -247,7 +249,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(847, 324);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Nhân viên giao hàng";
+            this.tabPage2.Text = "Nhân viên bưu cục";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // deliveryGridView
@@ -425,6 +427,58 @@
             this.createBtn.UseVisualStyleBackColor = false;
             this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
             // 
+            // reviewBtn
+            // 
+            this.reviewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.reviewBtn.FlatAppearance.BorderSize = 0;
+            this.reviewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reviewBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewBtn.ForeColor = System.Drawing.Color.White;
+            this.reviewBtn.Location = new System.Drawing.Point(306, 608);
+            this.reviewBtn.Name = "reviewBtn";
+            this.reviewBtn.Size = new System.Drawing.Size(324, 33);
+            this.reviewBtn.TabIndex = 35;
+            this.reviewBtn.Text = "Thống kê đánh giá dịch vụ";
+            this.reviewBtn.UseVisualStyleBackColor = false;
+            this.reviewBtn.Click += new System.EventHandler(this.reviewBtn_Click);
+            // 
+            // logOutBtn
+            // 
+            this.logOutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.logOutBtn.FlatAppearance.BorderSize = 0;
+            this.logOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOutBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.logOutBtn.ImageIndex = 0;
+            this.logOutBtn.ImageList = this.imageList1;
+            this.logOutBtn.Location = new System.Drawing.Point(12, 15);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(55, 40);
+            this.logOutBtn.TabIndex = 37;
+            this.logOutBtn.UseVisualStyleBackColor = false;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "signout.png");
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.refreshBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.Refresh_icon;
+            this.refreshBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.refreshBtn.FlatAppearance.BorderSize = 0;
+            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.ForeColor = System.Drawing.Color.White;
+            this.refreshBtn.Location = new System.Drawing.Point(795, 174);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(48, 30);
+            this.refreshBtn.TabIndex = 34;
+            this.refreshBtn.UseVisualStyleBackColor = false;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
             // searchBtn
             // 
             this.searchBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.search_icon;
@@ -450,48 +504,6 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // refreshBtn
-            // 
-            this.refreshBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.refreshBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.Refresh_icon;
-            this.refreshBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.refreshBtn.FlatAppearance.BorderSize = 0;
-            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.ForeColor = System.Drawing.Color.White;
-            this.refreshBtn.Location = new System.Drawing.Point(795, 174);
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(48, 30);
-            this.refreshBtn.TabIndex = 34;
-            this.refreshBtn.UseVisualStyleBackColor = false;
-            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
-            // 
-            // reviewBtn
-            // 
-            this.reviewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.reviewBtn.FlatAppearance.BorderSize = 0;
-            this.reviewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reviewBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reviewBtn.ForeColor = System.Drawing.Color.White;
-            this.reviewBtn.Location = new System.Drawing.Point(306, 608);
-            this.reviewBtn.Name = "reviewBtn";
-            this.reviewBtn.Size = new System.Drawing.Size(324, 33);
-            this.reviewBtn.TabIndex = 35;
-            this.reviewBtn.Text = "Thống kê đánh giá dịch vụ";
-            this.reviewBtn.UseVisualStyleBackColor = false;
-            this.reviewBtn.Click += new System.EventHandler(this.reviewBtn_Click);
-            // 
-            // logOutBtn
-            // 
-            this.logOutBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.logOutBtn.Location = new System.Drawing.Point(12, 15);
-            this.logOutBtn.Name = "logOutBtn";
-            this.logOutBtn.Size = new System.Drawing.Size(109, 40);
-            this.logOutBtn.TabIndex = 37;
-            this.logOutBtn.Text = "logOut";
-            this.logOutBtn.UseVisualStyleBackColor = true;
-            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
             // 
             // AdminDashboard
             // 
@@ -560,5 +572,6 @@
         private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.Button reviewBtn;
         private System.Windows.Forms.Button logOutBtn;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

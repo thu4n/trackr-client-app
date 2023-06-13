@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,10 +45,11 @@
             this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameLabel = new System.Windows.Forms.Label();
+            this.logOutBtn = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.logOutBtn = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -193,6 +195,22 @@
             this.usernameLabel.Text = "Username";
             this.usernameLabel.Click += new System.EventHandler(this.usernameLabel_Click);
             // 
+            // logOutBtn
+            // 
+            this.logOutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.logOutBtn.FlatAppearance.BorderSize = 0;
+            this.logOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOutBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.logOutBtn.ImageIndex = 0;
+            this.logOutBtn.ImageList = this.imageList1;
+            this.logOutBtn.Location = new System.Drawing.Point(12, 12);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(55, 40);
+            this.logOutBtn.TabIndex = 36;
+            this.logOutBtn.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.logOutBtn.UseVisualStyleBackColor = false;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
+            // 
             // refreshBtn
             // 
             this.refreshBtn.BackColor = System.Drawing.SystemColors.Control;
@@ -236,16 +254,11 @@
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // logOutBtn
+            // imageList1
             // 
-            this.logOutBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.logOutBtn.Location = new System.Drawing.Point(12, 12);
-            this.logOutBtn.Name = "logOutBtn";
-            this.logOutBtn.Size = new System.Drawing.Size(109, 40);
-            this.logOutBtn.TabIndex = 36;
-            this.logOutBtn.Text = "logOut";
-            this.logOutBtn.UseVisualStyleBackColor = true;
-            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "signout.png");
             // 
             // CustomerDashboard
             // 
@@ -289,5 +302,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusColum;
         private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.Button logOutBtn;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
