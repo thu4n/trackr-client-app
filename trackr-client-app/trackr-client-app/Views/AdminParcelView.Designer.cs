@@ -41,9 +41,10 @@
             this.parcelCodeLabel = new System.Windows.Forms.Label();
             this.titleLabel1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.reviewBtn = new System.Windows.Forms.Button();
+            this.cancelBtn = new System.Windows.Forms.Button();
             this.priceTB = new System.Windows.Forms.TextBox();
             this.priceLabel = new System.Windows.Forms.Label();
+            this.reviewBtn = new System.Windows.Forms.Button();
             this.delBtn = new System.Windows.Forms.Button();
             this.estimateDateLabel = new System.Windows.Forms.Label();
             this.estimateDateTB = new System.Windows.Forms.TextBox();
@@ -62,7 +63,6 @@
             this.cusCodeTB = new System.Windows.Forms.TextBox();
             this.cusCodeLabel = new System.Windows.Forms.Label();
             this.parcelImg = new System.Windows.Forms.PictureBox();
-            this.cancelBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelImg)).BeginInit();
@@ -200,20 +200,21 @@
             this.panel1.Size = new System.Drawing.Size(1015, 329);
             this.panel1.TabIndex = 63;
             // 
-            // reviewBtn
+            // cancelBtn
             // 
-            this.reviewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.reviewBtn.FlatAppearance.BorderSize = 0;
-            this.reviewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reviewBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reviewBtn.ForeColor = System.Drawing.Color.White;
-            this.reviewBtn.Location = new System.Drawing.Point(23, 269);
-            this.reviewBtn.Name = "reviewBtn";
-            this.reviewBtn.Size = new System.Drawing.Size(172, 33);
-            this.reviewBtn.TabIndex = 78;
-            this.reviewBtn.Text = "Xem đánh giá";
-            this.reviewBtn.UseVisualStyleBackColor = false;
-            this.reviewBtn.Click += new System.EventHandler(this.reviewBtn_Click);
+            this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.cancelBtn.FlatAppearance.BorderSize = 0;
+            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.ForeColor = System.Drawing.Color.White;
+            this.cancelBtn.Location = new System.Drawing.Point(434, 26);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(220, 33);
+            this.cancelBtn.TabIndex = 79;
+            this.cancelBtn.Text = "Duyệt yêu cầu hủy đơn";
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Visible = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // priceTB
             // 
@@ -237,6 +238,21 @@
             this.priceLabel.Size = new System.Drawing.Size(125, 23);
             this.priceLabel.TabIndex = 65;
             this.priceLabel.Text = "Phí giao hàng:";
+            // 
+            // reviewBtn
+            // 
+            this.reviewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.reviewBtn.FlatAppearance.BorderSize = 0;
+            this.reviewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reviewBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewBtn.ForeColor = System.Drawing.Color.White;
+            this.reviewBtn.Location = new System.Drawing.Point(23, 269);
+            this.reviewBtn.Name = "reviewBtn";
+            this.reviewBtn.Size = new System.Drawing.Size(172, 33);
+            this.reviewBtn.TabIndex = 78;
+            this.reviewBtn.Text = "Xem đánh giá";
+            this.reviewBtn.UseVisualStyleBackColor = false;
+            this.reviewBtn.Click += new System.EventHandler(this.reviewBtn_Click);
             // 
             // delBtn
             // 
@@ -454,20 +470,6 @@
             this.parcelImg.Size = new System.Drawing.Size(172, 172);
             this.parcelImg.TabIndex = 62;
             this.parcelImg.TabStop = false;
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.cancelBtn.FlatAppearance.BorderSize = 0;
-            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.ForeColor = System.Drawing.Color.White;
-            this.cancelBtn.Location = new System.Drawing.Point(434, 26);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(220, 33);
-            this.cancelBtn.TabIndex = 79;
-            this.cancelBtn.Text = "Duyệt yêu cầu hủy đơn";
-            this.cancelBtn.UseVisualStyleBackColor = false;
             // 
             // AdminParcelView
             // 

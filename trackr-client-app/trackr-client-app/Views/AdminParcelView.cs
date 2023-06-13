@@ -35,12 +35,21 @@ namespace trackr_client_app.Views
             GetCustomerData();
             parcelCodeTB.Text = parcel.ParID.ToString();
             parcelNameTB.Text = parcel.ParDescription;
-            statusTB.Text = parcel.ParStatus;
+            GetCancelStatus();
             noteTB.Text = parcel.Note;
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
             priceTB.Text = parcel.Price.ToString();
             DisplayTrackingTree();
+        }
+        private void GetCancelStatus()
+        {
+            string status = parcel.ParStatus;
+            if (parcel.ParStatus.Contains('@'))
+            {
+                status = parcel.ParStatus.Split('@')[0];
+            }
+            statusTB.Text = status;
         }
         private async void GetCustomerData()
         {
@@ -98,6 +107,11 @@ namespace trackr_client_app.Views
         {
             AdminReviewView adminReviewView = new AdminReviewView(parcel.ParID);
             adminReviewView.Show();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
