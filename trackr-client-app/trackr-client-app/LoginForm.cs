@@ -82,6 +82,14 @@ namespace trackr_client_app
         }
         private void Authorize(string role, string id)
         {
+            if(UserSession.customers.Count > 0)
+            {
+                UserSession.customers.Clear();
+            }
+            if(UserSession.parcels.Count > 0)
+            {
+                UserSession.parcels.Clear();
+            }
             if(role == "Admin")
             {
                 GetAdminInfo(id);
