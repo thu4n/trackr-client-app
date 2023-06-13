@@ -33,6 +33,7 @@ namespace trackr_client_app
 
         private void CustomerParcelView_Load(object sender, EventArgs e)
         {
+            GetCancelStatus();
             cusCodeTB.Text = UserSession.customer.CusID.ToString();
             cusAddressTB.Text = UserSession.customer.CusAddress.Replace('*',',');
             cusNameTB.Text = UserSession.customer.CusName;
@@ -50,6 +51,20 @@ namespace trackr_client_app
             DisplayTrackingTree();
         }
 
+        private void GetCancelStatus()
+        {
+            if(parcel.ParStatus.Contains('@'))
+            {
+                cancelBtn.Enabled = false;
+                cancelBtn.Text = "Đã gửi yêu cầu hủy đơn";
+                statusTB.Text = "IN_CANCEL";
+            }
+            else if(parcel.ParStatus == "CANCELLED")
+            {
+                cancelBtn.Enabled = false;
+                cancelBtn.Text = "Đơn hàng đã bị hủy";
+            }
+        }
         private async void GetReivewStatus()
         {
             var client = new HttpClient();

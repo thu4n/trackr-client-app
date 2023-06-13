@@ -93,7 +93,12 @@ namespace trackr_client_app
             int i = 1;
             foreach(Parcel parcel in UserSession.parcels)
             {
-                parcelGridView.Rows.Add(i++, parcel.ParID.ToString(),parcel.ParDescription,parcel.ParDeliveryDate.ToString(),parcel.ParStatus);
+                string status = parcel.ParStatus;
+                if (parcel.ParStatus.Contains('@'))
+                {
+                    status = parcel.ParStatus.Split('@')[0];
+                }
+                parcelGridView.Rows.Add(i++, parcel.ParID.ToString(), parcel.ParDescription, parcel.ParDeliveryDate.ToString(), status);
             }
         }
 

@@ -185,6 +185,12 @@
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DeliveryMan.cs" />
     <Compile Include="Models\Review.cs" />
+    <Compile Include="Views\AdminCancelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminCancelView.Designer.cs">
+      <DependentUpon>AdminCancelView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminCreateParcelView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,12 +238,6 @@
     </Compile>
     <Compile Include="Views\AdminReviewView.Designer.cs">
       <DependentUpon>AdminReviewView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CustomerConfirmView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\CustomerConfirmView.Designer.cs">
-      <DependentUpon>CustomerConfirmView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomerDashboard.cs">
       <SubType>Form</SubType>
@@ -316,6 +316,9 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdminCancelView.resx">
+      <DependentUpon>AdminCancelView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminCreateParcelView.resx">
       <DependentUpon>AdminCreateParcelView.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,9 +342,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AdminReviewView.resx">
       <DependentUpon>AdminReviewView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\CustomerConfirmView.resx">
-      <DependentUpon>CustomerConfirmView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
@@ -429,6 +429,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RatingStar_Fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets')" />
