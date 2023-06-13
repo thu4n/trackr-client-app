@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using trackr_client_app.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace trackr_client_app.Views
 {
@@ -48,6 +49,7 @@ namespace trackr_client_app.Views
             if (parcel.ParStatus.Contains('@'))
             {
                 status = parcel.ParStatus.Split('@')[0];
+                cancelBtn.Visible = true;
             }
             statusTB.Text = status;
         }
@@ -111,7 +113,7 @@ namespace trackr_client_app.Views
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-
+            var reason = parcel.ParStatus.Split('@')[1];
         }
     }
 }
