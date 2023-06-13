@@ -54,6 +54,7 @@ namespace trackr_client_app.Views
         }
         private void DisplayTrackingTree()
         {
+            treeView1.Nodes.Clear();
             if (parcel.ParRouteLocation == null || parcel.ParRouteLocation.Length <= 0) return;
             string[] routeLog = parcel.ParRouteLocation.Split('@');
             string[] timeLog = parcel.Realtime.Split('@');
@@ -111,7 +112,10 @@ namespace trackr_client_app.Views
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
             var response = await client.PutAsync(UserSession.apiUrl + $"Parcel/{parcel.ParID}", jsonContent);
             var responseString = await response.Content.ReadAsStringAsync();
-            MessageBox.Show(responseString);
+            if(response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Cập nhật thành công vị trí đơn hàng");
+            }
             Close();
         }
 

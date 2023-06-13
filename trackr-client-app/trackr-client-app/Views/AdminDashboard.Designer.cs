@@ -66,6 +66,8 @@
             this.searchBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.refreshBtn = new System.Windows.Forms.Button();
+            this.reviewBtn = new System.Windows.Forms.Button();
+            this.logOutBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
@@ -178,6 +180,7 @@
             this.parcelGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.parcelGridView.Location = new System.Drawing.Point(3, 3);
             this.parcelGridView.Name = "parcelGridView";
+            this.parcelGridView.ReadOnly = true;
             this.parcelGridView.RowHeadersWidth = 51;
             this.parcelGridView.RowTemplate.Height = 24;
             this.parcelGridView.Size = new System.Drawing.Size(841, 318);
@@ -191,6 +194,7 @@
             this.sttCol.HeaderText = "STT";
             this.sttCol.MinimumWidth = 6;
             this.sttCol.Name = "sttCol";
+            this.sttCol.ReadOnly = true;
             this.sttCol.Width = 62;
             // 
             // codeCol
@@ -198,6 +202,7 @@
             this.codeCol.HeaderText = "Mã vận đơn";
             this.codeCol.MinimumWidth = 6;
             this.codeCol.Name = "codeCol";
+            this.codeCol.ReadOnly = true;
             this.codeCol.Width = 125;
             // 
             // nameCol
@@ -206,12 +211,14 @@
             this.nameCol.HeaderText = "Tên đơn hàng";
             this.nameCol.MinimumWidth = 6;
             this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
             // 
             // dateCol
             // 
             this.dateCol.HeaderText = "Ngày đặt hàng";
             this.dateCol.MinimumWidth = 6;
             this.dateCol.Name = "dateCol";
+            this.dateCol.ReadOnly = true;
             this.dateCol.Width = 125;
             // 
             // statusCol
@@ -219,6 +226,7 @@
             this.statusCol.HeaderText = "Trạng thái";
             this.statusCol.MinimumWidth = 6;
             this.statusCol.Name = "statusCol";
+            this.statusCol.ReadOnly = true;
             this.statusCol.Width = 125;
             // 
             // deliCol
@@ -227,6 +235,7 @@
             this.deliCol.HeaderText = "Phân công giao";
             this.deliCol.MinimumWidth = 6;
             this.deliCol.Name = "deliCol";
+            this.deliCol.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -272,6 +281,7 @@
             this.deliveryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.deliveryGridView.Location = new System.Drawing.Point(3, 3);
             this.deliveryGridView.Name = "deliveryGridView";
+            this.deliveryGridView.ReadOnly = true;
             this.deliveryGridView.RowHeadersWidth = 51;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.deliveryGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
@@ -287,6 +297,7 @@
             this.sttCol2.HeaderText = "STT";
             this.sttCol2.MinimumWidth = 6;
             this.sttCol2.Name = "sttCol2";
+            this.sttCol2.ReadOnly = true;
             this.sttCol2.Width = 62;
             // 
             // codeCol2
@@ -294,6 +305,7 @@
             this.codeCol2.HeaderText = "Mã nhân viên";
             this.codeCol2.MinimumWidth = 6;
             this.codeCol2.Name = "codeCol2";
+            this.codeCol2.ReadOnly = true;
             this.codeCol2.Width = 125;
             // 
             // nameCol2
@@ -302,6 +314,7 @@
             this.nameCol2.HeaderText = "Tên nhân viên";
             this.nameCol2.MinimumWidth = 6;
             this.nameCol2.Name = "nameCol2";
+            this.nameCol2.ReadOnly = true;
             // 
             // numberCol2
             // 
@@ -309,6 +322,7 @@
             this.numberCol2.HeaderText = "SĐT";
             this.numberCol2.MinimumWidth = 6;
             this.numberCol2.Name = "numberCol2";
+            this.numberCol2.ReadOnly = true;
             // 
             // tabPage3
             // 
@@ -353,6 +367,7 @@
             this.customerGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customerGridView.Location = new System.Drawing.Point(0, 0);
             this.customerGridView.Name = "customerGridView";
+            this.customerGridView.ReadOnly = true;
             this.customerGridView.RowHeadersWidth = 51;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.customerGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
@@ -368,6 +383,7 @@
             this.sttCol3.HeaderText = "STT";
             this.sttCol3.MinimumWidth = 6;
             this.sttCol3.Name = "sttCol3";
+            this.sttCol3.ReadOnly = true;
             this.sttCol3.Width = 62;
             // 
             // codeCol3
@@ -375,6 +391,7 @@
             this.codeCol3.HeaderText = "Mã khách hàng";
             this.codeCol3.MinimumWidth = 6;
             this.codeCol3.Name = "codeCol3";
+            this.codeCol3.ReadOnly = true;
             this.codeCol3.Width = 125;
             // 
             // nameCol3
@@ -383,6 +400,7 @@
             this.nameCol3.HeaderText = "Tên khách hàng";
             this.nameCol3.MinimumWidth = 6;
             this.nameCol3.Name = "nameCol3";
+            this.nameCol3.ReadOnly = true;
             // 
             // addrCol
             // 
@@ -390,6 +408,7 @@
             this.addrCol.HeaderText = "Địa chỉ";
             this.addrCol.MinimumWidth = 6;
             this.addrCol.Name = "addrCol";
+            this.addrCol.ReadOnly = true;
             // 
             // createBtn
             // 
@@ -400,7 +419,7 @@
             this.createBtn.ForeColor = System.Drawing.Color.White;
             this.createBtn.Location = new System.Drawing.Point(52, 608);
             this.createBtn.Name = "createBtn";
-            this.createBtn.Size = new System.Drawing.Size(324, 33);
+            this.createBtn.Size = new System.Drawing.Size(235, 33);
             this.createBtn.TabIndex = 25;
             this.createBtn.Text = "Tạo đơn hàng mới";
             this.createBtn.UseVisualStyleBackColor = false;
@@ -434,24 +453,53 @@
             // 
             // refreshBtn
             // 
-            this.refreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.refreshBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.refreshBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.Refresh_icon;
+            this.refreshBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.refreshBtn.FlatAppearance.BorderSize = 0;
             this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshBtn.ForeColor = System.Drawing.Color.White;
-            this.refreshBtn.Location = new System.Drawing.Point(737, 608);
+            this.refreshBtn.Location = new System.Drawing.Point(795, 174);
             this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(163, 33);
+            this.refreshBtn.Size = new System.Drawing.Size(48, 30);
             this.refreshBtn.TabIndex = 34;
-            this.refreshBtn.Text = "Làm mới dữ liệu";
             this.refreshBtn.UseVisualStyleBackColor = false;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
+            // reviewBtn
+            // 
+            this.reviewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.reviewBtn.FlatAppearance.BorderSize = 0;
+            this.reviewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reviewBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewBtn.ForeColor = System.Drawing.Color.White;
+            this.reviewBtn.Location = new System.Drawing.Point(306, 608);
+            this.reviewBtn.Name = "reviewBtn";
+            this.reviewBtn.Size = new System.Drawing.Size(324, 33);
+            this.reviewBtn.TabIndex = 35;
+            this.reviewBtn.Text = "Thống kê đánh giá dịch vụ";
+            this.reviewBtn.UseVisualStyleBackColor = false;
+            this.reviewBtn.Click += new System.EventHandler(this.reviewBtn_Click);
+            // 
+            // logOutBtn
+            // 
+            this.logOutBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.logOutBtn.Location = new System.Drawing.Point(12, 15);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(109, 40);
+            this.logOutBtn.TabIndex = 37;
+            this.logOutBtn.Text = "logOut";
+            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
             // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 668);
+            this.Controls.Add(this.logOutBtn);
+            this.Controls.Add(this.reviewBtn);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.createBtn);
             this.Controls.Add(this.tabControl1);
@@ -510,5 +558,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn numberCol2;
         private System.Windows.Forms.Button createBtn;
         private System.Windows.Forms.Button refreshBtn;
+        private System.Windows.Forms.Button reviewBtn;
+        private System.Windows.Forms.Button logOutBtn;
     }
 }

@@ -47,6 +47,7 @@
             this.refreshBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchBtn = new System.Windows.Forms.Button();
+            this.logOutBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,9 +66,9 @@
             // searchTB
             // 
             this.searchTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTB.Location = new System.Drawing.Point(287, 152);
+            this.searchTB.Location = new System.Drawing.Point(300, 152);
             this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(436, 30);
+            this.searchTB.Size = new System.Drawing.Size(424, 30);
             this.searchTB.TabIndex = 12;
             // 
             // searchLabel
@@ -194,16 +195,17 @@
             // 
             // refreshBtn
             // 
-            this.refreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.refreshBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.refreshBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.Refresh_icon;
+            this.refreshBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.refreshBtn.FlatAppearance.BorderSize = 0;
             this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshBtn.ForeColor = System.Drawing.Color.White;
-            this.refreshBtn.Location = new System.Drawing.Point(807, 150);
+            this.refreshBtn.Location = new System.Drawing.Point(775, 150);
             this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(163, 33);
+            this.refreshBtn.Size = new System.Drawing.Size(70, 32);
             this.refreshBtn.TabIndex = 35;
-            this.refreshBtn.Text = "Làm mới dữ liệu";
             this.refreshBtn.UseVisualStyleBackColor = false;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
@@ -234,11 +236,23 @@
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
+            // logOutBtn
+            // 
+            this.logOutBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.logOutBtn.Location = new System.Drawing.Point(12, 12);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(109, 40);
+            this.logOutBtn.TabIndex = 36;
+            this.logOutBtn.Text = "logOut";
+            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
+            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 577);
+            this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.usernameLabel);
@@ -274,5 +288,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusColum;
         private System.Windows.Forms.Button refreshBtn;
+        private System.Windows.Forms.Button logOutBtn;
     }
 }

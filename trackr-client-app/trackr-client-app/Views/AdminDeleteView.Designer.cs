@@ -40,7 +40,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(67, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(343, 46);
+            this.label1.Size = new System.Drawing.Size(426, 60);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bạn có chắc chắn muốn xóa không? \r\nHành động này không thể hoàn tác được.\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -78,9 +78,9 @@
             // 
             // AdminDeleteView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 183);
+            this.ClientSize = new System.Drawing.Size(512, 161);
             this.Controls.Add(this.noBtn);
             this.Controls.Add(this.yesBtn);
             this.Controls.Add(this.label1);

@@ -8,8 +8,8 @@ namespace trackr_client_app.Models
 {
     public class Parcel
     {
-        public Parcel() 
-        { 
+        public Parcel()
+        {
             ParDescription = "";
             ParStatus = "READY_TO_SHIP";
             ParDeliveryDate = DateTime.Now;
@@ -21,6 +21,7 @@ namespace trackr_client_app.Models
             ManID = -99;
             ParRouteLocation = "";
         }
+
         public int ParID { get; set; }
         public string ParImage { get; set; }
         public string ParDescription { get; set; }
@@ -33,6 +34,11 @@ namespace trackr_client_app.Models
         public int CusID { get; set; }
         public int ManID { get; set; }
         public string ParRouteLocation { get; set; }
+        public string SelectedCancelReason { get; set; }
+        
 
     }
+
 }
+
+

@@ -21,6 +21,7 @@ namespace trackr_client_app.Views
         public AdminParcelView()
         {
             InitializeComponent();
+            
         }
 
         public AdminParcelView(Parcel parcel)
@@ -57,6 +58,7 @@ namespace trackr_client_app.Views
         }
         private void DisplayTrackingTree()
         {
+            treeView1.Nodes.Clear();
             if (parcel.ParRouteLocation == null || parcel.ParRouteLocation.Length <= 0) return;
             string[] routeLog = parcel.ParRouteLocation.Split('@');
             string[] timeLog = parcel.Realtime.Split('@');
@@ -92,9 +94,10 @@ namespace trackr_client_app.Views
             adminDeleteView.Show();
         }
 
-        private void modBtn_Click(object sender, EventArgs e)
+        private void reviewBtn_Click(object sender, EventArgs e)
         {
-
+            AdminReviewView adminReviewView = new AdminReviewView(parcel.ParID);
+            adminReviewView.Show();
         }
     }
 }

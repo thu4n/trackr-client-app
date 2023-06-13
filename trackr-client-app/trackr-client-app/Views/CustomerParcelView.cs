@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +22,7 @@ namespace trackr_client_app
         public CustomerParcelView()
         {
             InitializeComponent();
+           
         }
 
         public CustomerParcelView(Parcel parcel)
@@ -43,11 +46,36 @@ namespace trackr_client_app
             estimateDateTB.Text = parcel.ParDeliveryDate.AddDays(3).ToString("dd-MM-yyyy");
             parcelImg.ImageLocation = parcel.ParImage;
             parcelImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            GetReivewStatus();
             DisplayTrackingTree();
+        }
+
+        private async void GetReivewStatus()
+        {
+            var client = new HttpClient();
+            var response = await client.GetAsync(UserSession.apiUrl + $"review/parcel?id={parcel.ParID}");
+            var responseString = await response.Content.ReadAsStringAsync();
+            var reviews = JArray.Parse(responseString);
+            bool reviewed;
+            if (reviews.Count > 0)
+            {
+                reviewBtn.Text = "Đã đánh giá";
+                reviewed = true;
+            }
+            else
+            {
+                reviewed= false;
+            }
+            if (parcel.ParStatus == "COMPLETED" && !reviewed)
+            {
+                reviewBtn.Enabled = true;
+                reviewBtn.BackColor = ColorTranslator.FromHtml("226, 111, 111");
+            }
         }
 
         private void DisplayTrackingTree()
         {
+            treeView1.Nodes.Clear();
             if (parcel.ParRouteLocation == null || parcel.ParRouteLocation.Length <= 0) return;
             string[] routeLog = parcel.ParRouteLocation.Split('@');
             string[] timeLog = parcel.Realtime.Split('@');
@@ -62,7 +90,6 @@ namespace trackr_client_app
             for(int i=1; i < timeLog.Length; i++)
             {
                 int j = i - 1;
-                //string date = DateTime.ParseExact(timeLog[i], "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture).ToString();
                 treeView1.Nodes[j].Nodes.Add(Name, timeLog[i], 3, 3);
             }
             if (mark >= 0)
@@ -84,5 +111,16 @@ namespace trackr_client_app
             Process.Start(command);
         }
 
+        private void reviewBtn_Click(object sender, EventArgs e)
+        {
+            CustomerReview customerReview = new CustomerReview(parcel.ParID, parcel.ParDescription);
+            customerReview.Show();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            CustomerParcelCancel customerParcelCancel = new CustomerParcelCancel(parcel.ParID);
+            customerParcelCancel.Show();
+        }
     }
 }

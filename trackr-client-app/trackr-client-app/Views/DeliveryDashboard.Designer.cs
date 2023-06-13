@@ -59,6 +59,7 @@
             this.refreshBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchBtn = new System.Windows.Forms.Button();
+            this.logOutBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelGridView)).BeginInit();
@@ -89,7 +90,7 @@
             this.tabPage1.ForeColor = System.Drawing.Color.Black;
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage1.Size = new System.Drawing.Size(904, 324);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đơn hàng cần giao";
@@ -128,6 +129,7 @@
             this.parcelGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.parcelGridView.Location = new System.Drawing.Point(3, 3);
             this.parcelGridView.Name = "parcelGridView";
+            this.parcelGridView.ReadOnly = true;
             this.parcelGridView.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.parcelGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
@@ -142,6 +144,7 @@
             this.sttCol.HeaderText = "STT";
             this.sttCol.MinimumWidth = 6;
             this.sttCol.Name = "sttCol";
+            this.sttCol.ReadOnly = true;
             this.sttCol.Width = 62;
             // 
             // codeCol
@@ -149,6 +152,7 @@
             this.codeCol.HeaderText = "Mã vận đơn";
             this.codeCol.MinimumWidth = 6;
             this.codeCol.Name = "codeCol";
+            this.codeCol.ReadOnly = true;
             this.codeCol.Width = 125;
             // 
             // nameCol
@@ -157,6 +161,7 @@
             this.nameCol.HeaderText = "Tên đơn hàng";
             this.nameCol.MinimumWidth = 6;
             this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
             // 
             // dateCol
             // 
@@ -164,6 +169,7 @@
             this.dateCol.HeaderText = "Ngày đặt hàng";
             this.dateCol.MinimumWidth = 6;
             this.dateCol.Name = "dateCol";
+            this.dateCol.ReadOnly = true;
             // 
             // addrCol
             // 
@@ -171,6 +177,7 @@
             this.addrCol.HeaderText = "Địa chỉ";
             this.addrCol.MinimumWidth = 6;
             this.addrCol.Name = "addrCol";
+            this.addrCol.ReadOnly = true;
             // 
             // btnCol
             // 
@@ -189,7 +196,7 @@
             this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage2.Size = new System.Drawing.Size(904, 324);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Đơn hàng đang giao";
@@ -229,6 +236,7 @@
             this.parcelProcessedGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.parcelProcessedGridView.Location = new System.Drawing.Point(3, 3);
             this.parcelProcessedGridView.Name = "parcelProcessedGridView";
+            this.parcelProcessedGridView.ReadOnly = true;
             this.parcelProcessedGridView.RowHeadersWidth = 51;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.parcelProcessedGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
@@ -243,6 +251,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "STT";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 62;
             // 
             // dataGridViewTextBoxColumn2
@@ -250,6 +259,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Mã vận đơn";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
@@ -258,6 +268,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Tên đơn hàng";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -265,6 +276,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Ngày đặt hàng";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -272,6 +284,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Địa chỉ";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewButtonColumn1
             // 
@@ -325,16 +338,17 @@
             // 
             // refreshBtn
             // 
-            this.refreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.refreshBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.refreshBtn.BackgroundImage = global::trackr_client_app.Properties.Resources.Refresh_icon;
+            this.refreshBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.refreshBtn.FlatAppearance.BorderSize = 0;
             this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshBtn.ForeColor = System.Drawing.Color.White;
-            this.refreshBtn.Location = new System.Drawing.Point(60, 611);
+            this.refreshBtn.Location = new System.Drawing.Point(825, 171);
             this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(163, 33);
+            this.refreshBtn.Size = new System.Drawing.Size(60, 34);
             this.refreshBtn.TabIndex = 33;
-            this.refreshBtn.Text = "Làm mới dữ liệu";
             this.refreshBtn.UseVisualStyleBackColor = false;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
@@ -363,11 +377,23 @@
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
+            // logOutBtn
+            // 
+            this.logOutBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.logOutBtn.Location = new System.Drawing.Point(27, 12);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(109, 40);
+            this.logOutBtn.TabIndex = 37;
+            this.logOutBtn.Text = "logOut";
+            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
+            // 
             // DeliveryDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 664);
+            this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.usernameLabel);
@@ -418,5 +444,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.Button logOutBtn;
     }
 }
