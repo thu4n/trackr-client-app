@@ -55,7 +55,7 @@ namespace trackr_client_app.Views
         private async void realUploadBtn_Click(object sender, EventArgs e)
         {
             var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Post, "https://testtestserver20230526163638.azurewebsites.net/api/Image");
+            var request = new HttpRequestMessage(HttpMethod.Post, UserSession.apiUrl + "Image");
             var content = new MultipartFormDataContent();
             content.Add(new StreamContent(File.OpenRead(fileInfo.FullName)), "File", fileInfo.Name);
             request.Content = content;
@@ -77,7 +77,7 @@ namespace trackr_client_app.Views
 
             string jsonString = JsonConvert.SerializeObject(newParcel);
             var jsonContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            var postResponse = await client.PostAsync("https://testtestserver20230526163638.azurewebsites.net/api/Parcel", jsonContent);
+            var postResponse = await client.PostAsync(UserSession.apiUrl + "Parcel", jsonContent);
             var responseString = await postResponse.Content.ReadAsStringAsync();
             if(postResponse.StatusCode == HttpStatusCode.OK)
             {
